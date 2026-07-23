@@ -7,7 +7,7 @@ import {
   BadgeCheck,
   DollarSign,
   MapPin,
-  Home,
+  Home as HomeIcon,
   Truck,
   Building2,
   Package,

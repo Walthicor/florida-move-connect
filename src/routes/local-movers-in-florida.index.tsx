@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -10,21 +11,12 @@ import {
 } from "lucide-react";
 
 export const Route = createFileRoute("/local-movers-in-florida/")({
-  head: () => ({
-    meta: [
-      { title: "Local Movers in Florida — Compare Free Hourly Quotes | FMD" },
-      {
-        name: "description",
-        content:
-          "Local movers in Florida charge $95-$150/hour. Compare free quotes from licensed, FDACS-registered local moving companies in your city.",
-      },
-      { property: "og:title", content: "Local Movers in Florida" },
-      {
-        property: "og:description",
-        content:
-          "Compare free quotes from licensed, FDACS-registered local Florida movers.",
-      },
-    ],
+  head: () => pageHead({
+    path: "/local-movers-in-florida/",
+    title: 'Local Movers in Florida | Hourly Rates & Free Quotes 2026',
+    description: 'Compare licensed local moving companies across Florida. Hourly rates from $95/hr, FDACS-verified movers, same-week availability. Get up to 4 free quotes.',
+    service: { serviceType: 'Local Moving', areaServed: 'Florida' },
+    faqs: FAQS,
   }),
   component: LocalMoversPage,
 });

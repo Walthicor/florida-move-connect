@@ -1,14 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { CityHero, SimpleCostTable, LocalKnowledge, Faq } from "./movers-in-ocala.index";
 
 export const Route = createFileRoute("/movers-in-naples/")({
-  head: () => ({
-    meta: [
-      { title: "Movers in Naples, Florida — Compare Free Quotes | FMD" },
-      { name: "description", content: "Licensed Collier County movers for Naples snowbird season, gated communities and luxury/antique inventory." },
-      { property: "og:title", content: "Movers in Naples, Florida" },
-      { property: "og:description", content: "Compare free quotes from licensed Naples moving companies — season-savvy crews for Collier County." },
-    ],
+  head: () => pageHead({
+    path: "/movers-in-naples/",
+    title: 'Movers in Naples FL | Compare Licensed Moving Companies',
+    description: 'Compare free quotes from licensed Naples movers. Gated communities, white-glove and antique handling, season-smart scheduling. Collier County.',
+    service: { serviceType: 'Moving Services', areaServed: 'Naples, Florida' },
+    faqs: FAQS,
   }),
   component: NaplesPage,
 });

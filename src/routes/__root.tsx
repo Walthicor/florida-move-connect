@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { ORG_SCHEMA } from "@/lib/seo";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -15,19 +16,42 @@ import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
 import { CtaBand } from "../components/site/CtaBand";
 
+const TOP_SERVICES = [
+  { to: "/local-movers-in-florida/", label: "Local Movers" },
+  { to: "/long-distance-movers/", label: "Long Distance" },
+  { to: "/movers-in-miami/", label: "Miami Movers" },
+  { to: "/movers-in-tampa/", label: "Tampa Movers" },
+  { to: "/movers-in-orlando/", label: "Orlando Movers" },
+  { to: "/contact/", label: "Get Free Quotes" },
+] as const;
+
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-[60vh] items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
+    <div className="flex min-h-[70vh] items-center justify-center bg-background px-4 py-16">
+      <div className="max-w-lg text-center">
         <h1 className="font-display text-7xl font-bold text-ink">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-ink">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+        <h2 className="mt-4 font-display text-2xl font-bold text-ink">
+          Page not found
+        </h2>
+        <p className="mt-3 text-sm text-muted-foreground">
+          The page you're looking for doesn't exist or has been moved. Try one
+          of these instead:
         </p>
         <div className="mt-6">
           <Link to="/" className="btn-cta btn-cta-hover">
             Go home
           </Link>
+        </div>
+        <div className="mt-8 grid gap-2 sm:grid-cols-2 text-left">
+          {TOP_SERVICES.map((s) => (
+            <Link
+              key={s.to}
+              to={s.to}
+              className="rounded-lg border border-border bg-white px-4 py-3 text-sm font-semibold text-ink hover:border-brand hover:text-brand transition"
+            >
+              {s.label} →
+            </Link>
+          ))}
         </div>
       </div>
     </div>
@@ -94,8 +118,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
+        rel: "preload",
+        as: "style",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap",
+      },
+      {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap",
+      },
+      {
+        rel: "preload",
+        as: "image",
+        href: "/images/hero-family.jpg",
+        fetchPriority: "high",
+      } as unknown as { rel: string; href: string },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(ORG_SCHEMA),
       },
     ],
   }),

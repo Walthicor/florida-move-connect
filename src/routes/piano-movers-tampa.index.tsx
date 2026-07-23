@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -12,21 +13,12 @@ import {
 } from "lucide-react";
 
 export const Route = createFileRoute("/piano-movers-tampa/")({
-  head: () => ({
-    meta: [
-      { title: "Piano Movers in Tampa, FL — Specialty Move Quotes | FMD" },
-      {
-        name: "description",
-        content:
-          "Compare free quotes from specialty piano movers in Tampa Bay — skid boards, locking straps and humidity know-how.",
-      },
-      { property: "og:title", content: "Piano Movers in Tampa, FL" },
-      {
-        property: "og:description",
-        content:
-          "Compare free quotes from specialty piano movers in Tampa Bay.",
-      },
-    ],
+  head: () => pageHead({
+    path: "/piano-movers-tampa/",
+    title: 'Piano Movers in Tampa FL | Upright & Grand From $150',
+    description: 'Specialty piano movers in Tampa. Uprights from $150, grand pianos from $300. Stairs, crating & climate-aware handling. Compare free quotes today.',
+    service: { serviceType: 'Piano Moving', areaServed: 'Tampa, Florida' },
+    faqs: FAQS,
   }),
   component: PianoMoversTampaPage,
 });

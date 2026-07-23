@@ -1,15 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { useState } from "react";
 import { ArrowRight, ShieldCheck, ChevronDown, DollarSign, Building2, MapPin, Route as RouteIcon } from "lucide-react";
 
 export const Route = createFileRoute("/movers-in-miami/")({
-  head: () => ({
-    meta: [
-      { title: "Movers in Miami, Florida — Compare Free Quotes | FMD" },
-      { name: "description", content: "Licensed Miami movers who know Brickell COIs, Sunny Isles elevators and Coconut Grove parking. Compare free quotes in 2 minutes." },
-      { property: "og:title", content: "Movers in Miami, Florida" },
-      { property: "og:description", content: "Compare free quotes from licensed Miami moving companies — building-savvy crews for condos, high-rises and beyond." },
-    ],
+  head: () => pageHead({
+    path: "/movers-in-miami/",
+    title: 'Movers in Miami FL | Compare Licensed Moving Companies',
+    description: 'Compare free quotes from licensed movers in Miami. Condo & high-rise specialists, COI provided, from $450. Brickell to Kendall — verified companies.',
+    service: { serviceType: 'Moving Services', areaServed: 'Miami, Florida' },
+    faqs: FAQS,
   }),
   component: MiamiPage,
 });

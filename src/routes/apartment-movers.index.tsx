@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -9,21 +10,12 @@ import {
 } from "lucide-react";
 
 export const Route = createFileRoute("/apartment-movers/")({
-  head: () => ({
-    meta: [
-      { title: "Apartment and Condo Movers in Florida — Free Quotes | FMD" },
-      {
-        name: "description",
-        content:
-          "Florida apartment and condo movers who handle COIs, elevator reservations and building rules. Compare free quotes.",
-      },
-      { property: "og:title", content: "Apartment and Condo Movers in Florida" },
-      {
-        property: "og:description",
-        content:
-          "Compare free quotes from Florida apartment specialists — COIs, elevators and HOA rules handled.",
-      },
-    ],
+  head: () => pageHead({
+    path: "/apartment-movers/",
+    title: 'Apartment Movers in Florida | Condo & High-Rise Specialists',
+    description: 'Apartment and condo movers across Florida. COI for your building, elevator reservations, stairs crews. Compare free quotes from licensed movers.',
+    service: { serviceType: 'Apartment and Condo Moving', areaServed: 'Florida' },
+    faqs: FAQS,
   }),
   component: ApartmentMoversPage,
 });

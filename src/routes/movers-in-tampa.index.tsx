@@ -1,15 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { useState } from "react";
 import { ArrowRight, ShieldCheck, ChevronDown, DollarSign, Building2, MapPin, Music } from "lucide-react";
 
 export const Route = createFileRoute("/movers-in-tampa/")({
-  head: () => ({
-    meta: [
-      { title: "Movers in Tampa, Florida — Compare Free Quotes | FMD" },
-      { name: "description", content: "Licensed Tampa movers who plan around the bay, summer storms and downtown high-rises. Compare free quotes in 2 minutes." },
-      { property: "og:title", content: "Movers in Tampa, Florida" },
-      { property: "og:description", content: "Compare free quotes from licensed Tampa Bay movers — hourly rates from $95-$150." },
-    ],
+  head: () => pageHead({
+    path: "/movers-in-tampa/",
+    title: 'Movers in Tampa FL | Compare Licensed Moving Companies',
+    description: 'Compare free quotes from licensed movers in Tampa. Local crews from $95/hr, piano specialists, Hyde Park to Wesley Chapel. FDACS-verified companies.',
+    service: { serviceType: 'Moving Services', areaServed: 'Tampa, Florida' },
+    faqs: FAQS,
   }),
   component: TampaPage,
 });

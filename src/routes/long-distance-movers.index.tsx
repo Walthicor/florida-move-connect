@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -13,21 +14,12 @@ import {
 } from "lucide-react";
 
 export const Route = createFileRoute("/long-distance-movers/")({
-  head: () => ({
-    meta: [
-      { title: "Long Distance Movers in Florida — Compare Binding Quotes | FMD" },
-      {
-        name: "description",
-        content:
-          "Long distance moves from Florida cost $1,800-$8,000+. Compare free binding quotes from FMCSA-verified long distance moving companies.",
-      },
-      { property: "og:title", content: "Long Distance Movers in Florida" },
-      {
-        property: "og:description",
-        content:
-          "Compare free binding quotes from FMCSA-verified long distance movers in Florida.",
-      },
-    ],
+  head: () => pageHead({
+    path: "/long-distance-movers/",
+    title: 'Long Distance Movers in Florida | Compare Quotes & Save 40%',
+    description: 'Compare free quotes from licensed long distance moving companies in Florida. Binding estimates, FMCSA-verified movers, routes to all 50 states. 2026 rates inside.',
+    service: { serviceType: 'Long Distance Moving', areaServed: 'Florida' },
+    faqs: FAQS,
   }),
   component: LongDistancePage,
 });

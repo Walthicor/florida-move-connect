@@ -193,7 +193,7 @@ function QuoteFormCard() {
   return (
     <form
       onSubmit={(e) => e.preventDefault()}
-      className="rounded-2xl border border-border bg-white p-6 md:p-7 shadow-card"
+      className="pulse-form rounded-2xl border border-border bg-white p-6 md:p-7 shadow-card"
     >
       <h2 className="font-display text-xl font-bold text-ink">
         Get up to 4 free quotes

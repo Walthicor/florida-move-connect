@@ -15,7 +15,7 @@ export function CtaBand() {
         </div>
         <Link
           to="/contact/"
-          className="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3.5 font-semibold text-cta shadow-card hover:bg-white/95 transition"
+          className="pulse-cta inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3.5 font-semibold text-cta shadow-card hover:bg-white/95 transition"
         >
           Get Free Quotes
           <ArrowRight className="h-4 w-4" />

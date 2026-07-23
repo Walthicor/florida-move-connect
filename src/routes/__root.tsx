@@ -189,8 +189,7 @@ function HtmlLangSync() {
 }
 
 function useRouterPathname() {
-  // Small local hook to avoid an extra import at the top; uses router state.
-  const router = useRouter();
-  return router.state.location.pathname;
+  return useRouterState({ select: (s) => s.location.pathname });
 }
+
 

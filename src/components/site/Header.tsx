@@ -1,12 +1,21 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
-import { SERVICES, CITIES } from "./data";
+import { Menu, X, ChevronDown, Globe } from "lucide-react";
+import {
+  SERVICES_BY_LANG,
+  CITIES_BY_LANG,
+  useLang,
+  useTwinPath,
+  t,
+} from "@/lib/i18n";
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const [lang, setLang] = useState<"EN" | "ES">("EN");
   const [openMenu, setOpenMenu] = useState<null | "services" | "cities">(null);
+  const lang = useLang();
+  const twin = useTwinPath();
+  const navigate = useNavigate();
+  const dict = t[lang];
 
   useEffect(() => {
     if (open) document.body.style.overflow = "hidden";
@@ -16,11 +25,37 @@ export function Header() {
     };
   }, [open]);
 
+  // Persist language choice on toggle so subsequent visits know the user's preference.
+  useEffect(() => {
+    try {
+      localStorage.setItem("fmd_lang", lang);
+    } catch {
+      /* ignore */
+    }
+  }, [lang]);
+
+  const toggleLang = () => {
+    try {
+      localStorage.setItem("fmd_lang", lang === "en" ? "es" : "en");
+    } catch {
+      /* ignore */
+    }
+    // Navigate directly to the twin path; typed routes bypassed intentionally.
+    navigate({ to: twin as unknown as "/" });
+  };
+
+  const services = SERVICES_BY_LANG[lang];
+  const cities = CITIES_BY_LANG[lang];
+  const homeHref = lang === "es" ? "/es/" : "/";
+  const blogHref = lang === "es" ? "/es/blog/" : "/blog/";
+  const contactHref = lang === "es" ? "/es/contact/" : "/contact/";
+  const otherLang = lang === "en" ? "ES" : "EN";
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/75">
       <div className="container-page flex h-16 items-center justify-between gap-4 md:h-20">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 shrink-0">
+        <Link to={homeHref as "/"} className="flex items-center gap-2 shrink-0">
           <img
             src="/images/logo.jpg"
             alt="Florida Movers Direct"
@@ -31,46 +66,48 @@ export function Header() {
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-1">
           <DropdownNav
-            label="Services"
-            items={SERVICES}
+            label={dict.services}
+            items={services}
             isOpen={openMenu === "services"}
             onOpen={() => setOpenMenu("services")}
             onClose={() => setOpenMenu(null)}
           />
           <DropdownNav
-            label="Locations"
-            items={CITIES}
+            label={dict.locations}
+            items={cities}
             isOpen={openMenu === "cities"}
             onOpen={() => setOpenMenu("cities")}
             onClose={() => setOpenMenu(null)}
           />
           <Link
-            to="/blog/"
+            to={blogHref as "/blog/"}
             className="rounded-md px-3 py-2 text-sm font-medium text-ink hover:text-brand transition"
           >
-            Blog
+            {dict.blog}
           </Link>
           <Link
-            to="/contact/"
+            to={contactHref as "/contact/"}
             className="rounded-md px-3 py-2 text-sm font-medium text-ink hover:text-brand transition"
           >
-            Contact
+            {dict.contact}
           </Link>
         </nav>
 
         <div className="flex items-center gap-2 md:gap-3">
           <button
-            onClick={() => setLang(lang === "EN" ? "ES" : "EN")}
-            className="hidden sm:inline-flex items-center rounded-md border border-border px-2.5 py-1.5 text-xs font-semibold text-ink hover:border-brand hover:text-brand transition"
-            aria-label="Toggle language"
+            onClick={toggleLang}
+            className="hidden sm:inline-flex items-center gap-1.5 rounded-md border border-border px-2.5 py-1.5 text-xs font-semibold text-ink hover:border-brand hover:text-brand transition"
+            aria-label={dict.languageToggleAria}
+            title={dict.languageToggleAria}
           >
-            {lang} / {lang === "EN" ? "ES" : "EN"}
+            <Globe className="h-3.5 w-3.5" />
+            {lang.toUpperCase()} / {otherLang}
           </button>
           <Link
-            to="/contact/"
+            to={contactHref as "/contact/"}
             className="btn-cta btn-cta-hover hidden md:inline-flex text-sm"
           >
-            Get Free Quotes
+            {dict.getFreeQuotes}
           </Link>
           <button
             className="lg:hidden inline-flex items-center justify-center rounded-md p-2 text-ink hover:bg-muted"
@@ -86,34 +123,38 @@ export function Header() {
       {open && (
         <div className="lg:hidden border-t border-border bg-background">
           <div className="container-page py-4 space-y-4 max-h-[calc(100vh-4rem)] overflow-y-auto">
-            <MobileGroup label="Services" items={SERVICES} onNavigate={() => setOpen(false)} />
-            <MobileGroup label="Locations" items={CITIES} onNavigate={() => setOpen(false)} />
+            <MobileGroup label={dict.services} items={services} onNavigate={() => setOpen(false)} />
+            <MobileGroup label={dict.locations} items={cities} onNavigate={() => setOpen(false)} />
             <Link
-              to="/blog/"
+              to={blogHref as "/blog/"}
               onClick={() => setOpen(false)}
               className="block rounded-md px-2 py-2 text-base font-semibold text-ink"
             >
-              Blog
+              {dict.blog}
             </Link>
             <Link
-              to="/contact/"
+              to={contactHref as "/contact/"}
               onClick={() => setOpen(false)}
               className="block rounded-md px-2 py-2 text-base font-semibold text-ink"
             >
-              Contact
+              {dict.contact}
             </Link>
             <Link
-              to="/contact/"
+              to={contactHref as "/contact/"}
               onClick={() => setOpen(false)}
               className="btn-cta btn-cta-hover w-full"
             >
-              Get Free Quotes
+              {dict.getFreeQuotes}
             </Link>
             <button
-              onClick={() => setLang(lang === "EN" ? "ES" : "EN")}
-              className="w-full rounded-md border border-border px-3 py-2 text-sm font-semibold text-ink"
+              onClick={() => {
+                setOpen(false);
+                toggleLang();
+              }}
+              className="w-full inline-flex items-center justify-center gap-2 rounded-md border border-border px-3 py-2 text-sm font-semibold text-ink"
             >
-              Language: {lang}
+              <Globe className="h-4 w-4" />
+              {dict.languageLabel}: {lang.toUpperCase()} → {otherLang}
             </button>
           </div>
         </div>
@@ -150,7 +191,7 @@ function DropdownNav({
             {items.map((it) => (
               <Link
                 key={it.to}
-                to={it.to}
+                to={it.to as "/"}
                 onClick={onClose}
                 className="block rounded-md px-3 py-2 text-sm text-ink hover:bg-muted hover:text-brand transition"
               >
@@ -188,7 +229,7 @@ function MobileGroup({
           {items.map((it) => (
             <Link
               key={it.to}
-              to={it.to}
+              to={it.to as "/"}
               onClick={onNavigate}
               className="block rounded-md px-2 py-2 text-sm text-muted-foreground hover:text-brand"
             >

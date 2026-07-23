@@ -164,11 +164,16 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const pathname = useRouterPathname();
+  const normalized = pathname.replace(/\/+$/, "") || "/";
+  const noBandRoutes = new Set(["/", "/es", "/contact", "/es/contact"]);
+  const showQuoteBand = !noBandRoutes.has(normalized);
   return (
     <QueryClientProvider client={queryClient}>
       <HtmlLangSync />
       <div className="flex min-h-screen flex-col bg-background">
         <Header />
+        {showQuoteBand && <QuoteBand />}
         <main className="flex-1">
           <Outlet />
         </main>

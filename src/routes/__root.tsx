@@ -164,6 +164,7 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
+      <HtmlLangSync />
       <div className="flex min-h-screen flex-col bg-background">
         <Header />
         <main className="flex-1">
@@ -175,3 +176,20 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
+
+function HtmlLangSync() {
+  const pathname = useRouterPathname();
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    const isEs = pathname === "/es" || pathname === "/es/" || pathname.startsWith("/es/");
+    document.documentElement.lang = isEs ? "es" : "en";
+  }, [pathname]);
+  return null;
+}
+
+function useRouterPathname() {
+  // Small local hook to avoid an extra import at the top; uses router state.
+  const router = useRouter();
+  return router.state.location.pathname;
+}
+

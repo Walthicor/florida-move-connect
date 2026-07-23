@@ -1,0 +1,63 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
+import { PageHero, PageCostTable, PageLocalKnowledge, PageNeighborhoods, PageFaq } from "@/components/site/PageBlocks";
+
+const PATH = "/es/movers-in-boca-raton/";
+const FAQS = [
+  { q: "¿Requieren COI los condos de Boca?", a: "Sí, casi todos. Boca Raton concentra muchos edificios de lujo y comunidades 55+ que exigen COI, ascensor reservado y ventanas específicas de acceso." },
+  { q: "¿Sirven a comunidades 55+?", a: "Sí — Century Village, Kings Point, Del Aire y otras. Manejamos reglas HOA, gate house y horarios permitidos." },
+  { q: "¿Manejan mudanzas de vuelta al norte?", a: "Sí. Boca es punto común de mudanzas de larga distancia a NY, NJ, MA. FMCSA verificado con planificación previa." },
+];
+
+export const Route = createFileRoute("/es/movers-in-boca-raton/")({
+  head: () =>
+    pageHead({
+      path: PATH,
+      lang: "es",
+      title: "Mudanzas en Boca Raton FL | Empresas Licenciadas · Cotizaciones Gratis",
+      description: "Empresas de mudanzas en Boca Raton. Costos 2026, condos, country clubs y comunidades 55+. Compare hasta 4 cotizaciones gratis.",
+      faqs: FAQS,
+      service: { serviceType: "Moving Services", areaServed: "Boca Raton, FL" },
+    }),
+  component: () => (
+    <>
+      <PageHero
+        eyebrow="Boca Raton · Palm Beach County"
+        h1="Empresas de Mudanzas en Boca Raton"
+        intro="Condos de lujo, country clubs y comunidades 55+. Empresas licenciadas con experiencia en COIs, HOAs y ventanas de acceso."
+        ctaLabel="Cotización Gratis"
+        ctaHref="/es/contact/"
+      />
+      <PageCostTable
+        eyebrow="Precios 2026 · Boca Raton"
+        title="Costos típicos de mudanza en Boca"
+        col1="Tamaño"
+        col2="Casa / townhouse"
+        col3="Condo / high-rise"
+        rows={[
+          { size: "Studio / 1 hab", price: "$400-$700", detail: "$500-$900" },
+          { size: "2 habitaciones", price: "$700-$1,300", detail: "$900-$1,700" },
+          { size: "3 habitaciones", price: "$1,100-$2,000", detail: "$1,500-$2,600" },
+          { size: "4+ habitaciones", price: "$1,800-$3,000", detail: "$2,400-$4,000" },
+        ]}
+      />
+      <PageLocalKnowledge
+        eyebrow="Conocimiento local"
+        title="Particularidades de Boca Raton"
+        items={[
+          { t: "Country clubs", d: "Boca West, Broken Sound y St. Andrews — pases del gate y ventanas específicas. Coordinamos con concierge." },
+          { t: "Comunidades 55+", d: "Reglas HOA sobre día y hora de mudanza. Sábados y domingos suelen estar restringidos." },
+          { t: "Condos", d: "COI obligatorio, ascensor de carga reservado 3-7 días antes y protección de pisos exigida por building." },
+        ]}
+      />
+      <PageNeighborhoods
+        eyebrow="Cobertura"
+        title="Áreas que servimos en Boca"
+        items={[
+          "East Boca", "West Boca", "Boca Del Mar", "Boca Pointe", "Boca West", "Broken Sound", "St. Andrews", "Mizner Park", "Royal Palm Yacht Club", "Highland Beach", "Delray Beach",
+        ]}
+      />
+      <PageFaq title="Preguntas frecuentes" faqs={FAQS} />
+    </>
+  ),
+});

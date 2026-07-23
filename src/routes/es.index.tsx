@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { pageHead } from "@/lib/seo";
 import { HeroQuoteForm } from "@/components/site/QuoteForm";
+import heroVideo from "@/assets/hero-cinematic.mp4.asset.json";
 
 const PATH = "/es/";
 
@@ -92,20 +93,37 @@ function Page() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-surface-alt to-background">
-      <div className="container-page py-14 md:py-20 grid gap-10 lg:grid-cols-2 lg:items-start">
+    <section className="relative overflow-hidden isolate">
+      <video
+        className="absolute inset-0 h-full w-full object-cover"
+        src={heroVideo.url}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="/images/hero-family.jpg"
+        aria-hidden="true"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-[linear-gradient(120deg,rgba(11,83,148,0.88)_0%,rgba(11,25,45,0.78)_55%,rgba(11,25,45,0.55)_100%)]"
+      />
+      <div aria-hidden="true" className="absolute inset-0 bg-black/25" />
+
+      <div className="relative container-page py-16 md:py-24 grid gap-10 lg:grid-cols-2 lg:items-start">
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full bg-white border border-border px-3 py-1 text-xs font-semibold text-brand shadow-soft">
+          <span className="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur border border-white/25 px-3 py-1 text-xs font-semibold text-white shadow-soft">
             <ShieldCheck className="h-3.5 w-3.5" />
             Empresas licenciadas FDACS · verificadas FMCSA
           </span>
-          <h1 className="mt-5 font-display text-4xl md:text-5xl lg:text-6xl font-bold text-ink leading-[1.05]">
+          <h1 className="mt-5 font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.05] drop-shadow-[0_2px_20px_rgba(0,0,0,0.35)]">
             Empresas de Mudanzas en Florida. Compare Cotizaciones Gratis.
           </h1>
-          <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
+          <p className="mt-5 text-base md:text-lg text-white/90 leading-relaxed">
             Reciba hasta 4 cotizaciones gratis de empresas licenciadas en Florida en solo 2 minutos. Todas verificadas por FDACS o FMCSA. Locales, larga distancia, comercial, almacenamiento y más — sin compromiso.
           </p>
-          <ul className="mt-6 grid gap-2 text-sm text-ink">
+          <ul className="mt-6 grid gap-2 text-sm text-white">
             {[
               "Todas las empresas licenciadas y aseguradas",
               "Hasta 4 cotizaciones por escrito",
@@ -113,7 +131,7 @@ function Hero() {
               "Siempre gratis, sin obligación",
             ].map((t) => (
               <li key={t} className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-brand" /> {t}
+                <CheckCircle2 className="h-4 w-4 text-accent" /> {t}
               </li>
             ))}
           </ul>

@@ -34,9 +34,17 @@ import { Route as CommercialMoversIndexRouteImport } from './routes/commercial-m
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as ApartmentMoversIndexRouteImport } from './routes/apartment-movers.index'
 import { Route as EsTermsIndexRouteImport } from './routes/es.terms.index'
+import { Route as EsStorageSolutionsIndexRouteImport } from './routes/es.storage-solutions.index'
 import { Route as EsPrivacyPolicyIndexRouteImport } from './routes/es.privacy-policy.index'
+import { Route as EsPianoMoversIndexRouteImport } from './routes/es.piano-movers.index'
+import { Route as EsPianoMoversTampaIndexRouteImport } from './routes/es.piano-movers-tampa.index'
+import { Route as EsPackingServicesIndexRouteImport } from './routes/es.packing-services.index'
+import { Route as EsLongDistanceMoversIndexRouteImport } from './routes/es.long-distance-movers.index'
+import { Route as EsLocalMoversInFloridaIndexRouteImport } from './routes/es.local-movers-in-florida.index'
 import { Route as EsContactIndexRouteImport } from './routes/es.contact.index'
+import { Route as EsCommercialMoversIndexRouteImport } from './routes/es.commercial-movers.index'
 import { Route as EsBlogIndexRouteImport } from './routes/es.blog.index'
+import { Route as EsApartmentMoversIndexRouteImport } from './routes/es.apartment-movers.index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -165,19 +173,61 @@ const EsTermsIndexRoute = EsTermsIndexRouteImport.update({
   path: '/es/terms/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EsStorageSolutionsIndexRoute = EsStorageSolutionsIndexRouteImport.update({
+  id: '/es/storage-solutions/',
+  path: '/es/storage-solutions/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EsPrivacyPolicyIndexRoute = EsPrivacyPolicyIndexRouteImport.update({
   id: '/es/privacy-policy/',
   path: '/es/privacy-policy/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EsPianoMoversIndexRoute = EsPianoMoversIndexRouteImport.update({
+  id: '/es/piano-movers/',
+  path: '/es/piano-movers/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsPianoMoversTampaIndexRoute = EsPianoMoversTampaIndexRouteImport.update({
+  id: '/es/piano-movers-tampa/',
+  path: '/es/piano-movers-tampa/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsPackingServicesIndexRoute = EsPackingServicesIndexRouteImport.update({
+  id: '/es/packing-services/',
+  path: '/es/packing-services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsLongDistanceMoversIndexRoute =
+  EsLongDistanceMoversIndexRouteImport.update({
+    id: '/es/long-distance-movers/',
+    path: '/es/long-distance-movers/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const EsLocalMoversInFloridaIndexRoute =
+  EsLocalMoversInFloridaIndexRouteImport.update({
+    id: '/es/local-movers-in-florida/',
+    path: '/es/local-movers-in-florida/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const EsContactIndexRoute = EsContactIndexRouteImport.update({
   id: '/es/contact/',
   path: '/es/contact/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EsCommercialMoversIndexRoute = EsCommercialMoversIndexRouteImport.update({
+  id: '/es/commercial-movers/',
+  path: '/es/commercial-movers/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EsBlogIndexRoute = EsBlogIndexRouteImport.update({
   id: '/es/blog/',
   path: '/es/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsApartmentMoversIndexRoute = EsApartmentMoversIndexRouteImport.update({
+  id: '/es/apartment-movers/',
+  path: '/es/apartment-movers/',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -206,9 +256,17 @@ export interface FileRoutesByFullPath {
   '/privacy-policy/': typeof PrivacyPolicyIndexRoute
   '/storage-solutions/': typeof StorageSolutionsIndexRoute
   '/terms/': typeof TermsIndexRoute
+  '/es/apartment-movers/': typeof EsApartmentMoversIndexRoute
   '/es/blog/': typeof EsBlogIndexRoute
+  '/es/commercial-movers/': typeof EsCommercialMoversIndexRoute
   '/es/contact/': typeof EsContactIndexRoute
+  '/es/local-movers-in-florida/': typeof EsLocalMoversInFloridaIndexRoute
+  '/es/long-distance-movers/': typeof EsLongDistanceMoversIndexRoute
+  '/es/packing-services/': typeof EsPackingServicesIndexRoute
+  '/es/piano-movers-tampa/': typeof EsPianoMoversTampaIndexRoute
+  '/es/piano-movers/': typeof EsPianoMoversIndexRoute
   '/es/privacy-policy/': typeof EsPrivacyPolicyIndexRoute
+  '/es/storage-solutions/': typeof EsStorageSolutionsIndexRoute
   '/es/terms/': typeof EsTermsIndexRoute
 }
 export interface FileRoutesByTo {
@@ -236,9 +294,17 @@ export interface FileRoutesByTo {
   '/privacy-policy': typeof PrivacyPolicyIndexRoute
   '/storage-solutions': typeof StorageSolutionsIndexRoute
   '/terms': typeof TermsIndexRoute
+  '/es/apartment-movers': typeof EsApartmentMoversIndexRoute
   '/es/blog': typeof EsBlogIndexRoute
+  '/es/commercial-movers': typeof EsCommercialMoversIndexRoute
   '/es/contact': typeof EsContactIndexRoute
+  '/es/local-movers-in-florida': typeof EsLocalMoversInFloridaIndexRoute
+  '/es/long-distance-movers': typeof EsLongDistanceMoversIndexRoute
+  '/es/packing-services': typeof EsPackingServicesIndexRoute
+  '/es/piano-movers-tampa': typeof EsPianoMoversTampaIndexRoute
+  '/es/piano-movers': typeof EsPianoMoversIndexRoute
   '/es/privacy-policy': typeof EsPrivacyPolicyIndexRoute
+  '/es/storage-solutions': typeof EsStorageSolutionsIndexRoute
   '/es/terms': typeof EsTermsIndexRoute
 }
 export interface FileRoutesById {
@@ -267,9 +333,17 @@ export interface FileRoutesById {
   '/privacy-policy/': typeof PrivacyPolicyIndexRoute
   '/storage-solutions/': typeof StorageSolutionsIndexRoute
   '/terms/': typeof TermsIndexRoute
+  '/es/apartment-movers/': typeof EsApartmentMoversIndexRoute
   '/es/blog/': typeof EsBlogIndexRoute
+  '/es/commercial-movers/': typeof EsCommercialMoversIndexRoute
   '/es/contact/': typeof EsContactIndexRoute
+  '/es/local-movers-in-florida/': typeof EsLocalMoversInFloridaIndexRoute
+  '/es/long-distance-movers/': typeof EsLongDistanceMoversIndexRoute
+  '/es/packing-services/': typeof EsPackingServicesIndexRoute
+  '/es/piano-movers-tampa/': typeof EsPianoMoversTampaIndexRoute
+  '/es/piano-movers/': typeof EsPianoMoversIndexRoute
   '/es/privacy-policy/': typeof EsPrivacyPolicyIndexRoute
+  '/es/storage-solutions/': typeof EsStorageSolutionsIndexRoute
   '/es/terms/': typeof EsTermsIndexRoute
 }
 export interface FileRouteTypes {
@@ -299,9 +373,17 @@ export interface FileRouteTypes {
     | '/privacy-policy/'
     | '/storage-solutions/'
     | '/terms/'
+    | '/es/apartment-movers/'
     | '/es/blog/'
+    | '/es/commercial-movers/'
     | '/es/contact/'
+    | '/es/local-movers-in-florida/'
+    | '/es/long-distance-movers/'
+    | '/es/packing-services/'
+    | '/es/piano-movers-tampa/'
+    | '/es/piano-movers/'
     | '/es/privacy-policy/'
+    | '/es/storage-solutions/'
     | '/es/terms/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -329,9 +411,17 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/storage-solutions'
     | '/terms'
+    | '/es/apartment-movers'
     | '/es/blog'
+    | '/es/commercial-movers'
     | '/es/contact'
+    | '/es/local-movers-in-florida'
+    | '/es/long-distance-movers'
+    | '/es/packing-services'
+    | '/es/piano-movers-tampa'
+    | '/es/piano-movers'
     | '/es/privacy-policy'
+    | '/es/storage-solutions'
     | '/es/terms'
   id:
     | '__root__'
@@ -359,9 +449,17 @@ export interface FileRouteTypes {
     | '/privacy-policy/'
     | '/storage-solutions/'
     | '/terms/'
+    | '/es/apartment-movers/'
     | '/es/blog/'
+    | '/es/commercial-movers/'
     | '/es/contact/'
+    | '/es/local-movers-in-florida/'
+    | '/es/long-distance-movers/'
+    | '/es/packing-services/'
+    | '/es/piano-movers-tampa/'
+    | '/es/piano-movers/'
     | '/es/privacy-policy/'
+    | '/es/storage-solutions/'
     | '/es/terms/'
   fileRoutesById: FileRoutesById
 }
@@ -390,9 +488,17 @@ export interface RootRouteChildren {
   PrivacyPolicyIndexRoute: typeof PrivacyPolicyIndexRoute
   StorageSolutionsIndexRoute: typeof StorageSolutionsIndexRoute
   TermsIndexRoute: typeof TermsIndexRoute
+  EsApartmentMoversIndexRoute: typeof EsApartmentMoversIndexRoute
   EsBlogIndexRoute: typeof EsBlogIndexRoute
+  EsCommercialMoversIndexRoute: typeof EsCommercialMoversIndexRoute
   EsContactIndexRoute: typeof EsContactIndexRoute
+  EsLocalMoversInFloridaIndexRoute: typeof EsLocalMoversInFloridaIndexRoute
+  EsLongDistanceMoversIndexRoute: typeof EsLongDistanceMoversIndexRoute
+  EsPackingServicesIndexRoute: typeof EsPackingServicesIndexRoute
+  EsPianoMoversTampaIndexRoute: typeof EsPianoMoversTampaIndexRoute
+  EsPianoMoversIndexRoute: typeof EsPianoMoversIndexRoute
   EsPrivacyPolicyIndexRoute: typeof EsPrivacyPolicyIndexRoute
+  EsStorageSolutionsIndexRoute: typeof EsStorageSolutionsIndexRoute
   EsTermsIndexRoute: typeof EsTermsIndexRoute
 }
 
@@ -573,11 +679,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EsTermsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/es/storage-solutions/': {
+      id: '/es/storage-solutions/'
+      path: '/es/storage-solutions'
+      fullPath: '/es/storage-solutions/'
+      preLoaderRoute: typeof EsStorageSolutionsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/es/privacy-policy/': {
       id: '/es/privacy-policy/'
       path: '/es/privacy-policy'
       fullPath: '/es/privacy-policy/'
       preLoaderRoute: typeof EsPrivacyPolicyIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/piano-movers/': {
+      id: '/es/piano-movers/'
+      path: '/es/piano-movers'
+      fullPath: '/es/piano-movers/'
+      preLoaderRoute: typeof EsPianoMoversIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/piano-movers-tampa/': {
+      id: '/es/piano-movers-tampa/'
+      path: '/es/piano-movers-tampa'
+      fullPath: '/es/piano-movers-tampa/'
+      preLoaderRoute: typeof EsPianoMoversTampaIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/packing-services/': {
+      id: '/es/packing-services/'
+      path: '/es/packing-services'
+      fullPath: '/es/packing-services/'
+      preLoaderRoute: typeof EsPackingServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/long-distance-movers/': {
+      id: '/es/long-distance-movers/'
+      path: '/es/long-distance-movers'
+      fullPath: '/es/long-distance-movers/'
+      preLoaderRoute: typeof EsLongDistanceMoversIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/local-movers-in-florida/': {
+      id: '/es/local-movers-in-florida/'
+      path: '/es/local-movers-in-florida'
+      fullPath: '/es/local-movers-in-florida/'
+      preLoaderRoute: typeof EsLocalMoversInFloridaIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/es/contact/': {
@@ -587,11 +735,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EsContactIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/es/commercial-movers/': {
+      id: '/es/commercial-movers/'
+      path: '/es/commercial-movers'
+      fullPath: '/es/commercial-movers/'
+      preLoaderRoute: typeof EsCommercialMoversIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/es/blog/': {
       id: '/es/blog/'
       path: '/es/blog'
       fullPath: '/es/blog/'
       preLoaderRoute: typeof EsBlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/apartment-movers/': {
+      id: '/es/apartment-movers/'
+      path: '/es/apartment-movers'
+      fullPath: '/es/apartment-movers/'
+      preLoaderRoute: typeof EsApartmentMoversIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -622,9 +784,17 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyPolicyIndexRoute: PrivacyPolicyIndexRoute,
   StorageSolutionsIndexRoute: StorageSolutionsIndexRoute,
   TermsIndexRoute: TermsIndexRoute,
+  EsApartmentMoversIndexRoute: EsApartmentMoversIndexRoute,
   EsBlogIndexRoute: EsBlogIndexRoute,
+  EsCommercialMoversIndexRoute: EsCommercialMoversIndexRoute,
   EsContactIndexRoute: EsContactIndexRoute,
+  EsLocalMoversInFloridaIndexRoute: EsLocalMoversInFloridaIndexRoute,
+  EsLongDistanceMoversIndexRoute: EsLongDistanceMoversIndexRoute,
+  EsPackingServicesIndexRoute: EsPackingServicesIndexRoute,
+  EsPianoMoversTampaIndexRoute: EsPianoMoversTampaIndexRoute,
+  EsPianoMoversIndexRoute: EsPianoMoversIndexRoute,
   EsPrivacyPolicyIndexRoute: EsPrivacyPolicyIndexRoute,
+  EsStorageSolutionsIndexRoute: EsStorageSolutionsIndexRoute,
   EsTermsIndexRoute: EsTermsIndexRoute,
 }
 export const routeTree = rootRouteImport

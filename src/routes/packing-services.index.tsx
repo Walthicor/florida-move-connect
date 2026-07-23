@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -11,21 +12,12 @@ import {
 } from "lucide-react";
 
 export const Route = createFileRoute("/packing-services/")({
-  head: () => ({
-    meta: [
-      { title: "Professional Packing Services in Florida — Free Quotes | FMD" },
-      {
-        name: "description",
-        content:
-          "Full or fragile-only packing services in Florida. Compare free quotes from licensed movers — materials included.",
-      },
-      { property: "og:title", content: "Professional Packing Services in Florida" },
-      {
-        property: "og:description",
-        content:
-          "Compare free quotes for full or fragile-only packing services in Florida from licensed movers.",
-      },
-    ],
+  head: () => pageHead({
+    path: "/packing-services/",
+    title: 'Professional Packing Services in Florida | Full & Partial',
+    description: 'Professional packers in Florida from $280. Full packing, fragile-only and unpacking services from licensed movers. Compare free quotes today.',
+    service: { serviceType: 'Packing Services', areaServed: 'Florida' },
+    faqs: FAQS,
   }),
   component: PackingServicesPage,
 });

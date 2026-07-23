@@ -1,14 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { CityHero, SimpleCostTable, LocalKnowledge, Faq } from "./movers-in-ocala.index";
 
 export const Route = createFileRoute("/movers-in-boca-raton/")({
-  head: () => ({
-    meta: [
-      { title: "Movers in Boca Raton, Florida — Compare Free Quotes | FMD" },
-      { name: "description", content: "Licensed Palm Beach County movers for Boca Raton condo towers, 55+ and country-club communities. COIs handled." },
-      { property: "og:title", content: "Movers in Boca Raton, Florida" },
-      { property: "og:description", content: "Compare free quotes from licensed Boca Raton movers — association-ready COIs, same-day." },
-    ],
+  head: () => pageHead({
+    path: "/movers-in-boca-raton/",
+    title: 'Movers in Boca Raton FL | Condo Moving Specialists',
+    description: 'Compare free quotes from licensed Boca Raton movers. COI-ready crews for condos and 55+ communities, from $450. Palm Beach County coverage.',
+    service: { serviceType: 'Moving Services', areaServed: 'Boca Raton, Florida' },
+    faqs: FAQS,
   }),
   component: BocaPage,
 });

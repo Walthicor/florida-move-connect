@@ -1,15 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { useState } from "react";
 import { ArrowRight, ShieldCheck, ChevronDown, DollarSign, Building2, MapPin } from "lucide-react";
 
 export const Route = createFileRoute("/movers-in-ocala/")({
-  head: () => ({
-    meta: [
-      { title: "Movers in Ocala, Florida — Compare Free Quotes | FMD" },
-      { name: "description", content: "Licensed Marion County movers for Ocala, horse country and The Villages corridor. Compare free quotes in 2 minutes." },
-      { property: "og:title", content: "Movers in Ocala, Florida" },
-      { property: "og:description", content: "Compare free quotes from licensed Ocala moving companies — friendly rates across Marion County." },
-    ],
+  head: () => pageHead({
+    path: "/movers-in-ocala/",
+    title: 'Movers in Ocala FL | Compare Local Moving Companies',
+    description: 'Compare free quotes from licensed movers in Ocala. Horse-country properties, The Villages routes, from $350. Marion County specialists.',
+    service: { serviceType: 'Moving Services', areaServed: 'Ocala, Florida' },
+    faqs: FAQS,
   }),
   component: OcalaPage,
 });

@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -10,21 +11,12 @@ import {
 } from "lucide-react";
 
 export const Route = createFileRoute("/storage-solutions/")({
-  head: () => ({
-    meta: [
-      { title: "Moving and Storage Solutions in Florida — Free Quotes | FMD" },
-      {
-        name: "description",
-        content:
-          "Compare storage-in-transit and self-storage quotes in Florida. Climate-controlled options for humid Florida conditions.",
-      },
-      { property: "og:title", content: "Moving and Storage Solutions in Florida" },
-      {
-        property: "og:description",
-        content:
-          "Compare storage-in-transit and self-storage quotes in Florida from licensed movers.",
-      },
-    ],
+  head: () => pageHead({
+    path: "/storage-solutions/",
+    title: 'Moving and Storage in Florida | Climate-Controlled Options',
+    description: 'Compare Florida moving companies with storage: climate-controlled units, storage-in-transit and flexible terms from $80/month. Free quotes in 2 minutes.',
+    service: { serviceType: 'Moving and Storage', areaServed: 'Florida' },
+    faqs: FAQS,
   }),
   component: StorageSolutionsPage,
 });

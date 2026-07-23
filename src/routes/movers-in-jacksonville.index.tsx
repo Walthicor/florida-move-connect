@@ -1,14 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { CityHero, SimpleCostTable, LocalKnowledge, Neighborhoods, Faq } from "./movers-in-ocala.index";
 
 export const Route = createFileRoute("/movers-in-jacksonville/")({
-  head: () => ({
-    meta: [
-      { title: "Movers in Jacksonville, Florida — Compare Free Quotes | FMD" },
-      { name: "description", content: "Licensed Duval County movers covering all 840 sq mi of Jacksonville — including PCS moves at NAS Jax and Mayport." },
-      { property: "og:title", content: "Movers in Jacksonville, Florida" },
-      { property: "og:description", content: "Compare free quotes from licensed Jacksonville movers across Duval and St. Johns." },
-    ],
+  head: () => pageHead({
+    path: "/movers-in-jacksonville/",
+    title: 'Movers in Jacksonville FL | Compare Moving Companies',
+    description: 'Compare free quotes from licensed Jacksonville movers. Cross-town pricing done right, military PCS experience, from $400. Duval County crews.',
+    service: { serviceType: 'Moving Services', areaServed: 'Jacksonville, Florida' },
+    faqs: FAQS,
   }),
   component: JacksonvillePage,
 });

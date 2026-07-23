@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -19,27 +20,12 @@ import {
 import { CITIES } from "../components/site/data";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      {
-        title:
-          "Movers in Florida — Compare Licensed Moving Companies and Save | FMD",
-      },
-      {
-        name: "description",
-        content:
-          "Compare free quotes from licensed Florida movers in under 2 minutes. Up to 4 FDACS- and FMCSA-verified companies compete for your move.",
-      },
-      {
-        property: "og:title",
-        content: "Movers in Florida — Compare Licensed Moving Companies and Save",
-      },
-      {
-        property: "og:description",
-        content:
-          "Compare free quotes from licensed Florida movers. FDACS & FMCSA verified. Always free, no obligation.",
-      },
-    ],
+  head: () => pageHead({
+    path: "/",
+    title: 'Movers in Florida | Compare Licensed Moving Companies & Save',
+    description: 'Compare free quotes from licensed Florida movers. Local, long-distance & commercial moving companies verified by FDACS & FMCSA. Save up to 40% today.',
+    service: { serviceType: 'Moving Company Lead Matching', areaServed: 'Florida' },
+    faqs: FAQS,
   }),
   component: Home,
 });

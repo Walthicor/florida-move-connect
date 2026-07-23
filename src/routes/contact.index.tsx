@@ -1,18 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { useState } from "react";
 import { Mail, Phone, MapPin, ArrowRight, ArrowLeft, CheckCircle2 } from "lucide-react";
 import { CtaBand } from "@/components/site/CtaBand";
 
 export const Route = createFileRoute("/contact/")({
-  head: () => ({
-    meta: [
-      { title: "Contact Florida Movers Direct — Get Your Free Moving Quotes" },
-      { name: "description", content: "Get up to 4 free quotes from licensed Florida movers. Serving all of Florida — Miami to Pensacola. Takes 2 minutes." },
-      { property: "og:title", content: "Get Your Free Moving Quotes — Florida Movers Direct" },
-      { property: "og:description", content: "Compare up to 4 licensed Florida movers in 2 minutes. Always free, no obligation." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
+  head: () => pageHead({
+    path: "/contact/",
+    title: 'Get Free Moving Quotes | Florida Movers Direct',
+    description: 'Get up to 4 free quotes from licensed Florida moving companies in 2 minutes. No obligation, no spam — just verified movers competing for your move.',
   }),
   component: ContactPage,
 });

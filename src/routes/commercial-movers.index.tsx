@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -11,21 +12,12 @@ import {
 } from "lucide-react";
 
 export const Route = createFileRoute("/commercial-movers/")({
-  head: () => ({
-    meta: [
-      { title: "Commercial Movers in Florida — Office Move Quotes | FMD" },
-      {
-        name: "description",
-        content:
-          "Licensed Florida commercial movers for offices, retail and warehouses. Evening, overnight and weekend schedules. Compare free quotes.",
-      },
-      { property: "og:title", content: "Commercial Movers in Florida" },
-      {
-        property: "og:description",
-        content:
-          "Compare free quotes from licensed Florida commercial movers — offices, retail, warehouses.",
-      },
-    ],
+  head: () => pageHead({
+    path: "/commercial-movers/",
+    title: 'Commercial Movers in Florida | Office & Business Relocation',
+    description: 'Licensed commercial moving companies in Florida for offices, retail and warehouses. After-hours & weekend moves, IT handling, minimal downtime. Free quotes.',
+    service: { serviceType: 'Commercial and Office Moving', areaServed: 'Florida' },
+    faqs: FAQS,
   }),
   component: CommercialMoversPage,
 });

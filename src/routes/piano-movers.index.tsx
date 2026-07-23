@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -13,21 +14,12 @@ import {
 } from "lucide-react";
 
 export const Route = createFileRoute("/piano-movers/")({
-  head: () => ({
-    meta: [
-      { title: "Piano Movers in Florida — Specialty Move Quotes | FMD" },
-      {
-        name: "description",
-        content:
-          "Upright, baby grand or concert grand — compare free quotes from Florida piano moving specialists with skid boards and full insurance.",
-      },
-      { property: "og:title", content: "Piano Movers in Florida" },
-      {
-        property: "og:description",
-        content:
-          "Compare free quotes from licensed Florida piano moving specialists.",
-      },
-    ],
+  head: () => pageHead({
+    path: "/piano-movers/",
+    title: 'Piano Movers in Florida | Upright & Grand Piano Moving',
+    description: 'Specialty piano movers across Florida. Upright from $150, grand pianos from $300. Climate-aware handling, stairs & crating. Compare free quotes.',
+    service: { serviceType: 'Piano Moving', areaServed: 'Florida' },
+    faqs: FAQS,
   }),
   component: PianoMoversPage,
 });

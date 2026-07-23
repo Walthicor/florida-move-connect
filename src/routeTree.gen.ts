@@ -39,6 +39,13 @@ import { Route as EsPrivacyPolicyIndexRouteImport } from './routes/es.privacy-po
 import { Route as EsPianoMoversIndexRouteImport } from './routes/es.piano-movers.index'
 import { Route as EsPianoMoversTampaIndexRouteImport } from './routes/es.piano-movers-tampa.index'
 import { Route as EsPackingServicesIndexRouteImport } from './routes/es.packing-services.index'
+import { Route as EsMoversInTampaIndexRouteImport } from './routes/es.movers-in-tampa.index'
+import { Route as EsMoversInOrlandoIndexRouteImport } from './routes/es.movers-in-orlando.index'
+import { Route as EsMoversInOcalaIndexRouteImport } from './routes/es.movers-in-ocala.index'
+import { Route as EsMoversInNaplesIndexRouteImport } from './routes/es.movers-in-naples.index'
+import { Route as EsMoversInMiamiIndexRouteImport } from './routes/es.movers-in-miami.index'
+import { Route as EsMoversInJacksonvilleIndexRouteImport } from './routes/es.movers-in-jacksonville.index'
+import { Route as EsMoversInBocaRatonIndexRouteImport } from './routes/es.movers-in-boca-raton.index'
 import { Route as EsLongDistanceMoversIndexRouteImport } from './routes/es.long-distance-movers.index'
 import { Route as EsLocalMoversInFloridaIndexRouteImport } from './routes/es.local-movers-in-florida.index'
 import { Route as EsContactIndexRouteImport } from './routes/es.contact.index'
@@ -198,6 +205,43 @@ const EsPackingServicesIndexRoute = EsPackingServicesIndexRouteImport.update({
   path: '/es/packing-services/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EsMoversInTampaIndexRoute = EsMoversInTampaIndexRouteImport.update({
+  id: '/es/movers-in-tampa/',
+  path: '/es/movers-in-tampa/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsMoversInOrlandoIndexRoute = EsMoversInOrlandoIndexRouteImport.update({
+  id: '/es/movers-in-orlando/',
+  path: '/es/movers-in-orlando/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsMoversInOcalaIndexRoute = EsMoversInOcalaIndexRouteImport.update({
+  id: '/es/movers-in-ocala/',
+  path: '/es/movers-in-ocala/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsMoversInNaplesIndexRoute = EsMoversInNaplesIndexRouteImport.update({
+  id: '/es/movers-in-naples/',
+  path: '/es/movers-in-naples/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsMoversInMiamiIndexRoute = EsMoversInMiamiIndexRouteImport.update({
+  id: '/es/movers-in-miami/',
+  path: '/es/movers-in-miami/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsMoversInJacksonvilleIndexRoute =
+  EsMoversInJacksonvilleIndexRouteImport.update({
+    id: '/es/movers-in-jacksonville/',
+    path: '/es/movers-in-jacksonville/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const EsMoversInBocaRatonIndexRoute =
+  EsMoversInBocaRatonIndexRouteImport.update({
+    id: '/es/movers-in-boca-raton/',
+    path: '/es/movers-in-boca-raton/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const EsLongDistanceMoversIndexRoute =
   EsLongDistanceMoversIndexRouteImport.update({
     id: '/es/long-distance-movers/',
@@ -262,6 +306,13 @@ export interface FileRoutesByFullPath {
   '/es/contact/': typeof EsContactIndexRoute
   '/es/local-movers-in-florida/': typeof EsLocalMoversInFloridaIndexRoute
   '/es/long-distance-movers/': typeof EsLongDistanceMoversIndexRoute
+  '/es/movers-in-boca-raton/': typeof EsMoversInBocaRatonIndexRoute
+  '/es/movers-in-jacksonville/': typeof EsMoversInJacksonvilleIndexRoute
+  '/es/movers-in-miami/': typeof EsMoversInMiamiIndexRoute
+  '/es/movers-in-naples/': typeof EsMoversInNaplesIndexRoute
+  '/es/movers-in-ocala/': typeof EsMoversInOcalaIndexRoute
+  '/es/movers-in-orlando/': typeof EsMoversInOrlandoIndexRoute
+  '/es/movers-in-tampa/': typeof EsMoversInTampaIndexRoute
   '/es/packing-services/': typeof EsPackingServicesIndexRoute
   '/es/piano-movers-tampa/': typeof EsPianoMoversTampaIndexRoute
   '/es/piano-movers/': typeof EsPianoMoversIndexRoute
@@ -300,6 +351,13 @@ export interface FileRoutesByTo {
   '/es/contact': typeof EsContactIndexRoute
   '/es/local-movers-in-florida': typeof EsLocalMoversInFloridaIndexRoute
   '/es/long-distance-movers': typeof EsLongDistanceMoversIndexRoute
+  '/es/movers-in-boca-raton': typeof EsMoversInBocaRatonIndexRoute
+  '/es/movers-in-jacksonville': typeof EsMoversInJacksonvilleIndexRoute
+  '/es/movers-in-miami': typeof EsMoversInMiamiIndexRoute
+  '/es/movers-in-naples': typeof EsMoversInNaplesIndexRoute
+  '/es/movers-in-ocala': typeof EsMoversInOcalaIndexRoute
+  '/es/movers-in-orlando': typeof EsMoversInOrlandoIndexRoute
+  '/es/movers-in-tampa': typeof EsMoversInTampaIndexRoute
   '/es/packing-services': typeof EsPackingServicesIndexRoute
   '/es/piano-movers-tampa': typeof EsPianoMoversTampaIndexRoute
   '/es/piano-movers': typeof EsPianoMoversIndexRoute
@@ -339,6 +397,13 @@ export interface FileRoutesById {
   '/es/contact/': typeof EsContactIndexRoute
   '/es/local-movers-in-florida/': typeof EsLocalMoversInFloridaIndexRoute
   '/es/long-distance-movers/': typeof EsLongDistanceMoversIndexRoute
+  '/es/movers-in-boca-raton/': typeof EsMoversInBocaRatonIndexRoute
+  '/es/movers-in-jacksonville/': typeof EsMoversInJacksonvilleIndexRoute
+  '/es/movers-in-miami/': typeof EsMoversInMiamiIndexRoute
+  '/es/movers-in-naples/': typeof EsMoversInNaplesIndexRoute
+  '/es/movers-in-ocala/': typeof EsMoversInOcalaIndexRoute
+  '/es/movers-in-orlando/': typeof EsMoversInOrlandoIndexRoute
+  '/es/movers-in-tampa/': typeof EsMoversInTampaIndexRoute
   '/es/packing-services/': typeof EsPackingServicesIndexRoute
   '/es/piano-movers-tampa/': typeof EsPianoMoversTampaIndexRoute
   '/es/piano-movers/': typeof EsPianoMoversIndexRoute
@@ -379,6 +444,13 @@ export interface FileRouteTypes {
     | '/es/contact/'
     | '/es/local-movers-in-florida/'
     | '/es/long-distance-movers/'
+    | '/es/movers-in-boca-raton/'
+    | '/es/movers-in-jacksonville/'
+    | '/es/movers-in-miami/'
+    | '/es/movers-in-naples/'
+    | '/es/movers-in-ocala/'
+    | '/es/movers-in-orlando/'
+    | '/es/movers-in-tampa/'
     | '/es/packing-services/'
     | '/es/piano-movers-tampa/'
     | '/es/piano-movers/'
@@ -417,6 +489,13 @@ export interface FileRouteTypes {
     | '/es/contact'
     | '/es/local-movers-in-florida'
     | '/es/long-distance-movers'
+    | '/es/movers-in-boca-raton'
+    | '/es/movers-in-jacksonville'
+    | '/es/movers-in-miami'
+    | '/es/movers-in-naples'
+    | '/es/movers-in-ocala'
+    | '/es/movers-in-orlando'
+    | '/es/movers-in-tampa'
     | '/es/packing-services'
     | '/es/piano-movers-tampa'
     | '/es/piano-movers'
@@ -455,6 +534,13 @@ export interface FileRouteTypes {
     | '/es/contact/'
     | '/es/local-movers-in-florida/'
     | '/es/long-distance-movers/'
+    | '/es/movers-in-boca-raton/'
+    | '/es/movers-in-jacksonville/'
+    | '/es/movers-in-miami/'
+    | '/es/movers-in-naples/'
+    | '/es/movers-in-ocala/'
+    | '/es/movers-in-orlando/'
+    | '/es/movers-in-tampa/'
     | '/es/packing-services/'
     | '/es/piano-movers-tampa/'
     | '/es/piano-movers/'
@@ -494,6 +580,13 @@ export interface RootRouteChildren {
   EsContactIndexRoute: typeof EsContactIndexRoute
   EsLocalMoversInFloridaIndexRoute: typeof EsLocalMoversInFloridaIndexRoute
   EsLongDistanceMoversIndexRoute: typeof EsLongDistanceMoversIndexRoute
+  EsMoversInBocaRatonIndexRoute: typeof EsMoversInBocaRatonIndexRoute
+  EsMoversInJacksonvilleIndexRoute: typeof EsMoversInJacksonvilleIndexRoute
+  EsMoversInMiamiIndexRoute: typeof EsMoversInMiamiIndexRoute
+  EsMoversInNaplesIndexRoute: typeof EsMoversInNaplesIndexRoute
+  EsMoversInOcalaIndexRoute: typeof EsMoversInOcalaIndexRoute
+  EsMoversInOrlandoIndexRoute: typeof EsMoversInOrlandoIndexRoute
+  EsMoversInTampaIndexRoute: typeof EsMoversInTampaIndexRoute
   EsPackingServicesIndexRoute: typeof EsPackingServicesIndexRoute
   EsPianoMoversTampaIndexRoute: typeof EsPianoMoversTampaIndexRoute
   EsPianoMoversIndexRoute: typeof EsPianoMoversIndexRoute
@@ -714,6 +807,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EsPackingServicesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/es/movers-in-tampa/': {
+      id: '/es/movers-in-tampa/'
+      path: '/es/movers-in-tampa'
+      fullPath: '/es/movers-in-tampa/'
+      preLoaderRoute: typeof EsMoversInTampaIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/movers-in-orlando/': {
+      id: '/es/movers-in-orlando/'
+      path: '/es/movers-in-orlando'
+      fullPath: '/es/movers-in-orlando/'
+      preLoaderRoute: typeof EsMoversInOrlandoIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/movers-in-ocala/': {
+      id: '/es/movers-in-ocala/'
+      path: '/es/movers-in-ocala'
+      fullPath: '/es/movers-in-ocala/'
+      preLoaderRoute: typeof EsMoversInOcalaIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/movers-in-naples/': {
+      id: '/es/movers-in-naples/'
+      path: '/es/movers-in-naples'
+      fullPath: '/es/movers-in-naples/'
+      preLoaderRoute: typeof EsMoversInNaplesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/movers-in-miami/': {
+      id: '/es/movers-in-miami/'
+      path: '/es/movers-in-miami'
+      fullPath: '/es/movers-in-miami/'
+      preLoaderRoute: typeof EsMoversInMiamiIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/movers-in-jacksonville/': {
+      id: '/es/movers-in-jacksonville/'
+      path: '/es/movers-in-jacksonville'
+      fullPath: '/es/movers-in-jacksonville/'
+      preLoaderRoute: typeof EsMoversInJacksonvilleIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/movers-in-boca-raton/': {
+      id: '/es/movers-in-boca-raton/'
+      path: '/es/movers-in-boca-raton'
+      fullPath: '/es/movers-in-boca-raton/'
+      preLoaderRoute: typeof EsMoversInBocaRatonIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/es/long-distance-movers/': {
       id: '/es/long-distance-movers/'
       path: '/es/long-distance-movers'
@@ -790,6 +932,13 @@ const rootRouteChildren: RootRouteChildren = {
   EsContactIndexRoute: EsContactIndexRoute,
   EsLocalMoversInFloridaIndexRoute: EsLocalMoversInFloridaIndexRoute,
   EsLongDistanceMoversIndexRoute: EsLongDistanceMoversIndexRoute,
+  EsMoversInBocaRatonIndexRoute: EsMoversInBocaRatonIndexRoute,
+  EsMoversInJacksonvilleIndexRoute: EsMoversInJacksonvilleIndexRoute,
+  EsMoversInMiamiIndexRoute: EsMoversInMiamiIndexRoute,
+  EsMoversInNaplesIndexRoute: EsMoversInNaplesIndexRoute,
+  EsMoversInOcalaIndexRoute: EsMoversInOcalaIndexRoute,
+  EsMoversInOrlandoIndexRoute: EsMoversInOrlandoIndexRoute,
+  EsMoversInTampaIndexRoute: EsMoversInTampaIndexRoute,
   EsPackingServicesIndexRoute: EsPackingServicesIndexRoute,
   EsPianoMoversTampaIndexRoute: EsPianoMoversTampaIndexRoute,
   EsPianoMoversIndexRoute: EsPianoMoversIndexRoute,

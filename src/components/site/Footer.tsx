@@ -56,10 +56,10 @@ export function Footer() {
               </li>
             </ul>
             <div className="mt-6 space-y-2 text-xs text-white/60">
-              <Link to="/contact/" className="block hover:text-white">
+              <Link to="/privacy-policy/" className="block hover:text-white">
                 Privacy Policy
               </Link>
-              <Link to="/contact/" className="block hover:text-white">
+              <Link to="/terms/" className="block hover:text-white">
                 Terms of Service
               </Link>
             </div>

@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as StorageSolutionsIndexRouteImport } from './routes/storage-solutions.index'
+import { Route as PrivacyPolicyIndexRouteImport } from './routes/privacy-policy.index'
 import { Route as PianoMoversIndexRouteImport } from './routes/piano-movers.index'
 import { Route as PianoMoversTampaIndexRouteImport } from './routes/piano-movers-tampa.index'
 import { Route as PackingServicesIndexRouteImport } from './routes/packing-services.index'
@@ -39,6 +40,11 @@ const IndexRoute = IndexRouteImport.update({
 const StorageSolutionsIndexRoute = StorageSolutionsIndexRouteImport.update({
   id: '/storage-solutions/',
   path: '/storage-solutions/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyIndexRoute = PrivacyPolicyIndexRouteImport.update({
+  id: '/privacy-policy/',
+  path: '/privacy-policy/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PianoMoversIndexRoute = PianoMoversIndexRouteImport.update({
@@ -160,6 +166,7 @@ export interface FileRoutesByFullPath {
   '/packing-services/': typeof PackingServicesIndexRoute
   '/piano-movers-tampa/': typeof PianoMoversTampaIndexRoute
   '/piano-movers/': typeof PianoMoversIndexRoute
+  '/privacy-policy/': typeof PrivacyPolicyIndexRoute
   '/storage-solutions/': typeof StorageSolutionsIndexRoute
 }
 export interface FileRoutesByTo {
@@ -183,6 +190,7 @@ export interface FileRoutesByTo {
   '/packing-services': typeof PackingServicesIndexRoute
   '/piano-movers-tampa': typeof PianoMoversTampaIndexRoute
   '/piano-movers': typeof PianoMoversIndexRoute
+  '/privacy-policy': typeof PrivacyPolicyIndexRoute
   '/storage-solutions': typeof StorageSolutionsIndexRoute
 }
 export interface FileRoutesById {
@@ -207,6 +215,7 @@ export interface FileRoutesById {
   '/packing-services/': typeof PackingServicesIndexRoute
   '/piano-movers-tampa/': typeof PianoMoversTampaIndexRoute
   '/piano-movers/': typeof PianoMoversIndexRoute
+  '/privacy-policy/': typeof PrivacyPolicyIndexRoute
   '/storage-solutions/': typeof StorageSolutionsIndexRoute
 }
 export interface FileRouteTypes {
@@ -232,6 +241,7 @@ export interface FileRouteTypes {
     | '/packing-services/'
     | '/piano-movers-tampa/'
     | '/piano-movers/'
+    | '/privacy-policy/'
     | '/storage-solutions/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -255,6 +265,7 @@ export interface FileRouteTypes {
     | '/packing-services'
     | '/piano-movers-tampa'
     | '/piano-movers'
+    | '/privacy-policy'
     | '/storage-solutions'
   id:
     | '__root__'
@@ -278,6 +289,7 @@ export interface FileRouteTypes {
     | '/packing-services/'
     | '/piano-movers-tampa/'
     | '/piano-movers/'
+    | '/privacy-policy/'
     | '/storage-solutions/'
   fileRoutesById: FileRoutesById
 }
@@ -302,6 +314,7 @@ export interface RootRouteChildren {
   PackingServicesIndexRoute: typeof PackingServicesIndexRoute
   PianoMoversTampaIndexRoute: typeof PianoMoversTampaIndexRoute
   PianoMoversIndexRoute: typeof PianoMoversIndexRoute
+  PrivacyPolicyIndexRoute: typeof PrivacyPolicyIndexRoute
   StorageSolutionsIndexRoute: typeof StorageSolutionsIndexRoute
 }
 
@@ -319,6 +332,13 @@ declare module '@tanstack/react-router' {
       path: '/storage-solutions'
       fullPath: '/storage-solutions/'
       preLoaderRoute: typeof StorageSolutionsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy/': {
+      id: '/privacy-policy/'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy/'
+      preLoaderRoute: typeof PrivacyPolicyIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/piano-movers/': {
@@ -478,6 +498,7 @@ const rootRouteChildren: RootRouteChildren = {
   PackingServicesIndexRoute: PackingServicesIndexRoute,
   PianoMoversTampaIndexRoute: PianoMoversTampaIndexRoute,
   PianoMoversIndexRoute: PianoMoversIndexRoute,
+  PrivacyPolicyIndexRoute: PrivacyPolicyIndexRoute,
   StorageSolutionsIndexRoute: StorageSolutionsIndexRoute,
 }
 export const routeTree = rootRouteImport

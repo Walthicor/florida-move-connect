@@ -28,10 +28,15 @@ import { Route as MiamiMoversIndexRouteImport } from './routes/miami-movers.inde
 import { Route as LongDistanceMoversIndexRouteImport } from './routes/long-distance-movers.index'
 import { Route as LocalMoversIndexRouteImport } from './routes/local-movers.index'
 import { Route as LocalMoversInFloridaIndexRouteImport } from './routes/local-movers-in-florida.index'
+import { Route as EsIndexRouteImport } from './routes/es.index'
 import { Route as ContactIndexRouteImport } from './routes/contact.index'
 import { Route as CommercialMoversIndexRouteImport } from './routes/commercial-movers.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as ApartmentMoversIndexRouteImport } from './routes/apartment-movers.index'
+import { Route as EsTermsIndexRouteImport } from './routes/es.terms.index'
+import { Route as EsPrivacyPolicyIndexRouteImport } from './routes/es.privacy-policy.index'
+import { Route as EsContactIndexRouteImport } from './routes/es.contact.index'
+import { Route as EsBlogIndexRouteImport } from './routes/es.blog.index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -130,6 +135,11 @@ const LocalMoversInFloridaIndexRoute =
     path: '/local-movers-in-florida/',
     getParentRoute: () => rootRouteImport,
   } as any)
+const EsIndexRoute = EsIndexRouteImport.update({
+  id: '/es/',
+  path: '/es/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactIndexRoute = ContactIndexRouteImport.update({
   id: '/contact/',
   path: '/contact/',
@@ -150,6 +160,26 @@ const ApartmentMoversIndexRoute = ApartmentMoversIndexRouteImport.update({
   path: '/apartment-movers/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EsTermsIndexRoute = EsTermsIndexRouteImport.update({
+  id: '/es/terms/',
+  path: '/es/terms/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsPrivacyPolicyIndexRoute = EsPrivacyPolicyIndexRouteImport.update({
+  id: '/es/privacy-policy/',
+  path: '/es/privacy-policy/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsContactIndexRoute = EsContactIndexRouteImport.update({
+  id: '/es/contact/',
+  path: '/es/contact/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsBlogIndexRoute = EsBlogIndexRouteImport.update({
+  id: '/es/blog/',
+  path: '/es/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -157,6 +187,7 @@ export interface FileRoutesByFullPath {
   '/blog/': typeof BlogIndexRoute
   '/commercial-movers/': typeof CommercialMoversIndexRoute
   '/contact/': typeof ContactIndexRoute
+  '/es/': typeof EsIndexRoute
   '/local-movers-in-florida/': typeof LocalMoversInFloridaIndexRoute
   '/local-movers/': typeof LocalMoversIndexRoute
   '/long-distance-movers/': typeof LongDistanceMoversIndexRoute
@@ -175,6 +206,10 @@ export interface FileRoutesByFullPath {
   '/privacy-policy/': typeof PrivacyPolicyIndexRoute
   '/storage-solutions/': typeof StorageSolutionsIndexRoute
   '/terms/': typeof TermsIndexRoute
+  '/es/blog/': typeof EsBlogIndexRoute
+  '/es/contact/': typeof EsContactIndexRoute
+  '/es/privacy-policy/': typeof EsPrivacyPolicyIndexRoute
+  '/es/terms/': typeof EsTermsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -182,6 +217,7 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogIndexRoute
   '/commercial-movers': typeof CommercialMoversIndexRoute
   '/contact': typeof ContactIndexRoute
+  '/es': typeof EsIndexRoute
   '/local-movers-in-florida': typeof LocalMoversInFloridaIndexRoute
   '/local-movers': typeof LocalMoversIndexRoute
   '/long-distance-movers': typeof LongDistanceMoversIndexRoute
@@ -200,6 +236,10 @@ export interface FileRoutesByTo {
   '/privacy-policy': typeof PrivacyPolicyIndexRoute
   '/storage-solutions': typeof StorageSolutionsIndexRoute
   '/terms': typeof TermsIndexRoute
+  '/es/blog': typeof EsBlogIndexRoute
+  '/es/contact': typeof EsContactIndexRoute
+  '/es/privacy-policy': typeof EsPrivacyPolicyIndexRoute
+  '/es/terms': typeof EsTermsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -208,6 +248,7 @@ export interface FileRoutesById {
   '/blog/': typeof BlogIndexRoute
   '/commercial-movers/': typeof CommercialMoversIndexRoute
   '/contact/': typeof ContactIndexRoute
+  '/es/': typeof EsIndexRoute
   '/local-movers-in-florida/': typeof LocalMoversInFloridaIndexRoute
   '/local-movers/': typeof LocalMoversIndexRoute
   '/long-distance-movers/': typeof LongDistanceMoversIndexRoute
@@ -226,6 +267,10 @@ export interface FileRoutesById {
   '/privacy-policy/': typeof PrivacyPolicyIndexRoute
   '/storage-solutions/': typeof StorageSolutionsIndexRoute
   '/terms/': typeof TermsIndexRoute
+  '/es/blog/': typeof EsBlogIndexRoute
+  '/es/contact/': typeof EsContactIndexRoute
+  '/es/privacy-policy/': typeof EsPrivacyPolicyIndexRoute
+  '/es/terms/': typeof EsTermsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -235,6 +280,7 @@ export interface FileRouteTypes {
     | '/blog/'
     | '/commercial-movers/'
     | '/contact/'
+    | '/es/'
     | '/local-movers-in-florida/'
     | '/local-movers/'
     | '/long-distance-movers/'
@@ -253,6 +299,10 @@ export interface FileRouteTypes {
     | '/privacy-policy/'
     | '/storage-solutions/'
     | '/terms/'
+    | '/es/blog/'
+    | '/es/contact/'
+    | '/es/privacy-policy/'
+    | '/es/terms/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -260,6 +310,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/commercial-movers'
     | '/contact'
+    | '/es'
     | '/local-movers-in-florida'
     | '/local-movers'
     | '/long-distance-movers'
@@ -278,6 +329,10 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/storage-solutions'
     | '/terms'
+    | '/es/blog'
+    | '/es/contact'
+    | '/es/privacy-policy'
+    | '/es/terms'
   id:
     | '__root__'
     | '/'
@@ -285,6 +340,7 @@ export interface FileRouteTypes {
     | '/blog/'
     | '/commercial-movers/'
     | '/contact/'
+    | '/es/'
     | '/local-movers-in-florida/'
     | '/local-movers/'
     | '/long-distance-movers/'
@@ -303,6 +359,10 @@ export interface FileRouteTypes {
     | '/privacy-policy/'
     | '/storage-solutions/'
     | '/terms/'
+    | '/es/blog/'
+    | '/es/contact/'
+    | '/es/privacy-policy/'
+    | '/es/terms/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -311,6 +371,7 @@ export interface RootRouteChildren {
   BlogIndexRoute: typeof BlogIndexRoute
   CommercialMoversIndexRoute: typeof CommercialMoversIndexRoute
   ContactIndexRoute: typeof ContactIndexRoute
+  EsIndexRoute: typeof EsIndexRoute
   LocalMoversInFloridaIndexRoute: typeof LocalMoversInFloridaIndexRoute
   LocalMoversIndexRoute: typeof LocalMoversIndexRoute
   LongDistanceMoversIndexRoute: typeof LongDistanceMoversIndexRoute
@@ -329,6 +390,10 @@ export interface RootRouteChildren {
   PrivacyPolicyIndexRoute: typeof PrivacyPolicyIndexRoute
   StorageSolutionsIndexRoute: typeof StorageSolutionsIndexRoute
   TermsIndexRoute: typeof TermsIndexRoute
+  EsBlogIndexRoute: typeof EsBlogIndexRoute
+  EsContactIndexRoute: typeof EsContactIndexRoute
+  EsPrivacyPolicyIndexRoute: typeof EsPrivacyPolicyIndexRoute
+  EsTermsIndexRoute: typeof EsTermsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -466,6 +531,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LocalMoversInFloridaIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/es/': {
+      id: '/es/'
+      path: '/es'
+      fullPath: '/es/'
+      preLoaderRoute: typeof EsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact/': {
       id: '/contact/'
       path: '/contact'
@@ -494,6 +566,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApartmentMoversIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/es/terms/': {
+      id: '/es/terms/'
+      path: '/es/terms'
+      fullPath: '/es/terms/'
+      preLoaderRoute: typeof EsTermsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/privacy-policy/': {
+      id: '/es/privacy-policy/'
+      path: '/es/privacy-policy'
+      fullPath: '/es/privacy-policy/'
+      preLoaderRoute: typeof EsPrivacyPolicyIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/contact/': {
+      id: '/es/contact/'
+      path: '/es/contact'
+      fullPath: '/es/contact/'
+      preLoaderRoute: typeof EsContactIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/blog/': {
+      id: '/es/blog/'
+      path: '/es/blog'
+      fullPath: '/es/blog/'
+      preLoaderRoute: typeof EsBlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -503,6 +603,7 @@ const rootRouteChildren: RootRouteChildren = {
   BlogIndexRoute: BlogIndexRoute,
   CommercialMoversIndexRoute: CommercialMoversIndexRoute,
   ContactIndexRoute: ContactIndexRoute,
+  EsIndexRoute: EsIndexRoute,
   LocalMoversInFloridaIndexRoute: LocalMoversInFloridaIndexRoute,
   LocalMoversIndexRoute: LocalMoversIndexRoute,
   LongDistanceMoversIndexRoute: LongDistanceMoversIndexRoute,
@@ -521,6 +622,10 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyPolicyIndexRoute: PrivacyPolicyIndexRoute,
   StorageSolutionsIndexRoute: StorageSolutionsIndexRoute,
   TermsIndexRoute: TermsIndexRoute,
+  EsBlogIndexRoute: EsBlogIndexRoute,
+  EsContactIndexRoute: EsContactIndexRoute,
+  EsPrivacyPolicyIndexRoute: EsPrivacyPolicyIndexRoute,
+  EsTermsIndexRoute: EsTermsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

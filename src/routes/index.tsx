@@ -53,7 +53,7 @@ const TRUST_BADGES = [
 
 const SERVICES = [
   {
-    icon: Home,
+    icon: HomeIcon,
     title: "Local Movers",
     body:
       "Hourly crews for moves under 50 miles — from $95/hour for two movers and a truck. Same-week availability in most cities.",

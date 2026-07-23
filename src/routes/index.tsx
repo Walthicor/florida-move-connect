@@ -136,19 +136,41 @@ function Home() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-surface-alt to-background">
-      <div className="container-page py-14 md:py-20 grid gap-10 lg:grid-cols-[1.1fr_1fr] items-start">
+    <section className="relative overflow-hidden isolate">
+      {/* Cinematic video background */}
+      <video
+        className="absolute inset-0 h-full w-full object-cover"
+        src={heroVideo.url}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="/images/hero-family.jpg"
+        aria-hidden="true"
+      />
+      {/* Dark gradient overlay for readability */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-[linear-gradient(120deg,rgba(11,83,148,0.88)_0%,rgba(11,25,45,0.78)_55%,rgba(11,25,45,0.55)_100%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-black/25"
+      />
+
+      <div className="relative container-page py-16 md:py-24 grid gap-10 lg:grid-cols-[1.1fr_1fr] items-start">
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full bg-white border border-border px-3 py-1 text-xs font-semibold text-brand shadow-soft">
+          <span className="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur border border-white/25 px-3 py-1 text-xs font-semibold text-white shadow-soft">
             <ShieldCheck className="h-3.5 w-3.5" />
             FDACS & FMCSA Verified Movers
           </span>
-          <h1 className="mt-5 font-display text-4xl md:text-5xl lg:text-6xl font-bold text-ink leading-[1.05]">
+          <h1 className="mt-5 font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.05] drop-shadow-[0_2px_20px_rgba(0,0,0,0.35)]">
             Movers in Florida —{" "}
-            <span className="text-brand">Compare Licensed Moving Companies</span>{" "}
+            <span className="text-accent">Compare Licensed Moving Companies</span>{" "}
             and Save
           </h1>
-          <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-xl">
+          <p className="mt-5 text-base md:text-lg text-white/90 max-w-xl">
             Compare free quotes from licensed movers in Florida in under 2
             minutes. One simple form connects you with up to 4 FDACS- and
             FMCSA-verified moving companies competing for your move — local,
@@ -160,9 +182,9 @@ function Hero() {
             {TRUST_BADGES.map((b) => (
               <li
                 key={b}
-                className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white px-3 py-1.5 text-xs font-semibold text-ink shadow-soft"
+                className="inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/10 backdrop-blur px-3 py-1.5 text-xs font-semibold text-white shadow-soft"
               >
-                <BadgeCheck className="h-3.5 w-3.5 text-brand" />
+                <BadgeCheck className="h-3.5 w-3.5 text-accent" />
                 {b}
               </li>
             ))}

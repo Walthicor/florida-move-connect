@@ -18,6 +18,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import { CITIES } from "../components/site/data";
+import heroVideo from "@/assets/hero-cinematic.mp4.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => pageHead({

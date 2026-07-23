@@ -60,7 +60,7 @@ function ContactPage() {
 
           <form
             onSubmit={(e) => e.preventDefault()}
-            className="rounded-2xl border border-border bg-white p-6 md:p-8 shadow-card"
+            className="pulse-form rounded-2xl border border-border bg-white p-6 md:p-8 shadow-card"
           >
             <h2 className="font-display text-xl font-bold text-ink">Request free quotes</h2>
             <p className="mt-1 text-sm text-muted-foreground">

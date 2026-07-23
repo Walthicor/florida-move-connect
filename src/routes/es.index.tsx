@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { pageHead } from "@/lib/seo";
 import { HeroQuoteForm } from "@/components/site/QuoteForm";
+import heroVideo from "@/assets/hero-cinematic.mp4.asset.json";
 
 const PATH = "/es/";
 

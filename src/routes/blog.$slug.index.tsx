@@ -158,12 +158,32 @@ const DIY_FAQS = [
   },
 ];
 
+const PETS_FAQS = [
+  {
+    q: "Can I put my dog or cat in the moving truck?",
+    a: "No — professional movers legally cannot transport pets, and truck cargo areas hit lethal temperatures in Florida heat. Your pet rides in your air-conditioned car only.",
+  },
+  {
+    q: "How long can I leave my dog in the car during a Florida move?",
+    a: "Zero minutes. Florida car interiors reach 110°F+ within 20 minutes even on mild days. Plan pit stops with pet-friendly rest areas or drive-through-only food.",
+  },
+  {
+    q: "Do I need to update my pet's microchip when moving?",
+    a: "Yes — immediately after moving. If your pet escapes and is found, the shelter calls the number on the microchip. An outdated address defeats the purpose.",
+  },
+  {
+    q: "Should I use pet sedatives for a long-distance move?",
+    a: "Only under vet direction. Human anxiety meds (Xanax etc.) can be lethal to pets. Some vets prescribe gabapentin or trazodone for anxious pets; test the dose 1-2 weeks before the move to see how they react.",
+  },
+];
+
 const FAQS_BY_SLUG: Record<string, { q: string; a: string }[]> = {
   "how-much-do-movers-cost-florida": COST_FAQS,
   "florida-moving-checklist-8-weeks": CHECKLIST_FAQS,
   "snowbird-moving-florida-guide": SNOWBIRD_FAQS,
   "hurricane-season-moving-florida": HURRICANE_FAQS,
   "professional-movers-vs-diy-truck-florida": DIY_FAQS,
+  "moving-with-pets-florida-heat": PETS_FAQS,
 };
 
 

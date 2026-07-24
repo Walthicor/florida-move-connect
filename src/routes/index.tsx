@@ -126,8 +126,90 @@ function Home() {
       <CostTable />
       <WhyUs />
       <CitiesBand />
+      <FeaturedGuides />
       <FaqSection />
     </>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Featured pillar guides (one per SEO silo)                           */
+/* ------------------------------------------------------------------ */
+const PILLAR_GUIDES = [
+  {
+    slug: "how-much-do-movers-cost-florida",
+    category: "Moving Costs",
+    title: "How Much Do Movers Cost in Florida? (2026 Price Guide)",
+    excerpt: "Local $400-$1,600, long distance $2,200-$6,500+. Full breakdown by home size, city and season.",
+    image: "/__l5e/assets-v1/eb89c274-9067-43d1-addc-f9a6378e584d/local-movers-in-miami-costs.jpg",
+    alt: "Couple reviewing a local moving estimate in Miami",
+  },
+  {
+    slug: "florida-moving-checklist-8-weeks",
+    category: "Moving Guides",
+    title: "The Ultimate Florida Moving Checklist (8-Week Timeline)",
+    excerpt: "8-week timeline, condo COIs, hurricane-season prep and humidity-safe packing.",
+    image: "/__l5e/assets-v1/e6d70080-93a6-4f16-a558-c2651f439f34/florida-moving-checklist.jpg",
+    alt: "Florida couple reviewing their moving quote on a laptop",
+  },
+  {
+    slug: "best-florida-neighborhoods-families-2026",
+    category: "Florida Cities",
+    title: "Best Florida Neighborhoods to Move to in 2026 (By Lifestyle)",
+    excerpt: "Where to move by lifestyle — families, remote workers, retirees and young pros.",
+    image: "/__l5e/assets-v1/cb23e605-364c-4f6f-8814-72ac30e14852/best-florida-neighborhoods-families.jpg",
+    alt: "Aerial view of a leafy Florida family neighborhood at golden hour",
+  },
+];
+
+function FeaturedGuides() {
+  return (
+    <section className="bg-surface-alt">
+      <div className="container-page py-16 md:py-20">
+        <div className="flex items-end justify-between gap-6 flex-wrap">
+          <div>
+            <span className="text-xs font-semibold uppercase tracking-wider text-brand">
+              Editorial guides
+            </span>
+            <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
+              Read before you book
+            </h2>
+            <p className="mt-2 text-muted-foreground max-w-xl">
+              Our most useful pillar guides on Florida moving costs, planning and where to live.
+            </p>
+          </div>
+          <Link
+            to="/blog/"
+            className="inline-flex items-center gap-2 text-brand font-semibold hover:underline"
+          >
+            All Florida moving guides <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {PILLAR_GUIDES.map((g) => (
+            <Link
+              key={g.slug}
+              to="/blog/$slug/"
+              params={{ slug: g.slug }}
+              className="group rounded-2xl border border-border bg-white overflow-hidden shadow-soft hover:-translate-y-0.5 hover:border-brand transition"
+            >
+              <div className="aspect-[16/10] overflow-hidden bg-surface-alt">
+                <img src={g.image} alt={g.alt} loading="lazy" className="h-full w-full object-cover group-hover:scale-[1.03] transition" />
+              </div>
+              <div className="p-6">
+                <span className="rounded-full bg-brand/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-brand">
+                  {g.category}
+                </span>
+                <h3 className="mt-3 font-display text-lg font-bold text-ink group-hover:text-brand transition">
+                  {g.title}
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground">{g.excerpt}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 

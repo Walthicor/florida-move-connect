@@ -7,7 +7,7 @@ export function CtaBand() {
   const dict = t[lang];
   const contactHref = lang === "es" ? "/es/contact/" : "/contact/";
   return (
-    <section className="bg-cta text-cta-foreground">
+    <section className="bg-gradient-cta text-cta-foreground">
       <div className="container-page py-14 md:py-16 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
         <div>
           <h2 className="font-display text-2xl md:text-3xl font-bold text-white">

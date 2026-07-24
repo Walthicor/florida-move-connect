@@ -50,15 +50,23 @@
 :root {
   --radius: 0.5rem;
 
-  /* Brand tokens */
+  /* Brand tokens — derived from logo */
   --brand: #0B5394;           /* deep blue */
   --brand-foreground: #ffffff;
-  --cta: #F97316;             /* orange */
+  --brand-glow: #1E77C7;      /* lighter blue glow */
+  --cta: #F04800;             /* logo orange */
   --cta-foreground: #ffffff;
-  --navy: #0B2540;            /* footer navy */
+  --cta-glow: #FF7A2E;        /* orange glow */
+  --navy: #0B1F3A;            /* logo deep navy */
   --navy-foreground: #ffffff;
   --ink: #1F2937;             /* dark text */
   --surface-alt: #F4F7FB;     /* alt section bg */
+  --surface-warm: #FFF4EC;    /* warm tint from orange */
+  --surface-cool: #EAF2FB;    /* cool tint from blue */
+
+  --gradient-brand: linear-gradient(135deg, #0B1F3A 0%, #0B5394 55%, #1E77C7 100%);
+  --gradient-cta: linear-gradient(135deg, #F04800 0%, #FF7A2E 100%);
+  --gradient-sunset: linear-gradient(135deg, #0B2540 0%, #0B5394 45%, #F04800 100%);
 
   --background: #ffffff;
   --foreground: #1F2937;
@@ -69,17 +77,28 @@
   --primary: #0B5394;
   --primary-foreground: #ffffff;
   --secondary: #F4F7FB;
-  --secondary-foreground: #0B2540;
+  --secondary-foreground: #0B1F3A;
   --muted: #F4F7FB;
   --muted-foreground: #64748b;
-  --accent: #F4F7FB;
-  --accent-foreground: #0B5394;
+  --accent: #FFF4EC;
+  --accent-foreground: #F04800;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: #ffffff;
   --border: #E2E8F0;
   --input: #E2E8F0;
   --ring: #0B5394;
 }
+
+@theme inline {
+  --color-brand-glow: var(--brand-glow);
+  --color-cta-glow: var(--cta-glow);
+  --color-surface-warm: var(--surface-warm);
+  --color-surface-cool: var(--surface-cool);
+}
+
+@utility bg-gradient-brand { background-image: var(--gradient-brand); }
+@utility bg-gradient-cta { background-image: var(--gradient-cta); }
+@utility bg-gradient-sunset { background-image: var(--gradient-sunset); }
 
 html {
   scroll-behavior: smooth;

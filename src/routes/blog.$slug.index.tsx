@@ -283,6 +283,8 @@ function ArticlePage() {
         <InterstateBody />
       ) : post.slug === "moving-insurance-florida-explained" ? (
         <InsuranceBody />
+      ) : post.slug === "best-florida-neighborhoods-families-2026" ? (
+        <NeighborhoodsBody />
       ) : (
         <CostGuideBody />
       )}

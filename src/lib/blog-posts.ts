@@ -33,6 +33,20 @@ export const BLOG_POSTS: BlogPost[] = [
     metaDescription:
       "Movers in Florida cost $400-$1,600 for local moves and $2,200-$6,500 long distance. Full 2026 price breakdown by home size, city and season.",
   },
+  {
+    slug: "florida-moving-checklist-8-weeks",
+    title: "The Ultimate Florida Moving Checklist (8-Week Timeline)",
+    excerpt:
+      "Complete 8-week moving checklist for Florida — booking movers 6 weeks out, condo COIs, hurricane-season prep and humidity-safe packing.",
+    category: "Moving Guides",
+    date: "2026-01-22",
+    dateLabel: "January 22, 2026",
+    image: "/images/family-moving.jpg",
+    imageAlt: "Florida family planning their move with a checklist",
+    metaTitle: "Florida Moving Checklist: Week-by-Week 2026 Guide",
+    metaDescription:
+      "Complete 8-week moving checklist for Florida — from booking movers 6 weeks out to hurricane-season prep. Downloadable timeline + local tips.",
+  },
 ];
 
 export function getPost(slug: string): BlogPost | undefined {

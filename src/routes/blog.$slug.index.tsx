@@ -1703,7 +1703,7 @@ function NeighborhoodsBody() {
 
 
 
-function AuthorAndEnd({ faqs }: { faqs: { q: string; a: string }[] }) {
+function AuthorAndEnd({ slug, faqs }: { slug: string; faqs: { q: string; a: string }[] }) {
   return (
     <>
       <div className="container-page py-10 md:py-12 max-w-[720px]">
@@ -1715,6 +1715,9 @@ function AuthorAndEnd({ faqs }: { faqs: { q: string; a: string }[] }) {
             <FaqList faqs={faqs} />
           </>
         )}
+
+        <RelatedInSilo slug={slug} />
+        <NextStepLinks slug={slug} />
 
         <div className="mt-12 rounded-2xl border border-border bg-surface-alt p-6 flex gap-4 items-start">
           <div className="h-12 w-12 rounded-full bg-brand/10 text-brand flex items-center justify-center shrink-0">
@@ -1735,6 +1738,78 @@ function AuthorAndEnd({ faqs }: { faqs: { q: string; a: string }[] }) {
 
       <MidCta variant="end" />
     </>
+  );
+}
+
+function RelatedInSilo({ slug }: { slug: string }) {
+  const siblings = (SILOS[slug] ?? []).map((s) => BLOG_POSTS.find((p) => p.slug === s)).filter(Boolean) as BlogPost[];
+  if (siblings.length === 0) return null;
+  return (
+    <div className="mt-14">
+      <span className="text-xs font-semibold uppercase tracking-wider text-brand">
+        Continue in this series
+      </span>
+      <h2 className="mt-1 font-display text-2xl md:text-3xl font-bold text-ink">
+        Related guides
+      </h2>
+      <div className="mt-5 grid gap-5 sm:grid-cols-2">
+        {siblings.map((p) => (
+          <Link
+            key={p.slug}
+            to="/blog/$slug/"
+            params={{ slug: p.slug }}
+            className="group rounded-2xl border border-border bg-white overflow-hidden shadow-soft hover:-translate-y-0.5 hover:border-brand transition"
+          >
+            <div className="aspect-[16/10] overflow-hidden bg-surface-alt">
+              <img src={p.image} alt={p.imageAlt} loading="lazy" className="h-full w-full object-cover group-hover:scale-[1.03] transition" />
+            </div>
+            <div className="p-5">
+              <div className="text-[11px] font-semibold uppercase tracking-wider text-brand">
+                {p.category}
+              </div>
+              <h3 className="mt-2 font-display text-base font-bold text-ink group-hover:text-brand transition">
+                {p.title}
+              </h3>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function NextStepLinks({ slug }: { slug: string }) {
+  const step = NEXT_STEP[slug];
+  if (!step) return null;
+  return (
+    <div className="mt-12 rounded-2xl border border-border bg-white p-6">
+      <div className="font-display font-bold text-ink">Ready to move?</div>
+      <p className="mt-1 text-sm text-muted-foreground">
+        Next steps for readers of this guide:
+      </p>
+      <ul className="mt-4 space-y-2 text-sm">
+        <li className="flex items-start gap-2">
+          <ArrowRight className="h-4 w-4 mt-0.5 text-brand shrink-0" />
+          <span>
+            Go straight to{" "}
+            <Link to={step.service.to} className="text-brand font-semibold underline">
+              {step.service.label}
+            </Link>
+            .
+          </span>
+        </li>
+        <li className="flex items-start gap-2">
+          <ArrowRight className="h-4 w-4 mt-0.5 text-brand shrink-0" />
+          <span>
+            Or{" "}
+            <Link to={step.city.to} className="text-brand font-semibold underline">
+              {step.city.label}
+            </Link>{" "}
+            from licensed local crews.
+          </span>
+        </li>
+      </ul>
+    </div>
   );
 }
 

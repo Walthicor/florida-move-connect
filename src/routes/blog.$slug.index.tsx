@@ -173,9 +173,12 @@ function ArticlePage() {
         <ChecklistBody />
       ) : post.slug === "snowbird-moving-florida-guide" ? (
         <SnowbirdBody />
+      ) : post.slug === "hurricane-season-moving-florida" ? (
+        <HurricaneBody />
       ) : (
         <CostGuideBody />
       )}
+
       <AuthorAndEnd faqs={FAQS_BY_SLUG[post.slug] ?? []} />
     </article>
   );

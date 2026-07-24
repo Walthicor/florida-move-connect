@@ -259,7 +259,7 @@ export function MultiStepQuoteForm({
   );
 }
 
-function DarkField({
+function LightField({
   label,
   value,
   onChange,
@@ -278,10 +278,10 @@ function DarkField({
 }) {
   return (
     <label className="block">
-      <span className="text-xs font-bold uppercase tracking-wide text-white/85">{label}</span>
+      <span className="text-xs font-bold uppercase tracking-wide text-ink/85">{label}</span>
       <div className="relative mt-2">
         {icon && (
-          <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-white/50">
+          <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
             {icon}
           </span>
         )}
@@ -291,7 +291,7 @@ function DarkField({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
-          className={`w-full min-h-12 rounded-xl border border-white/20 bg-white/5 py-3 text-white placeholder-white/40 outline-none transition focus:border-cta/70 focus:bg-white/10 focus:ring-2 focus:ring-cta/40 ${
+          className={`w-full min-h-12 rounded-xl border border-input bg-white py-3 text-foreground placeholder-muted-foreground outline-none transition focus:border-cta focus:bg-white focus:ring-2 focus:ring-cta/30 ${
             icon ? "pl-10 pr-3" : "px-3"
           }`}
         />

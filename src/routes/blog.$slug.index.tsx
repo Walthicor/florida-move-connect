@@ -778,6 +778,171 @@ function HurricaneBody() {
   );
 }
 
+// ---------- DIY vs professional movers ----------
+function DiyBody() {
+  return (
+    <>
+      <div className="container-page py-10 md:py-12 max-w-[720px] prose-blog">
+        <p className="text-lg text-ink leading-relaxed">
+          Renting a truck seems cheaper than hiring movers — but once you add
+          fuel, insurance, mileage fees, packing supplies, and the value of
+          two days of your labor, the math often flips. For a typical
+          2-bedroom Florida move, professional movers cost{" "}
+          <strong>$850-$1,500</strong> and DIY runs <strong>$600-$1,100</strong>{" "}
+          with your own time free. Below is the full breakdown, plus the 4
+          situations where DIY genuinely wins and the 4 where it becomes a
+          disaster.
+        </p>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          The True Cost of a DIY Truck (2026)
+        </h2>
+        <div className="mt-5 overflow-x-auto rounded-xl border border-border">
+          <table className="w-full text-sm">
+            <thead className="bg-surface-alt text-ink">
+              <tr>
+                <th className="text-left px-4 py-3 font-semibold">Line Item</th>
+                <th className="text-left px-4 py-3 font-semibold">Cost</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border">
+              {[
+                ["Truck rental (20 ft, local)", "$130-$200/day"],
+                ["Fuel (100 mi + returns)", "$80-$140"],
+                ["Mileage overage", "$0.79-$1.19/mile"],
+                ["Damage waiver insurance", "$30-$50/day"],
+                ["Furniture pads and dolly", "$30-$60"],
+                ["Packing supplies (boxes, tape, paper)", "$150-$300"],
+                ["Fuel for two people helping", "$30-$60"],
+                ["Food/drinks for helpers", "$60-$120"],
+                ["TOTAL DIY (2 BR local)", "$510-$930"],
+                ["Add: your 2 days of labor", "Priceless"],
+              ].map((row) => (
+                <tr key={row[0]} className="bg-white">
+                  <td className="px-4 py-3 font-semibold text-ink">{row[0]}</td>
+                  <td className="px-4 py-3 text-ink">{row[1]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h2 className="mt-12 font-display text-2xl md:text-3xl font-bold text-ink">
+          The True Cost of Professional Movers
+        </h2>
+        <div className="mt-5 overflow-x-auto rounded-xl border border-border">
+          <table className="w-full text-sm">
+            <thead className="bg-surface-alt text-ink">
+              <tr>
+                <th className="text-left px-4 py-3 font-semibold">Line Item</th>
+                <th className="text-left px-4 py-3 font-semibold">Cost</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border">
+              {[
+                ["2-mover crew + truck (2 BR local)", "$850-$1,300"],
+                ["Includes: transport, loading, labor, basic valuation", "—"],
+                ["Add: packing service (optional)", "+$400-$800"],
+                ["Add: full-value protection", "+$50-$150"],
+                ["TOTAL professional (2 BR local)", "$850-$1,500"],
+                ["Your time cost", "Near zero"],
+              ].map((row) => (
+                <tr key={row[0]} className="bg-white">
+                  <td className="px-4 py-3 font-semibold text-ink">{row[0]}</td>
+                  <td className="px-4 py-3 text-ink">{row[1]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h2 className="mt-12 font-display text-2xl md:text-3xl font-bold text-ink">
+          When DIY Actually Wins — 4 clear cases
+        </h2>
+        <ul className="mt-4 space-y-3 text-ink list-disc pl-5">
+          <li>
+            <strong>Studio or single-room move under 30 miles</strong> — the
+            cost gap is small and physical demand is manageable.
+          </li>
+          <li>
+            <strong>Move within the same building or across the street</strong>{" "}
+            — a truck rental at hourly rate ($40-$60) beats crew mobilization.
+          </li>
+          <li>
+            <strong>You have strong friends with a free weekend</strong> AND
+            you own light furniture.
+          </li>
+          <li>
+            <strong>You are on a rigid budget under $600</strong> and can
+            accept the physical risk.
+          </li>
+        </ul>
+      </div>
+
+      <MidCta />
+
+      <div className="container-page py-10 md:py-12 max-w-[720px] prose-blog">
+        <h2 className="font-display text-2xl md:text-3xl font-bold text-ink">
+          When DIY Becomes a Disaster — 4 warning signs
+        </h2>
+        <ul className="mt-4 space-y-3 text-ink list-disc pl-5">
+          <li>
+            <strong>Heavy or valuable items</strong> (piano, safe, antiques,
+            granite tops) — one dropped item exceeds savings.{" "}
+            <Link to="/piano-movers/" className="text-brand underline">
+              Piano moves in particular
+            </Link>{" "}
+            are always specialist work.
+          </li>
+          <li>
+            <strong>Third-floor or high-rise moves</strong> — elevator
+            building rules alone often prevent DIY.
+          </li>
+          <li>
+            <strong>Moves over 100 miles</strong> — fuel + mileage + one-way
+            rental fees compound fast. Compare against a real{" "}
+            <Link to="/long-distance-movers/" className="text-brand underline">
+              long-distance mover
+            </Link>{" "}
+            quote before you commit.
+          </li>
+          <li>
+            <strong>Florida summer heat</strong> — heat exhaustion is a real
+            risk during 4+ hour DIY moves in July/August.
+          </li>
+        </ul>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          The Hidden Costs Most DIY-ers Forget
+        </h2>
+        <ul className="mt-4 space-y-3 text-ink list-disc pl-5">
+          <li>Broken items (average family reports $200-$500 in DIY breakage).</li>
+          <li>Truck damage deposits ($100-$500 held).</li>
+          <li>Muscle strains and back injuries.</li>
+          <li>Two vehicles = two returns and coordination.</li>
+          <li>Truck return timing penalties ($20-$40/hour late).</li>
+        </ul>
+
+        <p className="mt-8 text-ink">
+          Related reading:{" "}
+          <Link to="/local-movers-in-florida/" className="text-brand underline">
+            local movers in Florida
+          </Link>
+          ,{" "}
+          <Link
+            to="/blog/$slug/"
+            params={{ slug: "how-much-do-movers-cost-florida" }}
+            className="text-brand underline"
+          >
+            how much movers actually cost in Florida
+          </Link>
+          .
+        </p>
+      </div>
+    </>
+  );
+}
+
 // ---------- Shared tail (FAQ + author + end CTA) ----------
 
 function AuthorAndEnd({ faqs }: { faqs: { q: string; a: string }[] }) {

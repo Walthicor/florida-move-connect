@@ -195,6 +195,8 @@ function ArticlePage() {
         <SnowbirdBody />
       ) : post.slug === "hurricane-season-moving-florida" ? (
         <HurricaneBody />
+      ) : post.slug === "professional-movers-vs-diy-truck-florida" ? (
+        <DiyBody />
       ) : (
         <CostGuideBody />
       )}

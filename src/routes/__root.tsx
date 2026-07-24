@@ -117,10 +117,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Florida Movers Direct" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Florida Movers Direct — Compare Free Quotes from Licensed FL Movers" },
+      { name: "twitter:title", content: "Florida Movers Direct — Compare Free Quotes from Licensed FL Movers" },
+      { property: "og:description", content: "Get up to 4 free quotes from licensed, FDACS & FMCSA verified Florida moving companies. Local, long-distance, storage, commercial and more." },
+      { name: "twitter:description", content: "Get up to 4 free quotes from licensed, FDACS & FMCSA verified Florida moving companies. Local, long-distance, storage, commercial and more." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/SeQkoU9N6vbSQSv9DnATSPRX2tI2/social-images/social-1784863055346-Contact_Florida_Movers_Direct.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/SeQkoU9N6vbSQSv9DnATSPRX2tI2/social-images/social-1784863055346-Contact_Florida_Movers_Direct.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

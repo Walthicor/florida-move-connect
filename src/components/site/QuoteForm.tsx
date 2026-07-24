@@ -10,7 +10,7 @@ import {
   Phone,
   User,
 } from "lucide-react";
-import { useRouterState } from "@tanstack/react-router";
+import { useRouterState, useServerFn } from "@tanstack/react-router";
 import { z } from "zod";
 
 import { supabase } from "@/integrations/supabase/client";
@@ -28,9 +28,9 @@ const COPY = {
     back: "Back",
     continueBtn: "Continue",
     submitBtn: "Send my request",
+    stepRoute: "Where are you moving?",
     stepMoveType: "What type of move?",
     stepHomeSize: "Home size",
-    stepRoute: "Where are you moving?",
     stepWhen: "When do you want to move?",
     stepContact: "Your contact info",
     moveTypeOptions: ["Local (in Florida)", "Long distance", "Commercial / office", "Storage only"],
@@ -70,9 +70,9 @@ const COPY = {
     back: "Atrás",
     continueBtn: "Continuar",
     submitBtn: "Enviar solicitud",
+    stepRoute: "¿Desde dónde y hacia dónde?",
     stepMoveType: "¿Qué tipo de mudanza?",
     stepHomeSize: "Tamaño de la vivienda",
-    stepRoute: "¿Desde dónde y hacia dónde?",
     stepWhen: "¿Cuándo quiere mudarse?",
     stepContact: "Sus datos de contacto",
     moveTypeOptions: ["Local (en Florida)", "Larga distancia", "Comercial / oficina", "Solo almacenamiento"],
@@ -179,6 +179,7 @@ export function MultiStepQuoteForm({
   const lang = useLang();
   const c = COPY[lang];
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const sendLeadEmailFn = useServerFn(sendLeadEmail);
   const [step, setStep] = useState(1);
   const [status, setStatus] = useState<"idle" | "saving" | "sent" | "error">("idle");
   const [error, setError] = useState("");
@@ -210,9 +211,9 @@ export function MultiStepQuoteForm({
   };
 
   const validateStep = (targetStep = step) => {
-    if (targetStep === 1 && !normalized.moveType) return c.required;
-    if (targetStep === 2 && !normalized.homeSize) return c.required;
-    if (targetStep === 3 && (!normalized.fromZip || !normalized.toZip)) return c.invalidRoute;
+    if (targetStep === 1 && (!normalized.fromZip || !normalized.toZip)) return c.invalidRoute;
+    if (targetStep === 2 && !normalized.moveType) return c.required;
+    if (targetStep === 3 && !normalized.homeSize) return c.required;
     if (targetStep === 4 && !normalized.moveDate && !normalized.flexibility) return c.invalidDate;
     return "";
   };
@@ -256,7 +257,7 @@ export function MultiStepQuoteForm({
         user_agent: typeof navigator !== "undefined" ? navigator.userAgent : null,
       });
 
-      const emailResult = await sendLeadEmail({
+      const emailResult = await sendLeadEmailFn({
         data: {
           name: parsed.data.name,
           email: parsed.data.email,
@@ -285,7 +286,7 @@ export function MultiStepQuoteForm({
 
   if (status === "sent") {
     return (
-      <div className="pulse-form rounded-2xl border border-border bg-white p-6 md:p-8 shadow-card">
+      <div data-quote-form className="pulse-form rounded-2xl border border-border bg-white p-6 md:p-8 shadow-card">
         <div className="text-center py-8">
           <div className="mx-auto inline-flex h-14 w-14 items-center justify-center rounded-full bg-brand/10 text-brand">
             <CheckCircle2 className="h-7 w-7" />
@@ -298,7 +299,7 @@ export function MultiStepQuoteForm({
   }
 
   return (
-    <div className="pulse-form rounded-2xl border border-border bg-white p-6 md:p-8 shadow-card">
+    <div data-quote-form className="pulse-form rounded-2xl border border-border bg-white p-6 md:p-8 shadow-card">
       {isHero && (
         <div className="mb-5">
           <h2 className="font-display text-xl font-bold text-ink">{c.heroTitle}</h2>
@@ -321,32 +322,6 @@ export function MultiStepQuoteForm({
 
         <div className="mt-6 min-h-[300px]">
           {step === 1 && (
-            <Step title={c.stepMoveType}>
-              <OptionGrid
-                options={c.moveTypeOptions}
-                value={data.moveType}
-                onSelect={(opt) => {
-                  update("moveType", opt);
-                  setStep(2);
-                }}
-              />
-            </Step>
-          )}
-
-          {step === 2 && (
-            <Step title={c.stepHomeSize}>
-              <OptionGrid
-                options={c.homeSizeOptions}
-                value={data.homeSize}
-                onSelect={(opt) => {
-                  update("homeSize", opt);
-                  setStep(3);
-                }}
-              />
-            </Step>
-          )}
-
-          {step === 3 && (
             <Step title={c.stepRoute}>
               <div className="grid gap-4 sm:grid-cols-2">
                 <Field
@@ -366,6 +341,32 @@ export function MultiStepQuoteForm({
                   icon="pin"
                 />
               </div>
+            </Step>
+          )}
+
+          {step === 2 && (
+            <Step title={c.stepMoveType}>
+              <OptionGrid
+                options={c.moveTypeOptions}
+                value={data.moveType}
+                onSelect={(opt) => {
+                  update("moveType", opt);
+                  setStep(3);
+                }}
+              />
+            </Step>
+          )}
+
+          {step === 3 && (
+            <Step title={c.stepHomeSize}>
+              <OptionGrid
+                options={c.homeSizeOptions}
+                value={data.homeSize}
+                onSelect={(opt) => {
+                  update("homeSize", opt);
+                  setStep(4);
+                }}
+              />
             </Step>
           )}
 
@@ -425,7 +426,7 @@ export function MultiStepQuoteForm({
               <ArrowLeft className="h-4 w-4" /> {c.back}
             </button>
           )}
-          {step > 2 && step < totalSteps && (
+          {step < totalSteps && (
             <button type="button" onClick={goNext} className="btn-cta btn-cta-hover ml-auto text-sm">
               {c.continueBtn} <ArrowRight className="h-4 w-4" />
             </button>

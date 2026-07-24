@@ -131,6 +131,20 @@ export const BLOG_POSTS: BlogPost[] = [
     metaDescription:
       "Moving insurance explained: released value vs full-value protection vs third-party. What each covers, real costs, and what movers legally must offer.",
   },
+  {
+    slug: "best-florida-neighborhoods-families-2026",
+    title: "The Best Florida Neighborhoods to Move to in 2026 (By Lifestyle)",
+    excerpt:
+      "Where to move in Florida in 2026 by lifestyle — families, remote workers, retirees and young pros. Median home prices, schools, commute and trade-offs.",
+    category: "Florida Cities",
+    date: "2026-04-30",
+    dateLabel: "April 30, 2026",
+    image: "/__l5e/assets-v1/cb23e605-364c-4f6f-8814-72ac30e14852/best-florida-neighborhoods-families.jpg",
+    imageAlt: "Aerial view of a leafy Florida family neighborhood with palm-lined streets at golden hour",
+    metaTitle: "Best Florida Neighborhoods for Families in 2026",
+    metaDescription:
+      "Where to move in Florida in 2026: best neighborhoods by lifestyle — families, remote workers, retirees. Housing, schools, commute and cost of living.",
+  },
 ];
 
 export function getPost(slug: string): BlogPost | undefined {

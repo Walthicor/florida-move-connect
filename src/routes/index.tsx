@@ -7,7 +7,6 @@ import {
   CheckCircle2,
   BadgeCheck,
   DollarSign,
-  MapPin,
   Home as HomeIcon,
   Truck,
   Building2,
@@ -19,6 +18,7 @@ import {
 } from "lucide-react";
 import { CITIES } from "../components/site/data";
 import heroVideo from "@/assets/hero-cinematic.mp4.asset.json";
+import { HeroQuoteForm } from "@/components/site/QuoteForm";
 
 export const Route = createFileRoute("/")({
   head: () => pageHead({
@@ -281,65 +281,7 @@ function Hero() {
 }
 
 function QuoteFormCard() {
-  return (
-    <form
-      onSubmit={(e) => e.preventDefault()}
-      className="pulse-form rounded-2xl border border-border bg-white p-6 md:p-7 shadow-card"
-    >
-      <h2 className="font-display text-xl font-bold text-ink">
-        Get up to 4 free quotes
-      </h2>
-      <p className="mt-1 text-sm text-muted-foreground">
-        Takes about 2 minutes · No obligation
-      </p>
-
-      <div className="mt-5 space-y-4">
-        <div>
-          <label
-            htmlFor="from-zip"
-            className="block text-sm font-semibold text-ink"
-          >
-            Moving From (ZIP)
-          </label>
-          <div className="relative mt-1.5">
-            <MapPin className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-            <input
-              id="from-zip"
-              inputMode="numeric"
-              maxLength={5}
-              placeholder="e.g. 33101"
-              className="w-full rounded-lg border border-border bg-white pl-9 pr-3 py-3 text-sm text-ink placeholder:text-muted-foreground focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20"
-            />
-          </div>
-        </div>
-
-        <div>
-          <label
-            htmlFor="to-zip"
-            className="block text-sm font-semibold text-ink"
-          >
-            Moving To
-          </label>
-          <div className="relative mt-1.5">
-            <MapPin className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-            <input
-              id="to-zip"
-              placeholder="ZIP or city"
-              className="w-full rounded-lg border border-border bg-white pl-9 pr-3 py-3 text-sm text-ink placeholder:text-muted-foreground focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20"
-            />
-          </div>
-        </div>
-
-        <button type="submit" className="btn-cta btn-cta-hover w-full text-base">
-          Get Free Quotes <ArrowRight className="h-4 w-4" />
-        </button>
-
-        <p className="text-[11px] text-center text-muted-foreground">
-          Up to 4 licensed Florida movers · Always free
-        </p>
-      </div>
-    </form>
-  );
+  return <HeroQuoteForm />;
 }
 
 /* ------------------------------------------------------------------ */

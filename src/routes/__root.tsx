@@ -18,7 +18,6 @@ import { Footer } from "../components/site/Footer";
 import { CtaBand } from "../components/site/CtaBand";
 import { QuoteBand } from "../components/site/QuoteBand";
 import { TrustBar } from "../components/site/TrustBar";
-import { StickyMobileCta } from "../components/site/StickyMobileCta";
 import { FloatingActions } from "../components/site/FloatingActions";
 import { ScrollReveal } from "../components/site/ScrollReveal";
 
@@ -190,7 +189,6 @@ function RootComponent() {
         </main>
         <CtaBand />
         <Footer />
-        <StickyMobileCta />
         <FloatingActions />
       </div>
     </QueryClientProvider>

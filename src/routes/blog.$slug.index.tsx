@@ -150,6 +150,8 @@ function ArticlePage() {
       <ArticleHeader post={post} />
       {post.slug === "florida-moving-checklist-8-weeks" ? (
         <ChecklistBody />
+      ) : post.slug === "snowbird-moving-florida-guide" ? (
+        <SnowbirdBody />
       ) : (
         <CostGuideBody />
       )}

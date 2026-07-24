@@ -103,6 +103,20 @@ export const BLOG_POSTS: BlogPost[] = [
     metaDescription:
       "Moving with dogs, cats or exotic pets in Florida heat? Complete safety guide: transport rules, hot car risks, hotel policies, vet timing and settling in tips.",
   },
+  {
+    slug: "interstate-move-to-florida-timeline",
+    title: "How Long Does an Interstate Move to Florida Really Take?",
+    excerpt:
+      "Interstate moves to Florida take 1-14 days for delivery. Full timeline by origin state, factors that speed up or delay, and expedited options.",
+    category: "Moving Guides",
+    date: "2026-04-02",
+    dateLabel: "April 2, 2026",
+    image: "/__l5e/assets-v1/4071e295-1195-46ef-b3b4-22589d4b409e/interstate-move-to-florida.jpg",
+    imageAlt: "White moving truck driving south on an interstate highway toward Florida with palm trees on the horizon",
+    metaTitle: "How Long Does an Interstate Move to Florida Take? (2026)",
+    metaDescription:
+      "Interstate moves to Florida take 1-14 days for delivery. Full timeline by origin state, factors that speed up or delay, and expedited options.",
+  },
 ];
 
 export function getPost(slug: string): BlogPost | undefined {

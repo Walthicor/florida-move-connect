@@ -228,7 +228,7 @@ export function MultiStepQuoteForm({
           <LightField
             label={c.date}
             type="date"
-            icon={<CalendarDays className="h-4 w-4" />}
+            rightIcon={<CalendarDays className="h-4 w-4" />}
             value={data.moveDate}
             onChange={(v) => up("moveDate", v)}
           />

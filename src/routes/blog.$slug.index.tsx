@@ -177,6 +177,25 @@ const PETS_FAQS = [
   },
 ];
 
+const INTERSTATE_FAQS = [
+  {
+    q: "How long does an interstate move to Florida usually take?",
+    a: "Standard consolidated shipping delivers within 1-4 days from neighboring states, 3-8 days from the Northeast/Midwest, and 7-14 days from the West Coast. Dedicated or expedited service can cut those windows 40-60%.",
+  },
+  {
+    q: "Why can't movers give an exact delivery date?",
+    a: "Standard interstate moves share truck space with other households to keep costs down. Your specific slot depends on route optimization and other shipments. Guaranteed dates are available but cost significantly more.",
+  },
+  {
+    q: "Can I speed up a cross-country move to Florida?",
+    a: "Yes — dedicated truck service ($800-$2,000 extra) uses your load only, cutting time 40-60%. Expedited service ($1,500-$4,000 extra) guarantees 3-5 day delivery. Ask your mover for both options.",
+  },
+  {
+    q: "What should I pack in the car for a cross-country move to Florida?",
+    a: "Documents (birth certificates, passports, mortgage papers), medications, jewelry, cash, phone chargers, one week of essentials, and anything worth over $2,000 not covered by full-value protection. Everything else can safely travel with the mover.",
+  },
+];
+
 const FAQS_BY_SLUG: Record<string, { q: string; a: string }[]> = {
   "how-much-do-movers-cost-florida": COST_FAQS,
   "florida-moving-checklist-8-weeks": CHECKLIST_FAQS,
@@ -184,6 +203,7 @@ const FAQS_BY_SLUG: Record<string, { q: string; a: string }[]> = {
   "hurricane-season-moving-florida": HURRICANE_FAQS,
   "professional-movers-vs-diy-truck-florida": DIY_FAQS,
   "moving-with-pets-florida-heat": PETS_FAQS,
+  "interstate-move-to-florida-timeline": INTERSTATE_FAQS,
 };
 
 

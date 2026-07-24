@@ -267,6 +267,7 @@ function LightField({
   placeholder,
   inputMode,
   icon,
+  rightIcon,
 }: {
   label: string;
   value: string;
@@ -275,7 +276,10 @@ function LightField({
   placeholder?: string;
   inputMode?: React.HTMLAttributes<HTMLInputElement>["inputMode"];
   icon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
 }) {
+  const padLeft = icon ? "pl-10" : "pl-3";
+  const padRight = rightIcon ? "pr-10" : "pr-3";
   return (
     <label className="block">
       <span className="text-xs font-bold uppercase tracking-wide text-ink/85">{label}</span>
@@ -291,10 +295,13 @@ function LightField({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
-          className={`w-full min-h-12 rounded-xl border border-input bg-white py-3 text-foreground placeholder-muted-foreground outline-none transition focus:border-cta focus:bg-white focus:ring-2 focus:ring-cta/30 ${
-            icon ? "pl-10 pr-3" : "px-3"
-          }`}
+          className={`w-full min-h-12 rounded-xl border border-input bg-white py-3 text-foreground placeholder-muted-foreground outline-none transition focus:border-cta focus:bg-white focus:ring-2 focus:ring-cta/30 ${padLeft} ${padRight}`}
         />
+        {rightIcon && (
+          <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+            {rightIcon}
+          </span>
+        )}
       </div>
     </label>
   );

@@ -5,7 +5,7 @@ import {
   ArrowLeft,
   CheckCircle2,
 } from "lucide-react";
-import { useRouterState, useNavigate } from "@tanstack/react-router";
+import { useRouterState } from "@tanstack/react-router";
 import { supabase } from "@/integrations/supabase/client";
 import { useLang } from "@/lib/i18n";
 import { sendLeadEmail } from "@/lib/lead-email.functions";
@@ -128,7 +128,6 @@ async function saveLead(payload: LeadPayload) {
 export function HeroQuoteForm() {
   const lang = useLang();
   const c = COPY[lang];
-  const navigate = useNavigate();
   const [fromZip, setFromZip] = useState("");
   const [toZip, setToZip] = useState("");
   const [status, setStatus] = useState<"idle" | "saving" | "error">("idle");
@@ -136,26 +135,27 @@ export function HeroQuoteForm() {
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!fromZip && !toZip) return;
+    const cleanFromZip = fromZip.trim();
+    const cleanToZip = toZip.trim();
+    if (!cleanFromZip && !cleanToZip) return;
+
     setStatus("saving");
-    try {
-      // Save partial ZIP lead (non-blocking for navigation on failure)
-      await saveLead({
-        language: lang,
-        from_zip: fromZip || null,
-        to_zip: toZip || null,
-        source_path: pathname,
-        user_agent: typeof navigator !== "undefined" ? navigator.userAgent : null,
-      }).catch(() => null);
-      // Continue to the full multi-step form with ZIPs prefilled
-      const contactPath = lang === "es" ? "/es/contact/" : "/contact/";
-      navigate({
-        to: contactPath,
-        search: { from: fromZip || undefined, to: toZip || undefined } as never,
-      });
-    } catch {
-      setStatus("error");
-    }
+
+    // Continue immediately to the full multi-step form. The partial ZIP lead
+    // is saved in the background so a slow database request never blocks users.
+    void saveLead({
+      language: lang,
+      from_zip: cleanFromZip || null,
+      to_zip: cleanToZip || null,
+      source_path: pathname,
+      user_agent: typeof navigator !== "undefined" ? navigator.userAgent : null,
+    }).catch(() => null);
+
+    const contactPath = lang === "es" ? "/es/contact/" : "/contact/";
+    const params = new URLSearchParams();
+    if (cleanFromZip) params.set("from", cleanFromZip);
+    if (cleanToZip) params.set("to", cleanToZip);
+    window.location.href = `${contactPath}?${params.toString()}`;
   };
 
 

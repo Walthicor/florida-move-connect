@@ -215,6 +215,25 @@ const INSURANCE_FAQS = [
   },
 ];
 
+const NEIGHBORHOODS_FAQS = [
+  {
+    q: "What is the safest neighborhood in Florida for families?",
+    a: "Highly rated safe family areas include Wesley Chapel, Winter Park, Nocatee, Boca Raton (west of I-95), and The Villages. Crime rates plus school ratings plus community amenities are all high in these areas.",
+  },
+  {
+    q: "Where is the most affordable place to live in Florida?",
+    a: "Jacksonville metro (Riverside, Mandarin, Orange Park) consistently ranks lowest for big-city cost of living, followed by Gainesville, Ocala and Tallahassee. Median home prices under $400K remain achievable in these areas.",
+  },
+  {
+    q: "Which Florida city has the best job market?",
+    a: "Miami leads in finance, international business and hospitality; Orlando leads in tourism, healthcare (Medical City) and defense; Tampa is growing in tech and finance; Jacksonville is strong in logistics and banking. Choose the city matching your industry.",
+  },
+  {
+    q: "Where is the best place to retire in Florida in 2026?",
+    a: "Naples (luxury), Sarasota (culture + beach), The Villages (active community), Vero Beach (small-town), and Boca Raton (South FL luxury) top most retiree rankings. Selection depends on budget, hurricane-risk tolerance, and lifestyle preference.",
+  },
+];
+
 const FAQS_BY_SLUG: Record<string, { q: string; a: string }[]> = {
   "how-much-do-movers-cost-florida": COST_FAQS,
   "florida-moving-checklist-8-weeks": CHECKLIST_FAQS,
@@ -224,6 +243,7 @@ const FAQS_BY_SLUG: Record<string, { q: string; a: string }[]> = {
   "moving-with-pets-florida-heat": PETS_FAQS,
   "interstate-move-to-florida-timeline": INTERSTATE_FAQS,
   "moving-insurance-florida-explained": INSURANCE_FAQS,
+  "best-florida-neighborhoods-families-2026": NEIGHBORHOODS_FAQS,
 };
 
 

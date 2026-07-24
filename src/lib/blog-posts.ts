@@ -75,7 +75,20 @@ export const BLOG_POSTS: BlogPost[] = [
     metaDescription:
       "Can you move during Florida hurricane season? Yes — with the right prep. Best months within the season, insurance coverage, backup dates and evacuation planning.",
   },
-
+  {
+    slug: "professional-movers-vs-diy-truck-florida",
+    title: "Professional Movers vs Rental Truck: The Real Florida Cost Comparison",
+    excerpt:
+      "Rent a truck or hire movers? Full 2026 cost comparison including hidden Florida costs — fuel, insurance, mileage, damage risk. See when DIY actually saves money.",
+    category: "Moving Tips",
+    date: "2026-03-05",
+    dateLabel: "March 5, 2026",
+    image: "/__l5e/assets-v1/2563bd2d-da1d-4f70-8d6e-d4c3497a0286/professional-movers-vs-diy-truck-florida.jpg",
+    imageAlt: "Florida couple comparing a rental moving truck and a professional moving van in their driveway",
+    metaTitle: "Professional Movers vs DIY Truck in Florida: Real 2026 Cost Comparison",
+    metaDescription:
+      "Rent a truck or hire movers? Full cost comparison including hidden Florida costs — fuel, insurance, mileage, damage risk. See when DIY actually saves money.",
+  },
 ];
 
 export function getPost(slug: string): BlogPost | undefined {

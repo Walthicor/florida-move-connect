@@ -174,14 +174,17 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <HtmlLangSync />
+      <ScrollReveal />
       <div className="flex min-h-screen flex-col bg-background">
         <Header />
+        <TrustBar />
         {showQuoteBand && <QuoteBand />}
         <main className="flex-1">
           <Outlet />
         </main>
         <CtaBand />
         <Footer />
+        <StickyMobileCta />
       </div>
     </QueryClientProvider>
   );

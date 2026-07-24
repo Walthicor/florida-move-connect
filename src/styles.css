@@ -229,7 +229,7 @@ html, body {
 
 @media (prefers-reduced-motion: reduce) {
   .fade-up, .fade-up-in { animation: none !important; opacity: 1 !important; transform: none !important; transition: none !important; }
-  .pulse-cta, .btn-cta, .pulse-form { animation: none !important; }
+  .pulse-cta, .btn-cta, .pulse-form, .pulse-form-orange, .pulse-btn-cta { animation: none !important; }
   .fab-ring, .fab-inner { animation: none !important; }
 }
 

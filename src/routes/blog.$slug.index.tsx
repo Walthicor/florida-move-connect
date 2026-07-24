@@ -246,6 +246,106 @@ const FAQS_BY_SLUG: Record<string, { q: string; a: string }[]> = {
   "best-florida-neighborhoods-families-2026": NEIGHBORHOODS_FAQS,
 };
 
+// ---------- Interlinking: silo clusters + service/city routing ----------
+// Silo A · Money & Pricing | Silo B · Planning & Logistics | Silo C · People & Lifestyle
+const SILOS: Record<string, string[]> = {
+  "how-much-do-movers-cost-florida": [
+    "professional-movers-vs-diy-truck-florida",
+    "moving-insurance-florida-explained",
+  ],
+  "professional-movers-vs-diy-truck-florida": [
+    "how-much-do-movers-cost-florida",
+    "moving-insurance-florida-explained",
+  ],
+  "moving-insurance-florida-explained": [
+    "how-much-do-movers-cost-florida",
+    "professional-movers-vs-diy-truck-florida",
+  ],
+  "florida-moving-checklist-8-weeks": [
+    "hurricane-season-moving-florida",
+    "interstate-move-to-florida-timeline",
+  ],
+  "hurricane-season-moving-florida": [
+    "florida-moving-checklist-8-weeks",
+    "interstate-move-to-florida-timeline",
+  ],
+  "interstate-move-to-florida-timeline": [
+    "florida-moving-checklist-8-weeks",
+    "hurricane-season-moving-florida",
+  ],
+  "snowbird-moving-florida-guide": [
+    "moving-with-pets-florida-heat",
+    "best-florida-neighborhoods-families-2026",
+  ],
+  "moving-with-pets-florida-heat": [
+    "snowbird-moving-florida-guide",
+    "best-florida-neighborhoods-families-2026",
+  ],
+  "best-florida-neighborhoods-families-2026": [
+    "snowbird-moving-florida-guide",
+    "moving-with-pets-florida-heat",
+  ],
+};
+
+type CityRoute =
+  | "/movers-in-miami/"
+  | "/movers-in-tampa/"
+  | "/movers-in-orlando/"
+  | "/movers-in-ocala/"
+  | "/movers-in-jacksonville/"
+  | "/movers-in-naples/"
+  | "/movers-in-boca-raton/";
+type ServiceRoute =
+  | "/local-movers-in-florida/"
+  | "/long-distance-movers/"
+  | "/storage-solutions/"
+  | "/packing-services/"
+  | "/commercial-movers/"
+  | "/piano-movers/"
+  | "/apartment-movers/";
+
+const NEXT_STEP: Record<
+  string,
+  { service: { to: ServiceRoute; label: string }; city: { to: CityRoute; label: string } }
+> = {
+  "how-much-do-movers-cost-florida": {
+    service: { to: "/local-movers-in-florida/", label: "hire local movers in Florida" },
+    city: { to: "/movers-in-miami/", label: "compare Miami movers" },
+  },
+  "professional-movers-vs-diy-truck-florida": {
+    service: { to: "/local-movers-in-florida/", label: "book a professional local moving crew" },
+    city: { to: "/movers-in-orlando/", label: "get Orlando moving quotes" },
+  },
+  "moving-insurance-florida-explained": {
+    service: { to: "/long-distance-movers/", label: "compare long-distance movers with full-value protection" },
+    city: { to: "/movers-in-jacksonville/", label: "find licensed Jacksonville movers" },
+  },
+  "florida-moving-checklist-8-weeks": {
+    service: { to: "/packing-services/", label: "add professional packing services" },
+    city: { to: "/movers-in-tampa/", label: "get Tampa moving quotes" },
+  },
+  "hurricane-season-moving-florida": {
+    service: { to: "/storage-solutions/", label: "reserve climate-controlled storage" },
+    city: { to: "/movers-in-miami/", label: "book Miami movers with FVP" },
+  },
+  "interstate-move-to-florida-timeline": {
+    service: { to: "/long-distance-movers/", label: "compare long-distance movers to Florida" },
+    city: { to: "/movers-in-orlando/", label: "get Orlando delivery quotes" },
+  },
+  "snowbird-moving-florida-guide": {
+    service: { to: "/storage-solutions/", label: "reserve storage-in-transit" },
+    city: { to: "/movers-in-naples/", label: "book Naples movers" },
+  },
+  "moving-with-pets-florida-heat": {
+    service: { to: "/long-distance-movers/", label: "compare long-distance movers to Florida" },
+    city: { to: "/movers-in-tampa/", label: "get Tampa moving quotes" },
+  },
+  "best-florida-neighborhoods-families-2026": {
+    service: { to: "/local-movers-in-florida/", label: "hire local movers in Florida" },
+    city: { to: "/movers-in-boca-raton/", label: "get Boca Raton moving quotes" },
+  },
+};
+
 
 function NotFoundView() {
   return (

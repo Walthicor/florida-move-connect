@@ -89,6 +89,20 @@ export const BLOG_POSTS: BlogPost[] = [
     metaDescription:
       "Rent a truck or hire movers? Full cost comparison including hidden Florida costs — fuel, insurance, mileage, damage risk. See when DIY actually saves money.",
   },
+  {
+    slug: "moving-with-pets-florida-heat",
+    title: "Moving with Pets in Florida: The Complete Safety Guide",
+    excerpt:
+      "Florida heat kills pets faster than most owners realize. Full safety protocol: transport rules, hot car risks, hotel policies, vet timing and settling in tips.",
+    category: "Moving Tips",
+    date: "2026-03-19",
+    dateLabel: "March 19, 2026",
+    image: "/__l5e/assets-v1/99727100-1641-4616-8499-9bbb222dd194/moving-with-pets-florida-heat.jpg",
+    imageAlt: "Happy family with a golden retriever and cat carrier inside an air-conditioned SUV in Florida",
+    metaTitle: "Moving with Pets in Florida Heat: Safety Guide 2026",
+    metaDescription:
+      "Moving with dogs, cats or exotic pets in Florida heat? Complete safety guide: transport rules, hot car risks, hotel policies, vet timing and settling in tips.",
+  },
 ];
 
 export function getPost(slug: string): BlogPost | undefined {

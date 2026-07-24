@@ -52,6 +52,7 @@ import { Route as EsContactIndexRouteImport } from './routes/es.contact.index'
 import { Route as EsCommercialMoversIndexRouteImport } from './routes/es.commercial-movers.index'
 import { Route as EsBlogIndexRouteImport } from './routes/es.blog.index'
 import { Route as EsApartmentMoversIndexRouteImport } from './routes/es.apartment-movers.index'
+import { Route as BlogSlugIndexRouteImport } from './routes/blog.$slug.index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -274,6 +275,11 @@ const EsApartmentMoversIndexRoute = EsApartmentMoversIndexRouteImport.update({
   path: '/es/apartment-movers/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogSlugIndexRoute = BlogSlugIndexRouteImport.update({
+  id: '/blog/$slug/',
+  path: '/blog/$slug/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -300,6 +306,7 @@ export interface FileRoutesByFullPath {
   '/privacy-policy/': typeof PrivacyPolicyIndexRoute
   '/storage-solutions/': typeof StorageSolutionsIndexRoute
   '/terms/': typeof TermsIndexRoute
+  '/blog/$slug/': typeof BlogSlugIndexRoute
   '/es/apartment-movers/': typeof EsApartmentMoversIndexRoute
   '/es/blog/': typeof EsBlogIndexRoute
   '/es/commercial-movers/': typeof EsCommercialMoversIndexRoute
@@ -345,6 +352,7 @@ export interface FileRoutesByTo {
   '/privacy-policy': typeof PrivacyPolicyIndexRoute
   '/storage-solutions': typeof StorageSolutionsIndexRoute
   '/terms': typeof TermsIndexRoute
+  '/blog/$slug': typeof BlogSlugIndexRoute
   '/es/apartment-movers': typeof EsApartmentMoversIndexRoute
   '/es/blog': typeof EsBlogIndexRoute
   '/es/commercial-movers': typeof EsCommercialMoversIndexRoute
@@ -391,6 +399,7 @@ export interface FileRoutesById {
   '/privacy-policy/': typeof PrivacyPolicyIndexRoute
   '/storage-solutions/': typeof StorageSolutionsIndexRoute
   '/terms/': typeof TermsIndexRoute
+  '/blog/$slug/': typeof BlogSlugIndexRoute
   '/es/apartment-movers/': typeof EsApartmentMoversIndexRoute
   '/es/blog/': typeof EsBlogIndexRoute
   '/es/commercial-movers/': typeof EsCommercialMoversIndexRoute
@@ -438,6 +447,7 @@ export interface FileRouteTypes {
     | '/privacy-policy/'
     | '/storage-solutions/'
     | '/terms/'
+    | '/blog/$slug/'
     | '/es/apartment-movers/'
     | '/es/blog/'
     | '/es/commercial-movers/'
@@ -483,6 +493,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/storage-solutions'
     | '/terms'
+    | '/blog/$slug'
     | '/es/apartment-movers'
     | '/es/blog'
     | '/es/commercial-movers'
@@ -528,6 +539,7 @@ export interface FileRouteTypes {
     | '/privacy-policy/'
     | '/storage-solutions/'
     | '/terms/'
+    | '/blog/$slug/'
     | '/es/apartment-movers/'
     | '/es/blog/'
     | '/es/commercial-movers/'
@@ -574,6 +586,7 @@ export interface RootRouteChildren {
   PrivacyPolicyIndexRoute: typeof PrivacyPolicyIndexRoute
   StorageSolutionsIndexRoute: typeof StorageSolutionsIndexRoute
   TermsIndexRoute: typeof TermsIndexRoute
+  BlogSlugIndexRoute: typeof BlogSlugIndexRoute
   EsApartmentMoversIndexRoute: typeof EsApartmentMoversIndexRoute
   EsBlogIndexRoute: typeof EsBlogIndexRoute
   EsCommercialMoversIndexRoute: typeof EsCommercialMoversIndexRoute
@@ -898,6 +911,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EsApartmentMoversIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/$slug/': {
+      id: '/blog/$slug/'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug/'
+      preLoaderRoute: typeof BlogSlugIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -926,6 +946,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyPolicyIndexRoute: PrivacyPolicyIndexRoute,
   StorageSolutionsIndexRoute: StorageSolutionsIndexRoute,
   TermsIndexRoute: TermsIndexRoute,
+  BlogSlugIndexRoute: BlogSlugIndexRoute,
   EsApartmentMoversIndexRoute: EsApartmentMoversIndexRoute,
   EsBlogIndexRoute: EsBlogIndexRoute,
   EsCommercialMoversIndexRoute: EsCommercialMoversIndexRoute,

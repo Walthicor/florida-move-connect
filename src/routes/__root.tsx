@@ -176,6 +176,30 @@ function RootComponent() {
   const normalized = pathname.replace(/\/+$/, "") || "/";
   const noBandRoutes = new Set(["/", "/es", "/contact", "/es/contact"]);
   const showQuoteBand = !noBandRoutes.has(normalized);
+
+  useEffect(() => {
+    const onClick = (event: MouseEvent) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      const anchor = target.closest<HTMLAnchorElement>('a[href]');
+      if (!anchor) return;
+      const url = new URL(anchor.href, window.location.origin);
+      const isQuoteDestination = url.origin === window.location.origin && (url.pathname === "/contact/" || url.pathname === "/es/contact/");
+      const isQuoteCta = anchor.classList.contains("btn-cta") || anchor.classList.contains("pulse-cta") || anchor.dataset.quoteTrigger === "true";
+      if (!isQuoteDestination || !isQuoteCta) return;
+
+      const form = document.querySelector<HTMLElement>("[data-quote-form]");
+      if (!form) return;
+      event.preventDefault();
+      form.scrollIntoView({ behavior: "smooth", block: "center" });
+      const firstControl = form.querySelector<HTMLElement>("input, button");
+      window.setTimeout(() => firstControl?.focus({ preventScroll: true }), 350);
+    };
+
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <HtmlLangSync />

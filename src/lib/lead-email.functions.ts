@@ -1,4 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
+import { z } from "zod";
 
 export type LeadEmailPayload = {
   name?: string | null;
@@ -16,6 +17,20 @@ export type LeadEmailPayload = {
 
 const TO = ["mardigitalcali@gmail.com"];
 const FROM = "Florida Movers Direct <leads@floridamoversdirect.com>";
+
+const leadEmailSchema = z.object({
+  name: z.string().trim().min(2).max(100).nullable().optional(),
+  email: z.string().trim().email().max(255).nullable().optional(),
+  phone: z.string().trim().min(7).max(30).nullable().optional(),
+  from_zip: z.string().trim().min(2).max(80).nullable().optional(),
+  to_zip: z.string().trim().min(2).max(80).nullable().optional(),
+  home_size: z.string().trim().min(1).max(80).nullable().optional(),
+  move_type: z.string().trim().min(1).max(80).nullable().optional(),
+  move_date: z.string().trim().max(40).nullable().optional(),
+  flexibility: z.string().trim().max(80).nullable().optional(),
+  language: z.string().trim().max(10).nullable().optional(),
+  source_path: z.string().trim().max(300).nullable().optional(),
+});
 
 function esc(v: unknown): string {
   if (v == null || v === "") return "—";
@@ -74,7 +89,7 @@ function buildText(p: LeadEmailPayload): string {
 }
 
 export const sendLeadEmail = createServerFn({ method: "POST" })
-  .inputValidator((data: LeadEmailPayload) => data)
+  .inputValidator((data: LeadEmailPayload) => leadEmailSchema.parse(data))
   .handler(async ({ data }) => {
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {

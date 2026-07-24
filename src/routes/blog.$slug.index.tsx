@@ -101,9 +101,29 @@ const CHECKLIST_FAQS = [
   },
 ];
 
+const SNOWBIRD_FAQS = [
+  {
+    q: "What is the best time of year for a snowbird move to Florida?",
+    a: "Mid-October through mid-November. Weather is comfortable, hurricane risk is fading, and you avoid the December price surge. For the return trip: mid-April to early May.",
+  },
+  {
+    q: "Do I need to move my entire household?",
+    a: "No — most snowbirds move partial shipments: bedroom set, dining table, seasonal wardrobe, personal items. Movers price by weight/cubic feet, so a partial shipment costs 40-60% less than a full home.",
+  },
+  {
+    q: "Can my Florida moving company store items between seasons?",
+    a: "Yes — storage-in-transit is standard for snowbird routes. Your goods stay in the mover climate-controlled warehouse until your next trip, avoiding a year-round self-storage rental.",
+  },
+  {
+    q: "What documents do I need to move to Florida as a snowbird?",
+    a: "For domicile: proof of Florida residence (utility bill, lease, deed), Florida driver license, voter registration, and a Declaration of Domicile filed with your county clerk. For gated communities: mover COI, association vendor approval, elevator reservation.",
+  },
+];
+
 const FAQS_BY_SLUG: Record<string, { q: string; a: string }[]> = {
   "how-much-do-movers-cost-florida": COST_FAQS,
   "florida-moving-checklist-8-weeks": CHECKLIST_FAQS,
+  "snowbird-moving-florida-guide": SNOWBIRD_FAQS,
 };
 
 function NotFoundView() {

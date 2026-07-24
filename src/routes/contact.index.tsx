@@ -40,6 +40,16 @@ function ContactPage() {
     phone: "",
   });
 
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const sp = new URLSearchParams(window.location.search);
+    const from = sp.get("from") || "";
+    const to = sp.get("to") || "";
+    if (from || to) {
+      setData((d) => ({ ...d, fromZip: from || d.fromZip, toZip: to || d.toZip }));
+    }
+  }, []);
+
   const update = (k: keyof FormData, v: string) => setData((d) => ({ ...d, [k]: v }));
   const next = () => setStep((s) => Math.min(4, s + 1));
   const back = () => setStep((s) => Math.max(1, s - 1));

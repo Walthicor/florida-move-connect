@@ -443,6 +443,128 @@ function ChecklistBody() {
   );
 }
 
+// ---------- Snowbird article body ----------
+const SNOWBIRD_COSTS: { route: string; cost: string; notes: string }[] = [
+  { route: "New York → Naples", cost: "$2,200-$3,800", notes: "Partial shipment" },
+  { route: "Chicago → Sarasota", cost: "$2,000-$3,500", notes: "Partial shipment" },
+  { route: "Boston → Palm Beach", cost: "$2,400-$4,000", notes: "Partial shipment" },
+  { route: "Toronto → Fort Myers", cost: "$2,600-$4,500", notes: "Cross-border adds paperwork" },
+  { route: "Full household (if consolidating)", cost: "+40-60%", notes: "Furniture + kitchen" },
+];
+
+function SnowbirdBody() {
+  return (
+    <>
+      <div className="container-page py-10 md:py-12 max-w-[720px] prose-blog">
+        <p className="text-lg text-ink leading-relaxed">
+          Snowbirds — seasonal residents who winter in Florida and summer up
+          north — represent one of the largest recurring moving patterns in
+          America. If you are heading south for the first time or refining
+          your routine, this guide covers everything: the ideal arrival
+          window (mid-October to mid-November), typical costs (<strong>$1,800-$4,500</strong>{" "}
+          for a partial home shipment from the Northeast), gated community
+          access rules, storage between homes, and the tax nuances that make
+          snowbird moves different from regular relocations.
+        </p>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          When to Arrive (and When to Head Back)
+        </h2>
+        <p className="mt-3 text-ink">
+          <strong>Arrival:</strong> mid-October through mid-November hits the
+          sweet spot: heat has broken, hurricane season is winding down (peak
+          ends late October), and you beat the December-January rate spike.{" "}
+          <strong>Return:</strong> mid-April to early May before the summer
+          heat + humidity peaks. Moving late April instead of June saves
+          15-25%.
+        </p>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          Snowbird Moving Costs (2026)
+        </h2>
+        <div className="mt-5 overflow-x-auto rounded-xl border border-border">
+          <table className="w-full text-sm">
+            <thead className="bg-surface-alt text-ink">
+              <tr>
+                <th className="text-left px-4 py-3 font-semibold">Route</th>
+                <th className="text-left px-4 py-3 font-semibold">Typical Cost</th>
+                <th className="text-left px-4 py-3 font-semibold">Notes</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border">
+              {SNOWBIRD_COSTS.map((r) => (
+                <tr key={r.route} className="bg-white align-top">
+                  <td className="px-4 py-3 font-semibold text-ink">{r.route}</td>
+                  <td className="px-4 py-3 text-ink whitespace-nowrap">{r.cost}</td>
+                  <td className="px-4 py-3 text-ink">{r.notes}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          The Storage-in-Transit Advantage
+        </h2>
+        <p className="mt-3 text-ink">
+          Most snowbirds do not need to move an entire household — they need
+          select furniture, seasonal clothes, and personal items.{" "}
+          <Link to="/storage-solutions/" className="text-brand underline">
+            Storage-in-transit (SIT)
+          </Link>{" "}
+          lets your mover hold everything in their climate-controlled
+          warehouse between trips, so you avoid renting a Florida storage
+          unit year-round. Typical cost: <strong>$150-$350/month</strong>{" "}
+          for a partial-household shipment.
+        </p>
+      </div>
+
+      <MidCta />
+
+      <div className="container-page py-10 md:py-12 max-w-[720px] prose-blog">
+        <h2 className="font-display text-2xl md:text-3xl font-bold text-ink">
+          Gated Community + Condo Rules
+        </h2>
+        <p className="mt-3 text-ink">
+          <Link to="/movers-in-naples/" className="text-brand underline">
+            Naples movers
+          </Link>
+          ,{" "}
+          <Link to="/movers-in-boca-raton/" className="text-brand underline">
+            Boca Raton
+          </Link>
+          , Palm Beach, Marco Island: nearly every association requires:
+        </p>
+        <ul className="mt-4 space-y-3 text-ink list-disc pl-5">
+          <li>COI from your mover naming the association as additionally insured;</li>
+          <li>approved vendor lists (ask 30+ days ahead);</li>
+          <li>moving windows (typically weekday 9 AM-4 PM);</li>
+          <li>refundable move-in deposit ($250-$500).</li>
+        </ul>
+        <p className="mt-4 text-ink">
+          Florida movers who specialize in{" "}
+          <Link to="/long-distance-movers/" className="text-brand underline">
+            snowbird routes
+          </Link>{" "}
+          handle all this — national van lines often do not.
+        </p>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          Tax and Domicile Basics
+        </h2>
+        <p className="mt-3 text-ink">
+          If Florida is your primary residence for tax purposes (no state
+          income tax), you must actually live here more than half the year
+          (183+ days) and file a Declaration of Domicile at the county
+          clerk. If you split time, keep records: EZ-Pass logs, credit card
+          statements, medical appointments. This is where many snowbirds
+          get caught by their home-state tax authorities.
+        </p>
+      </div>
+    </>
+  );
+}
+
 // ---------- Shared tail (FAQ + author + end CTA) ----------
 function AuthorAndEnd({ faqs }: { faqs: { q: string; a: string }[] }) {
   return (

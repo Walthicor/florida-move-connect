@@ -41,8 +41,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Moving Guides",
     date: "2026-01-22",
     dateLabel: "January 22, 2026",
-    image: "/images/family-moving.jpg",
-    imageAlt: "Florida family planning their move with a checklist",
+    image: "/__l5e/assets-v1/e6d70080-93a6-4f16-a558-c2651f439f34/florida-moving-checklist.jpg",
+    imageAlt: "Florida couple reviewing their moving quote on a laptop",
     metaTitle: "Florida Moving Checklist: Week-by-Week 2026 Guide",
     metaDescription:
       "Complete 8-week moving checklist for Florida — from booking movers 6 weeks out to hurricane-season prep. Downloadable timeline + local tips.",

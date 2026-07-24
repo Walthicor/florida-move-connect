@@ -177,6 +177,25 @@ const PETS_FAQS = [
   },
 ];
 
+const INTERSTATE_FAQS = [
+  {
+    q: "How long does an interstate move to Florida usually take?",
+    a: "Standard consolidated shipping delivers within 1-4 days from neighboring states, 3-8 days from the Northeast/Midwest, and 7-14 days from the West Coast. Dedicated or expedited service can cut those windows 40-60%.",
+  },
+  {
+    q: "Why can't movers give an exact delivery date?",
+    a: "Standard interstate moves share truck space with other households to keep costs down. Your specific slot depends on route optimization and other shipments. Guaranteed dates are available but cost significantly more.",
+  },
+  {
+    q: "Can I speed up a cross-country move to Florida?",
+    a: "Yes — dedicated truck service ($800-$2,000 extra) uses your load only, cutting time 40-60%. Expedited service ($1,500-$4,000 extra) guarantees 3-5 day delivery. Ask your mover for both options.",
+  },
+  {
+    q: "What should I pack in the car for a cross-country move to Florida?",
+    a: "Documents (birth certificates, passports, mortgage papers), medications, jewelry, cash, phone chargers, one week of essentials, and anything worth over $2,000 not covered by full-value protection. Everything else can safely travel with the mover.",
+  },
+];
+
 const FAQS_BY_SLUG: Record<string, { q: string; a: string }[]> = {
   "how-much-do-movers-cost-florida": COST_FAQS,
   "florida-moving-checklist-8-weeks": CHECKLIST_FAQS,
@@ -184,6 +203,7 @@ const FAQS_BY_SLUG: Record<string, { q: string; a: string }[]> = {
   "hurricane-season-moving-florida": HURRICANE_FAQS,
   "professional-movers-vs-diy-truck-florida": DIY_FAQS,
   "moving-with-pets-florida-heat": PETS_FAQS,
+  "interstate-move-to-florida-timeline": INTERSTATE_FAQS,
 };
 
 
@@ -219,6 +239,8 @@ function ArticlePage() {
         <DiyBody />
       ) : post.slug === "moving-with-pets-florida-heat" ? (
         <PetsBody />
+      ) : post.slug === "interstate-move-to-florida-timeline" ? (
+        <InterstateBody />
       ) : (
         <CostGuideBody />
       )}
@@ -1096,6 +1118,152 @@ function PetsBody() {
             If pets stop eating or hide 3+ days, call a local vet.
           </li>
         </ul>
+      </div>
+    </>
+  );
+}
+
+// ---------- Interstate move to Florida timeline ----------
+function InterstateBody() {
+  return (
+    <>
+      <div className="container-page py-10 md:py-12 max-w-[720px] prose-blog">
+        <p className="text-lg text-ink leading-relaxed">
+          An interstate move to Florida typically takes <strong>1-14 days</strong>{" "}
+          for delivery, depending on origin state and service level. From
+          Georgia or the Carolinas: <strong>1-4 days</strong>. From the
+          Northeast or Midwest: <strong>3-8 days</strong>. From the West
+          Coast: <strong>7-14 days</strong>. Movers give you a delivery{" "}
+          <em>window</em> (not an exact date) because trucks combine multiple
+          households on the same route. Here is what determines your specific
+          timeline and how to speed it up.
+        </p>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          Delivery Times by Origin State
+        </h2>
+        <div className="mt-5 overflow-x-auto rounded-2xl border border-border">
+          <table className="w-full text-sm">
+            <thead className="bg-surface-alt text-ink">
+              <tr>
+                <th className="px-4 py-3 text-left font-semibold">Origin</th>
+                <th className="px-4 py-3 text-left font-semibold">Standard Window</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border">
+              {[
+                ["Georgia, Alabama, South Carolina", "1-4 days"],
+                ["Tennessee, North Carolina, Virginia", "2-5 days"],
+                ["New York, New Jersey, Pennsylvania", "3-7 days"],
+                ["Ohio, Michigan, Illinois", "4-8 days"],
+                ["Texas, Oklahoma", "4-8 days"],
+                ["Colorado, Utah, Arizona", "6-11 days"],
+                ["California, Oregon, Washington", "7-14 days"],
+                ["Alaska", "3-6 weeks (via barge and truck)"],
+              ].map(([o, w]) => (
+                <tr key={o}>
+                  <td className="px-4 py-3 text-ink">{o}</td>
+                  <td className="px-4 py-3 font-semibold text-ink">{w}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          Why Movers Give a Window, Not a Date
+        </h2>
+        <p className="mt-3 text-ink">
+          Standard interstate service combines multiple households on the same
+          truck (called <strong>consolidated shipping</strong>). This keeps
+          prices affordable but means your specific delivery slot depends on
+          the other shipments and route optimization. Guaranteed delivery
+          dates are available but cost <strong>30-70% more</strong>.
+        </p>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          What Extends Your Delivery Window
+        </h2>
+        <ul className="mt-4 space-y-3 text-ink list-disc pl-5">
+          <li>Consolidation with other households (biggest factor).</li>
+          <li>Long-distance routes crossing multiple states.</li>
+          <li>Peak season demand (May-September).</li>
+          <li>Weather (Florida hurricanes, mountain snow on cross-country routes).</li>
+          <li>Non-standard delivery location (rural areas, gated communities requiring shuttle trucks).</li>
+        </ul>
+      </div>
+
+      <MidCta />
+
+      <div className="container-page py-10 md:py-12 max-w-[720px] prose-blog">
+        <h2 className="font-display text-2xl md:text-3xl font-bold text-ink">
+          Expedited Options If You Need It Faster
+        </h2>
+        <div className="mt-5 overflow-x-auto rounded-2xl border border-border">
+          <table className="w-full text-sm">
+            <thead className="bg-surface-alt text-ink">
+              <tr>
+                <th className="px-4 py-3 text-left font-semibold">Service</th>
+                <th className="px-4 py-3 text-left font-semibold">Extra Cost</th>
+                <th className="px-4 py-3 text-left font-semibold">Timeline</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border">
+              {[
+                ["Standard consolidated", "Baseline", "Multiple households, longest window"],
+                ["Dedicated truck", "+$800-$2,000", "Your load only, 40-60% faster"],
+                ["Expedited service", "+$1,500-$4,000", "Guaranteed 3-5 day delivery"],
+                ["Air freight (small shipments)", "Highly variable", "1-3 days for essentials only"],
+              ].map(([s, c, t]) => (
+                <tr key={s}>
+                  <td className="px-4 py-3 font-semibold text-ink">{s}</td>
+                  <td className="px-4 py-3 text-ink">{c}</td>
+                  <td className="px-4 py-3 text-ink">{t}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          What You Can Do to Speed Things Up
+        </h2>
+        <ul className="mt-4 space-y-3 text-ink list-disc pl-5">
+          <li>
+            Book <strong>6-8 weeks ahead</strong> so you get preferred pickup
+            and delivery windows.
+          </li>
+          <li>
+            Be flexible on pickup dates — offering a 3-4 day pickup window
+            helps carriers consolidate efficiently.
+          </li>
+          <li>Choose mid-month over month-end (less demand).</li>
+          <li>Move during off-peak season (October-April).</li>
+        </ul>
+
+        <p className="mt-8 text-ink">
+          Ready to plan your move? Compare{" "}
+          <Link to="/long-distance-movers/" className="text-brand underline">
+            long-distance movers
+          </Link>
+          , learn how{" "}
+          <Link
+            to="/blog/$slug/"
+            params={{ slug: "how-much-do-movers-cost-florida" }}
+            className="text-brand underline"
+          >
+            Florida moving costs break down
+          </Link>
+          , and see our{" "}
+          <Link
+            to="/blog/$slug/"
+            params={{ slug: "florida-moving-checklist-8-weeks" }}
+            className="text-brand underline"
+          >
+            8-week Florida moving checklist
+          </Link>
+          .
+        </p>
       </div>
     </>
   );

@@ -1,8 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useRouterState } from "@tanstack/react-router";
 import { pageHead } from "@/lib/seo";
 import { useState } from "react";
 import { Mail, Phone, MapPin, ArrowRight, ArrowLeft, CheckCircle2 } from "lucide-react";
 import { CtaBand } from "@/components/site/CtaBand";
+import { sendLeadEmail } from "@/lib/lead-email.functions";
 
 export const Route = createFileRoute("/contact/")({
   head: () => pageHead({
@@ -27,6 +28,7 @@ type FormData = {
 function ContactPage() {
   const [step, setStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
   const [data, setData] = useState<FormData>({
     moveType: "",
     homeSize: "",
@@ -43,6 +45,20 @@ function ContactPage() {
   const back = () => setStep((s) => Math.max(1, s - 1));
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
+    void sendLeadEmail({
+      data: {
+        name: data.name || null,
+        email: data.email || null,
+        phone: data.phone || null,
+        from_zip: data.fromZip || null,
+        to_zip: data.toZip || null,
+        home_size: data.homeSize || null,
+        move_type: data.moveType || null,
+        move_date: data.moveDate || null,
+        language: "en",
+        source_path: pathname,
+      },
+    }).catch((err) => console.error("sendLeadEmail failed", err));
     setSubmitted(true);
   };
 

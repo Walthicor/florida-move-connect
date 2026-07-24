@@ -5,7 +5,7 @@ import {
   ArrowLeft,
   CheckCircle2,
 } from "lucide-react";
-import { useRouterState } from "@tanstack/react-router";
+import { useRouterState, useNavigate } from "@tanstack/react-router";
 import { supabase } from "@/integrations/supabase/client";
 import { useLang } from "@/lib/i18n";
 import { sendLeadEmail } from "@/lib/lead-email.functions";

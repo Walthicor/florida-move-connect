@@ -39,19 +39,14 @@ export function Footer() {
             <h4 className="font-display text-sm font-bold uppercase tracking-wider text-white">
               {dict.contactTitle}
             </h4>
-            <ul className="mt-4 space-y-3 text-sm text-white/75">
-              <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-cta" />
-                <a href="tel:+18005550100" className="hover:text-white">
-                  (800) 555-0100
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-cta" />
-                <a href="mailto:mardigitalcali@gmail.com" className="hover:text-white">
-                  mardigitalcali@gmail.com
-                </a>
-              </li>
+            <Link
+              to={contactHref as "/contact/"}
+              className="pulse-cta mt-4 inline-flex items-center gap-2 rounded-lg bg-gradient-cta px-5 py-3 text-sm font-semibold text-white shadow-card hover:brightness-110 transition"
+            >
+              {dict.getFreeQuotes}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <ul className="mt-5 space-y-3 text-sm text-white/75">
               <li>
                 <Link to={contactHref as "/contact/"} className="hover:text-white">
                   {dict.contactPage}
@@ -72,6 +67,7 @@ export function Footer() {
               </Link>
             </div>
           </div>
+
         </div>
       </div>
       <div className="border-t border-white/10">

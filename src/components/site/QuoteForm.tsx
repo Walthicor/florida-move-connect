@@ -10,7 +10,8 @@ import {
   Phone,
   User,
 } from "lucide-react";
-import { useRouterState, useServerFn } from "@tanstack/react-router";
+import { useRouterState } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
 import { supabase } from "@/integrations/supabase/client";

@@ -104,6 +104,10 @@ html {
   scroll-behavior: smooth;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
@@ -177,3 +181,40 @@ html {
     padding-inline: 2rem;
   }
 }
+
+@keyframes fade-up {
+  0% { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@utility fade-up {
+  animation: fade-up 0.6s ease-out both;
+}
+@utility fade-up-in {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility card-hover {
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card);
+    border-color: color-mix(in oklab, var(--brand) 40%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up, .fade-up-in { animation: none !important; opacity: 1 !important; transform: none !important; transition: none !important; }
+  .pulse-cta, .btn-cta, .pulse-form { animation: none !important; }
+}
+
+/* Mobile safe-area padding to prevent sticky bar overlap */
+@media (max-width: 767px) {
+  body { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)); }
+}
+

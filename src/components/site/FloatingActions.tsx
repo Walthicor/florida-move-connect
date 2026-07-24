@@ -41,7 +41,7 @@ export function FloatingActions() {
         onClick={scrollTop}
         aria-label={topLabel}
         title={topLabel}
-        className={`fab fab-teardrop fixed left-4 z-40 bottom-20 md:bottom-6 transition-all duration-300 ${
+        className={`fab fab-teardrop fixed left-4 z-40 bottom-28 md:bottom-6 transition-all duration-300 ${
           showTop ? "opacity-100 translate-y-0" : "pointer-events-none opacity-0 translate-y-3"
         }`}
       >
@@ -57,7 +57,7 @@ export function FloatingActions() {
         onClick={scrollToQuoteForm}
         aria-label={quoteLabel}
         title={quoteLabel}
-        className="fab fixed right-4 z-40 bottom-20 md:bottom-6"
+        className="fab fixed right-4 z-40 bottom-28 md:bottom-6"
       >
         <span className="fab-ring fab-ring-cta" aria-hidden="true" />
         <span className="fab-inner fab-inner-cta">

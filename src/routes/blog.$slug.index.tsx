@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowRight, Calendar, ChevronDown, Tag, User } from "lucide-react";
-import { getPost, BLOG_POSTS } from "@/lib/blog-posts";
+import { getPost, BLOG_POSTS, type BlogPost } from "@/lib/blog-posts";
 import { pageHead, SITE_URL, ORG_LOGO } from "@/lib/seo";
 
 export const Route = createFileRoute("/blog/$slug/")({
@@ -21,12 +21,13 @@ export const Route = createFileRoute("/blog/$slug/")({
     }
     const { post } = loaderData;
     const path = `/blog/${params.slug}/`;
+    const faqs = FAQS_BY_SLUG[post.slug] ?? [];
     const base = pageHead({
       path,
       title: post.metaTitle,
       description: post.metaDescription,
       image: post.image,
-      faqs: FAQS,
+      faqs,
     });
     const url = `${SITE_URL}${path}`;
     const image = post.image.startsWith("http")
@@ -65,7 +66,8 @@ export const Route = createFileRoute("/blog/$slug/")({
   component: ArticlePage,
 });
 
-const FAQS = [
+// ---------- FAQs ----------
+const COST_FAQS = [
   {
     q: "What do movers charge per hour in Florida?",
     a: "Between $95 and $150 per hour for two movers and a truck; each additional mover adds $40-$60/hour. Miami and Naples sit at the top of that range, Ocala and Gainesville near the bottom.",
@@ -79,6 +81,30 @@ const FAQS = [
     a: "Reputable movers ask for $0-$200 to reserve a date. Demands for large cash deposits (25%+ upfront) are a red flag under Florida consumer protection guidance.",
   },
 ];
+
+const CHECKLIST_FAQS = [
+  {
+    q: "How early should I start planning a Florida move?",
+    a: "8 weeks for a smooth move; 6 weeks minimum. Peak season (May-September) and hurricane season (June-November) need the earlier start because movers book out faster and weather adds risk.",
+  },
+  {
+    q: "What is the biggest mistake people make moving to Florida?",
+    a: "Underestimating heat and humidity. Wood furniture warps in unairconditioned trucks over long routes; electronics condensate when moved from AC to a hot truck and back. Full-service Florida movers plan for this — DIY movers often learn it the expensive way.",
+  },
+  {
+    q: "Do I need to notify my HOA before moving out in Florida?",
+    a: "Most Florida condos and gated communities require 30-day written notice. Some also require the incoming resident's mover to provide a COI. Check your association bylaws in Week 5.",
+  },
+  {
+    q: "What paperwork do I need after moving to Florida?",
+    a: "Within 30 days: Florida driver license (FLHSMV) and vehicle registration. If buying a home: file homestead exemption by March 1 for property tax savings. Update USPS, banks, and insurance immediately after moving.",
+  },
+];
+
+const FAQS_BY_SLUG: Record<string, { q: string; a: string }[]> = {
+  "how-much-do-movers-cost-florida": COST_FAQS,
+  "florida-moving-checklist-8-weeks": CHECKLIST_FAQS,
+};
 
 function NotFoundView() {
   return (
@@ -99,10 +125,22 @@ function NotFoundView() {
 
 function ArticlePage() {
   const { post } = Route.useLoaderData();
-
   return (
     <article className="bg-white">
-      {/* Header */}
+      <ArticleHeader post={post} />
+      {post.slug === "florida-moving-checklist-8-weeks" ? (
+        <ChecklistBody />
+      ) : (
+        <CostGuideBody />
+      )}
+      <AuthorAndEnd faqs={FAQS_BY_SLUG[post.slug] ?? []} />
+    </article>
+  );
+}
+
+function ArticleHeader({ post }: { post: BlogPost }) {
+  return (
+    <>
       <header className="bg-surface-alt border-b border-border">
         <div className="container-page py-12 md:py-16 max-w-[820px]">
           <div className="flex flex-wrap items-center gap-3 text-[11px] font-semibold uppercase tracking-wider">
@@ -122,8 +160,6 @@ function ArticlePage() {
           </h1>
         </div>
       </header>
-
-      {/* Hero image */}
       <div className="container-page pt-8 md:pt-10 max-w-[820px]">
         <img
           src={post.image}
@@ -131,8 +167,14 @@ function ArticlePage() {
           className="w-full rounded-2xl object-cover aspect-[16/9] shadow-soft"
         />
       </div>
+    </>
+  );
+}
 
-      {/* Body */}
+// ---------- Cost guide body (original article) ----------
+function CostGuideBody() {
+  return (
+    <>
       <div className="container-page py-10 md:py-12 max-w-[720px] prose-blog">
         <p className="text-lg text-ink leading-relaxed">
           Movers in Florida cost <strong>$400 to $1,600</strong> for a local
@@ -177,36 +219,15 @@ function ArticlePage() {
           The 6 Factors That Set Your Price
         </h2>
         <ul className="mt-5 space-y-4 text-ink">
-          <li>
-            <strong>Distance and access:</strong> stairs, elevators, long
-            carries — each adds time or flat fees ($40-$100 per flight of
-            stairs).
-          </li>
-          <li>
-            <strong>Season:</strong> May through September is peak (school
-            calendars + lease turnovers). Expect 20-30% higher rates than
-            winter.
-          </li>
-          <li>
-            <strong>Date:</strong> the last weekend of any month is the most
-            expensive 72 hours in moving. Mid-month weekdays are cheapest.
-          </li>
-          <li>
-            <strong>Packing:</strong> full professional packing adds
-            $600-$1,200 for a typical home but saves 3-4 days of your labor.
-          </li>
-          <li>
-            <strong>Specialty items:</strong> pianos ($150-$800), safes, pool
-            tables and art crating are quoted separately.
-          </li>
-          <li>
-            <strong>Storage:</strong> if your new home is not ready,
-            storage-in-transit runs $150-$400/month.
-          </li>
+          <li><strong>Distance and access:</strong> stairs, elevators, long carries — each adds time or flat fees ($40-$100 per flight of stairs).</li>
+          <li><strong>Season:</strong> May through September is peak (school calendars + lease turnovers). Expect 20-30% higher rates than winter.</li>
+          <li><strong>Date:</strong> the last weekend of any month is the most expensive 72 hours in moving. Mid-month weekdays are cheapest.</li>
+          <li><strong>Packing:</strong> full professional packing adds $600-$1,200 for a typical home but saves 3-4 days of your labor.</li>
+          <li><strong>Specialty items:</strong> pianos ($150-$800), safes, pool tables and art crating are quoted separately.</li>
+          <li><strong>Storage:</strong> if your new home is not ready, storage-in-transit runs $150-$400/month.</li>
         </ul>
       </div>
 
-      {/* Mid-article CTA */}
       <MidCta />
 
       <div className="container-page py-10 md:py-12 max-w-[720px]">
@@ -222,13 +243,198 @@ function ArticlePage() {
           dramatically lowest — quotes 40% under market are the classic setup
           for hostage-load scams.
         </p>
+      </div>
+    </>
+  );
+}
+
+// ---------- Checklist article body ----------
+const WEEKS: { week: string; focus: string; tasks: string }[] = [
+  { week: "Week 8", focus: "Foundation", tasks: "Get 3-4 quotes, choose service level, set budget with 15% Florida buffer, start moving folder." },
+  { week: "Week 7", focus: "Declutter", tasks: "Sell/donate/trash unused items. Book free charity pickup (Goodwill, Habitat ReStore, Salvation Army)." },
+  { week: "Week 6", focus: "Book + Records", tasks: "Sign mover contract. Request school and dental/medical records. Tour new schools." },
+  { week: "Week 5", focus: "Notify Everyone", tasks: "USPS change of address. Bank, cards, insurance, IRS, employer. Notify HOA/condo 30 days ahead." },
+  { week: "Week 4", focus: "Utilities + COI", tasks: "Schedule utility transfer (FPL/Duke, water, internet). Submit mover's COI to condo, reserve service elevator." },
+  { week: "Week 3", focus: "Pack Non-Essentials", tasks: "Off-season clothes, books, decor. Dish-pack double-wall boxes for glass. Label by room + contents." },
+  { week: "Week 2", focus: "Confirm + Prep", tasks: "Reconfirm mover in writing. Build essentials box. Monitor NOAA if in hurricane season, have backup date." },
+  { week: "Week 1", focus: "Home Stretch", tasks: "Pack remaining boxes. Defrost freezer 48h out. Cash for tips. Photo high-value items. Charge electronics." },
+];
+
+function ChecklistBody() {
+  return (
+    <>
+      <div className="container-page py-10 md:py-12 max-w-[720px] prose-blog">
+        <p className="text-lg text-ink leading-relaxed">
+          A successful Florida move starts <strong>8 weeks out</strong> — 6
+          weeks for peak season (May-September) or hurricane months
+          (June-November). This week-by-week checklist covers everything:
+          booking licensed movers, gathering records, condo COIs, utilities
+          and school transfers, plus Florida-specific tasks nobody warns you
+          about like humidity-safe packing and hurricane contingency planning.
+          Save it, print it, or share it.
+        </p>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          Week 8 — Foundation (before anything gets urgent)
+        </h2>
+        <ul className="mt-4 space-y-3 text-ink list-disc pl-5">
+          <li>
+            Get 3-4 quotes from FDACS-registered{" "}
+            <Link to="/local-movers-in-florida/" className="text-brand underline">
+              licensed local movers
+            </Link>{" "}
+            or FMCSA-verified{" "}
+            <Link to="/long-distance-movers/" className="text-brand underline">
+              long-distance moving companies
+            </Link>
+            .
+          </li>
+          <li>Decide: full-service, self-pack, or DIY.</li>
+          <li>Create a moving budget with a 15% buffer for Florida-specific costs (COI fees, storage, humidity-safe supplies).</li>
+          <li>Start a moving folder (physical + digital): quotes, contracts, receipts.</li>
+        </ul>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          Week 7 — Declutter Aggressively
+        </h2>
+        <p className="mt-3 text-ink">
+          In Florida heat, every extra pound in the truck costs you twice:
+          hourly rate + risk of heat damage. Sell, donate, or trash items you
+          have not used in a year. Local charities pickup for free: Goodwill,
+          Habitat ReStore, Salvation Army.
+        </p>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          Week 6 — Book Movers + School/Medical Records
+        </h2>
+        <p className="mt-3 text-ink">
+          Sign your moving contract. Request school records and
+          dental/medical files. If moving with kids, tour new schools if
+          possible.
+        </p>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          Week 5 — Notify Everyone
+        </h2>
+        <ul className="mt-4 space-y-3 text-ink list-disc pl-5">
+          <li>USPS change of address online ($1.10).</li>
+          <li>Update: bank, credit cards, insurance, IRS, employer, subscriptions.</li>
+          <li>Florida-specific: notify HOA/condo association 30 days ahead (many require it in writing).</li>
+        </ul>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          Week 4 — Utilities + Building Paperwork
+        </h2>
+        <p className="mt-3 text-ink">
+          Schedule utility disconnect at old address and connect at new
+          (electric FPL/Duke, water, internet). For condo moves: submit the
+          mover's COI to your building — Miami and Boca associations often
+          need 2-3 weeks to approve. Reserve the service elevator.
+        </p>
+      </div>
+
+      <MidCta />
+
+      <div className="container-page py-10 md:py-12 max-w-[720px] prose-blog">
+        <h2 className="font-display text-2xl md:text-3xl font-bold text-ink">
+          Week 3 — Start Packing Non-Essentials
+        </h2>
+        <p className="mt-3 text-ink">
+          Pack off-season clothes, books and decorations — or hire{" "}
+          <Link to="/packing-services/" className="text-brand underline">
+            professional packers
+          </Link>
+          . Use dish-pack double-wall boxes for anything glass — Florida truck
+          interiors hit 120°F+ in summer. Label boxes by ROOM + contents (not
+          just "Kitchen").
+        </p>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          Week 2 — Confirm + Prep
+        </h2>
+        <p className="mt-3 text-ink">
+          Reconfirm mover date/time in writing. Prepare an essentials box
+          (documents, meds, phone chargers, one week of clothes, toiletries,
+          snacks). If moving during hurricane season: monitor NOAA — have a
+          backup date in mind.
+        </p>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          Week 1 — The Home Stretch
+        </h2>
+        <ul className="mt-4 space-y-3 text-ink list-disc pl-5">
+          <li>Pack remaining boxes.</li>
+          <li>Defrost freezer 48 hours before.</li>
+          <li>Withdraw cash for tips ($4-$6/mover/hour).</li>
+          <li>Take photos of high-value items for insurance.</li>
+          <li>Charge all electronics + keep them in AC on moving day (not the hot truck).</li>
+        </ul>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          Moving Day + First Week
+        </h2>
+        <p className="mt-3 text-ink">
+          Do a final walkthrough with movers. Verify the inventory sheet
+          before signing. At the new home: unpack essentials box first, then
+          kitchen, then bedrooms. Within 30 days: get your Florida driver
+          license (state law), register your vehicle, and file the homestead
+          exemption if you bought (by March 1 to cut property tax).
+        </p>
 
         <h2 className="mt-12 font-display text-2xl md:text-3xl font-bold text-ink">
-          Frequently Asked Questions
+          The 8-Week Florida Moving Timeline at a Glance
         </h2>
-        <FaqList />
+        <div className="mt-5 overflow-x-auto rounded-xl border border-border">
+          <table className="w-full text-sm">
+            <thead className="bg-surface-alt text-ink">
+              <tr>
+                <th className="text-left px-4 py-3 font-semibold">Week</th>
+                <th className="text-left px-4 py-3 font-semibold">Focus</th>
+                <th className="text-left px-4 py-3 font-semibold">Key Tasks</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border">
+              {WEEKS.map((r) => (
+                <tr key={r.week} className="bg-white align-top">
+                  <td className="px-4 py-3 font-semibold text-brand whitespace-nowrap">{r.week}</td>
+                  <td className="px-4 py-3 font-semibold text-ink whitespace-nowrap">{r.focus}</td>
+                  <td className="px-4 py-3 text-ink">{r.tasks}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
-        {/* Author box */}
+        <p className="mt-8 text-ink">
+          Want the numbers behind this timeline? Read our{" "}
+          <Link
+            to="/blog/$slug/"
+            params={{ slug: "how-much-do-movers-cost-florida" }}
+            className="text-brand underline"
+          >
+            full 2026 cost guide
+          </Link>{" "}
+          before you book.
+        </p>
+      </div>
+    </>
+  );
+}
+
+// ---------- Shared tail (FAQ + author + end CTA) ----------
+function AuthorAndEnd({ faqs }: { faqs: { q: string; a: string }[] }) {
+  return (
+    <>
+      <div className="container-page py-10 md:py-12 max-w-[720px]">
+        {faqs.length > 0 && (
+          <>
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-ink">
+              Frequently Asked Questions
+            </h2>
+            <FaqList faqs={faqs} />
+          </>
+        )}
+
         <div className="mt-12 rounded-2xl border border-border bg-surface-alt p-6 flex gap-4 items-start">
           <div className="h-12 w-12 rounded-full bg-brand/10 text-brand flex items-center justify-center shrink-0">
             <User className="h-6 w-6" />
@@ -246,9 +452,8 @@ function ArticlePage() {
         </div>
       </div>
 
-      {/* End CTA is the global CtaBand rendered by __root; add an extra in-content one for emphasis */}
       <MidCta variant="end" />
-    </article>
+    </>
   );
 }
 
@@ -277,11 +482,11 @@ function MidCta({ variant = "mid" }: { variant?: "mid" | "end" }) {
   );
 }
 
-function FaqList() {
+function FaqList({ faqs }: { faqs: { q: string; a: string }[] }) {
   const [open, setOpen] = useState<number | null>(0);
   return (
     <div className="mt-5 divide-y divide-border rounded-2xl border border-border bg-white overflow-hidden">
-      {FAQS.map((f, i) => {
+      {faqs.map((f, i) => {
         const isOpen = open === i;
         return (
           <div key={f.q}>
@@ -309,5 +514,4 @@ function FaqList() {
   );
 }
 
-// Make sure the module is not tree-shaken to nothing when only 1 post exists.
 void BLOG_POSTS;

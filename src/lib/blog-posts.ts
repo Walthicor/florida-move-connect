@@ -61,6 +61,21 @@ export const BLOG_POSTS: BlogPost[] = [
     metaDescription:
       "Complete snowbird moving guide: best dates, costs, storage-in-transit, gated community rules, and how to time your Florida arrival. 2026 updated.",
   },
+  {
+    slug: "hurricane-season-moving-florida",
+    title: "Moving to Florida During Hurricane Season: What to Know",
+    excerpt:
+      "Yes, you can move during Florida hurricane season (June 1-Nov 30). Full-value insurance, force majeure clauses, NOAA monitoring and the safer months within the season.",
+    category: "Moving Guides",
+    date: "2026-02-19",
+    dateLabel: "February 19, 2026",
+    image: "/__l5e/assets-v1/a6234d7c-7531-410e-afe8-071b0d3ebd04/hurricane-moving-florida.jpg",
+    imageAlt: "Moving truck driving on a Florida highway under dramatic hurricane-season clouds",
+    metaTitle: "Moving to Florida During Hurricane Season: 2026 Guide",
+    metaDescription:
+      "Can you move during Florida hurricane season? Yes — with the right prep. Best months within the season, insurance coverage, backup dates and evacuation planning.",
+  },
+
 ];
 
 export function getPost(slug: string): BlogPost | undefined {

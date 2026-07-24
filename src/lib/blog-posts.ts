@@ -27,8 +27,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Moving Costs",
     date: "2026-01-15",
     dateLabel: "January 15, 2026",
-    image: "/images/hero-family.jpg",
-    imageAlt: "Florida movers loading a truck",
+    image: "/__l5e/assets-v1/eb89c274-9067-43d1-addc-f9a6378e584d/local-movers-in-miami-costs.jpg",
+    imageAlt: "Couple reviewing a local moving estimate in Miami",
     metaTitle: "How Much Do Movers Cost in Florida? 2026 Price Guide",
     metaDescription:
       "Movers in Florida cost $400-$1,600 for local moves and $2,200-$6,500 long distance. Full 2026 price breakdown by home size, city and season.",

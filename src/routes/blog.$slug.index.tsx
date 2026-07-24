@@ -246,6 +246,106 @@ const FAQS_BY_SLUG: Record<string, { q: string; a: string }[]> = {
   "best-florida-neighborhoods-families-2026": NEIGHBORHOODS_FAQS,
 };
 
+// ---------- Interlinking: silo clusters + service/city routing ----------
+// Silo A · Money & Pricing | Silo B · Planning & Logistics | Silo C · People & Lifestyle
+const SILOS: Record<string, string[]> = {
+  "how-much-do-movers-cost-florida": [
+    "professional-movers-vs-diy-truck-florida",
+    "moving-insurance-florida-explained",
+  ],
+  "professional-movers-vs-diy-truck-florida": [
+    "how-much-do-movers-cost-florida",
+    "moving-insurance-florida-explained",
+  ],
+  "moving-insurance-florida-explained": [
+    "how-much-do-movers-cost-florida",
+    "professional-movers-vs-diy-truck-florida",
+  ],
+  "florida-moving-checklist-8-weeks": [
+    "hurricane-season-moving-florida",
+    "interstate-move-to-florida-timeline",
+  ],
+  "hurricane-season-moving-florida": [
+    "florida-moving-checklist-8-weeks",
+    "interstate-move-to-florida-timeline",
+  ],
+  "interstate-move-to-florida-timeline": [
+    "florida-moving-checklist-8-weeks",
+    "hurricane-season-moving-florida",
+  ],
+  "snowbird-moving-florida-guide": [
+    "moving-with-pets-florida-heat",
+    "best-florida-neighborhoods-families-2026",
+  ],
+  "moving-with-pets-florida-heat": [
+    "snowbird-moving-florida-guide",
+    "best-florida-neighborhoods-families-2026",
+  ],
+  "best-florida-neighborhoods-families-2026": [
+    "snowbird-moving-florida-guide",
+    "moving-with-pets-florida-heat",
+  ],
+};
+
+type CityRoute =
+  | "/movers-in-miami/"
+  | "/movers-in-tampa/"
+  | "/movers-in-orlando/"
+  | "/movers-in-ocala/"
+  | "/movers-in-jacksonville/"
+  | "/movers-in-naples/"
+  | "/movers-in-boca-raton/";
+type ServiceRoute =
+  | "/local-movers-in-florida/"
+  | "/long-distance-movers/"
+  | "/storage-solutions/"
+  | "/packing-services/"
+  | "/commercial-movers/"
+  | "/piano-movers/"
+  | "/apartment-movers/";
+
+const NEXT_STEP: Record<
+  string,
+  { service: { to: ServiceRoute; label: string }; city: { to: CityRoute; label: string } }
+> = {
+  "how-much-do-movers-cost-florida": {
+    service: { to: "/local-movers-in-florida/", label: "hire local movers in Florida" },
+    city: { to: "/movers-in-miami/", label: "compare Miami movers" },
+  },
+  "professional-movers-vs-diy-truck-florida": {
+    service: { to: "/local-movers-in-florida/", label: "book a professional local moving crew" },
+    city: { to: "/movers-in-orlando/", label: "get Orlando moving quotes" },
+  },
+  "moving-insurance-florida-explained": {
+    service: { to: "/long-distance-movers/", label: "compare long-distance movers with full-value protection" },
+    city: { to: "/movers-in-jacksonville/", label: "find licensed Jacksonville movers" },
+  },
+  "florida-moving-checklist-8-weeks": {
+    service: { to: "/packing-services/", label: "add professional packing services" },
+    city: { to: "/movers-in-tampa/", label: "get Tampa moving quotes" },
+  },
+  "hurricane-season-moving-florida": {
+    service: { to: "/storage-solutions/", label: "reserve climate-controlled storage" },
+    city: { to: "/movers-in-miami/", label: "book Miami movers with FVP" },
+  },
+  "interstate-move-to-florida-timeline": {
+    service: { to: "/long-distance-movers/", label: "compare long-distance movers to Florida" },
+    city: { to: "/movers-in-orlando/", label: "get Orlando delivery quotes" },
+  },
+  "snowbird-moving-florida-guide": {
+    service: { to: "/storage-solutions/", label: "reserve storage-in-transit" },
+    city: { to: "/movers-in-naples/", label: "book Naples movers" },
+  },
+  "moving-with-pets-florida-heat": {
+    service: { to: "/long-distance-movers/", label: "compare long-distance movers to Florida" },
+    city: { to: "/movers-in-tampa/", label: "get Tampa moving quotes" },
+  },
+  "best-florida-neighborhoods-families-2026": {
+    service: { to: "/local-movers-in-florida/", label: "hire local movers in Florida" },
+    city: { to: "/movers-in-boca-raton/", label: "get Boca Raton moving quotes" },
+  },
+};
+
 
 function NotFoundView() {
   return (
@@ -289,7 +389,7 @@ function ArticlePage() {
         <CostGuideBody />
       )}
 
-      <AuthorAndEnd faqs={FAQS_BY_SLUG[post.slug] ?? []} />
+      <AuthorAndEnd slug={post.slug} faqs={FAQS_BY_SLUG[post.slug] ?? []} />
     </article>
   );
 }
@@ -1603,7 +1703,7 @@ function NeighborhoodsBody() {
 
 
 
-function AuthorAndEnd({ faqs }: { faqs: { q: string; a: string }[] }) {
+function AuthorAndEnd({ slug, faqs }: { slug: string; faqs: { q: string; a: string }[] }) {
   return (
     <>
       <div className="container-page py-10 md:py-12 max-w-[720px]">
@@ -1615,6 +1715,9 @@ function AuthorAndEnd({ faqs }: { faqs: { q: string; a: string }[] }) {
             <FaqList faqs={faqs} />
           </>
         )}
+
+        <RelatedInSilo slug={slug} />
+        <NextStepLinks slug={slug} />
 
         <div className="mt-12 rounded-2xl border border-border bg-surface-alt p-6 flex gap-4 items-start">
           <div className="h-12 w-12 rounded-full bg-brand/10 text-brand flex items-center justify-center shrink-0">
@@ -1635,6 +1738,78 @@ function AuthorAndEnd({ faqs }: { faqs: { q: string; a: string }[] }) {
 
       <MidCta variant="end" />
     </>
+  );
+}
+
+function RelatedInSilo({ slug }: { slug: string }) {
+  const siblings = (SILOS[slug] ?? []).map((s) => BLOG_POSTS.find((p) => p.slug === s)).filter(Boolean) as BlogPost[];
+  if (siblings.length === 0) return null;
+  return (
+    <div className="mt-14">
+      <span className="text-xs font-semibold uppercase tracking-wider text-brand">
+        Continue in this series
+      </span>
+      <h2 className="mt-1 font-display text-2xl md:text-3xl font-bold text-ink">
+        Related guides
+      </h2>
+      <div className="mt-5 grid gap-5 sm:grid-cols-2">
+        {siblings.map((p) => (
+          <Link
+            key={p.slug}
+            to="/blog/$slug/"
+            params={{ slug: p.slug }}
+            className="group rounded-2xl border border-border bg-white overflow-hidden shadow-soft hover:-translate-y-0.5 hover:border-brand transition"
+          >
+            <div className="aspect-[16/10] overflow-hidden bg-surface-alt">
+              <img src={p.image} alt={p.imageAlt} loading="lazy" className="h-full w-full object-cover group-hover:scale-[1.03] transition" />
+            </div>
+            <div className="p-5">
+              <div className="text-[11px] font-semibold uppercase tracking-wider text-brand">
+                {p.category}
+              </div>
+              <h3 className="mt-2 font-display text-base font-bold text-ink group-hover:text-brand transition">
+                {p.title}
+              </h3>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function NextStepLinks({ slug }: { slug: string }) {
+  const step = NEXT_STEP[slug];
+  if (!step) return null;
+  return (
+    <div className="mt-12 rounded-2xl border border-border bg-white p-6">
+      <div className="font-display font-bold text-ink">Ready to move?</div>
+      <p className="mt-1 text-sm text-muted-foreground">
+        Next steps for readers of this guide:
+      </p>
+      <ul className="mt-4 space-y-2 text-sm">
+        <li className="flex items-start gap-2">
+          <ArrowRight className="h-4 w-4 mt-0.5 text-brand shrink-0" />
+          <span>
+            Go straight to{" "}
+            <Link to={step.service.to} className="text-brand font-semibold underline">
+              {step.service.label}
+            </Link>
+            .
+          </span>
+        </li>
+        <li className="flex items-start gap-2">
+          <ArrowRight className="h-4 w-4 mt-0.5 text-brand shrink-0" />
+          <span>
+            Or{" "}
+            <Link to={step.city.to} className="text-brand font-semibold underline">
+              {step.city.label}
+            </Link>{" "}
+            from licensed local crews.
+          </span>
+        </li>
+      </ul>
+    </div>
   );
 }
 

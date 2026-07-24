@@ -17,6 +17,9 @@ import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
 import { CtaBand } from "../components/site/CtaBand";
 import { QuoteBand } from "../components/site/QuoteBand";
+import { TrustBar } from "../components/site/TrustBar";
+import { StickyMobileCta } from "../components/site/StickyMobileCta";
+import { ScrollReveal } from "../components/site/ScrollReveal";
 
 const TOP_SERVICES = [
   { to: "/local-movers-in-florida/", label: "Local Movers" },

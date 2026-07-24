@@ -47,6 +47,20 @@ export const BLOG_POSTS: BlogPost[] = [
     metaDescription:
       "Complete 8-week moving checklist for Florida — from booking movers 6 weeks out to hurricane-season prep. Downloadable timeline + local tips.",
   },
+  {
+    slug: "snowbird-moving-florida-guide",
+    title: "Snowbird Moving to Florida: The Complete Guide",
+    excerpt:
+      "Best dates, costs ($1,800-$4,500), storage-in-transit, gated community rules and domicile basics for snowbirds heading south in 2026.",
+    category: "Moving Guides",
+    date: "2026-02-05",
+    dateLabel: "February 5, 2026",
+    image: "/__l5e/assets-v1/42d63b09-d1cb-442b-aa30-f5abf9513a27/snowbird-moving-florida.jpg",
+    imageAlt: "Retired couple arriving at a Florida home with suitcases at golden hour",
+    metaTitle: "Snowbird Moving to Florida: 2026 Seasonal Guide",
+    metaDescription:
+      "Complete snowbird moving guide: best dates, costs, storage-in-transit, gated community rules, and how to time your Florida arrival. 2026 updated.",
+  },
 ];
 
 export function getPost(slug: string): BlogPost | undefined {

@@ -196,6 +196,25 @@ const INTERSTATE_FAQS = [
   },
 ];
 
+const INSURANCE_FAQS = [
+  {
+    q: "Do movers have to offer insurance in Florida?",
+    a: "Yes — federal law requires interstate movers to offer at least two options: free released value and paid full-value protection. Florida intrastate movers must also disclose valuation options under FDACS rules.",
+  },
+  {
+    q: "What is the difference between valuation and insurance?",
+    a: "Valuation is the mover's liability limit (regulated by FMCSA or FDACS). Insurance is a separate policy from a third-party carrier. Most movers only offer valuation; some sell insurance through affiliates.",
+  },
+  {
+    q: "Should I buy full-value protection for a local move?",
+    a: "For a short local move under 25 miles with sturdy furniture, released value may suffice. For anything valuable, over 25 miles, or during hurricane season, full-value protection is worth the $50-$150 per $10,000.",
+  },
+  {
+    q: "What happens if the mover refuses to pay a valid claim?",
+    a: "For interstate moves: file with the FMCSA at fmcsa.dot.gov and the Better Business Bureau. For intrastate Florida moves: FDACS handles complaints at 1-800-HELP-FLA. Small-claims court is available for disputes under $8,000.",
+  },
+];
+
 const FAQS_BY_SLUG: Record<string, { q: string; a: string }[]> = {
   "how-much-do-movers-cost-florida": COST_FAQS,
   "florida-moving-checklist-8-weeks": CHECKLIST_FAQS,
@@ -204,6 +223,7 @@ const FAQS_BY_SLUG: Record<string, { q: string; a: string }[]> = {
   "professional-movers-vs-diy-truck-florida": DIY_FAQS,
   "moving-with-pets-florida-heat": PETS_FAQS,
   "interstate-move-to-florida-timeline": INTERSTATE_FAQS,
+  "moving-insurance-florida-explained": INSURANCE_FAQS,
 };
 
 

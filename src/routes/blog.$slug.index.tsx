@@ -965,6 +965,142 @@ function DiyBody() {
   );
 }
 
+// ---------- Moving with pets in Florida ----------
+function PetsBody() {
+  return (
+    <>
+      <div className="container-page py-10 md:py-12 max-w-[720px] prose-blog">
+        <p className="text-lg text-ink leading-relaxed">
+          Florida heat kills pets faster than most owners realize — a car
+          interior on an 85°F day reaches <strong>110°F+ within 20 minutes</strong>,
+          and dogs cannot sweat. Moving safely with pets in Florida means:
+          transporting them in <strong>your air-conditioned vehicle</strong>{" "}
+          (never in the moving truck), timing the drive around the coolest
+          hours, updating vet records before the move, and giving them 2-3
+          days to settle before major changes. Here is the full protocol.
+        </p>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          Why Pets Never Go in the Moving Truck
+        </h2>
+        <p className="mt-3 text-ink">
+          Moving truck cabs are for the driver only (legal restriction in
+          most states). Cargo areas hit <strong>120°F+ in Florida summer</strong>{" "}
+          — lethal within minutes for any pet. All licensed{" "}
+          <Link to="/local-movers-in-florida/" className="text-brand underline">
+            Florida movers
+          </Link>{" "}
+          refuse to transport pets. Your pet rides with YOU in your
+          air-conditioned car, period.
+        </p>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          The Pet Moving Timeline
+        </h2>
+        <ul className="mt-4 space-y-3 text-ink list-disc pl-5">
+          <li>
+            <strong>4 weeks before:</strong> schedule vet visit for current
+            shot records and any anxiety medications. Update microchip
+            registration with new address.
+          </li>
+          <li>
+            <strong>2 weeks before:</strong> introduce carriers/crates
+            gradually — let pets sleep in them. Book pet-friendly hotels if
+            driving long distance.
+          </li>
+          <li>
+            <strong>1 week before:</strong> prepare a pet moving kit (food,
+            medications, favorite toys, leash, waste bags, water bowl).
+          </li>
+          <li>
+            <strong>Moving day:</strong> keep pets in a quiet room with door
+            closed while movers work — the doorbell + activity terrifies them
+            and increases escape risk.
+          </li>
+        </ul>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          Long-Distance Pet Transport
+        </h2>
+        <p className="mt-3 text-ink">
+          For moves over 500 miles, options:
+        </p>
+        <ul className="mt-4 space-y-3 text-ink list-disc pl-5">
+          <li>
+            <strong>Driving (best for most pets):</strong> breaks every 2
+            hours, never leave them in a parked car in Florida — even 5
+            minutes can kill.
+          </li>
+          <li>
+            <strong>Flying:</strong> check airline pet policies; most restrict
+            brachycephalic breeds (bulldogs, pugs) in cargo due to breathing
+            issues; Florida summer heat regulations often ground pet cargo.
+          </li>
+          <li>
+            <strong>Professional pet transport:</strong> specialists like
+            Royal Paws or IPATA-certified companies use climate-controlled
+            vans, $500-$2,000 depending on distance. Coordinate timing with
+            your{" "}
+            <Link to="/long-distance-movers/" className="text-brand underline">
+              long-distance mover
+            </Link>{" "}
+            so pets arrive around the same time as your household goods.
+          </li>
+        </ul>
+      </div>
+
+      <MidCta />
+
+      <div className="container-page py-10 md:py-12 max-w-[720px] prose-blog">
+        <h2 className="font-display text-2xl md:text-3xl font-bold text-ink">
+          Florida-Specific Pet Rules
+        </h2>
+        <ul className="mt-4 space-y-3 text-ink list-disc pl-5">
+          <li>
+            <strong>Dog licenses:</strong> required in most Florida counties
+            within 30 days of moving.
+          </li>
+          <li>
+            <strong>Rabies certificate:</strong> required for licensing; keep
+            records handy.
+          </li>
+          <li>
+            <strong>HOA/condo pet rules:</strong> many Florida associations
+            have breed and weight restrictions — verify BEFORE moving day.
+          </li>
+          <li>
+            <strong>Exotic pets:</strong> Florida has strict rules on exotic
+            species (some banned entirely: iguanas, tegus, giant pythons).
+            Check FWC before transporting.
+          </li>
+        </ul>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          Settling In (Days 1-7)
+        </h2>
+        <p className="mt-3 text-ink">
+          Set up a quiet room with familiar bedding, food, water, and litter
+          box (cats) BEFORE letting them explore. Keep to normal feeding and
+          walking schedules.
+        </p>
+        <ul className="mt-4 space-y-3 text-ink list-disc pl-5">
+          <li>
+            <strong>Cats:</strong> keep indoors for at least 2 weeks — they
+            can travel miles trying to return to old home.
+          </li>
+          <li>
+            <strong>Dogs:</strong> keep on leash even in fenced yards until
+            they learn the space.
+          </li>
+          <li>
+            If pets stop eating or hide 3+ days, call a local vet.
+          </li>
+        </ul>
+      </div>
+    </>
+  );
+}
+
 // ---------- Shared tail (FAQ + author + end CTA) ----------
 
 function AuthorAndEnd({ faqs }: { faqs: { q: string; a: string }[] }) {

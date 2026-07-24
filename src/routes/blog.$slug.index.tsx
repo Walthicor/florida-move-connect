@@ -139,11 +139,31 @@ const HURRICANE_FAQS = [
   },
 ];
 
+const DIY_FAQS = [
+  {
+    q: "Is renting a U-Haul cheaper than hiring movers in Florida?",
+    a: "For most 2+ bedroom moves, no — once you add fuel, mileage, insurance, supplies and food for helpers, DIY comes within 20-30% of professional. Under 30 miles for a studio or 1BR, DIY can save $200-$400 if you accept the labor.",
+  },
+  {
+    q: "How much does a rental truck really cost for a Florida move?",
+    a: "A 20-foot rental for a 2BR local move averages $510-$930 all-in — not the $130-$200 advertised base rate. Interstate one-way rentals cost much more due to drop-off fees.",
+  },
+  {
+    q: "What items should I never DIY move?",
+    a: "Pianos (always specialists), safes over 300 lbs, granite/marble countertops, fine art, antique furniture, aquariums, and anything that requires a stairclimbing dolly.",
+  },
+  {
+    q: "Is professional moving worth it for a local move under 5 miles?",
+    a: "For a studio or 1BR, often not. For 2+ bedrooms with any staircases or heavy items, the answer is almost always yes — the price gap is small and breakage risk is much lower.",
+  },
+];
+
 const FAQS_BY_SLUG: Record<string, { q: string; a: string }[]> = {
   "how-much-do-movers-cost-florida": COST_FAQS,
   "florida-moving-checklist-8-weeks": CHECKLIST_FAQS,
   "snowbird-moving-florida-guide": SNOWBIRD_FAQS,
   "hurricane-season-moving-florida": HURRICANE_FAQS,
+  "professional-movers-vs-diy-truck-florida": DIY_FAQS,
 };
 
 

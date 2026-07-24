@@ -217,6 +217,8 @@ function ArticlePage() {
         <HurricaneBody />
       ) : post.slug === "professional-movers-vs-diy-truck-florida" ? (
         <DiyBody />
+      ) : post.slug === "moving-with-pets-florida-heat" ? (
+        <PetsBody />
       ) : (
         <CostGuideBody />
       )}

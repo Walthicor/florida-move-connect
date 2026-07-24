@@ -238,6 +238,16 @@ html, body {
   body { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)); }
 }
 
+/* Hide default date picker indicator so our custom icon stays aligned */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
 /* Floating action buttons (back-to-top + quick quote) */
 @keyframes fab-spin { to { transform: rotate(360deg); } }
 @keyframes fab-pulse-navy {

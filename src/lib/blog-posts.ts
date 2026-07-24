@@ -117,6 +117,20 @@ export const BLOG_POSTS: BlogPost[] = [
     metaDescription:
       "Interstate moves to Florida take 1-14 days for delivery. Full timeline by origin state, factors that speed up or delay, and expedited options.",
   },
+  {
+    slug: "moving-insurance-florida-explained",
+    title: "Moving Insurance in Florida: What You Actually Need",
+    excerpt:
+      "Released value vs full-value protection vs third-party insurance — what each covers, real 2026 costs, and what Florida movers legally must offer.",
+    category: "Moving Guides",
+    date: "2026-04-16",
+    dateLabel: "April 16, 2026",
+    image: "/__l5e/assets-v1/bbd937a6-cd2b-4a35-bad3-9ab459280159/moving-insurance-florida.jpg",
+    imageAlt: "Florida homeowner reviewing a moving insurance document at a bright kitchen table with a laptop",
+    metaTitle: "Moving Insurance in Florida: What You Actually Need (2026)",
+    metaDescription:
+      "Moving insurance explained: released value vs full-value protection vs third-party. What each covers, real costs, and what movers legally must offer.",
+  },
 ];
 
 export function getPost(slug: string): BlogPost | undefined {

@@ -196,6 +196,25 @@ const INTERSTATE_FAQS = [
   },
 ];
 
+const INSURANCE_FAQS = [
+  {
+    q: "Do movers have to offer insurance in Florida?",
+    a: "Yes — federal law requires interstate movers to offer at least two options: free released value and paid full-value protection. Florida intrastate movers must also disclose valuation options under FDACS rules.",
+  },
+  {
+    q: "What is the difference between valuation and insurance?",
+    a: "Valuation is the mover's liability limit (regulated by FMCSA or FDACS). Insurance is a separate policy from a third-party carrier. Most movers only offer valuation; some sell insurance through affiliates.",
+  },
+  {
+    q: "Should I buy full-value protection for a local move?",
+    a: "For a short local move under 25 miles with sturdy furniture, released value may suffice. For anything valuable, over 25 miles, or during hurricane season, full-value protection is worth the $50-$150 per $10,000.",
+  },
+  {
+    q: "What happens if the mover refuses to pay a valid claim?",
+    a: "For interstate moves: file with the FMCSA at fmcsa.dot.gov and the Better Business Bureau. For intrastate Florida moves: FDACS handles complaints at 1-800-HELP-FLA. Small-claims court is available for disputes under $8,000.",
+  },
+];
+
 const FAQS_BY_SLUG: Record<string, { q: string; a: string }[]> = {
   "how-much-do-movers-cost-florida": COST_FAQS,
   "florida-moving-checklist-8-weeks": CHECKLIST_FAQS,
@@ -204,6 +223,7 @@ const FAQS_BY_SLUG: Record<string, { q: string; a: string }[]> = {
   "professional-movers-vs-diy-truck-florida": DIY_FAQS,
   "moving-with-pets-florida-heat": PETS_FAQS,
   "interstate-move-to-florida-timeline": INTERSTATE_FAQS,
+  "moving-insurance-florida-explained": INSURANCE_FAQS,
 };
 
 
@@ -241,6 +261,8 @@ function ArticlePage() {
         <PetsBody />
       ) : post.slug === "interstate-move-to-florida-timeline" ? (
         <InterstateBody />
+      ) : post.slug === "moving-insurance-florida-explained" ? (
+        <InsuranceBody />
       ) : (
         <CostGuideBody />
       )}
@@ -1269,7 +1291,150 @@ function InterstateBody() {
   );
 }
 
+// ---------- Moving insurance article body ----------
+function InsuranceBody() {
+  return (
+    <>
+      <div className="container-page py-10 md:py-12 max-w-[720px] prose-blog">
+        <p className="text-lg text-ink leading-relaxed">
+          Moving insurance in Florida is not really insurance — it is called{" "}
+          <strong>valuation</strong>, and there are three levels:{" "}
+          <strong>released value</strong> (free, but pays only 60 cents per
+          pound), <strong>full-value protection</strong> (paid, covers
+          repair/replacement of damaged items), and{" "}
+          <strong>third-party moving insurance</strong> (bought from an
+          outside carrier for high-value moves). Choosing wrong means a{" "}
+          <strong>$15,000 grand piano</strong> damaged by movers pays out
+          about <strong>$400</strong>. Here is what each option really covers
+          and when you need which.
+        </p>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          Released Value Protection (Free — and Almost Worthless)
+        </h2>
+        <p className="mt-3 text-ink">
+          All licensed movers <strong>MUST</strong> offer this by federal
+          law. It pays <strong>60 cents per pound</strong> of the damaged
+          item — regardless of the item's actual value. A 10-pound laptop
+          broken? <strong>$6</strong>. A 400-pound piano damaged?{" "}
+          <strong>$240</strong>. Only worth accepting if your goods are
+          inexpensive relics or the mover has an excellent track record.
+        </p>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          Full-Value Protection (Paid, Recommended)
+        </h2>
+        <p className="mt-3 text-ink">
+          The mover repairs, replaces, or pays the actual cash value of any
+          damaged or lost item, up to the declared value of your entire
+          shipment. <strong>COST:</strong> $50-$150 per $10,000 of declared
+          value. Example: a $50,000 shipment = $250-$750 for FVP coverage.
+          This is what most Florida households should elect, especially for
+          long-distance moves during hurricane season.
+        </p>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          Third-Party Moving Insurance
+        </h2>
+        <p className="mt-3 text-ink">
+          For high-value moves ($100,000+), specialty items (art collections,
+          antiques, wine), or maximum peace of mind, third-party carriers
+          (Baker International, Movinginsurance.com, Relocation Insurance
+          Group) offer separate policies. <strong>COST:</strong> 1-2% of
+          declared value. Use this when your goods exceed the mover's
+          declared-value limits or you want higher coverage without the
+          mover's deductibles.
+        </p>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          Comparison Table
+        </h2>
+        <div className="mt-5 overflow-x-auto rounded-2xl border border-border">
+          <table className="w-full text-sm">
+            <thead className="bg-surface-alt text-ink">
+              <tr>
+                <th className="px-4 py-3 text-left font-semibold">Type</th>
+                <th className="px-4 py-3 text-left font-semibold">Cost</th>
+                <th className="px-4 py-3 text-left font-semibold">Coverage</th>
+                <th className="px-4 py-3 text-left font-semibold">Best For</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border">
+              {[
+                ["Released value (Basic)", "Free", "$0.60/lb regardless of value", "Cheap items only"],
+                ["Full-value protection", "$50-$150 per $10,000", "Repair, replace or ACV", "Most households"],
+                ["Third-party insurance", "1-2% of declared value", "Full coverage, higher limits", "High-value moves"],
+              ].map((row) => (
+                <tr key={row[0]}>
+                  <td className="px-4 py-3 font-semibold text-ink">{row[0]}</td>
+                  <td className="px-4 py-3 text-ink">{row[1]}</td>
+                  <td className="px-4 py-3 text-ink">{row[2]}</td>
+                  <td className="px-4 py-3 text-ink">{row[3]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <MidCta />
+
+      <div className="container-page py-10 md:py-12 max-w-[720px] prose-blog">
+        <h2 className="font-display text-2xl md:text-3xl font-bold text-ink">
+          What Nothing Covers (Read Carefully)
+        </h2>
+        <p className="mt-3 text-ink">
+          All valuation and insurance exclude: <strong>cash, jewelry,
+          documents, plants, and perishables</strong> (unless separately
+          declared). Items in boxes <strong>YOU packed</strong> have lower
+          coverage limits than boxes packed by the mover. Damage from natural
+          disasters may require separate riders. Always ask your mover for a
+          full exclusion list in writing.
+        </p>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          How to File a Claim
+        </h2>
+        <p className="mt-3 text-ink">
+          Note damage on the inventory sheet at delivery — do{" "}
+          <strong>not</strong> sign off if items are damaged. Take photos
+          immediately. File a written claim within <strong>9 months</strong>{" "}
+          (federal deadline for interstate; may be shorter for intrastate FL
+          under FDACS rules). Include: photos, inventory sheet copy,
+          contract, repair estimates. Legitimate movers pay valid claims —
+          most disputes come from paperwork gaps.
+        </p>
+
+        <p className="mt-8 text-ink">
+          Getting quotes for your move? Compare{" "}
+          <Link to="/long-distance-movers/" className="text-brand underline">
+            long-distance movers
+          </Link>
+          , read our{" "}
+          <Link
+            to="/blog/$slug/"
+            params={{ slug: "hurricane-season-moving-florida" }}
+            className="text-brand underline"
+          >
+            hurricane-season moving guide
+          </Link>
+          , learn about{" "}
+          <a href="/blog/binding-vs-non-binding-moving-estimates/" className="text-brand underline">
+            binding vs. non-binding estimates
+          </a>
+          , and see how to{" "}
+          <a href="/blog/verify-florida-moving-company-license/" className="text-brand underline">
+            verify a Florida moving company license
+          </a>
+          .
+        </p>
+      </div>
+    </>
+  );
+}
+
 // ---------- Shared tail (FAQ + author + end CTA) ----------
+
 
 function AuthorAndEnd({ faqs }: { faqs: { q: string; a: string }[] }) {
   return (

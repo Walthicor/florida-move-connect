@@ -389,7 +389,7 @@ function ArticlePage() {
         <CostGuideBody />
       )}
 
-      <AuthorAndEnd faqs={FAQS_BY_SLUG[post.slug] ?? []} />
+      <AuthorAndEnd slug={post.slug} faqs={FAQS_BY_SLUG[post.slug] ?? []} />
     </article>
   );
 }

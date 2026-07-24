@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Mail, Phone, ShieldCheck } from "lucide-react";
+import { ArrowRight, ShieldCheck } from "lucide-react";
+
 import { SERVICES_BY_LANG, CITIES_BY_LANG, useLang, t } from "@/lib/i18n";
 
 export function Footer() {

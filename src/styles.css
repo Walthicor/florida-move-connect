@@ -172,23 +172,22 @@ html, body {
   animation: form-glow 2.6s ease-in-out infinite;
 }
 
-@keyframes form-glow-orange {
-  0%, 100% { box-shadow: 0 10px 30px rgba(11, 31, 58, 0.35), 0 0 0 0 rgba(240, 72, 0, 0.55); }
-  50%      { box-shadow: 0 10px 30px rgba(11, 31, 58, 0.35), 0 0 0 14px rgba(240, 72, 0, 0); }
+@keyframes form-glow-light {
+  0%, 100% { box-shadow: 0 10px 30px rgba(11, 31, 58, 0.12), 0 0 0 0 rgba(240, 72, 0, 0.45); }
+  50%      { box-shadow: 0 10px 30px rgba(11, 31, 58, 0.12), 0 0 0 14px rgba(240, 72, 0, 0); }
 }
-@utility pulse-form-orange {
-  animation: form-glow-orange 2.6s ease-in-out infinite;
+@utility pulse-form-light {
+  animation: form-glow-light 2.6s ease-in-out infinite;
 }
 @utility pulse-btn-cta {
   animation: cta-pulse 2s ease-in-out infinite;
   &:hover { animation-play-state: paused; }
 }
-@utility quote-card-dark {
-  background: linear-gradient(160deg, rgba(11, 31, 58, 0.96) 0%, rgba(11, 31, 58, 0.88) 55%, rgba(20, 45, 80, 0.9) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  color: #fff;
+@utility quote-card-light {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  color: var(--ink);
+  box-shadow: 0 10px 30px -10px rgba(11, 31, 58, 0.15);
 }
 
 @utility container-page {

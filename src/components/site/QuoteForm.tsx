@@ -164,26 +164,26 @@ export function MultiStepQuoteForm({
 
   if (status === "sent") {
     return (
-      <div data-quote-form className="quote-card-dark pulse-form-orange rounded-3xl p-8 text-center">
-        <div className="mx-auto inline-flex h-14 w-14 items-center justify-center rounded-full bg-cta/20 text-cta">
+      <div data-quote-form className="quote-card-light pulse-form-light rounded-3xl p-8 text-center">
+        <div className="mx-auto inline-flex h-14 w-14 items-center justify-center rounded-full bg-cta/15 text-cta">
           <CheckCircle2 className="h-7 w-7" />
         </div>
-        <h2 className="mt-4 font-display text-2xl font-bold text-white">{c.successTitle}</h2>
-        <p className="mt-2 text-sm text-white/70">{c.successBody}</p>
+        <h2 className="mt-4 font-display text-2xl font-bold text-ink">{c.successTitle}</h2>
+        <p className="mt-2 text-sm text-muted-foreground">{c.successBody}</p>
       </div>
     );
   }
 
   return (
-    <div data-quote-form className="quote-card-dark pulse-form-orange rounded-3xl p-6 md:p-8">
+    <div data-quote-form className="quote-card-light pulse-form-light rounded-3xl p-6 md:p-8">
       <form onSubmit={submit} noValidate>
-        <h2 className="font-display text-2xl md:text-3xl font-extrabold uppercase tracking-tight text-white">
+        <h2 className="font-display text-2xl md:text-3xl font-extrabold uppercase tracking-tight text-ink">
           {c.title}
         </h2>
-        <p className="mt-1 text-sm text-white/70">{c.sub}</p>
+        <p className="mt-1 text-sm text-muted-foreground">{c.sub}</p>
 
         <div className="mt-6 grid gap-4">
-          <DarkField
+          <LightField
             label={c.name}
             icon={<User className="h-4 w-4" />}
             value={data.name}
@@ -191,7 +191,7 @@ export function MultiStepQuoteForm({
             placeholder={c.namePh}
           />
           <div className="grid gap-4 sm:grid-cols-2">
-            <DarkField
+            <LightField
               label={c.phone}
               type="tel"
               inputMode="tel"
@@ -200,7 +200,7 @@ export function MultiStepQuoteForm({
               onChange={(v) => up("phone", v)}
               placeholder={c.phonePh}
             />
-            <DarkField
+            <LightField
               label={c.email}
               type="email"
               icon={<Mail className="h-4 w-4" />}
@@ -210,14 +210,14 @@ export function MultiStepQuoteForm({
             />
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            <DarkField
+            <LightField
               label={c.from}
               icon={<MapPin className="h-4 w-4" />}
               value={data.fromZip}
               onChange={(v) => up("fromZip", v)}
               placeholder={c.fromPh}
             />
-            <DarkField
+            <LightField
               label={c.to}
               icon={<MapPin className="h-4 w-4" />}
               value={data.toZip}
@@ -225,7 +225,7 @@ export function MultiStepQuoteForm({
               placeholder={c.toPh}
             />
           </div>
-          <DarkField
+          <LightField
             label={c.date}
             type="date"
             icon={<CalendarDays className="h-4 w-4" />}
@@ -235,7 +235,7 @@ export function MultiStepQuoteForm({
         </div>
 
         {error && (
-          <p className="mt-4 rounded-lg bg-red-500/15 px-3 py-2 text-center text-xs font-semibold text-red-200">
+          <p className="mt-4 rounded-lg bg-red-500/10 px-3 py-2 text-center text-xs font-semibold text-red-700">
             {error}
           </p>
         )}
@@ -243,13 +243,13 @@ export function MultiStepQuoteForm({
         <button
           type="submit"
           disabled={status === "saving"}
-          className="pulse-btn-cta mt-6 flex w-full min-h-14 items-center justify-center gap-2 rounded-full bg-cta px-6 py-4 text-base font-bold text-ink shadow-lg transition hover:brightness-105 disabled:opacity-70"
+          className="pulse-btn-cta mt-6 flex w-full min-h-14 items-center justify-center gap-2 rounded-full bg-cta px-6 py-4 text-base font-bold text-cta-foreground shadow-lg transition hover:brightness-105 disabled:opacity-70"
         >
           {status === "saving" ? c.sending : c.submit}
           <ArrowRight className="h-5 w-5" />
         </button>
 
-        <p className="mt-4 text-center text-[11px] leading-relaxed text-white/60">
+        <p className="mt-4 text-center text-[11px] leading-relaxed text-muted-foreground">
           {c.disclaimer} {c.seeOur}{" "}
           <a href={privacyHref} className="underline hover:text-cta">{c.privacy}</a> {c.and}{" "}
           <a href={termsHref} className="underline hover:text-cta">{c.terms}</a>.
@@ -259,7 +259,7 @@ export function MultiStepQuoteForm({
   );
 }
 
-function DarkField({
+function LightField({
   label,
   value,
   onChange,
@@ -278,10 +278,10 @@ function DarkField({
 }) {
   return (
     <label className="block">
-      <span className="text-xs font-bold uppercase tracking-wide text-white/85">{label}</span>
+      <span className="text-xs font-bold uppercase tracking-wide text-ink/85">{label}</span>
       <div className="relative mt-2">
         {icon && (
-          <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-white/50">
+          <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
             {icon}
           </span>
         )}
@@ -291,7 +291,7 @@ function DarkField({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
-          className={`w-full min-h-12 rounded-xl border border-white/20 bg-white/5 py-3 text-white placeholder-white/40 outline-none transition focus:border-cta/70 focus:bg-white/10 focus:ring-2 focus:ring-cta/40 ${
+          className={`w-full min-h-12 rounded-xl border border-input bg-white py-3 text-foreground placeholder-muted-foreground outline-none transition focus:border-cta focus:bg-white focus:ring-2 focus:ring-cta/30 ${
             icon ? "pl-10 pr-3" : "px-3"
           }`}
         />

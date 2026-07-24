@@ -5,7 +5,7 @@ import {
   ArrowLeft,
   CheckCircle2,
 } from "lucide-react";
-import { useRouterState, useNavigate } from "@tanstack/react-router";
+import { useRouterState } from "@tanstack/react-router";
 import { supabase } from "@/integrations/supabase/client";
 import { useLang } from "@/lib/i18n";
 import { sendLeadEmail } from "@/lib/lead-email.functions";
@@ -128,7 +128,6 @@ async function saveLead(payload: LeadPayload) {
 export function HeroQuoteForm() {
   const lang = useLang();
   const c = COPY[lang];
-  const navigate = useNavigate();
   const [fromZip, setFromZip] = useState("");
   const [toZip, setToZip] = useState("");
   const [status, setStatus] = useState<"idle" | "saving" | "error">("idle");
@@ -152,18 +151,11 @@ export function HeroQuoteForm() {
       user_agent: typeof navigator !== "undefined" ? navigator.userAgent : null,
     }).catch(() => null);
 
-    if (lang === "es") {
-      void navigate({
-        to: "/es/contact/",
-        search: { from: cleanFromZip || undefined, to: cleanToZip || undefined } as never,
-      });
-      return;
-    }
-
-    void navigate({
-      to: "/contact/",
-      search: { from: cleanFromZip || undefined, to: cleanToZip || undefined } as never,
-    });
+    const contactPath = lang === "es" ? "/es/contact/" : "/contact/";
+    const params = new URLSearchParams();
+    if (cleanFromZip) params.set("from", cleanFromZip);
+    if (cleanToZip) params.set("to", cleanToZip);
+    window.location.href = `${contactPath}?${params.toString()}`;
   };
 
 

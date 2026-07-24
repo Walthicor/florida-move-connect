@@ -1,6 +1,6 @@
 import { createFileRoute, useRouterState } from "@tanstack/react-router";
 import { pageHead } from "@/lib/seo";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Mail, Phone, MapPin, ArrowRight, ArrowLeft, CheckCircle2 } from "lucide-react";
 import { CtaBand } from "@/components/site/CtaBand";
 import { sendLeadEmail } from "@/lib/lead-email.functions";

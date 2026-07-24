@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, CalendarDays, CheckCircle2, Mail, MapPin, Phone, User } from "lucide-react";
+import { ArrowRight, Building2, CalendarDays, CheckCircle2, Home, Mail, MapPin, Phone, Ruler, User } from "lucide-react";
 import { useRouterState } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { z } from "zod";
@@ -22,10 +22,12 @@ const COPY = {
     fromPh: "33578",
     to: "Moving To (ZIP)",
     toPh: "33607",
+    propertyType: "Property Type",
+    size: "Size",
     date: "Preferred Date",
     submit: "Get My Free Quote",
     sending: "Sending…",
-    invalid: "Please complete name, phone, valid email and both ZIPs.",
+    invalid: "Please complete all required fields (name, phone, email, ZIPs, property type, size).",
     error: "Sorry — we couldn't send your request. Please try again.",
     successTitle: "Thanks — we've got your request",
     successBody:
@@ -36,6 +38,34 @@ const COPY = {
     privacy: "Privacy Policy",
     and: "and",
     terms: "Terms",
+    propertyOptions: [
+      { v: "house", l: "House" },
+      { v: "apartment", l: "Apartment" },
+      { v: "condo", l: "Condo" },
+      { v: "townhouse", l: "Townhouse" },
+      { v: "commercial", l: "Commercial / Office" },
+      { v: "storage", l: "Storage Only" },
+    ],
+    residentialSizes: [
+      { v: "studio", l: "Studio" },
+      { v: "1br", l: "1 Bedroom" },
+      { v: "2br", l: "2 Bedrooms" },
+      { v: "3br", l: "3 Bedrooms" },
+      { v: "4br", l: "4 Bedrooms" },
+      { v: "5br+", l: "5+ Bedrooms" },
+    ],
+    commercialSizes: [
+      { v: "<1000", l: "Under 1,000 sq ft" },
+      { v: "1000-3000", l: "1,000 – 3,000 sq ft" },
+      { v: "3000-5000", l: "3,000 – 5,000 sq ft" },
+      { v: "5000+", l: "5,000+ sq ft" },
+    ],
+    storageSizes: [
+      { v: "small", l: "Small (5x5 – 5x10)" },
+      { v: "medium", l: "Medium (10x10 – 10x15)" },
+      { v: "large", l: "Large (10x20 – 10x30)" },
+    ],
+    selectPh: "Select…",
   },
   es: {
     title: "Reciba su Cotización Gratis",
@@ -50,10 +80,12 @@ const COPY = {
     fromPh: "33578",
     to: "Destino (ZIP)",
     toPh: "33607",
+    propertyType: "Tipo de Propiedad",
+    size: "Tamaño",
     date: "Fecha preferida",
     submit: "Solicitar Cotización Gratis",
     sending: "Enviando…",
-    invalid: "Complete nombre, teléfono, correo válido y ambos ZIPs.",
+    invalid: "Complete todos los campos (nombre, teléfono, correo, ZIPs, tipo de propiedad y tamaño).",
     error: "Lo sentimos — no pudimos enviar su solicitud. Intente de nuevo.",
     successTitle: "Gracias — recibimos su solicitud",
     successBody:
@@ -64,6 +96,34 @@ const COPY = {
     privacy: "Política de Privacidad",
     and: "y los",
     terms: "Términos",
+    propertyOptions: [
+      { v: "house", l: "Casa" },
+      { v: "apartment", l: "Apartamento" },
+      { v: "condo", l: "Condominio" },
+      { v: "townhouse", l: "Townhouse" },
+      { v: "commercial", l: "Comercial / Oficina" },
+      { v: "storage", l: "Solo Almacenaje" },
+    ],
+    residentialSizes: [
+      { v: "studio", l: "Estudio" },
+      { v: "1br", l: "1 Habitación" },
+      { v: "2br", l: "2 Habitaciones" },
+      { v: "3br", l: "3 Habitaciones" },
+      { v: "4br", l: "4 Habitaciones" },
+      { v: "5br+", l: "5+ Habitaciones" },
+    ],
+    commercialSizes: [
+      { v: "<1000", l: "Menos de 1,000 sq ft" },
+      { v: "1000-3000", l: "1,000 – 3,000 sq ft" },
+      { v: "3000-5000", l: "3,000 – 5,000 sq ft" },
+      { v: "5000+", l: "5,000+ sq ft" },
+    ],
+    storageSizes: [
+      { v: "small", l: "Pequeña (5x5 – 5x10)" },
+      { v: "medium", l: "Mediana (10x10 – 10x15)" },
+      { v: "large", l: "Grande (10x20 – 10x30)" },
+    ],
+    selectPh: "Seleccione…",
   },
 } as const;
 
@@ -73,6 +133,8 @@ const schema = z.object({
   email: z.string().trim().email().max(255),
   fromZip: z.string().trim().min(3).max(80),
   toZip: z.string().trim().min(2).max(80),
+  propertyType: z.string().trim().min(1).max(40),
+  size: z.string().trim().min(1).max(40),
   moveDate: z.string().trim().max(40).optional(),
 });
 
@@ -82,10 +144,21 @@ type FormData = {
   email: string;
   fromZip: string;
   toZip: string;
+  propertyType: string;
+  size: string;
   moveDate: string;
 };
 
-const empty: FormData = { name: "", phone: "", email: "", fromZip: "", toZip: "", moveDate: "" };
+const empty: FormData = {
+  name: "",
+  phone: "",
+  email: "",
+  fromZip: "",
+  toZip: "",
+  propertyType: "",
+  size: "",
+  moveDate: "",
+};
 
 export function HeroQuoteForm() {
   return <MultiStepQuoteForm />;
@@ -110,19 +183,27 @@ export function MultiStepQuoteForm({
 
   const up = (k: keyof FormData, v: string) => {
     setError("");
-    setData((d) => ({ ...d, [k]: v }));
+    setData((d) => {
+      const next = { ...d, [k]: v };
+      if (k === "propertyType") next.size = "";
+      return next;
+    });
   };
+
+  const sizeOptions =
+    data.propertyType === "commercial"
+      ? c.commercialSizes
+      : data.propertyType === "storage"
+      ? c.storageSizes
+      : c.residentialSizes;
+
+  const propertyLabel =
+    c.propertyOptions.find((o) => o.v === data.propertyType)?.l || data.propertyType;
+  const sizeLabel = sizeOptions.find((o) => o.v === data.size)?.l || data.size;
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const parsed = schema.safeParse({
-      name: data.name,
-      phone: data.phone,
-      email: data.email,
-      fromZip: data.fromZip,
-      toZip: data.toZip,
-      moveDate: data.moveDate,
-    });
+    const parsed = schema.safeParse(data);
     if (!parsed.success) {
       setError(c.invalid);
       return;
@@ -137,6 +218,8 @@ export function MultiStepQuoteForm({
         email: parsed.data.email,
         from_zip: parsed.data.fromZip,
         to_zip: parsed.data.toZip,
+        move_type: parsed.data.propertyType,
+        home_size: parsed.data.size,
         move_date: parsed.data.moveDate || null,
         source_path: pathname,
         user_agent: typeof navigator !== "undefined" ? navigator.userAgent : null,
@@ -149,6 +232,8 @@ export function MultiStepQuoteForm({
           phone: parsed.data.phone,
           from_zip: parsed.data.fromZip,
           to_zip: parsed.data.toZip,
+          move_type: propertyLabel,
+          home_size: sizeLabel,
           move_date: parsed.data.moveDate || null,
           language: lang,
           source_path: pathname,
@@ -223,6 +308,31 @@ export function MultiStepQuoteForm({
               value={data.toZip}
               onChange={(v) => up("toZip", v)}
               placeholder={c.toPh}
+            />
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <LightSelect
+              label={c.propertyType}
+              icon={<Building2 className="h-4 w-4" />}
+              value={data.propertyType}
+              onChange={(v) => up("propertyType", v)}
+              placeholder={c.selectPh}
+              options={c.propertyOptions}
+            />
+            <LightSelect
+              label={c.size}
+              icon={
+                data.propertyType === "commercial" || data.propertyType === "storage" ? (
+                  <Ruler className="h-4 w-4" />
+                ) : (
+                  <Home className="h-4 w-4" />
+                )
+              }
+              value={data.size}
+              onChange={(v) => up("size", v)}
+              placeholder={c.selectPh}
+              options={sizeOptions}
+              disabled={!data.propertyType}
             />
           </div>
           <LightField
@@ -302,6 +412,58 @@ function LightField({
             {rightIcon}
           </span>
         )}
+      </div>
+    </label>
+  );
+}
+
+function LightSelect({
+  label,
+  value,
+  onChange,
+  placeholder,
+  icon,
+  options,
+  disabled,
+}: {
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+  placeholder?: string;
+  icon?: React.ReactNode;
+  options: ReadonlyArray<{ v: string; l: string }>;
+  disabled?: boolean;
+}) {
+  const padLeft = icon ? "pl-10" : "pl-3";
+  return (
+    <label className="block">
+      <span className="text-xs font-bold uppercase tracking-wide text-ink/85">{label}</span>
+      <div className="relative mt-2">
+        {icon && (
+          <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+            {icon}
+          </span>
+        )}
+        <select
+          value={value}
+          disabled={disabled}
+          onChange={(e) => onChange(e.target.value)}
+          className={`w-full min-h-12 appearance-none rounded-xl border border-input bg-white pr-9 py-3 text-foreground outline-none transition focus:border-cta focus:ring-2 focus:ring-cta/30 disabled:opacity-60 ${padLeft}`}
+        >
+          <option value="" disabled>
+            {placeholder}
+          </option>
+          {options.map((o) => (
+            <option key={o.v} value={o.v}>
+              {o.l}
+            </option>
+          ))}
+        </select>
+        <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+          <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+            <path d="M5 8l5 5 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </span>
       </div>
     </label>
   );

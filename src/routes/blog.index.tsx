@@ -1,26 +1,19 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { BLOG_POSTS } from "@/lib/blog-posts";
+import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/blog/")({
-  head: () => ({
-    meta: [
-      { title: "Moving Tips & Guides — Florida Movers Direct Blog" },
-      { name: "description", content: "Moving guides, tips, and Florida-specific advice from Florida Movers Direct." },
-      { property: "og:title", content: "Florida Movers Direct Blog" },
-      { property: "og:description", content: "Moving guides & Florida-specific tips." },
-    ],
-  }),
-  component: BlogPage,
+  head: () =>
+    pageHead({
+      path: "/blog/",
+      title: "Florida Moving Blog — Costs, Guides & City Tips",
+      description:
+        "Practical Florida moving guides: costs, city-by-city tips, packing, and how to hire licensed movers. Updated for 2026.",
+    }),
+  component: BlogIndex,
 });
 
-function BlogPage() {
-  const posts = [
-    { title: "How to pack a Florida kitchen in a day", tag: "Packing" },
-    { title: "Moving to Miami: everything you need to know", tag: "Miami" },
-    { title: "Long-distance moves from Florida — a checklist", tag: "Long distance" },
-    { title: "Hurricane season moving tips", tag: "Florida" },
-    { title: "Choosing a licensed Florida mover", tag: "Guide" },
-    { title: "Piano moving: what it really costs", tag: "Specialty" },
-  ];
+function BlogIndex() {
   return (
     <section className="bg-surface-alt">
       <div className="container-page py-16 md:py-20">
@@ -28,27 +21,46 @@ function BlogPage() {
           Blog
         </span>
         <h1 className="mt-2 font-display text-4xl md:text-5xl font-bold text-ink">
-          Moving tips & Florida guides
+          Florida moving guides & tips
         </h1>
         <p className="mt-3 text-muted-foreground max-w-xl">
-          Practical, no-fluff advice for moving in and around Florida. Posts coming soon.
+          Real editorial content from the Florida Movers Direct team — costs,
+          city guides, and how to hire licensed movers with confidence.
         </p>
+
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {posts.map((p) => (
-            <article
-              key={p.title}
-              className="rounded-2xl border border-border bg-white p-6 shadow-soft hover:-translate-y-0.5 hover:border-brand transition"
+          {BLOG_POSTS.map((p) => (
+            <Link
+              key={p.slug}
+              to="/blog/$slug/"
+              params={{ slug: p.slug }}
+              className="group rounded-2xl border border-border bg-white overflow-hidden shadow-soft hover:-translate-y-0.5 hover:border-brand transition"
             >
-              <span className="inline-block rounded-full bg-brand/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-brand">
-                {p.tag}
-              </span>
-              <h2 className="mt-4 font-display text-lg font-bold text-ink">
-                {p.title}
-              </h2>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Coming soon — real editorial content lands in the next iteration.
-              </p>
-            </article>
+              <div className="aspect-[16/10] overflow-hidden bg-surface-alt">
+                <img
+                  src={p.image}
+                  alt={p.imageAlt}
+                  loading="lazy"
+                  className="h-full w-full object-cover group-hover:scale-[1.03] transition"
+                />
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-wider">
+                  <span className="rounded-full bg-brand/10 px-3 py-1 text-brand">
+                    {p.category}
+                  </span>
+                  <time className="text-muted-foreground" dateTime={p.date}>
+                    {p.dateLabel}
+                  </time>
+                </div>
+                <h2 className="mt-3 font-display text-lg font-bold text-ink group-hover:text-brand transition">
+                  {p.title}
+                </h2>
+                <p className="mt-2 text-sm text-muted-foreground line-clamp-3">
+                  {p.excerpt}
+                </p>
+              </div>
+            </Link>
           ))}
         </div>
       </div>

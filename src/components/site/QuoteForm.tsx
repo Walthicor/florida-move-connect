@@ -8,6 +8,7 @@ import {
 import { useRouterState } from "@tanstack/react-router";
 import { supabase } from "@/integrations/supabase/client";
 import { useLang } from "@/lib/i18n";
+import { sendLeadEmail } from "@/lib/lead-email.functions";
 
 /* ---------------------------------------------------------------------- */
 /* Copy dictionary                                                         */
@@ -275,6 +276,21 @@ export function MultiStepQuoteForm() {
         source_path: pathname,
         user_agent: typeof navigator !== "undefined" ? navigator.userAgent : null,
       });
+      // Completed lead — notify by email (fire-and-forget; don't block UX).
+      void sendLeadEmail({
+        data: {
+          name: data.name || null,
+          email: data.email || null,
+          phone: data.phone || null,
+          from_zip: data.fromZip || null,
+          to_zip: data.toZip || null,
+          home_size: data.homeSize || null,
+          move_type: data.moveType || null,
+          move_date: data.moveDate || null,
+          language: lang,
+          source_path: pathname,
+        },
+      }).catch((err) => console.error("sendLeadEmail failed", err));
       setStatus("sent");
     } catch {
       setStatus("error");

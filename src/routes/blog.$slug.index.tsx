@@ -120,11 +120,32 @@ const SNOWBIRD_FAQS = [
   },
 ];
 
+const HURRICANE_FAQS = [
+  {
+    q: "Can I move during hurricane season in Florida?",
+    a: "Yes — most Florida moves happen during hurricane season simply because the season covers half the year. The keys are full-value moving insurance, flexible dates, and monitoring NOAA starting 10 days out.",
+  },
+  {
+    q: "Do movers refuse to work during hurricanes?",
+    a: "For active named storms in the immediate area: yes, and rightfully — highways close, trucks are grounded. Force majeure clauses in contracts allow this. Storms outside your immediate area rarely stop moves.",
+  },
+  {
+    q: "Should I delay my move if a hurricane is forecast?",
+    a: "If a named storm cone touches your route within 5-7 days, yes — reschedule with your mover using your flexibility clause. Movers prefer a 48-hour delay over damaged cargo.",
+  },
+  {
+    q: "What if my belongings are damaged by a storm during a move?",
+    a: "Full-value protection (if you elected it) requires the mover to repair, replace, or pay actual cash value. Standard released valuation (60 cents/lb) is almost worthless. This is why FVP is non-negotiable in hurricane season.",
+  },
+];
+
 const FAQS_BY_SLUG: Record<string, { q: string; a: string }[]> = {
   "how-much-do-movers-cost-florida": COST_FAQS,
   "florida-moving-checklist-8-weeks": CHECKLIST_FAQS,
   "snowbird-moving-florida-guide": SNOWBIRD_FAQS,
+  "hurricane-season-moving-florida": HURRICANE_FAQS,
 };
+
 
 function NotFoundView() {
   return (

@@ -1,6 +1,6 @@
 import { createFileRoute, useRouterState } from "@tanstack/react-router";
 import { pageHead } from "@/lib/seo";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Mail, Phone, MapPin, ArrowRight, ArrowLeft, CheckCircle2 } from "lucide-react";
 import { CtaBand } from "@/components/site/CtaBand";
 import { sendLeadEmail } from "@/lib/lead-email.functions";
@@ -39,6 +39,16 @@ function ContactPage() {
     email: "",
     phone: "",
   });
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const sp = new URLSearchParams(window.location.search);
+    const from = sp.get("from") || "";
+    const to = sp.get("to") || "";
+    if (from || to) {
+      setData((d) => ({ ...d, fromZip: from || d.fromZip, toZip: to || d.toZip }));
+    }
+  }, []);
 
   const update = (k: keyof FormData, v: string) => setData((d) => ({ ...d, [k]: v }));
   const next = () => setStep((s) => Math.min(4, s + 1));

@@ -239,6 +239,8 @@ function ArticlePage() {
         <DiyBody />
       ) : post.slug === "moving-with-pets-florida-heat" ? (
         <PetsBody />
+      ) : post.slug === "interstate-move-to-florida-timeline" ? (
+        <InterstateBody />
       ) : (
         <CostGuideBody />
       )}

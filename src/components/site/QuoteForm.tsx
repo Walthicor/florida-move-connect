@@ -128,9 +128,10 @@ async function saveLead(payload: LeadPayload) {
 export function HeroQuoteForm() {
   const lang = useLang();
   const c = COPY[lang];
+  const navigate = useNavigate();
   const [fromZip, setFromZip] = useState("");
   const [toZip, setToZip] = useState("");
-  const [status, setStatus] = useState<"idle" | "saving" | "sent" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "saving" | "error">("idle");
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   const onSubmit = async (e: React.FormEvent) => {
@@ -138,30 +139,25 @@ export function HeroQuoteForm() {
     if (!fromZip && !toZip) return;
     setStatus("saving");
     try {
+      // Save partial ZIP lead (non-blocking for navigation on failure)
       await saveLead({
         language: lang,
         from_zip: fromZip || null,
         to_zip: toZip || null,
         source_path: pathname,
         user_agent: typeof navigator !== "undefined" ? navigator.userAgent : null,
+      }).catch(() => null);
+      // Continue to the full multi-step form with ZIPs prefilled
+      const contactPath = lang === "es" ? "/es/contact/" : "/contact/";
+      navigate({
+        to: contactPath,
+        search: { from: fromZip || undefined, to: toZip || undefined } as never,
       });
-      setStatus("sent");
     } catch {
       setStatus("error");
     }
   };
 
-  if (status === "sent") {
-    return (
-      <div className="pulse-form rounded-2xl border border-border bg-white p-6 md:p-7 shadow-card text-center">
-        <div className="mx-auto inline-flex h-14 w-14 items-center justify-center rounded-full bg-brand/10 text-brand">
-          <CheckCircle2 className="h-7 w-7" />
-        </div>
-        <h2 className="mt-4 font-display text-xl font-bold text-ink">{c.successTitle}</h2>
-        <p className="mt-2 text-sm text-muted-foreground">{c.successBody}</p>
-      </div>
-    );
-  }
 
   return (
     <form

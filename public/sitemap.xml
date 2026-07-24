@@ -140,6 +140,11 @@
     <changefreq>monthly</changefreq><priority>0.6</priority>
   </url>
   <url>
+    <loc>https://floridamoversdirect.com/blog/hurricane-season-moving-florida/</loc>
+    <changefreq>monthly</changefreq><priority>0.6</priority>
+  </url>
+
+  <url>
     <loc>https://floridamoversdirect.com/privacy-policy/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://floridamoversdirect.com/privacy-policy/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://floridamoversdirect.com/es/privacy-policy/"/>

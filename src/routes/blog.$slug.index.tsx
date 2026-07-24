@@ -120,11 +120,32 @@ const SNOWBIRD_FAQS = [
   },
 ];
 
+const HURRICANE_FAQS = [
+  {
+    q: "Can I move during hurricane season in Florida?",
+    a: "Yes — most Florida moves happen during hurricane season simply because the season covers half the year. The keys are full-value moving insurance, flexible dates, and monitoring NOAA starting 10 days out.",
+  },
+  {
+    q: "Do movers refuse to work during hurricanes?",
+    a: "For active named storms in the immediate area: yes, and rightfully — highways close, trucks are grounded. Force majeure clauses in contracts allow this. Storms outside your immediate area rarely stop moves.",
+  },
+  {
+    q: "Should I delay my move if a hurricane is forecast?",
+    a: "If a named storm cone touches your route within 5-7 days, yes — reschedule with your mover using your flexibility clause. Movers prefer a 48-hour delay over damaged cargo.",
+  },
+  {
+    q: "What if my belongings are damaged by a storm during a move?",
+    a: "Full-value protection (if you elected it) requires the mover to repair, replace, or pay actual cash value. Standard released valuation (60 cents/lb) is almost worthless. This is why FVP is non-negotiable in hurricane season.",
+  },
+];
+
 const FAQS_BY_SLUG: Record<string, { q: string; a: string }[]> = {
   "how-much-do-movers-cost-florida": COST_FAQS,
   "florida-moving-checklist-8-weeks": CHECKLIST_FAQS,
   "snowbird-moving-florida-guide": SNOWBIRD_FAQS,
+  "hurricane-season-moving-florida": HURRICANE_FAQS,
 };
+
 
 function NotFoundView() {
   return (
@@ -152,9 +173,12 @@ function ArticlePage() {
         <ChecklistBody />
       ) : post.slug === "snowbird-moving-florida-guide" ? (
         <SnowbirdBody />
+      ) : post.slug === "hurricane-season-moving-florida" ? (
+        <HurricaneBody />
       ) : (
         <CostGuideBody />
       )}
+
       <AuthorAndEnd faqs={FAQS_BY_SLUG[post.slug] ?? []} />
     </article>
   );
@@ -565,7 +589,175 @@ function SnowbirdBody() {
   );
 }
 
+// ---------- Hurricane article body ----------
+const HURRICANE_MONTHS: { month: string; risk: string; note: string }[] = [
+  { month: "June", risk: "Low", note: "Season opens quietly" },
+  { month: "July", risk: "Low-Moderate", note: "Occasional early storm" },
+  { month: "August", risk: "High", note: "Peak begins mid-month" },
+  { month: "September", risk: "HIGHEST", note: "Statistical peak Sept 10" },
+  { month: "October", risk: "High to Moderate", note: "Peak ends late Oct" },
+  { month: "November", risk: "Low", note: "Season winds down" },
+];
+
+function HurricaneBody() {
+  return (
+    <>
+      <div className="container-page py-10 md:py-12 max-w-[720px] prose-blog">
+        <p className="text-lg text-ink leading-relaxed">
+          Yes, you can move to or within Florida during hurricane season
+          (June 1 - November 30) — most snowbird arrivals happen in October,
+          deep in the season. The keys are: full-value moving insurance, a
+          flexible date agreement with your mover, monitoring NOAA 10 days
+          out, and knowing which months within the season are lower-risk.
+          Peak activity is mid-August through mid-October; June and late
+          November are relatively quiet. Here is the full breakdown.
+        </p>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          Hurricane Season Risk by Month
+        </h2>
+        <div className="mt-5 overflow-x-auto rounded-xl border border-border">
+          <table className="w-full text-sm">
+            <thead className="bg-surface-alt text-ink">
+              <tr>
+                <th className="text-left px-4 py-3 font-semibold">Month</th>
+                <th className="text-left px-4 py-3 font-semibold">Storm Risk</th>
+                <th className="text-left px-4 py-3 font-semibold">Note</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border">
+              {HURRICANE_MONTHS.map((r) => (
+                <tr key={r.month} className="bg-white">
+                  <td className="px-4 py-3 font-semibold text-ink whitespace-nowrap">{r.month}</td>
+                  <td className="px-4 py-3 font-semibold text-brand whitespace-nowrap">{r.risk}</td>
+                  <td className="px-4 py-3 text-ink">{r.note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h2 className="mt-12 font-display text-2xl md:text-3xl font-bold text-ink">
+          Full-Value Moving Insurance
+        </h2>
+        <p className="mt-3 text-ink">
+          Standard mover valuation pays only <strong>60 cents per pound</strong> —
+          worthless if a storm damages your shipment. During hurricane
+          season, ALWAYS request full-value protection (FVP): the mover
+          repairs, replaces, or pays actual cash value. Cost:{" "}
+          <strong>$50-$150 per $10,000 of goods</strong>. Ask your mover for
+          it in writing — many do not offer it unless asked.
+        </p>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          The Contract Clauses You Need
+        </h2>
+        <p className="mt-3 text-ink">
+          Ask for these in writing before signing:
+        </p>
+        <ul className="mt-4 space-y-3 text-ink list-disc pl-5">
+          <li>
+            <strong>FORCE MAJEURE</strong> — mover can delay for named storms
+            without penalty (you also want the right to reschedule).
+          </li>
+          <li>
+            <strong>STORAGE-IN-TRANSIT</strong> — if a storm blocks delivery,
+            your shipment holds in their warehouse for up to X days at no
+            charge.
+          </li>
+          <li>
+            <strong>FLEXIBLE DELIVERY WINDOW</strong> — not a specific date,
+            so a 24-48h weather delay does not break your contract.
+          </li>
+        </ul>
+      </div>
+
+      <MidCta />
+
+      <div className="container-page py-10 md:py-12 max-w-[720px] prose-blog">
+        <h2 className="font-display text-2xl md:text-3xl font-bold text-ink">
+          The 10-Day Weather Protocol
+        </h2>
+        <p className="mt-3 text-ink">
+          Monitor the NOAA National Hurricane Center (
+          <a
+            href="https://www.nhc.noaa.gov"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-brand underline"
+          >
+            nhc.noaa.gov
+          </a>
+          ) starting 10 days before your move. Named storms are given 7-10
+          day forecast cones. If the cone touches your route: contact your
+          mover immediately about backup dates. Most professional movers
+          monitor storms and will reach out proactively — if they do not,
+          that is a warning sign.
+        </p>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          What Never Goes in the Truck During a Storm Week
+        </h2>
+        <ul className="mt-4 space-y-3 text-ink list-disc pl-5">
+          <li>
+            <strong>Documents</strong> (birth certificates, passports,
+            insurance policies): travel with you in a waterproof folder.
+          </li>
+          <li><strong>Prescription medications:</strong> with you.</li>
+          <li>
+            <strong>Photos and irreplaceable items:</strong> with you or in
+            short-term self-storage.
+          </li>
+          <li>
+            <strong>Anything valued over $5,000 that is not covered by FVP:</strong>{" "}
+            separately insured or with you.
+          </li>
+        </ul>
+
+        <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
+          If a Storm Hits Mid-Move
+        </h2>
+        <p className="mt-3 text-ink">
+          If your goods are in transit:{" "}
+          <Link to="/long-distance-movers/" className="text-brand underline">
+            your mover
+          </Link>{" "}
+          routes around the storm or holds in a warehouse (this is why the{" "}
+          <Link to="/storage-solutions/" className="text-brand underline">
+            SIT clause
+          </Link>{" "}
+          matters). Your delivery may push 1-4 days. If your goods are
+          already delivered but you cannot occupy the new home: mover
+          typically stores them until access resumes. Document everything
+          with photos for insurance.
+        </p>
+
+        <p className="mt-8 text-ink">
+          Related reading:{" "}
+          <Link
+            to="/blog/$slug/"
+            params={{ slug: "florida-moving-checklist-8-weeks" }}
+            className="text-brand underline"
+          >
+            the 8-week Florida moving checklist
+          </Link>{" "}
+          and our{" "}
+          <Link
+            to="/blog/$slug/"
+            params={{ slug: "snowbird-moving-florida-guide" }}
+            className="text-brand underline"
+          >
+            snowbird timing guide
+          </Link>
+          .
+        </p>
+      </div>
+    </>
+  );
+}
+
 // ---------- Shared tail (FAQ + author + end CTA) ----------
+
 function AuthorAndEnd({ faqs }: { faqs: { q: string; a: string }[] }) {
   return (
     <>

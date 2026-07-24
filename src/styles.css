@@ -184,9 +184,10 @@ html, body {
   &:hover { animation-play-state: paused; }
 }
 @utility quote-card-light {
-  background: #ffffff;
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.55);
   color: var(--ink);
+  backdrop-filter: blur(16px) saturate(140%);
   box-shadow: 0 10px 30px -10px rgba(11, 31, 58, 0.15);
 }
 

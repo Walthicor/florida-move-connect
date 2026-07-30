@@ -81,10 +81,55 @@ function LocalMoversPage() {
       <RatesTable />
       <WhatCounts />
       <Drivers />
+      <CityLinks />
       <Faq />
     </>
   );
 }
+
+const CITY_PAGES = [
+  { to: "/movers-in-pensacola/", label: "Movers in Pensacola", d: "Panhandle market, NAS Pensacola relocations and long-haul routes east on I-10." },
+  { to: "/movers-in-tallahassee/", label: "Movers in Tallahassee", d: "What movers actually cost in the capital, plus FSU and FAMU move seasonality." },
+  { to: "/movers-in-the-villages/", label: "Movers in The Villages", d: "Downsizing moves, partial loads and storage overlap in the retirement community." },
+  { to: "/movers-in-hialeah/", label: "Movers in Hialeah", d: "Bilingual crews for dense multifamily housing and cross-town Miami-Dade moves." },
+  { to: "/movers-in-miami/", label: "Movers in Miami", d: "Condo COIs, elevator slots and parking access across Miami-Dade." },
+  { to: "/movers-in-ocala/", label: "Movers in Ocala", d: "Marion County rates and the busiest short route in north-central Florida." },
+];
+
+function CityLinks() {
+  return (
+    <section className="bg-background">
+      <div className="container-page py-16 md:py-20">
+        <div className="max-w-3xl">
+          <span className="text-xs font-semibold uppercase tracking-wider text-brand">By city</span>
+          <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
+            Local Moving Rates by Florida City
+          </h2>
+          <p className="mt-3 text-muted-foreground">
+            Hourly rates are statewide, but access, seasonality and building rules are not. These
+            city guides show what actually changes the number where you live.
+          </p>
+        </div>
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {CITY_PAGES.map((c) => (
+            <Link
+              key={c.to}
+              to={c.to as "/"}
+              className="group rounded-2xl border border-border bg-white p-6 shadow-soft transition hover:border-brand hover:shadow-card"
+            >
+              <h3 className="font-display text-lg font-bold text-ink group-hover:text-brand">{c.label}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.d}</p>
+              <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand">
+                View rates <ArrowRight className="h-4 w-4" />
+              </span>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 
 function Hero() {
   return (

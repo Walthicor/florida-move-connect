@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { pageHead } from "@/lib/seo";
+import { ProseSection, SubBlock, CardGrid, CheckList } from "@/components/site/ContentSections";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -56,6 +57,14 @@ const FAQS = [
     q: "Do commercial movers handle cubicle disassembly?",
     a: "Yes — furniture systems, conference rooms and reception builds are disassembled, moved and rebuilt to your floor plan.",
   },
+  {
+    q: "Will our landlord need a certificate of insurance from the commercial mover?",
+    a: "Almost always. Commercial landlords and property managers in Florida require a COI naming the building owner and management company as additional insured, with general liability and workers' compensation listed, before the freight elevator is released.",
+  },
+  {
+    q: "Do commercial movers in Florida handle server rooms and IT equipment?",
+    a: "Yes. Server racks, network gear and workstations are inventoried, shut down in a documented sequence, transported anti-static and reconnected to a port map. Coordinate the cutover window with your IT team before the move date is booked.",
+  },
 ];
 
 function CommercialMoversPage() {
@@ -63,6 +72,11 @@ function CommercialMoversPage() {
     <>
       <Hero />
       <CostTable />
+      <MoveTypes />
+      <Scheduling />
+      <ITHandling />
+      <CoiSection />
+      <CityCoverage />
       <AfterHours />
       <ITSection />
       <Checklist />
@@ -70,6 +84,178 @@ function CommercialMoversPage() {
     </>
   );
 }
+
+function MoveTypes() {
+  return (
+    <ProseSection
+      eyebrow="Project types"
+      title="Office Relocation vs Warehouse Move vs Retail Buildout"
+      bg="bg-background"
+    >
+      <p>
+        "Commercial moving" covers three jobs that share almost nothing
+        operationally. Telling a commercial mover which one you have is the
+        fastest way to a realistic quote.
+      </p>
+      <CardGrid cols={3}>
+        <SubBlock title="Office relocation">
+          <p>
+            Workstations, cubicle systems, conference furniture, files and IT.
+            Priced by station count and floor plan complexity, with labeling and
+            rebuild to a numbered seating chart. Building access at both ends
+            usually drives the schedule more than distance does.
+          </p>
+        </SubBlock>
+        <SubBlock title="Warehouse and industrial">
+          <p>
+            Racking, pallets, inventory and machinery. Needs forklifts, dock
+            height matching and often a phased plan so shipping never fully stops.
+            Weight and equipment rigging replace station count as the pricing
+            driver.
+          </p>
+        </SubBlock>
+        <SubBlock title="Retail buildout">
+          <p>
+            Fixtures, displays, POS hardware and stock, usually sequenced around a
+            construction schedule and a fixed opening date. Deliveries are staged
+            to arrive as trades finish, not all at once.
+          </p>
+        </SubBlock>
+      </CardGrid>
+    </ProseSection>
+  );
+}
+
+function Scheduling() {
+  return (
+    <ProseSection
+      eyebrow="Downtime"
+      title="After-Hours and Weekend Scheduling to Avoid Business Downtime"
+      bg="bg-surface-alt"
+    >
+      <p>
+        The real cost of an office move is rarely the invoice — it is the hours
+        your staff cannot work. Commercial movers schedule around that by loading
+        after close on Friday and rebuilding through the weekend, so the office is
+        operational Monday morning. Many Florida buildings only permit freight
+        elevator use outside business hours anyway, which makes evening and
+        weekend work the default rather than the exception.
+      </p>
+      <CheckList
+        items={[
+          "Book the freight elevator and loading dock the same day you book the mover — in multi-tenant towers those slots go first.",
+          "Phase larger offices across consecutive weekends by department so no team loses more than one workday.",
+          "Agree a labeling and floor-plan numbering system before packing starts; rebuild speed depends on it entirely.",
+          "Confirm building security procedures for after-hours access, badge escorts and elevator operators.",
+        ]}
+      />
+    </ProseSection>
+  );
+}
+
+function ITHandling() {
+  return (
+    <ProseSection
+      eyebrow="Technology"
+      title="IT and Server Equipment Handling"
+      bg="bg-background"
+    >
+      <p>
+        Servers, network switches, UPS units and workstations are the highest-risk
+        items in any office relocation, and they are the reason a commercial move
+        needs a documented sequence rather than a truck and a crew. Equipment is
+        inventoried by asset tag, powered down in an agreed order, cabling is
+        photographed and labeled, and racks are moved on air-ride equipment with
+        anti-static protection.
+      </p>
+      <p>
+        Reconnection is the half people underestimate. Give the mover and your IT
+        provider the same port map and rack elevation, and schedule the cutover so
+        the network is tested before staff return. Anything business-critical —
+        backups, cloud failover, phone routing — should be verified the evening
+        before, not on the morning after.
+      </p>
+    </ProseSection>
+  );
+}
+
+function CoiSection() {
+  return (
+    <ProseSection
+      eyebrow="Paperwork"
+      title="Certificate of Insurance Requirements Landlords Demand"
+      bg="bg-surface-alt"
+    >
+      <p>
+        In Florida commercial property, no COI means no elevator. Property
+        managers require a certificate of insurance from the moving company before
+        move day, and they are specific about what appears on it. A mover who
+        cannot produce one within a day is a mover who has not done this before.
+      </p>
+      <CheckList
+        items={[
+          "The building owner and the management company named as additional insured — both, exactly as the lease spells them.",
+          "General liability at the limit the lease requires, commonly $1M per occurrence with a $2M aggregate.",
+          "Workers' compensation coverage listed, since the crew works inside the landlord's property.",
+          "Auto liability and cargo coverage for the vehicles on the dock.",
+          "Submitted to property management in advance of the move date — most buildings want it days ahead, not on arrival.",
+        ]}
+      />
+      <p>
+        The same requirement follows you into residential towers.{" "}
+        <Link to="/apartment-movers/">
+          Apartment and condo buildings ask for near-identical paperwork
+        </Link>
+        , which is why COI-ready crews handle both.
+      </p>
+    </ProseSection>
+  );
+}
+
+function CityCoverage() {
+  return (
+    <ProseSection
+      eyebrow="Coverage"
+      title="Florida Commercial Movers by Market"
+      bg="bg-background"
+    >
+      <p>
+        Office movers in Florida work the state's business corridors, and building
+        rules differ noticeably between them.
+      </p>
+      <CheckList
+        items={[
+          <>
+            <strong className="text-ink">Miami and Miami-Dade</strong> — Brickell and
+            Downtown towers run the strictest dock and COI regimes; see{" "}
+            <Link to="/movers-in-miami/">what Miami access rules involve</Link>.
+          </>,
+          <>
+            <strong className="text-ink">Tampa</strong> — Westshore and Downtown office
+            parks, covered in our{" "}
+            <Link to="/movers-in-tampa/">Tampa moving guide</Link>.
+          </>,
+          <>
+            <strong className="text-ink">Orlando</strong> — corporate and hospitality
+            relocations across{" "}
+            <Link to="/movers-in-orlando/">Central Florida</Link>.
+          </>,
+          <>
+            <strong className="text-ink">Jacksonville</strong> — logistics and warehouse
+            work along the{" "}
+            <Link to="/movers-in-jacksonville/">Northeast Florida corridor</Link>.
+          </>,
+          <>
+            <strong className="text-ink">Boca Raton and Palm Beach County</strong> —
+            professional-services offices;{" "}
+            <Link to="/movers-in-boca-raton/">see local rates</Link>.
+          </>,
+        ]}
+      />
+    </ProseSection>
+  );
+}
+
 
 function Hero() {
   return (

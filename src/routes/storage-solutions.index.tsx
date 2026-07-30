@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { pageHead } from "@/lib/seo";
+import { ProseSection, SubBlock, CardGrid, CheckList } from "@/components/site/ContentSections";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -57,6 +58,14 @@ const FAQS = [
     q: "Is a portable container cheaper than a mover with storage?",
     a: "For flexible DIY timelines, often yes. For full households needing loading labor anyway, SIT usually wins on total cost and single-company accountability.",
   },
+  {
+    q: "What is the difference between mover storage and self-storage?",
+    a: "Storage-in-transit keeps your shipment on the mover's inventory in a warehouse you do not visit; self-storage is a unit you rent and access yourself. One company handles the whole chain with SIT, which is what most established moving and storage companies in Florida quote for closing-date gaps.",
+  },
+  {
+    q: "Is moving and storage in Ocala FL available from the same company?",
+    a: "Yes. Marion County movers commonly quote load, store and redeliver as one job, so your furniture is handled once rather than twice.",
+  },
 ];
 
 function StorageSolutionsPage() {
@@ -64,12 +73,171 @@ function StorageSolutionsPage() {
     <>
       <Hero />
       <CostTable />
+      <SitVsSelf />
+      <ClimateSection />
+      <OverlapScenarios />
+      <CityCoverage />
       <ClimateControl />
       <StorageInTransit />
       <Faq />
     </>
   );
 }
+
+function SitVsSelf() {
+  return (
+    <ProseSection
+      eyebrow="Two different products"
+      title="Storage-in-Transit vs Self-Storage: What Actually Differs"
+      bg="bg-background"
+    >
+      <p>
+        People searching for moving and storage companies in Florida are usually
+        choosing between two things that only look similar. Storage-in-transit
+        (SIT) is warehouse space provided by the mover: your shipment stays
+        inventoried, palletized or vaulted, and the same company that loaded it
+        redelivers it. Self-storage is a unit you rent directly, load yourself or
+        pay a crew to load, and access whenever you like.
+      </p>
+      <CardGrid>
+        <SubBlock title="Storage-in-transit (mover-provided)">
+          <p>
+            One contract, one inventory list, one party accountable for damage.
+            Typically capped around 90 days, billed monthly with a redelivery fee.
+            You cannot walk in and grab a box — the warehouse is not a
+            self-access facility. This is what trusted moving and storage
+            operators quote when a closing slips.
+          </p>
+        </SubBlock>
+        <SubBlock title="Self-storage (you rent the unit)">
+          <p>
+            Cheapest per square foot and open-ended, but you handle two moves:
+            house to unit, unit to new home. Liability splits between the facility
+            and whoever you hire each time. Best when the timeline is genuinely
+            unknown or you need regular access to what is stored.
+          </p>
+        </SubBlock>
+      </CardGrid>
+    </ProseSection>
+  );
+}
+
+function ClimateSection() {
+  return (
+    <ProseSection
+      eyebrow="Florida-specific"
+      title="Climate-Controlled Storage and Why Florida Humidity Changes the Math"
+      bg="bg-surface-alt"
+    >
+      <p>
+        An unconditioned storage unit in Florida tracks the outside air. Through
+        the summer that means sustained high heat and high relative humidity for
+        months, and moisture is what damages stored contents — not the temperature
+        by itself. Climate-controlled units hold both temperature and humidity in
+        a narrower band, which is why every established moving and storage company
+        in Florida quotes it as the default for anything valuable.
+      </p>
+      <CheckList
+        items={[
+          "Wood furniture: joints swell and shrink with humidity swings, veneer lifts and finishes cloud.",
+          <>
+            Pianos: soundboards, pinblocks and action parts are hygroscopic, so an
+            instrument left in an unconditioned unit goes out of regulation. See{" "}
+            <Link to="/piano-movers/">how specialist piano crews handle storage</Link>{" "}
+            before you park one anywhere.
+          </>,
+          "Artwork and photographs: canvas slackens, paper cockles and mold takes hold on framed pieces.",
+          "Electronics: condensation on cold boards and corrosion on connectors are the usual failure modes.",
+        ]}
+      />
+      <p>
+        Upholstery, leather, mattresses, documents and anything with adhesive
+        belong on the same list. If a mover quotes a rate that looks unusually low,
+        confirm whether the unit is actually conditioned.
+      </p>
+    </ProseSection>
+  );
+}
+
+function OverlapScenarios() {
+  return (
+    <ProseSection
+      eyebrow="When people need it"
+      title="Typical Overlap Scenarios That Require Storage"
+      bg="bg-background"
+    >
+      <CardGrid cols={3}>
+        <SubBlock title="Closing-date gaps">
+          <p>
+            The sale funds before the purchase does. SIT covers the days or weeks
+            between, and the mover redelivers when keys change hands — no second
+            loading crew required.
+          </p>
+        </SubBlock>
+        <SubBlock title="Snowbird seasonal storage">
+          <p>
+            Seasonal residents store furnishings between stays rather than paying
+            year-round for space they use six months. Climate control is
+            non-negotiable through a Florida summer.
+          </p>
+        </SubBlock>
+        <SubBlock title="Downsizing">
+          <p>
+            Moving from a house into a villa or condo leaves furniture with no
+            room yet. Storage buys time to sell, gift or place pieces instead of
+            deciding under pressure on move day.
+          </p>
+        </SubBlock>
+      </CardGrid>
+      <p>
+        Renovations, military and corporate relocations with delayed housing, and
+        estate transitions produce the same requirement. In all of them the cost
+        driver is duration and volume, so give the mover a realistic end date.
+      </p>
+    </ProseSection>
+  );
+}
+
+function CityCoverage() {
+  return (
+    <ProseSection
+      eyebrow="Coverage"
+      title="Moving and Storage Coverage Across Florida"
+      bg="bg-surface-alt"
+    >
+      <p>
+        Storage capacity varies by market, and so does availability during
+        season. These are the metros where our network holds the most warehouse
+        space.
+      </p>
+      <CheckList
+        items={[
+          <>
+            <strong className="text-ink">Ocala and Marion County</strong> — combined{" "}
+            <Link to="/movers-in-ocala/">Ocala moving and storage</Link> bookings are
+            routine, often tied to Villages-corridor downsizing.
+          </>,
+          <>
+            <strong className="text-ink">Tampa Bay</strong> — see{" "}
+            <Link to="/movers-in-tampa/">Tampa moving rates</Link> for local crew
+            pricing alongside warehouse holds.
+          </>,
+          <>
+            <strong className="text-ink">Orlando and Central Florida</strong> —{" "}
+            <Link to="/movers-in-orlando/">Orlando movers</Link> cover relocation and
+            corporate housing gaps.
+          </>,
+          <>
+            <strong className="text-ink">Miami and Miami-Dade</strong> —{" "}
+            <Link to="/movers-in-miami/">Miami moving costs</Link> include the
+            high-rise access factors that also affect redelivery.
+          </>,
+        ]}
+      />
+    </ProseSection>
+  );
+}
+
 
 function Hero() {
   return (

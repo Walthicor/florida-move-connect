@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { pageHead } from "@/lib/seo";
+import { Link } from "@tanstack/react-router";
 import { CityHero, SimpleCostTable, LocalKnowledge, Faq } from "./movers-in-ocala.index";
+import { ProseSection } from "@/components/site/ContentSections";
 
 export const Route = createFileRoute("/movers-in-boca-raton/")({
   head: () => pageHead({
@@ -30,6 +32,8 @@ const FAQS = [
   { q: "How much do movers cost in Boca Raton?", a: "$450-$900 for a 1-bedroom and $850-$1,500 for 2-3 bedrooms; condo towers add $100-$300 in elevator and carry time." },
   { q: "Do Boca movers serve the rest of Palm Beach County?", a: "Yes — Delray Beach, Boynton Beach, West Palm Beach, Wellington and the coastal corridor are all daily territory." },
   { q: "My building requires a COI — is that a problem?", a: "It is Tuesday. Every mover in our Boca network produces association-ready COIs, usually same-day." },
+  { q: "Can Boca Raton movers handle a piano?", a: "Not a general crew — a piano needs a specialist team with a skid board and its own valuation. Our Boca Raton piano movers page covers uprights, grands and condo-tower instrument moves." },
+  { q: "How far ahead should I book a Boca Raton move?", a: "Three weeks for October-April season dates, and one to two weeks off-season. Book the service elevator with your association on the same day you confirm the crew." },
 ];
 
 function BocaPage() {
@@ -42,6 +46,26 @@ function BocaPage() {
       />
       <SimpleCostTable title="Boca Raton Moving Costs (2026)" rows={COSTS} />
       <LocalKnowledge title="Moving in Boca Raton: Condo Rules Run the Show" items={LOCAL} />
+      <ProseSection title="Pianos, Antiques and Other Specialty Items in Boca Raton">
+        <p>
+          Boca households move more grand pianos, art collections and antique
+          furniture than almost any market in Palm Beach County, and none of it
+          belongs on a standard hourly crew. A piano in particular needs a skid
+          board, a trained team and its own declared value — especially coming out
+          of a tower where the instrument crosses a loading dock and a service
+          elevator.
+        </p>
+        <p>
+          Our{" "}
+          <Link to="/piano-movers-boca-raton/">
+            Boca Raton piano moving guide
+          </Link>{" "}
+          covers upright and grand pricing, condo-tower staging and what specialist
+          crews do differently. For artwork, mirrors and chandeliers travelling in
+          the same load, see{" "}
+          <Link to="/packing-services/">custom crating and fragile packing</Link>.
+        </p>
+      </ProseSection>
       <Faq faqs={FAQS} />
     </>
   );

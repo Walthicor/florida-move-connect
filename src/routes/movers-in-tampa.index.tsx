@@ -43,6 +43,8 @@ const FAQS = [
   { q: "Do you have piano movers in Tampa?", a: "Yes — one of our most requested Tampa services. Uprights from $150, grands from $300, including stairs and crating. See the dedicated Tampa piano movers page for the full price table." },
   { q: "When is the best time to schedule a Tampa move?", a: "Early morning, mid-month, on a weekday. In summer, a 7-8 AM start beats the heat and the daily storms; if crossing the bay, avoid 7-9 AM and 4-7 PM bridge traffic." },
   { q: "Do Tampa movers cover St. Petersburg and Clearwater?", a: "Yes — Pinellas County is standard territory. Cross-bay moves bill the same hourly rates; only the drive time differs, which smart scheduling minimizes." },
+  { q: "Do Tampa buildings require a certificate of insurance?", a: "Channelside, downtown and most Westshore-area towers do. The association or property manager wants the COI on file before the service elevator is released, so send it over as soon as your date is set." },
+  { q: "How far ahead should I book movers in Tampa?", a: "One to two weeks off-season is usually enough. For summer, month-end dates or any move needing a reserved elevator, give it three to four weeks." },
 ];
 
 function TampaPage() {
@@ -174,7 +176,11 @@ function PianoCard() {
             </span>
             <div>
               <p className="text-base text-muted-foreground leading-relaxed">
-                Tampa is one of the most active piano-moving markets in Florida — and a piano is the one item standard crews should never touch. Our network includes dedicated piano movers in Tampa handling uprights from $150 and grands from $300, with skid boards, stair expertise and humidity-aware placement.
+                Tampa is one of the most active piano-moving markets in Florida — and a piano is the one item standard crews should never touch. Our network includes dedicated piano movers in Tampa handling uprights from $150 and grands from $300, with skid boards, stair expertise and humidity-aware placement. Start with the full{" "}
+                <Link to="/piano-movers-tampa/" className="font-semibold text-brand hover:underline">
+                  Tampa piano moving price table and crew requirements
+                </Link>{" "}
+                before you book a general moving crew for an instrument.
               </p>
               <div className="mt-5">
                 <Link to="/piano-movers-tampa/" className="btn-cta btn-cta-hover text-sm">

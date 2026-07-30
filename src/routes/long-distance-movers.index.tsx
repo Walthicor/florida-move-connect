@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { pageHead } from "@/lib/seo";
+import { ProseSection, SubBlock, CardGrid, CheckList } from "@/components/site/ContentSections";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -86,6 +87,14 @@ const FAQS = [
     q: "What should never go in the moving truck?",
     a: "Documents, medications, jewelry, cash and anything irreplaceable travel with you. In Florida heat, add candles, electronics and instruments to the keep-with-me list — truck interiors can pass 120°F in summer.",
   },
+  {
+    q: "Which Florida long distance moving companies can I trust?",
+    a: "Any interstate carrier must hold active FMCSA operating authority and a USDOT number with insurance on file. That single check separates real Florida long distance movers from brokers and rogue operators.",
+  },
+  {
+    q: "Can I get a long distance moving instant quote?",
+    a: "You can get instant ballpark ranges online, but a price you can hold a mover to comes from a video or in-home survey. Use the instant number to shortlist, then convert it into a binding written estimate.",
+  },
 ];
 
 function LongDistancePage() {
@@ -93,13 +102,173 @@ function LongDistancePage() {
     <>
       <Hero />
       <CostTable />
+      <InboundMoves />
       <Estimates />
+      <BindingBlog />
+      <PianoTransport />
+      <SouthwestCoverage />
       <Verify />
       <Timeline />
       <Faq />
     </>
   );
 }
+
+function InboundMoves() {
+  return (
+    <ProseSection
+      eyebrow="Inbound routes"
+      title="Moving to Florida From Out of State"
+      bg="bg-background"
+    >
+      <p>
+        Most of the volume on Florida interstate moving lanes runs one direction:
+        in. Every inbound route below is handled by carriers that must hold active
+        FMCSA operating authority and a USDOT number, and on each one a binding
+        estimate is what keeps the delivery-day invoice from drifting. Transit
+        windows are delivery spreads, not guarantees — long-haul shipments share
+        trailer space, and the mover commits to a range in writing.
+      </p>
+      <CardGrid>
+        <SubBlock title="From New York City to South Florida">
+          <p>
+            Typical transit is roughly 3-6 days to Palm Beach and Broward
+            addresses. Movers from NYC to Boca Raton deal with two hard access
+            problems at once: a Manhattan or Brooklyn origin with permit parking
+            and elevator windows, and a South Florida association that wants a
+            certificate of insurance before the truck reaches the loading dock.
+            Get both buildings' rules to the carrier before the estimate is
+            signed, and insist on binding-not-to-exceed pricing.
+          </p>
+        </SubBlock>
+        <SubBlock title="From Chicago to Florida">
+          <p>
+            Chicago to Boca Raton and the rest of South Florida usually runs 3-7
+            days in transit. Winter departures are the busy window for this lane,
+            and weather delays at origin are the most common reason a spread
+            stretches. Confirm the carrier's USDOT authority is active, and ask
+            how the estimate changes if the pickup date moves.
+          </p>
+        </SubBlock>
+        <SubBlock title="From Washington DC to Miami">
+          <p>
+            Movers from DC to Miami generally quote 2-5 days. The complication is
+            almost always the destination: Miami-Dade high-rises schedule service
+            elevators in blocks and require an HOA-approved COI. A binding
+            estimate protects you when the building forces a shuttle or a second
+            delivery attempt. Our{" "}
+            <Link to="/movers-in-miami/">Miami moving cost guide</Link> covers the
+            dock and elevator rules in detail.
+          </p>
+        </SubBlock>
+        <SubBlock title="From the West Coast to Florida">
+          <p>
+            San Francisco to Miami movers and other cross-country lanes run the
+            longest spreads — commonly 7-14 days. On a haul this long the weight
+            of your shipment drives the price, so a survey-based binding estimate
+            matters more than anywhere else. Verify the FMCSA record of the
+            carrier that actually loads the truck, not just the company that took
+            your call.
+          </p>
+        </SubBlock>
+      </CardGrid>
+    </ProseSection>
+  );
+}
+
+function BindingBlog() {
+  return (
+    <ProseSection
+      title="Binding vs Non-Binding Estimates"
+      bg="bg-background"
+    >
+      <p>
+        The estimate type is the contract term that decides what you actually pay
+        on delivery day. Binding locks the price to the surveyed inventory.
+        Binding-not-to-exceed can only move down. Non-binding follows actual
+        weight, and federal rules cap what you must pay at delivery at 110% of the
+        written estimate — with the balance billed afterwards.
+      </p>
+      <p>
+        We wrote a full walkthrough of how each one behaves when the inventory
+        changes, what a reweigh looks like, and the language to ask for before
+        signing:{" "}
+        <a href="/blog/binding-vs-non-binding-moving-estimates/">
+          how binding and non-binding moving estimates differ in practice
+        </a>
+        .
+      </p>
+    </ProseSection>
+  );
+}
+
+function PianoTransport() {
+  return (
+    <ProseSection
+      eyebrow="Specialty freight"
+      title="Interstate Piano Transport"
+      bg="bg-surface-alt"
+    >
+      <p>
+        A piano on an interstate move is specialty freight, not another box. Piano
+        movers interstate crate or board-and-wrap the instrument, secure it upright
+        or on its side depending on type, and load it where trailer shift is
+        lowest. Uprights and grands are handled differently, and grands are almost
+        always removed from their legs and travel on a skid board.
+      </p>
+      <p>
+        The valuation issue is the part people miss. Basic released-value
+        protection on an interstate shipment pays $0.60 per pound, per article —
+        so a 700-pound grand worth five figures would settle at roughly $420 if it
+        is damaged. Declare full-value protection separately for the instrument,
+        in writing, before pickup.
+      </p>
+      <CheckList
+        items={[
+          <>
+            Start with our{" "}
+            <Link to="/piano-movers/">Florida piano moving hub</Link> for crew
+            requirements, crating and what specialist handling costs.
+          </>,
+          <>
+            Concert and baby grands have their own procedure — see{" "}
+            <Link to="/grand-piano-movers/">grand piano transport</Link>.
+          </>,
+          "Ask whether the piano travels on the same truck the whole way or is transferred at a terminal.",
+        ]}
+      />
+    </ProseSection>
+  );
+}
+
+function SouthwestCoverage() {
+  return (
+    <ProseSection
+      eyebrow="Regional coverage"
+      title="Southwest Florida Long-Distance Coverage"
+      bg="bg-background"
+    >
+      <p>
+        Southwest Florida generates a steady flow of outbound interstate work, and
+        the carriers in our network run the corridor as one service area. Estero
+        FL long distance movers, Naples households heading north for the summer,
+        Fort Myers relocations and Bonita Springs seasonal residents are all quoted
+        on the same lane pricing as the rest of the state — the difference is
+        pickup routing, not rate.
+      </p>
+      <p>
+        Gulf-side communities add two practical wrinkles: gated developments that
+        restrict truck size and hurricane-season scheduling that compresses summer
+        availability. Name the community and the gate rules when you request
+        quotes. For local work in the region, see our{" "}
+        <Link to="/movers-in-naples/">Naples moving guide</Link>, and for
+        statewide hourly pricing start with{" "}
+        <Link to="/local-movers-in-florida/">local movers in Florida</Link>.
+      </p>
+    </ProseSection>
+  );
+}
+
 
 function Hero() {
   return (

@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { pageHead } from "@/lib/seo";
+import { ProseSection, SubBlock, CardGrid, CheckList } from "@/components/site/ContentSections";
 import { useState } from "react";
 import { ArrowRight, ShieldCheck, ChevronDown, DollarSign, Building2, MapPin, Route as RouteIcon } from "lucide-react";
 
@@ -49,6 +50,8 @@ const FAQS = [
   { q: "How do I find cheap movers in Miami without getting scammed?", a: "Compare at least 3 licensed movers, move mid-month on a weekday, declutter first — and treat any quote 40% below the others as a red flag, not a bargain. Lowball bids are the classic setup for hostage-load scams in South Florida." },
   { q: "Do Miami condo buildings require special arrangements?", a: "Almost always: a COI from your mover, a reserved service elevator, weekday moving windows, and sometimes a refundable deposit ($250-$500). Our Miami movers send the COI to your property manager within 24 hours." },
   { q: "Can one company handle my move from Miami to another Florida city?", a: "Yes — intrastate routes like Miami-Orlando and Miami-Tampa are core routes for our long distance partners, with pricing by inventory rather than by the hour." },
+  { q: "What are local mover rates in Miami-Dade County?", a: "Two movers and a truck run $100-$160 per hour in Miami-Dade. By home size that works out to $450-$900 for a studio or one-bedroom, $700-$1,200 for a two-bedroom and $850-$1,500 for a three-bedroom, plus $100-$300 where a high-rise is involved." },
+  { q: "How do I confirm I am hiring licensed movers in Miami FL?", a: "Ask for the FDACS mover registration number for in-state work, or the USDOT number for anything crossing state lines, and verify it before paying a deposit. A licensed Miami mover will also produce an association-ready certificate of insurance on request." },
 ];
 
 function MiamiPage() {
@@ -59,10 +62,14 @@ function MiamiPage() {
         h1={<>Movers in <span className="text-brand">Miami</span>, Florida</>}
         intro="Local moves in Miami cost $450-$900 for a studio or 1-bedroom and $850-$1,500 for a 2-3 bedroom home — and the difference between a smooth Miami move and a nightmare is a crew that knows the buildings. COIs in Brickell, elevator slots in Sunny Isles, parking permits in Coconut Grove: our Miami movers handle all of it daily. Compare free quotes from licensed Miami moving companies in 2 minutes."
       />
-      <CostTable title="Miami Moving Costs (2026)" col2="Price Range" col3="Crew & Time" rows={COSTS} />
+      <CostTable title="Local Mover Rates in Miami-Dade County" col2="Price Range" col3="Crew & Time" rows={COSTS} />
+      <RatesExplainer />
+      <HighRiseSection />
+      <MunicipalityCoverage />
       <LocalKnowledge title="Moving in Miami: What Actually Makes It Different" items={LOCAL} />
       <Neighborhoods title="Neighborhoods Our Miami Movers Cover Daily" items={NEIGHBORHOODS} tail="and all of Miami-Dade County." />
       <RoutesBlock title="Popular Routes from Miami" items={ROUTES} />
+
       <section className="bg-surface-alt">
         <div className="container-page py-14 max-w-3xl">
           <h2 className="font-display text-2xl md:text-3xl font-bold text-ink">Moving to or from Hialeah?</h2>
@@ -81,6 +88,138 @@ function MiamiPage() {
     </>
   );
 }
+
+function RatesExplainer() {
+  return (
+    <ProseSection
+      eyebrow="Pricing detail"
+      title="How Local Movers Cost Is Calculated in Miami-Dade"
+      bg="bg-surface-alt"
+    >
+      <p>
+        Local movers prices in Miami-Dade County are hourly, not flat. The rate for
+        two movers and a truck runs $100-$160 per hour, and a third mover adds
+        roughly $35-$50 per hour on top. That hourly figure is what produces the
+        home-size ranges in the table above — a studio at $450-$900, a two-bedroom
+        at $700-$1,200 and a three-bedroom at $850-$1,500.
+      </p>
+      <CheckList
+        items={[
+          "The clock generally starts when the crew arrives and stops when the last item is placed; some companies bill travel time between addresses.",
+          "Most Miami movers set a three- or four-hour minimum, so a very small job is not billed at one hour.",
+          "High-rise access adds $100-$300 for elevator cycles and dock-to-unit carries.",
+          "Materials, specialty items and stairs are separate line items — get them quoted before move day, not after.",
+          "Mid-month weekday moves are the cheapest slots in Miami; month-end and season dates are the most expensive.",
+        ]}
+      />
+      <p>
+        Comparing Miami moving quotes is the single biggest lever on what you pay.
+        Statewide context sits in our{" "}
+        <Link to="/local-movers-in-florida/" className="font-semibold text-brand hover:underline">
+          Florida local moving rate guide
+        </Link>
+        , and anything leaving the state is priced by weight instead — see{" "}
+        <Link to="/long-distance-movers/" className="font-semibold text-brand hover:underline">
+          interstate carriers and binding estimates
+        </Link>
+        .
+      </p>
+    </ProseSection>
+  );
+}
+
+function HighRiseSection() {
+  return (
+    <ProseSection
+      eyebrow="Buildings"
+      title="High-Rise and Condo Moves in Miami"
+      bg="bg-background"
+    >
+      <p>
+        Condo movers in Miami work to the building's schedule. Downtown, Brickell,
+        Edgewater, Aventura and the beach towers all run the same basic system, and
+        missing any part of it costs you the day.
+      </p>
+      <CardGrid>
+        <SubBlock title="Loading dock and truck access">
+          <p>
+            Most towers require the truck to use a dock or designated bay with a
+            height limit — a 26-foot trailer may not fit, which means a shuttle.
+            Street-side loading is rarely permitted downtown or on Miami Beach.
+          </p>
+        </SubBlock>
+        <SubBlock title="Service elevator reservation">
+          <p>
+            Elevators are padded and reserved in timed blocks, commonly weekdays
+            between 9 AM and 4 PM. Season slots go two to three weeks ahead; book
+            the elevator the same day you book the crew.
+          </p>
+        </SubBlock>
+        <SubBlock title="HOA certificate of insurance">
+          <p>
+            Associations require a COI naming the association and management
+            company as additional insured, with liability and workers' comp
+            listed. Our Miami network sends it to your property manager within 24
+            hours.
+          </p>
+        </SubBlock>
+        <SubBlock title="Deposits and move rules">
+          <p>
+            Refundable damage deposits of $250-$500 are common, along with
+            restrictions on holidays and weekends. Rental buildings run the same
+            playbook — see{" "}
+            <Link to="/apartment-movers/" className="font-semibold text-brand hover:underline">
+              apartment and condo move requirements
+            </Link>
+            .
+          </p>
+        </SubBlock>
+      </CardGrid>
+    </ProseSection>
+  );
+}
+
+function MunicipalityCoverage() {
+  return (
+    <ProseSection
+      eyebrow="Coverage"
+      title="Miami-Dade Municipality Coverage"
+      bg="bg-surface-alt"
+    >
+      <p>
+        The same crews and the same hourly rates cover Miami-Dade beyond the city
+        limits. Access — not distance — is what changes the estimate between these
+        municipalities.
+      </p>
+      <CheckList
+        items={[
+          <>
+            <strong className="text-ink">Hialeah</strong> — dense multifamily housing and
+            bilingual crews;{" "}
+            <Link to="/movers-in-hialeah/" className="font-semibold text-brand hover:underline">
+              see Hialeah moving rates
+            </Link>
+            .
+          </>,
+          "Doral — office parks and newer townhome communities with gated access and vendor registration.",
+          "Coral Gables — historic single-family streets with tree canopy and tight driveway approaches.",
+          "Aventura — beachside condo towers with the strictest elevator and COI scheduling in the county.",
+          "Kendall — sprawling suburban subdivisions where long carries and driveway staging drive time.",
+          "Homestead — south Miami-Dade single-family and agricultural-edge properties with longer drive times.",
+        ]}
+      />
+      <p>
+        Moving a piano anywhere in the county is its own job with its own crew —
+        read{" "}
+        <Link to="/piano-movers-miami/" className="font-semibold text-brand hover:underline">
+          how Miami piano specialists handle high-rise instrument moves
+        </Link>{" "}
+        before booking a general crew for it.
+      </p>
+    </ProseSection>
+  );
+}
+
 
 function Hero({ eyebrow, h1, intro }: { eyebrow: string; h1: React.ReactNode; intro: string }) {
   return (

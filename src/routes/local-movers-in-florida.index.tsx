@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { pageHead } from "@/lib/seo";
+import { ProseSection, CheckList } from "@/components/site/ContentSections";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -72,6 +73,14 @@ const FAQS = [
     q: "How far ahead should I book?",
     a: "1-2 weeks off-season; 3-4 for summer or month-end.",
   },
+  {
+    q: "Are local movers in Florida required to be licensed?",
+    a: "Intrastate household movers must register with the Florida Department of Agriculture and Consumer Services (FDACS) and carry a registration number. Ask for it, then confirm it on the FDACS business search before you pay a deposit.",
+  },
+  {
+    q: "Do condo and high-rise buildings change what a local move costs?",
+    a: "Yes. Condo movers in Florida budget extra time for reserved service elevators, loading-dock windows and long carries, which typically adds $100-$300 to an otherwise standard job.",
+  },
 ];
 
 function LocalMoversPage() {
@@ -81,20 +90,98 @@ function LocalMoversPage() {
       <RatesTable />
       <WhatCounts />
       <Drivers />
+      <CondoMoves />
+      <FdacsSection />
       <CityLinks />
       <Faq />
     </>
   );
 }
 
+function CondoMoves() {
+  return (
+    <ProseSection
+      eyebrow="Building access"
+      title="Condo and High-Rise Moves in Florida"
+      bg="bg-surface-alt"
+    >
+      <p>
+        Florida has more condominium units than almost anywhere in the country, and
+        a condo move is a different job from a single-family move even when the
+        inventory is identical. Condo movers in Florida plan around the building
+        first and the furniture second.
+      </p>
+      <CheckList
+        items={[
+          "A certificate of insurance naming the association and management company, filed before move day — no COI, no elevator.",
+          "A reserved and padded service elevator, usually in a timed block with a hard stop.",
+          "Loading dock or designated truck bay access; downtown towers often have no street-side option at all.",
+          "Approved moving hours, which in many associations exclude Sundays and holidays entirely.",
+          "Long carries from dock to unit, which is where the $100-$300 high-rise premium comes from.",
+        ]}
+      />
+      <p>
+        Give the mover the building name and the association's move-in packet with
+        your quote request. Rental towers work the same way — see our{" "}
+        <Link to="/apartment-movers/">apartment moving guide</Link> for elevator and
+        stair pricing detail.
+      </p>
+    </ProseSection>
+  );
+}
+
+function FdacsSection() {
+  return (
+    <ProseSection
+      eyebrow="Verification"
+      title="What FDACS Registration Means and How to Verify It"
+      bg="bg-background"
+    >
+      <p>
+        Any company performing intrastate household moves in Florida — movers in FL
+        working entirely inside state lines — must be registered as a mover with
+        the Florida Department of Agriculture and Consumer Services. Registration
+        means the company has filed as a moving business and carries the insurance
+        the state requires. It is the baseline check that separates licensed movers
+        in Miami FL, or anywhere else in the state, from an unregistered truck rental
+        operation.
+      </p>
+      <CheckList
+        items={[
+          "Ask for the FDACS mover registration number in writing, before any deposit changes hands.",
+          "Look the company up on the FDACS business search at fdacs.gov and confirm the registration is current.",
+          "Verify the legal business name matches the name on your estimate — not just the brand on the truck.",
+          "For any move crossing state lines, check the USDOT number with the FMCSA instead; see our guide to interstate carriers linked below.",
+          "Refuse large cash deposits and blank or unsigned estimates regardless of what the paperwork claims.",
+        ]}
+      />
+      <p>
+        Moving out of state rather than across town? Federal rules and carrier
+        verification apply instead —{" "}
+        <Link to="/long-distance-movers/">
+          our interstate moving guide explains the FMCSA check
+        </Link>
+        .
+      </p>
+    </ProseSection>
+  );
+}
+
 const CITY_PAGES = [
-  { to: "/movers-in-pensacola/", label: "Movers in Pensacola", d: "Panhandle market, NAS Pensacola relocations and long-haul routes east on I-10." },
-  { to: "/movers-in-tallahassee/", label: "Movers in Tallahassee", d: "What movers actually cost in the capital, plus FSU and FAMU move seasonality." },
-  { to: "/movers-in-the-villages/", label: "Movers in The Villages", d: "Downsizing moves, partial loads and storage overlap in the retirement community." },
+  { to: "/movers-in-miami/", label: "Movers in Miami", d: "Condo COIs, elevator slots and Miami-Dade rate detail." },
   { to: "/movers-in-hialeah/", label: "Movers in Hialeah", d: "Bilingual crews for dense multifamily housing and cross-town Miami-Dade moves." },
-  { to: "/movers-in-miami/", label: "Movers in Miami", d: "Condo COIs, elevator slots and parking access across Miami-Dade." },
-  { to: "/movers-in-ocala/", label: "Movers in Ocala", d: "Marion County rates and the busiest short route in north-central Florida." },
+  { to: "/movers-in-boca-raton/", label: "Movers in Boca Raton", d: "Palm Beach County associations, 55+ communities and season scheduling." },
+  { to: "/movers-in-naples/", label: "Movers in Naples", d: "Southwest Florida gated communities and seasonal-resident timing." },
+  { to: "/movers-in-tampa/", label: "Movers in Tampa", d: "Bay-area bridge routes, historic districts and Westshore offices." },
+  { to: "/movers-in-sarasota/", label: "Movers in Sarasota", d: "Gulf-coast condo towers and barrier-island access." },
+  { to: "/movers-in-orlando/", label: "Movers in Orlando", d: "Central Florida relocation volume and corporate housing gaps." },
+  { to: "/movers-in-ocala/", label: "Movers in Ocala", d: "Marion County rates, horse-farm access and Villages-corridor routes." },
+  { to: "/movers-in-the-villages/", label: "Movers in The Villages", d: "Downsizing moves, partial loads and storage overlap in the retirement community." },
+  { to: "/movers-in-jacksonville/", label: "Movers in Jacksonville", d: "Northeast Florida coastal, military and logistics-corridor moves." },
+  { to: "/movers-in-tallahassee/", label: "Movers in Tallahassee", d: "What movers actually cost in the capital, plus FSU and FAMU move seasonality." },
+  { to: "/movers-in-pensacola/", label: "Movers in Pensacola", d: "Panhandle market, NAS Pensacola relocations and long-haul routes east on I-10." },
 ];
+
 
 function CityLinks() {
   return (
@@ -103,11 +190,12 @@ function CityLinks() {
         <div className="max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-wider text-brand">By city</span>
           <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
-            Local Moving Rates by Florida City
+            Cities We Serve Across Florida
           </h2>
           <p className="mt-3 text-muted-foreground">
-            Hourly rates are statewide, but access, seasonality and building rules are not. These
-            city guides show what actually changes the number where you live.
+            Hourly rates are statewide, but access, seasonality and building rules are not. This is
+            the full directory of Florida cities we cover — each guide shows what actually changes
+            the number where you live.
           </p>
         </div>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

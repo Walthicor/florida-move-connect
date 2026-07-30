@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { pageHead } from "@/lib/seo";
+import { ProseSection, SubBlock, CardGrid, CheckList } from "@/components/site/ContentSections";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -59,6 +60,14 @@ const FAQS = [
     q: "Do movers handle walk-up buildings without elevators?",
     a: "Yes — stairs add time on hourly jobs and $40-$100 per flight on flat-rate specialty items. Tell the mover the floor number upfront for an accurate quote.",
   },
+  {
+    q: "How far ahead do I need to reserve the elevator?",
+    a: "Most Florida complexes release the service elevator in two- to four-hour blocks and want the reservation a week or more out, along with the mover's certificate of insurance. Book the elevator the same day you book the crew.",
+  },
+  {
+    q: "What does a studio or one-bedroom apartment move cost in Florida?",
+    a: "A studio runs $400-$650 and a one-bedroom $450-$800 for a two-mover crew, with high-rise access adding $100-$300. Hourly rates across the state sit at $95-$150 per hour for two movers and a truck.",
+  },
 ];
 
 function ApartmentMoversPage() {
@@ -66,11 +75,145 @@ function ApartmentMoversPage() {
     <>
       <Hero />
       <CostTable />
+      <ElevatorCoi />
+      <StairsPricing />
+      <SmallUnitCosts />
+      <ApartmentCities />
       <BuildingReqs />
       <Faq />
     </>
   );
 }
+
+function ElevatorCoi() {
+  return (
+    <ProseSection
+      eyebrow="Building rules"
+      title="Elevator Reservations and Certificate of Insurance Requirements"
+      bg="bg-background"
+    >
+      <p>
+        In Florida apartment complexes and condo towers, the building controls the
+        move — not the mover. Two pieces of admin decide whether the truck gets
+        unloaded on the day you booked: a reserved service elevator and an
+        approved certificate of insurance on file with management.
+      </p>
+      <CheckList
+        items={[
+          "Elevators are released in timed blocks, often two to four hours, and padded by building staff. Overrun the block and the crew waits on the clock.",
+          "The COI must name the property owner and management company as additional insured, and list general liability and workers' compensation.",
+          "Many buildings restrict moves to weekdays between set hours, which rules out Saturday moves entirely in some towers.",
+          "Loading-dock access, freight entrances and gate codes need to be confirmed before move morning, not discovered on it.",
+        ]}
+      />
+      <p>
+        Ask the leasing office for the move-in packet as soon as you sign, and hand
+        it to the mover with the quote request. Commercial buildings run the same
+        system — our{" "}
+        <Link to="/commercial-movers/">office relocation guide</Link> covers the
+        paperwork side in more depth.
+      </p>
+    </ProseSection>
+  );
+}
+
+function StairsPricing() {
+  return (
+    <ProseSection
+      eyebrow="Access"
+      title="Stairs and Walk-Up Pricing"
+      bg="bg-surface-alt"
+    >
+      <p>
+        Garden-style complexes and older walk-ups are the most common apartment
+        layout in Florida, and stairs are the single biggest variable in what an
+        apartment move actually costs. On hourly jobs the effect is indirect: each
+        flight slows the carry cycle, so a third-floor unit routinely takes one to
+        two hours longer than the identical unit at ground level. On flat-rate and
+        specialty items, stairs are billed directly at $40-$100 per flight.
+      </p>
+      <CheckList
+        items={[
+          "Give the mover your floor number and whether an elevator exists — a quote built for ground level will not hold.",
+          "Long carries matter as much as stairs: distance from the truck to your door across a parking lot adds real time.",
+          "Reserve parking near the building entrance where the complex allows it; a shuttle from an overflow lot changes the job.",
+          "Heavy single items — sleeper sofas, safes, treadmills — are quoted separately when stairs are involved.",
+        ]}
+      />
+    </ProseSection>
+  );
+}
+
+function SmallUnitCosts() {
+  return (
+    <ProseSection
+      eyebrow="Budget"
+      title="Studio and One-Bedroom Cost Expectations"
+      bg="bg-background"
+    >
+      <p>
+        Small units are the bread and butter of Florida apartment movers. A studio
+        with a two-mover crew runs $400-$650 and typically takes three to four
+        hours; a one-bedroom runs $450-$800 across three to five hours. A
+        two-bedroom apartment moves with a three-mover crew at $600-$1,100. High-rise
+        access adds $100-$300 on top for elevator cycles and long carries.
+      </p>
+      <p>
+        Those figures assume you are packed before the crew arrives. If you are
+        not, either add hours or book{" "}
+        <Link to="/packing-services/">fragile-only or partial packing</Link>, which
+        is usually cheaper than paying movers to box a kitchen on the clock. If your
+        lease dates do not line up,{" "}
+        <Link to="/storage-solutions/">short-term storage</Link> bridges the gap. For
+        statewide hourly context, see{" "}
+        <Link to="/local-movers-in-florida/">local moving rates in Florida</Link>.
+      </p>
+    </ProseSection>
+  );
+}
+
+function ApartmentCities() {
+  return (
+    <ProseSection
+      eyebrow="Coverage"
+      title="Apartment Moves by Florida Market"
+      bg="bg-surface-alt"
+    >
+      <CardGrid>
+        <SubBlock title="Boca Raton apartment movers">
+          <p>
+            Palm Beach County associations are the strictest in the state on COIs,
+            approved hours and vendor registration. Rates and building detail are
+            in our{" "}
+            <Link to="/movers-in-boca-raton/">Boca Raton moving guide</Link>.
+          </p>
+        </SubBlock>
+        <SubBlock title="Ocala apartment moves">
+          <p>
+            Marion County rentals are mostly garden-style walk-ups, which makes
+            stairs the pricing factor rather than elevators. See{" "}
+            <Link to="/movers-in-ocala/">what movers charge in Ocala</Link>.
+          </p>
+        </SubBlock>
+        <SubBlock title="Tallahassee student moves">
+          <p>
+            August turnover around the universities compresses the whole market
+            into two weeks. Book early — details in our{" "}
+            <Link to="/movers-in-tallahassee/">Tallahassee moving costs guide</Link>.
+          </p>
+        </SubBlock>
+        <SubBlock title="Miami high-rise apartments">
+          <p>
+            Loading docks, timed service elevators and HOA-approved insurance are
+            standard downtown and on the beach. Start with{" "}
+            <Link to="/movers-in-miami/">Miami-Dade moving rates</Link>.
+          </p>
+        </SubBlock>
+      </CardGrid>
+    </ProseSection>
+  );
+}
+
 
 function Hero() {
   return (

@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { pageHead } from "@/lib/seo";
+import { ProseSection, SubBlock, CardGrid, CheckList } from "@/components/site/ContentSections";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -58,6 +59,14 @@ const FAQS = [
     q: "Can I pack some rooms myself and hire packers for the rest?",
     a: "Absolutely — partial packing is priced by room or by hour. Most popular split: you do bedrooms and books, the pros do kitchen and breakables.",
   },
+  {
+    q: "What do full packing and unpacking services actually include?",
+    a: "Labor, all standard cartons, paper, bubble, tape and labeling on the pack side; on the unpack side, contents placed on flat surfaces or into cabinets, plus removal of the empty boxes and packing debris. Custom crating and disposal beyond a normal load are quoted separately.",
+  },
+  {
+    q: "Do Florida packing services cover artwork, mirrors and chandeliers?",
+    a: "Yes, as specialty items. Mirrors and glass go in telescoping mirror cartons, artwork in custom-built crates when value warrants it, and chandeliers are dismantled, wrapped arm by arm and boxed to a fitted cavity.",
+  },
 ];
 
 function PackingServicesPage() {
@@ -65,12 +74,154 @@ function PackingServicesPage() {
     <>
       <Hero />
       <CostTable />
+      <PackLevels />
+      <WhatsIncluded />
+      <SpecialtyItems />
+      <Unpacking />
       <FullVsFragile />
       <FloridaFactor />
       <Faq />
     </>
   );
 }
+
+function PackLevels() {
+  return (
+    <ProseSection
+      eyebrow="Choose a level"
+      title="Full Pack vs Partial Pack vs Fragile-Only"
+      bg="bg-background"
+    >
+      <p>
+        Florida packing services are sold at three levels, and the right one
+        depends on how much time you have rather than how much stuff you own.
+      </p>
+      <CardGrid cols={3}>
+        <SubBlock title="Full pack">
+          <p>
+            The crew packs the entire home — closets, kitchen, garage, everything —
+            usually in one or two days before load day. Highest cost, lowest effort,
+            and the strongest position if you later file a claim, because the mover
+            packed the carton.
+          </p>
+        </SubBlock>
+        <SubBlock title="Partial pack">
+          <p>
+            You handle clothing, books and linens; the crew takes the rooms that
+            eat time. Priced by room or by hour. The most common split is
+            homeowner-packed bedrooms with professionally packed kitchen and
+            breakables.
+          </p>
+        </SubBlock>
+        <SubBlock title="Fragile-only">
+          <p>
+            Glassware, china, stemware, lamps, mirrors and electronics only. The
+            cheapest way to protect the items that actually break, and the option
+            most people should default to if the budget is tight.
+          </p>
+        </SubBlock>
+      </CardGrid>
+    </ProseSection>
+  );
+}
+
+function WhatsIncluded() {
+  return (
+    <ProseSection
+      eyebrow="Scope"
+      title="What a Packing Service Actually Includes"
+      bg="bg-surface-alt"
+    >
+      <CheckList
+        items={[
+          "Labor: trained packers working room by room, not the loading crew doing it in a hurry on move morning.",
+          "Materials: cartons in every standard size, dish packs, wardrobe boxes, packing paper, bubble wrap, tape and stretch film.",
+          "Labeling: every carton marked by room and contents so the unload crew places it where it belongs.",
+          "An inventory that ties cartons to the bill of lading, which is what a claim is settled against.",
+          "Disassembly of beds, tables and mirrors from dressers where the pack requires it.",
+        ]}
+      />
+      <p>
+        Quoted separately: custom wooden crates, TVs over 65 inches, gun safes,
+        appliance servicing, and anything requiring a licensed trade to disconnect.
+        Ask for those line items in writing rather than assuming they are folded
+        into the packing rate.
+      </p>
+    </ProseSection>
+  );
+}
+
+function SpecialtyItems() {
+  return (
+    <ProseSection
+      eyebrow="High-value items"
+      title="Specialty Item Packing: Artwork, Mirrors, TVs, Chandeliers and Pianos"
+      bg="bg-background"
+    >
+      <CardGrid>
+        <SubBlock title="Artwork and mirrors">
+          <p>
+            Framed pieces are corner-protected, glass-taped and packed face to face
+            in mirror cartons; higher-value canvases get a built-to-size wooden
+            crate. Never lay framed glass flat in a truck — it travels on edge.
+          </p>
+        </SubBlock>
+        <SubBlock title="TVs and electronics">
+          <p>
+            Original cartons are best; otherwise a fitted TV box with foam corners.
+            Screens travel upright and are the first thing to suffer in an
+            unconditioned truck sitting in Florida sun.
+          </p>
+        </SubBlock>
+        <SubBlock title="Chandeliers and light fixtures">
+          <p>
+            Removed by the crew where safe, arms and crystals wrapped individually,
+            then set into a cavity cut to shape. Photograph the assembly before it
+            comes down so reinstallation is straightforward.
+          </p>
+        </SubBlock>
+        <SubBlock title="Pianos">
+          <p>
+            Pianos are not a packing job — they need a specialist crew, a board and
+            skid, and their own valuation. Read{" "}
+            <Link to="/piano-movers/">
+              what professional piano handling involves
+            </Link>{" "}
+            before booking packers who say they can "wrap it".
+          </p>
+        </SubBlock>
+      </CardGrid>
+    </ProseSection>
+  );
+}
+
+function Unpacking() {
+  return (
+    <ProseSection
+      eyebrow="After delivery"
+      title="Unpacking and Debris Removal"
+      bg="bg-surface-alt"
+    >
+      <p>
+        Full packing and unpacking services close the loop at the destination.
+        Standard unpack means cartons are opened, contents are placed on counters,
+        shelves and flat surfaces, and the empties are broken down and taken away
+        the same day — which matters, because a three-bedroom pack produces more
+        cardboard than most driveways can hold.
+      </p>
+      <p>
+        Settle-in unpacking goes further: dishes into cabinets, clothes onto
+        hangers, beds made. It is billed hourly and is worth booking for seniors,
+        families with small children and anyone returning to work immediately. If
+        furniture is leaving the house rather than arriving, ask about donation
+        drop-off and disposal at the same time — and if some of it needs to be
+        held rather than moved, our{" "}
+        <Link to="/storage-solutions/">storage options</Link> cover the overlap.
+      </p>
+    </ProseSection>
+  );
+}
+
 
 function Hero() {
   return (

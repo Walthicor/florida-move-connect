@@ -120,15 +120,20 @@ export const SERVICES_BY_LANG = {
 export const CITIES_BY_LANG = {
   en: [
     { label: "Miami", to: "/movers-in-miami/" },
+    { label: "Hialeah", to: "/movers-in-hialeah/" },
     { label: "Tampa", to: "/movers-in-tampa/" },
     { label: "Orlando", to: "/movers-in-orlando/" },
     { label: "Ocala", to: "/movers-in-ocala/" },
+    { label: "The Villages", to: "/movers-in-the-villages/" },
     { label: "Jacksonville", to: "/movers-in-jacksonville/" },
+    { label: "Tallahassee", to: "/movers-in-tallahassee/" },
+    { label: "Pensacola", to: "/movers-in-pensacola/" },
     { label: "Naples", to: "/movers-in-naples/" },
     { label: "Boca Raton", to: "/movers-in-boca-raton/" },
   ],
   es: [
     { label: "Miami", to: "/es/movers-in-miami/" },
+    { label: "Hialeah", to: "/es/movers-in-hialeah/" },
     { label: "Tampa", to: "/es/movers-in-tampa/" },
     { label: "Orlando", to: "/es/movers-in-orlando/" },
     { label: "Ocala", to: "/es/movers-in-ocala/" },
@@ -137,3 +142,4 @@ export const CITIES_BY_LANG = {
     { label: "Boca Raton", to: "/es/movers-in-boca-raton/" },
   ],
 } as const;
+

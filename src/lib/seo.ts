@@ -12,6 +12,7 @@ export const ORG_LOGO = `${SITE_URL}/images/logo.jpg`;
 export const ORG_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
   name: "Florida Movers Direct",
   url: SITE_URL,
   logo: ORG_LOGO,

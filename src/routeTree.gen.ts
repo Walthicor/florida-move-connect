@@ -37,6 +37,7 @@ import { Route as MiamiMoversIndexRouteImport } from './routes/miami-movers.inde
 import { Route as LongDistanceMoversIndexRouteImport } from './routes/long-distance-movers.index'
 import { Route as LocalMoversIndexRouteImport } from './routes/local-movers.index'
 import { Route as LocalMoversInFloridaIndexRouteImport } from './routes/local-movers-in-florida.index'
+import { Route as GrandPianoMoversIndexRouteImport } from './routes/grand-piano-movers.index'
 import { Route as FurnitureMoversIndexRouteImport } from './routes/furniture-movers.index'
 import { Route as EsIndexRouteImport } from './routes/es.index'
 import { Route as ContactIndexRouteImport } from './routes/contact.index'
@@ -209,6 +210,11 @@ const LocalMoversInFloridaIndexRoute =
     path: '/local-movers-in-florida/',
     getParentRoute: () => rootRouteImport,
   } as any)
+const GrandPianoMoversIndexRoute = GrandPianoMoversIndexRouteImport.update({
+  id: '/grand-piano-movers/',
+  path: '/grand-piano-movers/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FurnitureMoversIndexRoute = FurnitureMoversIndexRouteImport.update({
   id: '/furniture-movers/',
   path: '/furniture-movers/',
@@ -353,6 +359,7 @@ export interface FileRoutesByFullPath {
   '/contact/': typeof ContactIndexRoute
   '/es/': typeof EsIndexRoute
   '/furniture-movers/': typeof FurnitureMoversIndexRoute
+  '/grand-piano-movers/': typeof GrandPianoMoversIndexRoute
   '/local-movers-in-florida/': typeof LocalMoversInFloridaIndexRoute
   '/local-movers/': typeof LocalMoversIndexRoute
   '/long-distance-movers/': typeof LongDistanceMoversIndexRoute
@@ -409,6 +416,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactIndexRoute
   '/es': typeof EsIndexRoute
   '/furniture-movers': typeof FurnitureMoversIndexRoute
+  '/grand-piano-movers': typeof GrandPianoMoversIndexRoute
   '/local-movers-in-florida': typeof LocalMoversInFloridaIndexRoute
   '/local-movers': typeof LocalMoversIndexRoute
   '/long-distance-movers': typeof LongDistanceMoversIndexRoute
@@ -466,6 +474,7 @@ export interface FileRoutesById {
   '/contact/': typeof ContactIndexRoute
   '/es/': typeof EsIndexRoute
   '/furniture-movers/': typeof FurnitureMoversIndexRoute
+  '/grand-piano-movers/': typeof GrandPianoMoversIndexRoute
   '/local-movers-in-florida/': typeof LocalMoversInFloridaIndexRoute
   '/local-movers/': typeof LocalMoversIndexRoute
   '/long-distance-movers/': typeof LongDistanceMoversIndexRoute
@@ -524,6 +533,7 @@ export interface FileRouteTypes {
     | '/contact/'
     | '/es/'
     | '/furniture-movers/'
+    | '/grand-piano-movers/'
     | '/local-movers-in-florida/'
     | '/local-movers/'
     | '/long-distance-movers/'
@@ -580,6 +590,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/es'
     | '/furniture-movers'
+    | '/grand-piano-movers'
     | '/local-movers-in-florida'
     | '/local-movers'
     | '/long-distance-movers'
@@ -636,6 +647,7 @@ export interface FileRouteTypes {
     | '/contact/'
     | '/es/'
     | '/furniture-movers/'
+    | '/grand-piano-movers/'
     | '/local-movers-in-florida/'
     | '/local-movers/'
     | '/long-distance-movers/'
@@ -693,6 +705,7 @@ export interface RootRouteChildren {
   ContactIndexRoute: typeof ContactIndexRoute
   EsIndexRoute: typeof EsIndexRoute
   FurnitureMoversIndexRoute: typeof FurnitureMoversIndexRoute
+  GrandPianoMoversIndexRoute: typeof GrandPianoMoversIndexRoute
   LocalMoversInFloridaIndexRoute: typeof LocalMoversInFloridaIndexRoute
   LocalMoversIndexRoute: typeof LocalMoversIndexRoute
   LongDistanceMoversIndexRoute: typeof LongDistanceMoversIndexRoute
@@ -939,6 +952,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LocalMoversInFloridaIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/grand-piano-movers/': {
+      id: '/grand-piano-movers/'
+      path: '/grand-piano-movers'
+      fullPath: '/grand-piano-movers/'
+      preLoaderRoute: typeof GrandPianoMoversIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/furniture-movers/': {
       id: '/furniture-movers/'
       path: '/furniture-movers'
@@ -1133,6 +1153,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactIndexRoute: ContactIndexRoute,
   EsIndexRoute: EsIndexRoute,
   FurnitureMoversIndexRoute: FurnitureMoversIndexRoute,
+  GrandPianoMoversIndexRoute: GrandPianoMoversIndexRoute,
   LocalMoversInFloridaIndexRoute: LocalMoversInFloridaIndexRoute,
   LocalMoversIndexRoute: LocalMoversIndexRoute,
   LongDistanceMoversIndexRoute: LongDistanceMoversIndexRoute,

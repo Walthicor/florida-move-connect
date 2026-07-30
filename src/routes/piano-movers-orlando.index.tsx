@@ -1,63 +1,81 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { pageHead } from "@/lib/seo";
-import { PageHero, PageCostTable, PageLocalKnowledge, PageNeighborhoods, PageFaq } from "@/components/site/PageBlocks";
+import { PianoCityPage, pianoCitySchema, type PianoFaq } from "@/components/site/PianoCityPage";
 
 const PATH = "/piano-movers-orlando/";
+const CITY = "Orlando";
 
-const FAQS = [
-  { q: "How much do piano movers charge in Orlando?", a: "Locally, uprights run $150 - $500, baby grands $300 - $800 and concert grands $500 - $1,500. Interstate piano transport costs $450 - $2,300. Stairs add $40 - $130 per flight and partial disassembly about $150." },
-  { q: "Do I need a specialist piano mover?", a: "Specialist crews cost $100 - $300 more than general movers, and they bring piano boards, skid boards, stair equipment and instrument-specific insurance. For grands, stairs or high-value uprights, use a specialist." },
-  { q: "Will the piano need tuning after the move in Orlando?", a: "Yes. Florida humidity and a new room change how the soundboard sits. Wait two to four weeks for the instrument to acclimate, then book a tuning so it holds pitch." },
+const FAQS: PianoFaq[] = [
+  {
+    q: "How much does piano moving in Orlando cost?",
+    a: "Uprights, spinets and consoles run $150 - $500 locally with a two-mover crew, baby grands $300 - $800 and concert grands $500 - $1,500. Interstate transport is $450 - $2,300. Stairs add $40 - $130 per flight and partial disassembly around $150.",
+  },
+  {
+    q: "Can a piano be delivered to a vacation home or short-term rental?",
+    a: "Yes, and it is a common Orlando request. Give the mover the property manager's contact, the gate or lockbox procedure and the access window when you request quotes. Unattended deliveries still need someone authorised on site to sign for the instrument.",
+  },
+  {
+    q: "Do you move church and community-hall uprights around Orlando?",
+    a: "Regularly. Congregations and retirement communities across the metro move consoles and uprights between halls and campuses. Double doors, sloped ramps and platform steps are measured first, and partial disassembly is quoted at about $150 when clearance is tight.",
+  },
+  {
+    q: "Should I tune the piano right after it arrives?",
+    a: "Wait two to four weeks. The instrument needs to settle into the humidity of its new Orlando room before a tuning will hold. Tuning the same week usually means paying a technician twice, once now and again once the soundboard stabilises.",
+  },
+  {
+    q: "How far in advance should Orlando moves be booked?",
+    a: "Two to three weeks for a local move and four or more for interstate transport. Month-end weekends fill first, and seasonal second-home turnovers around the tourist corridor tighten specialist crew availability further.",
+  },
 ];
 
 export const Route = createFileRoute("/piano-movers-orlando/")({
-  head: () =>
-    pageHead({
+  head: () => {
+    const base = pageHead({
       path: PATH,
-      title: "Piano Movers in Orlando FL | Upright & Grand Piano Moving",
-      description: "Licensed Orlando piano movers. Uprights $150-$500, grands $300-$800 locally. CPM-trained, insured crews. Compare up to 4 free quotes.",
+      title: "Piano Movers in Orlando FL | Free Quotes & Rates 2026",
+      description:
+        "Licensed Orlando piano movers. Uprights $150-$500, grands $300-$800 locally. CPM-trained, insured crews. Compare up to 4 free quotes.",
       faqs: FAQS,
-      service: { serviceType: "Piano Moving", areaServed: "Orlando, FL" },
       noAlternates: true,
-    }),
+    });
+    return { ...base, scripts: [...base.scripts, ...pianoCitySchema(CITY, PATH)] };
+  },
   component: () => (
-    <>
-      <PageHero
-        eyebrow="Orlando · Pianos"
-        h1={<>Piano Movers in <span className="text-brand">Orlando</span>, Florida</>}
-        intro="Studio uprights, church grands and two-story suburban homes — Orlando piano moving handled by licensed, insured crews with piano boards and stair equipment."
-        ctaLabel="Get Piano Moving Quotes"
-        ctaHref="/contact/"
-      />
-      <PageCostTable
-        eyebrow="Pricing 2026"
-        title="Piano moving rates in Orlando"
-        col1="Piano type"
-        col2="Local price"
-        col3="Crew"
-        rows={[
-          { size: "Upright / spinet / console", price: "$150 - $500", detail: "2 movers · 300-900 lb" },
-          { size: "Baby grand", price: "$300 - $800", detail: "3-4 movers · 500-800 lb" },
-          { size: "Concert grand", price: "$500 - $1,500", detail: "4-5 movers · up to 1,300 lb" },
-          { size: "Interstate transport (any)", price: "$450 - $2,300", detail: "Crew varies" },
-        ]}
-      />
-      <PageLocalKnowledge
-        eyebrow="Local context"
-        title="What makes Orlando piano moves different"
-        items={[
-          { t: "Two-story suburban builds", d: "Most Orlando piano moves involve a staircase. Each flight adds $40-$130, and second-floor placement averages +$100." },
-          { t: "Studio and church instruments", d: "Institutional uprights and grands often need partial disassembly (~$150) to clear double doors and choir lofts." },
-          { t: "Theme-park corridor traffic", d: "Crews schedule around I-4 and tourist-corridor congestion so the instrument spends less time on the truck." }
-        ]}
-      />
-      <PageNeighborhoods
-        eyebrow="Coverage"
-        title="Areas served around Orlando"
-        items={["Downtown Orlando", "Winter Park", "Baldwin Park", "Lake Nona", "Dr. Phillips", "Windermere", "Altamonte Springs", "Kissimmee", "Oviedo", "Apopka", "Winter Garden", "Celebration"]}
-        tail="Comparing options statewide? Start from the Florida piano movers hub."
-      />
-      <PageFaq title="Orlando piano moving FAQ" faqs={FAQS} />
-    </>
+    <PianoCityPage
+      city={CITY}
+      eyebrow="Orlando piano moving specialists"
+      opening="Orlando piano moving costs $150 - $500 for an upright and $300 - $800 for a grand piano locally, with interstate transport at $450 - $2,300. Tell us the instrument and the address once, and up to 4 licensed, insured piano movers in Orlando FL send you written quotes at no cost."
+      challenges={[
+        {
+          t: "Second homes and short-term rentals",
+          d: "Orlando has an unusually high concentration of vacation homes and short-term rentals, so a large share of piano placements happen at a second property the owner is not living in. That means gate codes, property-manager scheduling and a signature from someone other than the buyer — details that belong in the quote, not on move day.",
+        },
+        {
+          t: "Church and retirement community uprights",
+          d: "Large retirement and church communities across the metro generate a steady stream of upright moves between halls, campuses and villas. These are short hauls with awkward access: double doors, platform steps and stage ramps rather than residential staircases.",
+        },
+        {
+          t: "Placement in a home nobody occupies daily",
+          d: "A piano in a rental or seasonal house sits in a room whose AC may be cycled down for weeks. Keep the instrument off exterior walls and out of direct vent airflow, and plan the tuning for two to four weeks after placement rather than the day it arrives.",
+        },
+      ]}
+      areasIntro="Crews cover the whole Orlando metro, from Winter Park bungalows to newer two-story builds in the outer suburbs where a staircase is part of nearly every quote."
+      areas={[
+        "Winter Park",
+        "Lake Mary",
+        "Windermere",
+        "Dr. Phillips",
+        "Altamonte Springs",
+        "Kissimmee",
+        "Oviedo",
+        "Apopka",
+      ]}
+      faqs={FAQS}
+      related={[
+        { to: "/movers-in-orlando/", label: "Full-service movers in Orlando", d: "Moving the whole house too? Adding an upright to a household move costs $75 - $150 extra." },
+        { to: "/piano-movers-tampa/", label: "Piano movers in Tampa", d: "Bay-area crews for historic bungalows and downtown condo freight elevators." },
+        { to: "/piano-movers-jacksonville/", label: "Piano movers in Jacksonville", d: "Cross-town hauls and interstate transport out of Northeast Florida." },
+      ]}
+    />
   ),
 });

@@ -37,6 +37,8 @@ export interface PageHeadOptions {
   service?: ServiceMeta;
   /** Defaults to "en". Set "es" on every Spanish route. */
   lang?: Lang;
+  /** Skip hreflang alternates when no translated twin exists (e.g. blog articles). */
+  noAlternates?: boolean;
 }
 
 export function pageHead(opts: PageHeadOptions) {
@@ -120,9 +122,13 @@ export function pageHead(opts: PageHeadOptions) {
     ],
     links: [
       { rel: "canonical", href: canonicalUrl },
-      { rel: "alternate", hrefLang: "en", href: enUrl },
-      { rel: "alternate", hrefLang: "es", href: esUrl },
-      { rel: "alternate", hrefLang: "x-default", href: enUrl },
+      ...(opts.noAlternates
+        ? []
+        : [
+            { rel: "alternate", hrefLang: "en", href: enUrl },
+            { rel: "alternate", hrefLang: "es", href: esUrl },
+            { rel: "alternate", hrefLang: "x-default", href: enUrl },
+          ]),
     ],
     scripts,
   };

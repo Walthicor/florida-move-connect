@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TermsIndexRouteImport } from './routes/terms.index'
 import { Route as StorageSolutionsIndexRouteImport } from './routes/storage-solutions.index'
@@ -58,6 +59,11 @@ import { Route as EsBlogIndexRouteImport } from './routes/es.blog.index'
 import { Route as EsApartmentMoversIndexRouteImport } from './routes/es.apartment-movers.index'
 import { Route as BlogSlugIndexRouteImport } from './routes/blog.$slug.index'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -307,6 +313,7 @@ const BlogSlugIndexRoute = BlogSlugIndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/apartment-movers/': typeof ApartmentMoversIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/commercial-movers/': typeof CommercialMoversIndexRoute
@@ -357,6 +364,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/apartment-movers': typeof ApartmentMoversIndexRoute
   '/blog': typeof BlogIndexRoute
   '/commercial-movers': typeof CommercialMoversIndexRoute
@@ -408,6 +416,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/apartment-movers/': typeof ApartmentMoversIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/commercial-movers/': typeof CommercialMoversIndexRoute
@@ -460,6 +469,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/sitemap.xml'
     | '/apartment-movers/'
     | '/blog/'
     | '/commercial-movers/'
@@ -510,6 +520,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/sitemap.xml'
     | '/apartment-movers'
     | '/blog'
     | '/commercial-movers'
@@ -560,6 +571,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/sitemap.xml'
     | '/apartment-movers/'
     | '/blog/'
     | '/commercial-movers/'
@@ -611,6 +623,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ApartmentMoversIndexRoute: typeof ApartmentMoversIndexRoute
   BlogIndexRoute: typeof BlogIndexRoute
   CommercialMoversIndexRoute: typeof CommercialMoversIndexRoute
@@ -662,6 +675,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -1003,6 +1023,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   ApartmentMoversIndexRoute: ApartmentMoversIndexRoute,
   BlogIndexRoute: BlogIndexRoute,
   CommercialMoversIndexRoute: CommercialMoversIndexRoute,

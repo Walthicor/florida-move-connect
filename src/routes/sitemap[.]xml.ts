@@ -1,39 +1,32 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
-import { routeTree } from "@/routeTree.gen";
 import { BLOG_POSTS } from "@/lib/blog-posts";
 import { REDIRECT_PATHS } from "@/lib/redirects";
 
 const BASE_URL = "https://floridamoversdirect.com";
 
-type AnyRoute = { fullPath?: string; children?: unknown };
+// Real route table, read from the route files themselves at build time.
+// (Importing routeTree.gen here would create a circular import.)
+const ROUTE_MODULES = import.meta.glob("/src/routes/**/*.tsx", { eager: false });
 
-/** Walk the generated route tree and collect every concrete page path. */
-function collectPaths(route: AnyRoute, out: Set<string>) {
-  const full = route.fullPath;
-  if (typeof full === "string" && full.length > 0) {
-    out.add(full);
-  }
-  const children = route.children;
-  if (children) {
-    const list = Array.isArray(children) ? children : Object.values(children);
-    for (const child of list) collectPaths(child as AnyRoute, out);
-  }
-  return out;
+/** "/src/routes/es.movers-in-miami.index.tsx" -> "/es/movers-in-miami/" */
+function fileToPath(file: string): string | null {
+  let rel = file.replace("/src/routes/", "").replace(/\.(tsx|ts)$/, "");
+  if (rel.startsWith("__") || rel === "README") return null;
+  if (rel.includes("$") || rel.includes("*") || rel.includes("[")) return null;
+  rel = rel.replace(/(^|\.)index$/, "");
+  const path = rel === "" ? "/" : `/${rel.split(".").join("/")}/`;
+  return path;
 }
-
-const withSlash = (p: string) => (p.endsWith("/") ? p : `${p}/`);
 
 /** Public, indexable, HTTP-200 page paths derived from the real route table. */
 export function getSitemapPaths(): string[] {
-  const raw = Array.from(collectPaths(routeTree as AnyRoute, new Set<string>()));
   const paths = new Set<string>();
 
-  for (const p of raw) {
-    if (p.includes("$") || p.includes("*")) continue; // dynamic / splat
-    if (p.startsWith("/api/") || p.startsWith("/lovable")) continue;
-    if (p.includes("sitemap")) continue;
-    const path = withSlash(p);
+  for (const file of Object.keys(ROUTE_MODULES)) {
+    const path = fileToPath(file);
+    if (!path) continue;
+    if (path.startsWith("/api/") || path.startsWith("/lovable")) continue;
     if (REDIRECT_PATHS.includes(path)) continue; // 301, never 200
     paths.add(path);
   }

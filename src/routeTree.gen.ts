@@ -14,6 +14,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as TermsIndexRouteImport } from './routes/terms.index'
 import { Route as StorageSolutionsIndexRouteImport } from './routes/storage-solutions.index'
 import { Route as PrivacyPolicyIndexRouteImport } from './routes/privacy-policy.index'
+import { Route as PianoMovingCostIndexRouteImport } from './routes/piano-moving-cost.index'
 import { Route as PianoMoversIndexRouteImport } from './routes/piano-movers.index'
 import { Route as PianoMoversTheVillagesIndexRouteImport } from './routes/piano-movers-the-villages.index'
 import { Route as PianoMoversTampaIndexRouteImport } from './routes/piano-movers-tampa.index'
@@ -88,6 +89,11 @@ const StorageSolutionsIndexRoute = StorageSolutionsIndexRouteImport.update({
 const PrivacyPolicyIndexRoute = PrivacyPolicyIndexRouteImport.update({
   id: '/privacy-policy/',
   path: '/privacy-policy/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PianoMovingCostIndexRoute = PianoMovingCostIndexRouteImport.update({
+  id: '/piano-moving-cost/',
+  path: '/piano-moving-cost/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PianoMoversIndexRoute = PianoMoversIndexRouteImport.update({
@@ -383,6 +389,7 @@ export interface FileRoutesByFullPath {
   '/piano-movers-tampa/': typeof PianoMoversTampaIndexRoute
   '/piano-movers-the-villages/': typeof PianoMoversTheVillagesIndexRoute
   '/piano-movers/': typeof PianoMoversIndexRoute
+  '/piano-moving-cost/': typeof PianoMovingCostIndexRoute
   '/privacy-policy/': typeof PrivacyPolicyIndexRoute
   '/storage-solutions/': typeof StorageSolutionsIndexRoute
   '/terms/': typeof TermsIndexRoute
@@ -440,6 +447,7 @@ export interface FileRoutesByTo {
   '/piano-movers-tampa': typeof PianoMoversTampaIndexRoute
   '/piano-movers-the-villages': typeof PianoMoversTheVillagesIndexRoute
   '/piano-movers': typeof PianoMoversIndexRoute
+  '/piano-moving-cost': typeof PianoMovingCostIndexRoute
   '/privacy-policy': typeof PrivacyPolicyIndexRoute
   '/storage-solutions': typeof StorageSolutionsIndexRoute
   '/terms': typeof TermsIndexRoute
@@ -498,6 +506,7 @@ export interface FileRoutesById {
   '/piano-movers-tampa/': typeof PianoMoversTampaIndexRoute
   '/piano-movers-the-villages/': typeof PianoMoversTheVillagesIndexRoute
   '/piano-movers/': typeof PianoMoversIndexRoute
+  '/piano-moving-cost/': typeof PianoMovingCostIndexRoute
   '/privacy-policy/': typeof PrivacyPolicyIndexRoute
   '/storage-solutions/': typeof StorageSolutionsIndexRoute
   '/terms/': typeof TermsIndexRoute
@@ -557,6 +566,7 @@ export interface FileRouteTypes {
     | '/piano-movers-tampa/'
     | '/piano-movers-the-villages/'
     | '/piano-movers/'
+    | '/piano-moving-cost/'
     | '/privacy-policy/'
     | '/storage-solutions/'
     | '/terms/'
@@ -614,6 +624,7 @@ export interface FileRouteTypes {
     | '/piano-movers-tampa'
     | '/piano-movers-the-villages'
     | '/piano-movers'
+    | '/piano-moving-cost'
     | '/privacy-policy'
     | '/storage-solutions'
     | '/terms'
@@ -671,6 +682,7 @@ export interface FileRouteTypes {
     | '/piano-movers-tampa/'
     | '/piano-movers-the-villages/'
     | '/piano-movers/'
+    | '/piano-moving-cost/'
     | '/privacy-policy/'
     | '/storage-solutions/'
     | '/terms/'
@@ -729,6 +741,7 @@ export interface RootRouteChildren {
   PianoMoversTampaIndexRoute: typeof PianoMoversTampaIndexRoute
   PianoMoversTheVillagesIndexRoute: typeof PianoMoversTheVillagesIndexRoute
   PianoMoversIndexRoute: typeof PianoMoversIndexRoute
+  PianoMovingCostIndexRoute: typeof PianoMovingCostIndexRoute
   PrivacyPolicyIndexRoute: typeof PrivacyPolicyIndexRoute
   StorageSolutionsIndexRoute: typeof StorageSolutionsIndexRoute
   TermsIndexRoute: typeof TermsIndexRoute
@@ -789,6 +802,13 @@ declare module '@tanstack/react-router' {
       path: '/privacy-policy'
       fullPath: '/privacy-policy/'
       preLoaderRoute: typeof PrivacyPolicyIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/piano-moving-cost/': {
+      id: '/piano-moving-cost/'
+      path: '/piano-moving-cost'
+      fullPath: '/piano-moving-cost/'
+      preLoaderRoute: typeof PianoMovingCostIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/piano-movers/': {
@@ -1177,6 +1197,7 @@ const rootRouteChildren: RootRouteChildren = {
   PianoMoversTampaIndexRoute: PianoMoversTampaIndexRoute,
   PianoMoversTheVillagesIndexRoute: PianoMoversTheVillagesIndexRoute,
   PianoMoversIndexRoute: PianoMoversIndexRoute,
+  PianoMovingCostIndexRoute: PianoMovingCostIndexRoute,
   PrivacyPolicyIndexRoute: PrivacyPolicyIndexRoute,
   StorageSolutionsIndexRoute: StorageSolutionsIndexRoute,
   TermsIndexRoute: TermsIndexRoute,

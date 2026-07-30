@@ -28,6 +28,7 @@ export const Route = createFileRoute("/blog/$slug/")({
       description: post.metaDescription,
       image: post.image,
       faqs,
+      noAlternates: true,
     });
     const url = `${SITE_URL}${path}`;
     const image = post.image.startsWith("http")

@@ -7,6 +7,8 @@ const FAQS = [
   { q: "¿Vale la pena pagar por empaque?", a: "Sí si transporta piezas frágiles, arte, o si tiene poco tiempo. También activa cobertura de 'Full Value Protection' — si usted empaca, la empresa no cubre roturas dentro de cajas cerradas por usted." },
   { q: "¿La empresa trae los materiales?", a: "Sí. Los planes 'Full Pack' incluyen cajas, papel, cinta y film. En 'Fragile-only' cobran los materiales aparte pero traen todo el día del servicio." },
   { q: "¿Puedo empacar parcialmente?", a: "Sí — 'Partial Pack'. Usted empaca ropa y libros, la empresa empaca cocina, arte y frágiles. Baja costo y mantiene la cobertura sobre lo que ellos empacaron." },
+  { q: "¿Qué incluye exactamente el servicio de embalaje?", a: "Materiales grado mudanza, mano de obra del equipo, etiquetado por habitación e inventario básico. El desempaque y el retiro de cajas normalmente se cotizan aparte." },
+  { q: "¿Quién empaca un piano o una obra de arte?", a: "Un equipo especializado. El piano requiere crew propio con tabla de deslizamiento y valuación declarada; el arte y los espejos se protegen en cajas a medida (custom crating), no en cajas estándar." },
 ];
 
 export const Route = createFileRoute("/es/packing-services/")({
@@ -57,6 +59,33 @@ export const Route = createFileRoute("/es/packing-services/")({
           { t: "Humedad", d: "Cartón mal cerrado absorbe humedad y colapsa. El empaque profesional usa cajas grado mudanza que resisten." },
           { t: "Calor en camiones", d: "Cera, velas y vinilo se deforman. Empaque con papel protege del contacto directo con superficies calientes." },
           { t: "Tormentas súbitas", d: "Chubascos en tránsito ocurren todo el año. Film retráctil sobre muebles evita daño por agua." },
+        ]}
+      />
+      <PageLocalKnowledge
+        eyebrow="Qué incluye"
+        title="Qué incluye realmente un servicio de embalaje"
+        items={[
+          { t: "Materiales y mano de obra", d: "Cajas grado mudanza, papel sin tinta, cinta, film retráctil y el equipo que empaca. Todo llega el día del servicio." },
+          { t: "Etiquetado e inventario", d: "Cada caja se rotula por habitación y contenido. Eso acelera la descarga y reduce horas facturables el día de la mudanza." },
+          { t: "Cobertura sobre lo empacado", d: "Lo que empaca la empresa queda cubierto por su póliza. Lo que empaca usted, no — esa es la diferencia práctica más importante." },
+        ]}
+      />
+      <PageLocalKnowledge
+        eyebrow="Artículos especiales"
+        title="Arte, espejos, TVs, lámparas de araña y pianos"
+        items={[
+          { t: "Arte y espejos", d: "Cajas a medida con esquineros y doble pared. Nunca en cajas estándar: el vidrio plano se quiebra por presión lateral." },
+          { t: "TVs y electrónica", d: "Caja original o caja de TV con espuma. La pantalla viaja de canto, jamás acostada bajo peso." },
+          { t: "Pianos", d: "Servicio aparte con equipo especializado. Vea la guía de mudanza de pianos en Florida antes de contratar un equipo general." },
+        ]}
+      />
+      <PageLocalKnowledge
+        eyebrow="Después de la mudanza"
+        title="Desempaque y retiro de cajas"
+        items={[
+          { t: "Desempaque completo", d: "El equipo abre, coloca y organiza por habitación. Se cotiza por hora y se agenda el mismo día o al día siguiente." },
+          { t: "Retiro de escombros", d: "Cajas vacías, papel y film se retiran al final. Sin ese servicio, el reciclaje queda a su cargo." },
+          { t: "Agende con anticipación", d: "El desempaque debe pedirse al cotizar, no el día de la entrega: requiere horas de equipo reservadas." },
         ]}
       />
       <PageFaq title="Preguntas frecuentes" faqs={FAQS} />

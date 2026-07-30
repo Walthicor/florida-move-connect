@@ -63,7 +63,21 @@ function MiamiPage() {
       <LocalKnowledge title="Moving in Miami: What Actually Makes It Different" items={LOCAL} />
       <Neighborhoods title="Neighborhoods Our Miami Movers Cover Daily" items={NEIGHBORHOODS} tail="and all of Miami-Dade County." />
       <RoutesBlock title="Popular Routes from Miami" items={ROUTES} />
+      <section className="bg-surface-alt">
+        <div className="container-page py-14 max-w-3xl">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-ink">Moving to or from Hialeah?</h2>
+          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+            Hialeah is one of the highest-volume cross-town destinations in Miami-Dade, with its own
+            mix of dense multifamily buildings and predominantly Spanish-speaking households. See our{" "}
+            <Link to="/movers-in-hialeah/" className="font-semibold text-brand hover:underline">
+              guide to movers in Hialeah
+            </Link>{" "}
+            for bilingual crews, building COI requirements and hourly pricing on that route.
+          </p>
+        </div>
+      </section>
       <Faq faqs={FAQS} />
+
     </>
   );
 }

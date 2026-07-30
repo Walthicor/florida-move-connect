@@ -49,6 +49,8 @@ const FAQS = [
   { q: "How do I find cheap movers in Miami without getting scammed?", a: "Compare at least 3 licensed movers, move mid-month on a weekday, declutter first — and treat any quote 40% below the others as a red flag, not a bargain. Lowball bids are the classic setup for hostage-load scams in South Florida." },
   { q: "Do Miami condo buildings require special arrangements?", a: "Almost always: a COI from your mover, a reserved service elevator, weekday moving windows, and sometimes a refundable deposit ($250-$500). Our Miami movers send the COI to your property manager within 24 hours." },
   { q: "Can one company handle my move from Miami to another Florida city?", a: "Yes — intrastate routes like Miami-Orlando and Miami-Tampa are core routes for our long distance partners, with pricing by inventory rather than by the hour." },
+  { q: "What are local mover rates in Miami-Dade County?", a: "Two movers and a truck run $100-$160 per hour in Miami-Dade. By home size that works out to $450-$900 for a studio or one-bedroom, $700-$1,200 for a two-bedroom and $850-$1,500 for a three-bedroom, plus $100-$300 where a high-rise is involved." },
+  { q: "How do I confirm I am hiring licensed movers in Miami FL?", a: "Ask for the FDACS mover registration number for in-state work, or the USDOT number for anything crossing state lines, and verify it before paying a deposit. A licensed Miami mover will also produce an association-ready certificate of insurance on request." },
 ];
 
 function MiamiPage() {
@@ -59,10 +61,14 @@ function MiamiPage() {
         h1={<>Movers in <span className="text-brand">Miami</span>, Florida</>}
         intro="Local moves in Miami cost $450-$900 for a studio or 1-bedroom and $850-$1,500 for a 2-3 bedroom home — and the difference between a smooth Miami move and a nightmare is a crew that knows the buildings. COIs in Brickell, elevator slots in Sunny Isles, parking permits in Coconut Grove: our Miami movers handle all of it daily. Compare free quotes from licensed Miami moving companies in 2 minutes."
       />
-      <CostTable title="Miami Moving Costs (2026)" col2="Price Range" col3="Crew & Time" rows={COSTS} />
+      <CostTable title="Local Mover Rates in Miami-Dade County" col2="Price Range" col3="Crew & Time" rows={COSTS} />
+      <RatesExplainer />
+      <HighRiseSection />
+      <MunicipalityCoverage />
       <LocalKnowledge title="Moving in Miami: What Actually Makes It Different" items={LOCAL} />
       <Neighborhoods title="Neighborhoods Our Miami Movers Cover Daily" items={NEIGHBORHOODS} tail="and all of Miami-Dade County." />
       <RoutesBlock title="Popular Routes from Miami" items={ROUTES} />
+
       <section className="bg-surface-alt">
         <div className="container-page py-14 max-w-3xl">
           <h2 className="font-display text-2xl md:text-3xl font-bold text-ink">Moving to or from Hialeah?</h2>

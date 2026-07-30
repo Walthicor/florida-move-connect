@@ -35,6 +35,7 @@ import { Route as MoversInOcalaIndexRouteImport } from './routes/movers-in-ocala
 import { Route as MoversInNaplesIndexRouteImport } from './routes/movers-in-naples.index'
 import { Route as MoversInMiamiIndexRouteImport } from './routes/movers-in-miami.index'
 import { Route as MoversInJacksonvilleIndexRouteImport } from './routes/movers-in-jacksonville.index'
+import { Route as MoversInHialeahIndexRouteImport } from './routes/movers-in-hialeah.index'
 import { Route as MoversInBocaRatonIndexRouteImport } from './routes/movers-in-boca-raton.index'
 import { Route as MoverInTampaIndexRouteImport } from './routes/mover-in-tampa.index'
 import { Route as MiamiMoversIndexRouteImport } from './routes/miami-movers.index'
@@ -60,6 +61,7 @@ import { Route as EsMoversInOcalaIndexRouteImport } from './routes/es.movers-in-
 import { Route as EsMoversInNaplesIndexRouteImport } from './routes/es.movers-in-naples.index'
 import { Route as EsMoversInMiamiIndexRouteImport } from './routes/es.movers-in-miami.index'
 import { Route as EsMoversInJacksonvilleIndexRouteImport } from './routes/es.movers-in-jacksonville.index'
+import { Route as EsMoversInHialeahIndexRouteImport } from './routes/es.movers-in-hialeah.index'
 import { Route as EsMoversInBocaRatonIndexRouteImport } from './routes/es.movers-in-boca-raton.index'
 import { Route as EsLongDistanceMoversIndexRouteImport } from './routes/es.long-distance-movers.index'
 import { Route as EsLocalMoversInFloridaIndexRouteImport } from './routes/es.local-movers-in-florida.index'
@@ -205,6 +207,11 @@ const MoversInJacksonvilleIndexRoute =
     path: '/movers-in-jacksonville/',
     getParentRoute: () => rootRouteImport,
   } as any)
+const MoversInHialeahIndexRoute = MoversInHialeahIndexRouteImport.update({
+  id: '/movers-in-hialeah/',
+  path: '/movers-in-hialeah/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MoversInBocaRatonIndexRoute = MoversInBocaRatonIndexRouteImport.update({
   id: '/movers-in-boca-raton/',
   path: '/movers-in-boca-raton/',
@@ -332,6 +339,11 @@ const EsMoversInJacksonvilleIndexRoute =
     path: '/es/movers-in-jacksonville/',
     getParentRoute: () => rootRouteImport,
   } as any)
+const EsMoversInHialeahIndexRoute = EsMoversInHialeahIndexRouteImport.update({
+  id: '/es/movers-in-hialeah/',
+  path: '/es/movers-in-hialeah/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EsMoversInBocaRatonIndexRoute =
   EsMoversInBocaRatonIndexRouteImport.update({
     id: '/es/movers-in-boca-raton/',
@@ -392,6 +404,7 @@ export interface FileRoutesByFullPath {
   '/miami-movers/': typeof MiamiMoversIndexRoute
   '/mover-in-tampa/': typeof MoverInTampaIndexRoute
   '/movers-in-boca-raton/': typeof MoversInBocaRatonIndexRoute
+  '/movers-in-hialeah/': typeof MoversInHialeahIndexRoute
   '/movers-in-jacksonville/': typeof MoversInJacksonvilleIndexRoute
   '/movers-in-miami/': typeof MoversInMiamiIndexRoute
   '/movers-in-naples/': typeof MoversInNaplesIndexRoute
@@ -424,6 +437,7 @@ export interface FileRoutesByFullPath {
   '/es/local-movers-in-florida/': typeof EsLocalMoversInFloridaIndexRoute
   '/es/long-distance-movers/': typeof EsLongDistanceMoversIndexRoute
   '/es/movers-in-boca-raton/': typeof EsMoversInBocaRatonIndexRoute
+  '/es/movers-in-hialeah/': typeof EsMoversInHialeahIndexRoute
   '/es/movers-in-jacksonville/': typeof EsMoversInJacksonvilleIndexRoute
   '/es/movers-in-miami/': typeof EsMoversInMiamiIndexRoute
   '/es/movers-in-naples/': typeof EsMoversInNaplesIndexRoute
@@ -453,6 +467,7 @@ export interface FileRoutesByTo {
   '/miami-movers': typeof MiamiMoversIndexRoute
   '/mover-in-tampa': typeof MoverInTampaIndexRoute
   '/movers-in-boca-raton': typeof MoversInBocaRatonIndexRoute
+  '/movers-in-hialeah': typeof MoversInHialeahIndexRoute
   '/movers-in-jacksonville': typeof MoversInJacksonvilleIndexRoute
   '/movers-in-miami': typeof MoversInMiamiIndexRoute
   '/movers-in-naples': typeof MoversInNaplesIndexRoute
@@ -485,6 +500,7 @@ export interface FileRoutesByTo {
   '/es/local-movers-in-florida': typeof EsLocalMoversInFloridaIndexRoute
   '/es/long-distance-movers': typeof EsLongDistanceMoversIndexRoute
   '/es/movers-in-boca-raton': typeof EsMoversInBocaRatonIndexRoute
+  '/es/movers-in-hialeah': typeof EsMoversInHialeahIndexRoute
   '/es/movers-in-jacksonville': typeof EsMoversInJacksonvilleIndexRoute
   '/es/movers-in-miami': typeof EsMoversInMiamiIndexRoute
   '/es/movers-in-naples': typeof EsMoversInNaplesIndexRoute
@@ -515,6 +531,7 @@ export interface FileRoutesById {
   '/miami-movers/': typeof MiamiMoversIndexRoute
   '/mover-in-tampa/': typeof MoverInTampaIndexRoute
   '/movers-in-boca-raton/': typeof MoversInBocaRatonIndexRoute
+  '/movers-in-hialeah/': typeof MoversInHialeahIndexRoute
   '/movers-in-jacksonville/': typeof MoversInJacksonvilleIndexRoute
   '/movers-in-miami/': typeof MoversInMiamiIndexRoute
   '/movers-in-naples/': typeof MoversInNaplesIndexRoute
@@ -547,6 +564,7 @@ export interface FileRoutesById {
   '/es/local-movers-in-florida/': typeof EsLocalMoversInFloridaIndexRoute
   '/es/long-distance-movers/': typeof EsLongDistanceMoversIndexRoute
   '/es/movers-in-boca-raton/': typeof EsMoversInBocaRatonIndexRoute
+  '/es/movers-in-hialeah/': typeof EsMoversInHialeahIndexRoute
   '/es/movers-in-jacksonville/': typeof EsMoversInJacksonvilleIndexRoute
   '/es/movers-in-miami/': typeof EsMoversInMiamiIndexRoute
   '/es/movers-in-naples/': typeof EsMoversInNaplesIndexRoute
@@ -578,6 +596,7 @@ export interface FileRouteTypes {
     | '/miami-movers/'
     | '/mover-in-tampa/'
     | '/movers-in-boca-raton/'
+    | '/movers-in-hialeah/'
     | '/movers-in-jacksonville/'
     | '/movers-in-miami/'
     | '/movers-in-naples/'
@@ -610,6 +629,7 @@ export interface FileRouteTypes {
     | '/es/local-movers-in-florida/'
     | '/es/long-distance-movers/'
     | '/es/movers-in-boca-raton/'
+    | '/es/movers-in-hialeah/'
     | '/es/movers-in-jacksonville/'
     | '/es/movers-in-miami/'
     | '/es/movers-in-naples/'
@@ -639,6 +659,7 @@ export interface FileRouteTypes {
     | '/miami-movers'
     | '/mover-in-tampa'
     | '/movers-in-boca-raton'
+    | '/movers-in-hialeah'
     | '/movers-in-jacksonville'
     | '/movers-in-miami'
     | '/movers-in-naples'
@@ -671,6 +692,7 @@ export interface FileRouteTypes {
     | '/es/local-movers-in-florida'
     | '/es/long-distance-movers'
     | '/es/movers-in-boca-raton'
+    | '/es/movers-in-hialeah'
     | '/es/movers-in-jacksonville'
     | '/es/movers-in-miami'
     | '/es/movers-in-naples'
@@ -700,6 +722,7 @@ export interface FileRouteTypes {
     | '/miami-movers/'
     | '/mover-in-tampa/'
     | '/movers-in-boca-raton/'
+    | '/movers-in-hialeah/'
     | '/movers-in-jacksonville/'
     | '/movers-in-miami/'
     | '/movers-in-naples/'
@@ -732,6 +755,7 @@ export interface FileRouteTypes {
     | '/es/local-movers-in-florida/'
     | '/es/long-distance-movers/'
     | '/es/movers-in-boca-raton/'
+    | '/es/movers-in-hialeah/'
     | '/es/movers-in-jacksonville/'
     | '/es/movers-in-miami/'
     | '/es/movers-in-naples/'
@@ -762,6 +786,7 @@ export interface RootRouteChildren {
   MiamiMoversIndexRoute: typeof MiamiMoversIndexRoute
   MoverInTampaIndexRoute: typeof MoverInTampaIndexRoute
   MoversInBocaRatonIndexRoute: typeof MoversInBocaRatonIndexRoute
+  MoversInHialeahIndexRoute: typeof MoversInHialeahIndexRoute
   MoversInJacksonvilleIndexRoute: typeof MoversInJacksonvilleIndexRoute
   MoversInMiamiIndexRoute: typeof MoversInMiamiIndexRoute
   MoversInNaplesIndexRoute: typeof MoversInNaplesIndexRoute
@@ -794,6 +819,7 @@ export interface RootRouteChildren {
   EsLocalMoversInFloridaIndexRoute: typeof EsLocalMoversInFloridaIndexRoute
   EsLongDistanceMoversIndexRoute: typeof EsLongDistanceMoversIndexRoute
   EsMoversInBocaRatonIndexRoute: typeof EsMoversInBocaRatonIndexRoute
+  EsMoversInHialeahIndexRoute: typeof EsMoversInHialeahIndexRoute
   EsMoversInJacksonvilleIndexRoute: typeof EsMoversInJacksonvilleIndexRoute
   EsMoversInMiamiIndexRoute: typeof EsMoversInMiamiIndexRoute
   EsMoversInNaplesIndexRoute: typeof EsMoversInNaplesIndexRoute
@@ -992,6 +1018,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MoversInJacksonvilleIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/movers-in-hialeah/': {
+      id: '/movers-in-hialeah/'
+      path: '/movers-in-hialeah'
+      fullPath: '/movers-in-hialeah/'
+      preLoaderRoute: typeof MoversInHialeahIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/movers-in-boca-raton/': {
       id: '/movers-in-boca-raton/'
       path: '/movers-in-boca-raton'
@@ -1167,6 +1200,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EsMoversInJacksonvilleIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/es/movers-in-hialeah/': {
+      id: '/es/movers-in-hialeah/'
+      path: '/es/movers-in-hialeah'
+      fullPath: '/es/movers-in-hialeah/'
+      preLoaderRoute: typeof EsMoversInHialeahIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/es/movers-in-boca-raton/': {
       id: '/es/movers-in-boca-raton/'
       path: '/es/movers-in-boca-raton'
@@ -1242,6 +1282,7 @@ const rootRouteChildren: RootRouteChildren = {
   MiamiMoversIndexRoute: MiamiMoversIndexRoute,
   MoverInTampaIndexRoute: MoverInTampaIndexRoute,
   MoversInBocaRatonIndexRoute: MoversInBocaRatonIndexRoute,
+  MoversInHialeahIndexRoute: MoversInHialeahIndexRoute,
   MoversInJacksonvilleIndexRoute: MoversInJacksonvilleIndexRoute,
   MoversInMiamiIndexRoute: MoversInMiamiIndexRoute,
   MoversInNaplesIndexRoute: MoversInNaplesIndexRoute,
@@ -1274,6 +1315,7 @@ const rootRouteChildren: RootRouteChildren = {
   EsLocalMoversInFloridaIndexRoute: EsLocalMoversInFloridaIndexRoute,
   EsLongDistanceMoversIndexRoute: EsLongDistanceMoversIndexRoute,
   EsMoversInBocaRatonIndexRoute: EsMoversInBocaRatonIndexRoute,
+  EsMoversInHialeahIndexRoute: EsMoversInHialeahIndexRoute,
   EsMoversInJacksonvilleIndexRoute: EsMoversInJacksonvilleIndexRoute,
   EsMoversInMiamiIndexRoute: EsMoversInMiamiIndexRoute,
   EsMoversInNaplesIndexRoute: EsMoversInNaplesIndexRoute,

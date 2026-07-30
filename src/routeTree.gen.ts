@@ -14,8 +14,14 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as TermsIndexRouteImport } from './routes/terms.index'
 import { Route as StorageSolutionsIndexRouteImport } from './routes/storage-solutions.index'
 import { Route as PrivacyPolicyIndexRouteImport } from './routes/privacy-policy.index'
+import { Route as PianoMovingCostIndexRouteImport } from './routes/piano-moving-cost.index'
 import { Route as PianoMoversIndexRouteImport } from './routes/piano-movers.index'
+import { Route as PianoMoversTheVillagesIndexRouteImport } from './routes/piano-movers-the-villages.index'
 import { Route as PianoMoversTampaIndexRouteImport } from './routes/piano-movers-tampa.index'
+import { Route as PianoMoversOrlandoIndexRouteImport } from './routes/piano-movers-orlando.index'
+import { Route as PianoMoversMiamiIndexRouteImport } from './routes/piano-movers-miami.index'
+import { Route as PianoMoversJacksonvilleIndexRouteImport } from './routes/piano-movers-jacksonville.index'
+import { Route as PianoMoversBocaRatonIndexRouteImport } from './routes/piano-movers-boca-raton.index'
 import { Route as PackingServicesIndexRouteImport } from './routes/packing-services.index'
 import { Route as MudanzasFIndexRouteImport } from './routes/mudanzas-f.index'
 import { Route as MovingStorageIndexRouteImport } from './routes/moving-storage.index'
@@ -32,6 +38,7 @@ import { Route as MiamiMoversIndexRouteImport } from './routes/miami-movers.inde
 import { Route as LongDistanceMoversIndexRouteImport } from './routes/long-distance-movers.index'
 import { Route as LocalMoversIndexRouteImport } from './routes/local-movers.index'
 import { Route as LocalMoversInFloridaIndexRouteImport } from './routes/local-movers-in-florida.index'
+import { Route as GrandPianoMoversIndexRouteImport } from './routes/grand-piano-movers.index'
 import { Route as FurnitureMoversIndexRouteImport } from './routes/furniture-movers.index'
 import { Route as EsIndexRouteImport } from './routes/es.index'
 import { Route as ContactIndexRouteImport } from './routes/contact.index'
@@ -84,16 +91,49 @@ const PrivacyPolicyIndexRoute = PrivacyPolicyIndexRouteImport.update({
   path: '/privacy-policy/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PianoMovingCostIndexRoute = PianoMovingCostIndexRouteImport.update({
+  id: '/piano-moving-cost/',
+  path: '/piano-moving-cost/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PianoMoversIndexRoute = PianoMoversIndexRouteImport.update({
   id: '/piano-movers/',
   path: '/piano-movers/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PianoMoversTheVillagesIndexRoute =
+  PianoMoversTheVillagesIndexRouteImport.update({
+    id: '/piano-movers-the-villages/',
+    path: '/piano-movers-the-villages/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const PianoMoversTampaIndexRoute = PianoMoversTampaIndexRouteImport.update({
   id: '/piano-movers-tampa/',
   path: '/piano-movers-tampa/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PianoMoversOrlandoIndexRoute = PianoMoversOrlandoIndexRouteImport.update({
+  id: '/piano-movers-orlando/',
+  path: '/piano-movers-orlando/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PianoMoversMiamiIndexRoute = PianoMoversMiamiIndexRouteImport.update({
+  id: '/piano-movers-miami/',
+  path: '/piano-movers-miami/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PianoMoversJacksonvilleIndexRoute =
+  PianoMoversJacksonvilleIndexRouteImport.update({
+    id: '/piano-movers-jacksonville/',
+    path: '/piano-movers-jacksonville/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const PianoMoversBocaRatonIndexRoute =
+  PianoMoversBocaRatonIndexRouteImport.update({
+    id: '/piano-movers-boca-raton/',
+    path: '/piano-movers-boca-raton/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const PackingServicesIndexRoute = PackingServicesIndexRouteImport.update({
   id: '/packing-services/',
   path: '/packing-services/',
@@ -176,6 +216,11 @@ const LocalMoversInFloridaIndexRoute =
     path: '/local-movers-in-florida/',
     getParentRoute: () => rootRouteImport,
   } as any)
+const GrandPianoMoversIndexRoute = GrandPianoMoversIndexRouteImport.update({
+  id: '/grand-piano-movers/',
+  path: '/grand-piano-movers/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FurnitureMoversIndexRoute = FurnitureMoversIndexRouteImport.update({
   id: '/furniture-movers/',
   path: '/furniture-movers/',
@@ -320,6 +365,7 @@ export interface FileRoutesByFullPath {
   '/contact/': typeof ContactIndexRoute
   '/es/': typeof EsIndexRoute
   '/furniture-movers/': typeof FurnitureMoversIndexRoute
+  '/grand-piano-movers/': typeof GrandPianoMoversIndexRoute
   '/local-movers-in-florida/': typeof LocalMoversInFloridaIndexRoute
   '/local-movers/': typeof LocalMoversIndexRoute
   '/long-distance-movers/': typeof LongDistanceMoversIndexRoute
@@ -336,8 +382,14 @@ export interface FileRoutesByFullPath {
   '/moving-storage/': typeof MovingStorageIndexRoute
   '/mudanzas-f/': typeof MudanzasFIndexRoute
   '/packing-services/': typeof PackingServicesIndexRoute
+  '/piano-movers-boca-raton/': typeof PianoMoversBocaRatonIndexRoute
+  '/piano-movers-jacksonville/': typeof PianoMoversJacksonvilleIndexRoute
+  '/piano-movers-miami/': typeof PianoMoversMiamiIndexRoute
+  '/piano-movers-orlando/': typeof PianoMoversOrlandoIndexRoute
   '/piano-movers-tampa/': typeof PianoMoversTampaIndexRoute
+  '/piano-movers-the-villages/': typeof PianoMoversTheVillagesIndexRoute
   '/piano-movers/': typeof PianoMoversIndexRoute
+  '/piano-moving-cost/': typeof PianoMovingCostIndexRoute
   '/privacy-policy/': typeof PrivacyPolicyIndexRoute
   '/storage-solutions/': typeof StorageSolutionsIndexRoute
   '/terms/': typeof TermsIndexRoute
@@ -371,6 +423,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactIndexRoute
   '/es': typeof EsIndexRoute
   '/furniture-movers': typeof FurnitureMoversIndexRoute
+  '/grand-piano-movers': typeof GrandPianoMoversIndexRoute
   '/local-movers-in-florida': typeof LocalMoversInFloridaIndexRoute
   '/local-movers': typeof LocalMoversIndexRoute
   '/long-distance-movers': typeof LongDistanceMoversIndexRoute
@@ -387,8 +440,14 @@ export interface FileRoutesByTo {
   '/moving-storage': typeof MovingStorageIndexRoute
   '/mudanzas-f': typeof MudanzasFIndexRoute
   '/packing-services': typeof PackingServicesIndexRoute
+  '/piano-movers-boca-raton': typeof PianoMoversBocaRatonIndexRoute
+  '/piano-movers-jacksonville': typeof PianoMoversJacksonvilleIndexRoute
+  '/piano-movers-miami': typeof PianoMoversMiamiIndexRoute
+  '/piano-movers-orlando': typeof PianoMoversOrlandoIndexRoute
   '/piano-movers-tampa': typeof PianoMoversTampaIndexRoute
+  '/piano-movers-the-villages': typeof PianoMoversTheVillagesIndexRoute
   '/piano-movers': typeof PianoMoversIndexRoute
+  '/piano-moving-cost': typeof PianoMovingCostIndexRoute
   '/privacy-policy': typeof PrivacyPolicyIndexRoute
   '/storage-solutions': typeof StorageSolutionsIndexRoute
   '/terms': typeof TermsIndexRoute
@@ -423,6 +482,7 @@ export interface FileRoutesById {
   '/contact/': typeof ContactIndexRoute
   '/es/': typeof EsIndexRoute
   '/furniture-movers/': typeof FurnitureMoversIndexRoute
+  '/grand-piano-movers/': typeof GrandPianoMoversIndexRoute
   '/local-movers-in-florida/': typeof LocalMoversInFloridaIndexRoute
   '/local-movers/': typeof LocalMoversIndexRoute
   '/long-distance-movers/': typeof LongDistanceMoversIndexRoute
@@ -439,8 +499,14 @@ export interface FileRoutesById {
   '/moving-storage/': typeof MovingStorageIndexRoute
   '/mudanzas-f/': typeof MudanzasFIndexRoute
   '/packing-services/': typeof PackingServicesIndexRoute
+  '/piano-movers-boca-raton/': typeof PianoMoversBocaRatonIndexRoute
+  '/piano-movers-jacksonville/': typeof PianoMoversJacksonvilleIndexRoute
+  '/piano-movers-miami/': typeof PianoMoversMiamiIndexRoute
+  '/piano-movers-orlando/': typeof PianoMoversOrlandoIndexRoute
   '/piano-movers-tampa/': typeof PianoMoversTampaIndexRoute
+  '/piano-movers-the-villages/': typeof PianoMoversTheVillagesIndexRoute
   '/piano-movers/': typeof PianoMoversIndexRoute
+  '/piano-moving-cost/': typeof PianoMovingCostIndexRoute
   '/privacy-policy/': typeof PrivacyPolicyIndexRoute
   '/storage-solutions/': typeof StorageSolutionsIndexRoute
   '/terms/': typeof TermsIndexRoute
@@ -476,6 +542,7 @@ export interface FileRouteTypes {
     | '/contact/'
     | '/es/'
     | '/furniture-movers/'
+    | '/grand-piano-movers/'
     | '/local-movers-in-florida/'
     | '/local-movers/'
     | '/long-distance-movers/'
@@ -492,8 +559,14 @@ export interface FileRouteTypes {
     | '/moving-storage/'
     | '/mudanzas-f/'
     | '/packing-services/'
+    | '/piano-movers-boca-raton/'
+    | '/piano-movers-jacksonville/'
+    | '/piano-movers-miami/'
+    | '/piano-movers-orlando/'
     | '/piano-movers-tampa/'
+    | '/piano-movers-the-villages/'
     | '/piano-movers/'
+    | '/piano-moving-cost/'
     | '/privacy-policy/'
     | '/storage-solutions/'
     | '/terms/'
@@ -527,6 +600,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/es'
     | '/furniture-movers'
+    | '/grand-piano-movers'
     | '/local-movers-in-florida'
     | '/local-movers'
     | '/long-distance-movers'
@@ -543,8 +617,14 @@ export interface FileRouteTypes {
     | '/moving-storage'
     | '/mudanzas-f'
     | '/packing-services'
+    | '/piano-movers-boca-raton'
+    | '/piano-movers-jacksonville'
+    | '/piano-movers-miami'
+    | '/piano-movers-orlando'
     | '/piano-movers-tampa'
+    | '/piano-movers-the-villages'
     | '/piano-movers'
+    | '/piano-moving-cost'
     | '/privacy-policy'
     | '/storage-solutions'
     | '/terms'
@@ -578,6 +658,7 @@ export interface FileRouteTypes {
     | '/contact/'
     | '/es/'
     | '/furniture-movers/'
+    | '/grand-piano-movers/'
     | '/local-movers-in-florida/'
     | '/local-movers/'
     | '/long-distance-movers/'
@@ -594,8 +675,14 @@ export interface FileRouteTypes {
     | '/moving-storage/'
     | '/mudanzas-f/'
     | '/packing-services/'
+    | '/piano-movers-boca-raton/'
+    | '/piano-movers-jacksonville/'
+    | '/piano-movers-miami/'
+    | '/piano-movers-orlando/'
     | '/piano-movers-tampa/'
+    | '/piano-movers-the-villages/'
     | '/piano-movers/'
+    | '/piano-moving-cost/'
     | '/privacy-policy/'
     | '/storage-solutions/'
     | '/terms/'
@@ -630,6 +717,7 @@ export interface RootRouteChildren {
   ContactIndexRoute: typeof ContactIndexRoute
   EsIndexRoute: typeof EsIndexRoute
   FurnitureMoversIndexRoute: typeof FurnitureMoversIndexRoute
+  GrandPianoMoversIndexRoute: typeof GrandPianoMoversIndexRoute
   LocalMoversInFloridaIndexRoute: typeof LocalMoversInFloridaIndexRoute
   LocalMoversIndexRoute: typeof LocalMoversIndexRoute
   LongDistanceMoversIndexRoute: typeof LongDistanceMoversIndexRoute
@@ -646,8 +734,14 @@ export interface RootRouteChildren {
   MovingStorageIndexRoute: typeof MovingStorageIndexRoute
   MudanzasFIndexRoute: typeof MudanzasFIndexRoute
   PackingServicesIndexRoute: typeof PackingServicesIndexRoute
+  PianoMoversBocaRatonIndexRoute: typeof PianoMoversBocaRatonIndexRoute
+  PianoMoversJacksonvilleIndexRoute: typeof PianoMoversJacksonvilleIndexRoute
+  PianoMoversMiamiIndexRoute: typeof PianoMoversMiamiIndexRoute
+  PianoMoversOrlandoIndexRoute: typeof PianoMoversOrlandoIndexRoute
   PianoMoversTampaIndexRoute: typeof PianoMoversTampaIndexRoute
+  PianoMoversTheVillagesIndexRoute: typeof PianoMoversTheVillagesIndexRoute
   PianoMoversIndexRoute: typeof PianoMoversIndexRoute
+  PianoMovingCostIndexRoute: typeof PianoMovingCostIndexRoute
   PrivacyPolicyIndexRoute: typeof PrivacyPolicyIndexRoute
   StorageSolutionsIndexRoute: typeof StorageSolutionsIndexRoute
   TermsIndexRoute: typeof TermsIndexRoute
@@ -710,6 +804,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyPolicyIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/piano-moving-cost/': {
+      id: '/piano-moving-cost/'
+      path: '/piano-moving-cost'
+      fullPath: '/piano-moving-cost/'
+      preLoaderRoute: typeof PianoMovingCostIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/piano-movers/': {
       id: '/piano-movers/'
       path: '/piano-movers'
@@ -717,11 +818,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PianoMoversIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/piano-movers-the-villages/': {
+      id: '/piano-movers-the-villages/'
+      path: '/piano-movers-the-villages'
+      fullPath: '/piano-movers-the-villages/'
+      preLoaderRoute: typeof PianoMoversTheVillagesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/piano-movers-tampa/': {
       id: '/piano-movers-tampa/'
       path: '/piano-movers-tampa'
       fullPath: '/piano-movers-tampa/'
       preLoaderRoute: typeof PianoMoversTampaIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/piano-movers-orlando/': {
+      id: '/piano-movers-orlando/'
+      path: '/piano-movers-orlando'
+      fullPath: '/piano-movers-orlando/'
+      preLoaderRoute: typeof PianoMoversOrlandoIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/piano-movers-miami/': {
+      id: '/piano-movers-miami/'
+      path: '/piano-movers-miami'
+      fullPath: '/piano-movers-miami/'
+      preLoaderRoute: typeof PianoMoversMiamiIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/piano-movers-jacksonville/': {
+      id: '/piano-movers-jacksonville/'
+      path: '/piano-movers-jacksonville'
+      fullPath: '/piano-movers-jacksonville/'
+      preLoaderRoute: typeof PianoMoversJacksonvilleIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/piano-movers-boca-raton/': {
+      id: '/piano-movers-boca-raton/'
+      path: '/piano-movers-boca-raton'
+      fullPath: '/piano-movers-boca-raton/'
+      preLoaderRoute: typeof PianoMoversBocaRatonIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/packing-services/': {
@@ -834,6 +970,13 @@ declare module '@tanstack/react-router' {
       path: '/local-movers-in-florida'
       fullPath: '/local-movers-in-florida/'
       preLoaderRoute: typeof LocalMoversInFloridaIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/grand-piano-movers/': {
+      id: '/grand-piano-movers/'
+      path: '/grand-piano-movers'
+      fullPath: '/grand-piano-movers/'
+      preLoaderRoute: typeof GrandPianoMoversIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/furniture-movers/': {
@@ -1030,6 +1173,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactIndexRoute: ContactIndexRoute,
   EsIndexRoute: EsIndexRoute,
   FurnitureMoversIndexRoute: FurnitureMoversIndexRoute,
+  GrandPianoMoversIndexRoute: GrandPianoMoversIndexRoute,
   LocalMoversInFloridaIndexRoute: LocalMoversInFloridaIndexRoute,
   LocalMoversIndexRoute: LocalMoversIndexRoute,
   LongDistanceMoversIndexRoute: LongDistanceMoversIndexRoute,
@@ -1046,8 +1190,14 @@ const rootRouteChildren: RootRouteChildren = {
   MovingStorageIndexRoute: MovingStorageIndexRoute,
   MudanzasFIndexRoute: MudanzasFIndexRoute,
   PackingServicesIndexRoute: PackingServicesIndexRoute,
+  PianoMoversBocaRatonIndexRoute: PianoMoversBocaRatonIndexRoute,
+  PianoMoversJacksonvilleIndexRoute: PianoMoversJacksonvilleIndexRoute,
+  PianoMoversMiamiIndexRoute: PianoMoversMiamiIndexRoute,
+  PianoMoversOrlandoIndexRoute: PianoMoversOrlandoIndexRoute,
   PianoMoversTampaIndexRoute: PianoMoversTampaIndexRoute,
+  PianoMoversTheVillagesIndexRoute: PianoMoversTheVillagesIndexRoute,
   PianoMoversIndexRoute: PianoMoversIndexRoute,
+  PianoMovingCostIndexRoute: PianoMovingCostIndexRoute,
   PrivacyPolicyIndexRoute: PrivacyPolicyIndexRoute,
   StorageSolutionsIndexRoute: StorageSolutionsIndexRoute,
   TermsIndexRoute: TermsIndexRoute,

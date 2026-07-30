@@ -43,9 +43,24 @@ function OcalaPage() {
       />
       <SimpleCostTable title="Ocala Moving Costs (2026)" rows={COSTS} />
       <LocalKnowledge title="Moving in Ocala: What Local Crews Plan For" items={LOCAL} />
+      <section className="bg-background">
+        <div className="container-page py-14 max-w-3xl">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-ink">Moving between Ocala and The Villages</h2>
+          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+            The Ocala-to-Villages corridor is the busiest short route in Marion County. If the
+            community itself is your destination, our{" "}
+            <Link to="/movers-in-the-villages/" className="font-semibold text-brand hover:underline">
+              guide to movers in The Villages
+            </Link>{" "}
+            covers villa truck staging, downsizing partial loads and the storage overlap that
+            almost every inbound household needs.
+          </p>
+        </div>
+      </section>
       <Faq faqs={FAQS} />
     </>
   );
+
 }
 
 export function CityHero({ eyebrow, h1, intro }: { eyebrow: string; h1: React.ReactNode; intro: string }) {

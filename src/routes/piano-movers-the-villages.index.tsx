@@ -1,63 +1,80 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { pageHead } from "@/lib/seo";
-import { PageHero, PageCostTable, PageLocalKnowledge, PageNeighborhoods, PageFaq } from "@/components/site/PageBlocks";
+import { PianoCityPage, pianoCitySchema, type PianoFaq } from "@/components/site/PianoCityPage";
 
 const PATH = "/piano-movers-the-villages/";
+const CITY = "The Villages";
 
-const FAQS = [
-  { q: "How much do piano movers charge in The Villages?", a: "Locally, uprights run $150 - $500, baby grands $300 - $800 and concert grands $500 - $1,500. Interstate piano transport costs $450 - $2,300. Stairs add $40 - $130 per flight and partial disassembly about $150." },
-  { q: "Do I need a specialist piano mover?", a: "Specialist crews cost $100 - $300 more than general movers, and they bring piano boards, skid boards, stair equipment and instrument-specific insurance. For grands, stairs or high-value uprights, use a specialist." },
-  { q: "Will the piano need tuning after the move in The Villages?", a: "Yes. Florida humidity and a new room change how the soundboard sits. Wait two to four weeks for the instrument to acclimate, then book a tuning so it holds pitch." },
+const FAQS: PianoFaq[] = [
+  {
+    q: "Can a grand piano be delivered into a villa?",
+    a: "Usually yes. Villa layouts here are golf-cart oriented, so the truck often stages on the street or a shared drive and the crew rolls the instrument in from there. Legs, pedal box and music rack come off first, at roughly $150 for partial disassembly.",
+  },
+  {
+    q: "My grand is shipping down from up north — what will that cost?",
+    a: "Interstate piano transport runs $450 - $2,300 depending on route and instrument, and heat-treated crating adds $1,000 - $1,600 when it is required. Downsizing moves into The Villages frequently arrive this way, so book four or more weeks out.",
+  },
+  {
+    q: "What do local piano moves inside The Villages cost?",
+    a: "Uprights are $150 - $500 and baby grands $300 - $800, with concert grands at $500 - $1,500. Short hops between villages are still priced on crew size, stairs and disassembly rather than mileage, so a five-minute move is not a five-minute price.",
+  },
+  {
+    q: "Do you move instruments for resident music and choral groups?",
+    a: "Yes. Active resident music and choral groups move uprights between recreation centers and community halls regularly. Those venues have double doors, stage steps and ramps rather than staircases, and the route is measured before the piano leaves the room.",
+  },
+  {
+    q: "When should the piano be tuned after arriving?",
+    a: "Two to four weeks after placement. An instrument that has just come from a northern home faces a large humidity change in Central Florida, and the soundboard needs to settle before a tuning will hold pitch in its new room.",
+  },
 ];
 
 export const Route = createFileRoute("/piano-movers-the-villages/")({
-  head: () =>
-    pageHead({
+  head: () => {
+    const base = pageHead({
       path: PATH,
-      title: "Piano Movers in The Villages FL | Upright & Grand Moving",
-      description: "Piano movers serving The Villages. Uprights $150-$500, grands $300-$800 locally, interstate $450-$2,300. Insured, CPM-trained crews. Free quotes.",
+      title: "Piano Movers The Villages FL | Grand Piano Specialists",
+      description:
+        "Piano movers serving The Villages. Uprights $150-$500, grands $300-$800 locally, interstate $450-$2,300. Insured, CPM-trained crews. Free quotes.",
       faqs: FAQS,
-      service: { serviceType: "Piano Moving", areaServed: "The Villages, FL" },
       noAlternates: true,
-    }),
+    });
+    return { ...base, scripts: [...base.scripts, ...pianoCitySchema(CITY, PATH)] };
+  },
   component: () => (
-    <>
-      <PageHero
-        eyebrow="The Villages · Pianos"
-        h1={<>Piano Movers in <span className="text-brand">The Villages</span>, Florida</>}
-        intro="Downsizing, right-sizing and second-home moves — piano moving in The Villages is usually a short hop that still needs the full skid board and strap treatment."
-        ctaLabel="Get Piano Moving Quotes"
-        ctaHref="/contact/"
-      />
-      <PageCostTable
-        eyebrow="Pricing 2026"
-        title="Piano moving rates in The Villages"
-        col1="Piano type"
-        col2="Local price"
-        col3="Crew"
-        rows={[
-          { size: "Upright / spinet / console", price: "$150 - $500", detail: "2 movers · 300-900 lb" },
-          { size: "Baby grand", price: "$300 - $800", detail: "3-4 movers · 500-800 lb" },
-          { size: "Concert grand", price: "$500 - $1,500", detail: "4-5 movers · up to 1,300 lb" },
-          { size: "Interstate transport (any)", price: "$450 - $2,300", detail: "Crew varies" },
-        ]}
-      />
-      <PageLocalKnowledge
-        eyebrow="Local context"
-        title="What makes The Villages piano moves different"
-        items={[
-          { t: "Downsizing moves", d: "Many residents move an upright from a larger northern home into a villa. Measure the destination room before the truck is booked." },
-          { t: "Short local hops", d: "Inside-community moves are short but still priced by crew size, stairs and disassembly — not by mileage alone." },
-          { t: "Seasonal residents", d: "Interstate piano transport in and out of Central Florida peaks with snowbird season; reserve crews weeks ahead." }
-        ]}
-      />
-      <PageNeighborhoods
-        eyebrow="Coverage"
-        title="Areas served around The Villages"
-        items={["Spanish Springs", "Lake Sumter Landing", "Brownwood", "Sumter County", "Lady Lake", "Wildwood", "Fruitland Park", "Leesburg", "Oxford", "Summerfield", "Belleview", "Ocala"]}
-        tail="Comparing options statewide? Start from the Florida piano movers hub."
-      />
-      <PageFaq title="The Villages piano moving FAQ" faqs={FAQS} />
-    </>
+    <PianoCityPage
+      city={CITY}
+      eyebrow="Grand piano specialists"
+      opening="Grand piano moving in The Villages FL costs $300 - $800 locally and $150 - $500 for an upright, with interstate transport at $450 - $2,300. Tell us the instrument and the villa once, and up to 4 licensed, insured piano movers send free written quotes with no obligation."
+      challenges={[
+        {
+          t: "More pianos per household than anywhere",
+          d: "As one of the largest retirement communities in the United States, The Villages has an unusually high density of pianos per household, supported by active resident music and choral groups. Instruments move between homes, recreation centers and community halls far more often than in a typical Florida market.",
+        },
+        {
+          t: "Downsizing from a larger northern home",
+          d: "A great many moves here start out of state: a grand piano leaving a big northern house and arriving in a smaller Florida villa. That means interstate transport at $450 - $2,300, possible crating at $1,000 - $1,600, and a destination room that must be measured before the truck is booked.",
+        },
+        {
+          t: "Golf-cart streets and villa garages",
+          d: "Street layouts here are built around golf carts, and villa garage access is narrow. Truck staging is the real planning problem: crews often park at a distance and roll the instrument in on a piano board, which affects crew size and time on the estimate.",
+        },
+      ]}
+      areasIntro="Coverage spans the town squares and the surrounding Lake, Sumter and Marion County towns, including out-of-state deliveries arriving through Central Florida."
+      areas={[
+        "Spanish Springs",
+        "Lake Sumter Landing",
+        "Brownwood",
+        "Fenney",
+        "Leesburg",
+        "Lady Lake",
+        "Wildwood",
+      ]}
+      faqs={FAQS}
+      related={[
+        { to: "/movers-in-ocala/", label: "Full-service movers in Ocala and the north Villages area", d: "Whole-home and downsizing moves nearby, with an upright bundled in for $75 - $150 extra." },
+        { to: "/piano-movers-orlando/", label: "Piano movers in Orlando", d: "Vacation-home placements and church upright moves across Central Florida." },
+        { to: "/piano-movers-jacksonville/", label: "Piano movers in Jacksonville", d: "Per-mile cross-town pricing and interstate transport out of Northeast Florida." },
+      ]}
+    />
   ),
 });

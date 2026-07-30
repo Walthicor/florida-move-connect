@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { pageHead } from "@/lib/seo";
+import { ProseSection, SubBlock, CardGrid, CheckList } from "@/components/site/ContentSections";
 import { useState } from "react";
 import { ArrowRight, ShieldCheck, ChevronDown, DollarSign, Building2, MapPin, Route as RouteIcon } from "lucide-react";
 

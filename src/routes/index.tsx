@@ -14,6 +14,7 @@ import {
   Boxes,
   Building,
   Piano,
+  Users,
   ChevronDown,
 } from "lucide-react";
 import { CITIES } from "../components/site/data";

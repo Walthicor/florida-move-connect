@@ -49,6 +49,7 @@ import { Route as ContactIndexRouteImport } from './routes/contact.index'
 import { Route as CommercialMoversIndexRouteImport } from './routes/commercial-movers.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as ApartmentMoversIndexRouteImport } from './routes/apartment-movers.index'
+import { Route as AboutIndexRouteImport } from './routes/about.index'
 import { Route as EsTermsIndexRouteImport } from './routes/es.terms.index'
 import { Route as EsStorageSolutionsIndexRouteImport } from './routes/es.storage-solutions.index'
 import { Route as EsPrivacyPolicyIndexRouteImport } from './routes/es.privacy-policy.index'
@@ -278,6 +279,11 @@ const ApartmentMoversIndexRoute = ApartmentMoversIndexRouteImport.update({
   path: '/apartment-movers/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutIndexRoute = AboutIndexRouteImport.update({
+  id: '/about/',
+  path: '/about/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EsTermsIndexRoute = EsTermsIndexRouteImport.update({
   id: '/es/terms/',
   path: '/es/terms/',
@@ -391,6 +397,7 @@ const BlogSlugIndexRoute = BlogSlugIndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/about/': typeof AboutIndexRoute
   '/apartment-movers/': typeof ApartmentMoversIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/commercial-movers/': typeof CommercialMoversIndexRoute
@@ -454,6 +461,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/about': typeof AboutIndexRoute
   '/apartment-movers': typeof ApartmentMoversIndexRoute
   '/blog': typeof BlogIndexRoute
   '/commercial-movers': typeof CommercialMoversIndexRoute
@@ -518,6 +526,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/about/': typeof AboutIndexRoute
   '/apartment-movers/': typeof ApartmentMoversIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/commercial-movers/': typeof CommercialMoversIndexRoute
@@ -583,6 +592,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/sitemap.xml'
+    | '/about/'
     | '/apartment-movers/'
     | '/blog/'
     | '/commercial-movers/'
@@ -646,6 +656,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/sitemap.xml'
+    | '/about'
     | '/apartment-movers'
     | '/blog'
     | '/commercial-movers'
@@ -709,6 +720,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/sitemap.xml'
+    | '/about/'
     | '/apartment-movers/'
     | '/blog/'
     | '/commercial-movers/'
@@ -773,6 +785,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  AboutIndexRoute: typeof AboutIndexRoute
   ApartmentMoversIndexRoute: typeof ApartmentMoversIndexRoute
   BlogIndexRoute: typeof BlogIndexRoute
   CommercialMoversIndexRoute: typeof CommercialMoversIndexRoute
@@ -1116,6 +1129,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApartmentMoversIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about/': {
+      id: '/about/'
+      path: '/about'
+      fullPath: '/about/'
+      preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/es/terms/': {
       id: '/es/terms/'
       path: '/es/terms'
@@ -1269,6 +1289,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  AboutIndexRoute: AboutIndexRoute,
   ApartmentMoversIndexRoute: ApartmentMoversIndexRoute,
   BlogIndexRoute: BlogIndexRoute,
   CommercialMoversIndexRoute: CommercialMoversIndexRoute,
@@ -1332,13 +1353,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

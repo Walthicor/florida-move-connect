@@ -101,7 +101,7 @@ function AboutPage() {
         </p>
       </ProseSection>
 
-      <ProseSection eyebrow="Verification" title="How our verification process works" alt>
+      <ProseSection eyebrow="Verification" title="How our verification process works" bg="bg-surface-alt">
         <SubBlock title="Intrastate movers — FDACS registration">
           <p>
             Florida requires every household moving company operating inside the state to register
@@ -150,7 +150,7 @@ function AboutPage() {
         </p>
       </ProseSection>
 
-      <ProseSection eyebrow="Our focus" title="Why we only cover Florida" alt>
+      <ProseSection eyebrow="Our focus" title="Why we only cover Florida" bg="bg-surface-alt">
         <p>
           Moving is a local business dressed up as a national one. The rules that decide what your
           move costs are county- and building-level: FDACS registration under Chapter 507, condo

@@ -16,8 +16,8 @@ export const Route = createFileRoute("/es/packing-services/")({
     pageHead({
       path: PATH,
       lang: "es",
-      title: "Servicios Profesionales de Embalaje en Florida | Cotizaciones Gratis",
-      description: "Servicios de embalaje profesional: full pack, fragile-only y materiales. Precios 2026 en Florida. Compare hasta 4 cotizaciones gratis.",
+      title: "Servicios de Embalaje Profesional en Florida | Cotice",
+      description: "Servicios de embalaje profesional en Florida: full pack, solo frágiles y materiales incluidos. Precios 2026. Compare hasta 4 cotizaciones gratis.",
       faqs: FAQS,
       service: { serviceType: "Professional Packing Services", areaServed: "Florida" },
     }),

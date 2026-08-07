@@ -8,7 +8,7 @@ export const Route = createFileRoute("/blog/")({
       path: "/blog/",
       title: "Florida Moving Blog — Costs, Guides & City Tips",
       description:
-        "Practical Florida moving guides: costs, city-by-city tips, packing, and how to hire licensed movers. Updated for 2026.",
+        "Practical Florida moving guides: real 2026 costs, city-by-city tips, packing advice, and how to hire licensed, FDACS-verified moving companies.",
     }),
   component: BlogIndex,
 });

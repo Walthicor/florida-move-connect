@@ -15,7 +15,7 @@ export const Route = createFileRoute("/es/movers-in-ocala/")({
       path: PATH,
       lang: "es",
       title: "Mudanzas en Ocala FL | Marion County · Cotizaciones Gratis",
-      description: "Empresas de mudanzas en Ocala y Marion County. Precios 2026, The Villages y horse country. Compare cotizaciones gratis.",
+      description: "Empresas de mudanzas licenciadas en Ocala y Marion County: precios 2026, rutas a The Villages y fincas de horse country. Cotice gratis hoy mismo.",
       faqs: FAQS,
       service: { serviceType: "Moving Services", areaServed: "Ocala, FL" },
     }),

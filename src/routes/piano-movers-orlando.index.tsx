@@ -34,7 +34,7 @@ export const Route = createFileRoute("/piano-movers-orlando/")({
       path: PATH,
       title: "Piano Movers in Orlando FL | Free Quotes & Rates 2026",
       description:
-        "Licensed Orlando piano movers. Uprights $150-$500, grands $300-$800 locally. CPM-trained, insured crews. Compare up to 4 free quotes.",
+        "Licensed Orlando piano movers. Uprights $150-$500 and grands $300-$800 locally, moved by CPM-trained, insured crews. Compare up to 4 free quotes.",
       faqs: FAQS,
       noAlternates: true,
     });

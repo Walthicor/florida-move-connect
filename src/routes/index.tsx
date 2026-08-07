@@ -44,6 +44,7 @@ const SERVICES = [
     title: "Local Movers",
     body:
       "Hourly crews for moves under 50 miles — from $95/hour for two movers and a truck. Same-week availability in most cities.",
+    anchor: "Local Movers in Florida",
     to: "/local-movers-in-florida/",
   },
   {
@@ -51,6 +52,7 @@ const SERVICES = [
     title: "Long Distance Movers",
     body:
       "Interstate and intrastate moves with binding estimates, FMCSA-verified carriers and delivery windows in writing.",
+    anchor: "Long Distance Movers",
     to: "/long-distance-movers/",
   },
   {
@@ -58,6 +60,7 @@ const SERVICES = [
     title: "Commercial and Office Movers",
     body:
       "After-hours and weekend relocations with COI handling and IT care — never lose a business day.",
+    anchor: "Commercial Movers",
     to: "/commercial-movers/",
   },
   {
@@ -65,6 +68,7 @@ const SERVICES = [
     title: "Packing Services",
     body:
       "Full or fragile-only professional packing from $280, materials included.",
+    anchor: "Packing Services",
     to: "/packing-services/",
   },
   {
@@ -72,6 +76,7 @@ const SERVICES = [
     title: "Moving and Storage",
     body:
       "Storage-in-transit and climate-controlled options — essential in Florida humidity.",
+    anchor: "Moving and Storage",
     to: "/storage-solutions/",
   },
   {
@@ -79,6 +84,7 @@ const SERVICES = [
     title: "Apartment and Condo Movers",
     body:
       "COI, elevator reservations and building rules handled.",
+    anchor: "Apartment Movers",
     to: "/apartment-movers/",
   },
   {
@@ -86,6 +92,7 @@ const SERVICES = [
     title: "Piano and Specialty Movers",
     body:
       "Uprights from $150, grands from $300, moved with real piano equipment.",
+    anchor: "Piano Movers",
     to: "/piano-movers/",
   },
 ] as const;
@@ -359,7 +366,7 @@ function ServicesGrid() {
         </div>
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map(({ icon: Icon, title, body, to }) => (
+          {SERVICES.map(({ icon: Icon, title, body, to, anchor }) => (
             <Link
               key={to}
               to={to}
@@ -375,7 +382,7 @@ function ServicesGrid() {
                 {body}
               </p>
               <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand">
-                Learn more <ArrowRight className="h-4 w-4" />
+                {anchor} <ArrowRight className="h-4 w-4" />
               </span>
             </Link>
           ))}

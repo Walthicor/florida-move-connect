@@ -107,22 +107,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Florida Movers Direct — Compare Free Quotes from Licensed FL Movers" },
+      { title: "Florida Movers Direct — Free Quotes from Licensed Movers" },
       {
         name: "description",
         content:
-          "Get up to 4 free quotes from licensed, FDACS & FMCSA verified Florida moving companies. Local, long-distance, storage, commercial and more.",
+          "Get up to 4 free quotes from licensed, FDACS and FMCSA verified Florida moving companies for local, long-distance, storage and commercial moves.",
       },
       { name: "author", content: "Florida Movers Direct" },
+      // Sitewide defaults only. Per-page title, description, og:* and
+      // twitter:* tags are emitted once per route via pageHead().
       { property: "og:site_name", content: "Florida Movers Direct" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:title", content: "Florida Movers Direct — Compare Free Quotes from Licensed FL Movers" },
-      { name: "twitter:title", content: "Florida Movers Direct — Compare Free Quotes from Licensed FL Movers" },
-      { property: "og:description", content: "Get up to 4 free quotes from licensed, FDACS & FMCSA verified Florida moving companies. Local, long-distance, storage, commercial and more." },
-      { name: "twitter:description", content: "Get up to 4 free quotes from licensed, FDACS & FMCSA verified Florida moving companies. Local, long-distance, storage, commercial and more." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/SeQkoU9N6vbSQSv9DnATSPRX2tI2/social-images/social-1784863055346-Contact_Florida_Movers_Direct.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/SeQkoU9N6vbSQSv9DnATSPRX2tI2/social-images/social-1784863055346-Contact_Florida_Movers_Direct.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

@@ -14,8 +14,8 @@ export const Route = createFileRoute("/es/commercial-movers/")({
     pageHead({
       path: PATH,
       lang: "es",
-      title: "Empresas de Mudanzas Comerciales en Florida | Oficinas y Retail",
-      description: "Mudanzas comerciales y de oficinas en Florida con zero-downtime. IT, COIs y fines de semana. Compare hasta 4 cotizaciones gratis.",
+      title: "Mudanzas Comerciales en Florida | Oficinas y Retail",
+      description: "Mudanzas comerciales y de oficinas en Florida sin perder un día de trabajo. Manejamos equipos IT, COIs y fines de semana. Compare 4 cotizaciones gratis.",
       faqs: FAQS,
       service: { serviceType: "Commercial Moving Services", areaServed: "Florida" },
     }),

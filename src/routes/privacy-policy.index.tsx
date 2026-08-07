@@ -1,17 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CtaBand } from "@/components/site/CtaBand";
+import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/privacy-policy/")({
-  head: () => ({
-    meta: [
-      { title: "Privacy Policy — Florida Movers Direct" },
-      { name: "description", content: "How Florida Movers Direct collects, uses, and shares information you submit to request moving quotes, including TCPA and Florida/CCPA privacy basics." },
-      { property: "og:title", content: "Privacy Policy — Florida Movers Direct" },
-      { property: "og:description", content: "Our privacy practices for lead generation, partner sharing, TCPA consent, and Florida/CCPA rights." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      path: "/privacy-policy/",
+      title: "Privacy Policy | Florida Movers Direct Quote Service",
+      description:
+        "How Florida Movers Direct collects, uses and shares the information you submit to request moving quotes, including TCPA consent and Florida/CCPA rights.",
+      noAlternates: true,
+    }),
   component: PrivacyPage,
 });
 

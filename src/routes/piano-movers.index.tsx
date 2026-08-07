@@ -99,7 +99,7 @@ export const Route = createFileRoute("/piano-movers/")({
       path: PATH,
       title: "Piano Movers in Florida | Licensed Piano Moving Quotes",
       description:
-        "Compare licensed Florida piano movers. Upright moves from $150, grand pianos from $300. Insured, CPM-trained crews. Up to 4 free quotes.",
+        "Compare licensed Florida piano movers. Upright moves start at $150 and grand pianos at $300, handled by insured CPM-trained crews. 4 free quotes.",
       service: { serviceType: "Piano Moving", areaServed: "Florida" },
       faqs: FAQS,
     });

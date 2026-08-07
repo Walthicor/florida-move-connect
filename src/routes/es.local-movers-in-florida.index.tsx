@@ -15,7 +15,7 @@ export const Route = createFileRoute("/es/local-movers-in-florida/")({
     pageHead({
       path: PATH,
       lang: "es",
-      title: "Empresas de Mudanzas Locales en Florida | Compare Cotizaciones Gratis",
+      title: "Empresas de Mudanzas Locales en Florida | Cotice Gratis",
       description: "Empresas de mudanzas locales licenciadas en Florida. Tarifas 2026 desde $95-$150/hr. Compare hasta 4 cotizaciones gratis. Verificadas por FDACS.",
       faqs: FAQS,
       service: { serviceType: "Local Moving Services", areaServed: "Florida" },

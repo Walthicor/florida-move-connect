@@ -1,17 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CtaBand } from "@/components/site/CtaBand";
+import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/terms/")({
-  head: () => ({
-    meta: [
-      { title: "Terms of Service — Florida Movers Direct" },
-      { name: "description", content: "Terms governing your use of Florida Movers Direct, our lead-matching service, TCPA consent, disclaimers, and limitation of liability." },
-      { property: "og:title", content: "Terms of Service — Florida Movers Direct" },
-      { property: "og:description", content: "The rules for using floridamoversdirect.com and our free moving quote request service." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      path: "/terms/",
+      title: "Terms of Service | Florida Movers Direct Quotes",
+      description:
+        "Terms governing your use of Florida Movers Direct, our free lead-matching service, TCPA consent, disclaimers and limitation of liability in Florida.",
+      noAlternates: true,
+    }),
   component: TermsPage,
 });
 

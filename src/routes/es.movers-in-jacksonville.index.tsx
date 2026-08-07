@@ -14,8 +14,8 @@ export const Route = createFileRoute("/es/movers-in-jacksonville/")({
     pageHead({
       path: PATH,
       lang: "es",
-      title: "Mudanzas en Jacksonville FL | Duval County · Cotizaciones Gratis",
-      description: "Empresas de mudanzas en Jacksonville. Precios 2026, PCS militar (NAS Jax) y puentes. Compare hasta 4 cotizaciones gratis.",
+      title: "Mudanzas en Jacksonville FL | Empresas Licenciadas",
+      description: "Empresas de mudanzas licenciadas en Jacksonville y Duval County: precios 2026, traslados militares PCS (NAS Jax) y puentes. Cotice gratis hoy.",
       faqs: FAQS,
       service: { serviceType: "Moving Services", areaServed: "Jacksonville, FL" },
     }),

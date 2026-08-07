@@ -7,6 +7,7 @@ export const SERVICES = [
   { label: "Piano Movers", to: "/piano-movers/" },
   { label: "Piano Movers Tampa", to: "/piano-movers-tampa/" },
   { label: "Apartment Movers", to: "/apartment-movers/" },
+  { label: "Senior Moving Services", to: "/senior-moving-services/" },
 ] as const;
 
 export const CITIES = [

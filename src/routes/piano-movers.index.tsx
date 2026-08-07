@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { pageHead, SITE_URL } from "@/lib/seo";
+import { pageHead } from "@/lib/seo";
 import { HeroQuoteForm } from "@/components/site/QuoteForm";
 import { useState } from "react";
 import {

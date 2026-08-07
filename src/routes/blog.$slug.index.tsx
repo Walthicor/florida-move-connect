@@ -625,7 +625,20 @@ function ChecklistBody() {
           <li>Withdraw cash for tips ($4-$6/mover/hour).</li>
           <li>Take photos of high-value items for insurance.</li>
           <li>Charge all electronics + keep them in AC on moving day (not the hot truck).</li>
+          <li>
+            Most Florida leases and closing contracts require a professional move-out clean — compare quotes from{" "}
+            <a
+              href="https://floridacleaningdirect.site/"
+              target="_blank"
+              rel="noopener"
+              className="text-brand underline"
+            >
+              licensed cleaning services in Florida
+            </a>{" "}
+            to avoid losing your deposit.
+          </li>
         </ul>
+
 
         <h2 className="mt-10 font-display text-2xl md:text-3xl font-bold text-ink">
           Moving Day + First Week

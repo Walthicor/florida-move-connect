@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { pageHead } from "@/lib/seo";
 import { CityHero, SimpleCostTable, LocalKnowledge, Faq } from "./movers-in-ocala.index";
 
@@ -42,6 +42,21 @@ function NaplesPage() {
       />
       <SimpleCostTable title="Naples Moving Costs (2026)" rows={COSTS} />
       <LocalKnowledge title="Moving in Naples: The Season Sets the Rules" items={LOCAL} />
+      <section className="bg-surface-alt">
+        <div className="container-page py-14 max-w-3xl">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-ink">
+            Downsizing into a Naples 55+ community
+          </h2>
+          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+            A large share of Collier County moves are retirees leaving a larger home for a villa or
+            condo. Our{" "}
+            <Link to="/senior-moving-services/" className="font-semibold text-brand hover:underline">
+              senior moving services
+            </Link>{" "}
+            page covers sorting days, 55+ community move-in paperwork and donation pickups.
+          </p>
+        </div>
+      </section>
       <Faq faqs={FAQS} />
     </>
   );

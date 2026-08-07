@@ -63,7 +63,10 @@ function BocaPage() {
           covers upright and grand pricing, condo-tower staging and what specialist
           crews do differently. For artwork, mirrors and chandeliers travelling in
           the same load, see{" "}
-          <Link to="/packing-services/">custom crating and fragile packing</Link>.
+          <Link to="/packing-services/">custom crating and fragile packing</Link>. If the move is a
+          retiree downsizing out of a family home, our{" "}
+          <Link to="/senior-moving-services/">senior moving services</Link> cover sorting, Century
+          Village and Kings Point move-in rules and donation pickups.
         </p>
       </ProseSection>
       <Faq faqs={FAQS} />

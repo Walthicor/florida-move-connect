@@ -8,9 +8,9 @@ export const Route = createFileRoute("/es/terms/")({
     pageHead({
       path: PATH,
       lang: "es",
-      title: "Términos de Servicio | Florida Movers Direct",
+      title: "Términos de Servicio | Mudanzas en Florida — FMD",
       description:
-        "Términos y condiciones del servicio gratuito de emparejamiento con empresas de mudanzas licenciadas en Florida.",
+        "Términos y condiciones del servicio gratuito de emparejamiento con empresas de mudanzas licenciadas en Florida, incluido el consentimiento TCPA.",
     }),
   component: Page,
 });

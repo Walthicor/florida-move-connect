@@ -14,8 +14,8 @@ export const Route = createFileRoute("/es/piano-movers-tampa/")({
     pageHead({
       path: PATH,
       lang: "es",
-      title: "Empresas de Mudanzas de Pianos en Tampa, FL | Cotizaciones Gratis",
-      description: "Especialistas en mudanzas de pianos en Tampa Bay: Hyde Park, Westchase, Brandon, St. Pete. Compare cotizaciones gratis 2026.",
+      title: "Mudanzas de Pianos en Tampa FL | Cotizaciones Gratis",
+      description: "Especialistas en mudanzas de pianos en Tampa Bay: Hyde Park, Westchase, Brandon y St. Pete. Verticales desde $150. Compare cotizaciones gratis 2026.",
       faqs: FAQS,
       service: { serviceType: "Piano Moving Services", areaServed: "Tampa, FL" },
     }),

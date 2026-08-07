@@ -15,7 +15,7 @@ export const Route = createFileRoute("/es/movers-in-miami/")({
       path: PATH,
       lang: "es",
       title: "Mudanzas en Miami FL | Compare Empresas Licenciadas",
-      description: "Empresas de mudanzas licenciadas en Miami. Costos 2026, requisitos de condos y COIs. Compare hasta 4 cotizaciones gratis.",
+      description: "Empresas de mudanzas licenciadas en Miami-Dade: costos 2026, requisitos de condos, COIs y reserva de ascensores. Compare 4 cotizaciones gratis.",
       faqs: FAQS,
       service: { serviceType: "Moving Services", areaServed: "Miami, FL" },
     }),

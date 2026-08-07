@@ -14,8 +14,8 @@ export const Route = createFileRoute("/es/movers-in-tampa/")({
     pageHead({
       path: PATH,
       lang: "es",
-      title: "Mudanzas en Tampa FL | Empresas Licenciadas · Cotizaciones Gratis",
-      description: "Empresas de mudanzas en Tampa. Costos 2026, Bay Area, puentes a St. Pete y estrategia de tormentas. Compare 4 cotizaciones gratis.",
+      title: "Mudanzas en Tampa FL | Empresas Licenciadas 2026",
+      description: "Empresas de mudanzas licenciadas en Tampa Bay: costos 2026, puentes a St. Pete y estrategia para temporada de tormentas. Compare 4 cotizaciones gratis.",
       faqs: FAQS,
       service: { serviceType: "Moving Services", areaServed: "Tampa, FL" },
     }),

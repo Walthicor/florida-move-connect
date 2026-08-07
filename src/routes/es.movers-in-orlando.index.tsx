@@ -14,8 +14,8 @@ export const Route = createFileRoute("/es/movers-in-orlando/")({
     pageHead({
       path: PATH,
       lang: "es",
-      title: "Mudanzas en Orlando FL | Empresas Licenciadas · Cotizaciones Gratis",
-      description: "Empresas de mudanzas en Orlando. Costos 2026, corredor turístico I-4 y rotación de rentas. Compare hasta 4 cotizaciones gratis.",
+      title: "Mudanzas en Orlando FL | Empresas Licenciadas 2026",
+      description: "Empresas de mudanzas licenciadas en Orlando: costos 2026, tráfico del corredor I-4 y alta rotación de rentas. Compare hasta 4 cotizaciones gratis.",
       faqs: FAQS,
       service: { serviceType: "Moving Services", areaServed: "Orlando, FL" },
     }),

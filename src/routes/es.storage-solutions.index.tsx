@@ -14,8 +14,8 @@ export const Route = createFileRoute("/es/storage-solutions/")({
     pageHead({
       path: PATH,
       lang: "es",
-      title: "Soluciones de Almacenamiento en Florida | Storage-in-Transit y Clima Controlado",
-      description: "Almacenamiento con clima controlado y storage-in-transit (SIT) en Florida. Costos 2026 y cómo elegir. Compare cotizaciones gratis.",
+      title: "Almacenamiento en Florida | Storage-in-Transit y Clima",
+      description: "Almacenamiento con clima controlado y storage-in-transit (SIT) en Florida: costos 2026 y cómo elegir la opción correcta. Cotizaciones gratis hoy.",
       faqs: FAQS,
       service: { serviceType: "Moving and Storage Solutions", areaServed: "Florida" },
     }),

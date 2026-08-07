@@ -107,7 +107,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Florida Movers Direct — Compare Free Quotes from Licensed FL Movers" },
+      { title: "Florida Movers Direct — Free Quotes from Licensed Movers" },
       {
         name: "description",
         content:

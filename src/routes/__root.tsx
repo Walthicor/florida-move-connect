@@ -207,6 +207,7 @@ function RootComponent() {
       <div className="flex min-h-screen flex-col bg-background">
         <Header />
         <TrustBar />
+        <Breadcrumbs />
         {showQuoteBand && <QuoteBand />}
         <main className="flex-1">
           <Outlet />

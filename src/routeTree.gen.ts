@@ -53,6 +53,7 @@ import { Route as ApartmentMoversIndexRouteImport } from './routes/apartment-mov
 import { Route as AboutIndexRouteImport } from './routes/about.index'
 import { Route as EsTermsIndexRouteImport } from './routes/es.terms.index'
 import { Route as EsStorageSolutionsIndexRouteImport } from './routes/es.storage-solutions.index'
+import { Route as EsSeniorMovingServicesIndexRouteImport } from './routes/es.senior-moving-services.index'
 import { Route as EsPrivacyPolicyIndexRouteImport } from './routes/es.privacy-policy.index'
 import { Route as EsPianoMoversIndexRouteImport } from './routes/es.piano-movers.index'
 import { Route as EsPianoMoversTampaIndexRouteImport } from './routes/es.piano-movers-tampa.index'
@@ -301,6 +302,12 @@ const EsStorageSolutionsIndexRoute = EsStorageSolutionsIndexRouteImport.update({
   path: '/es/storage-solutions/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EsSeniorMovingServicesIndexRoute =
+  EsSeniorMovingServicesIndexRouteImport.update({
+    id: '/es/senior-moving-services/',
+    path: '/es/senior-moving-services/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const EsPrivacyPolicyIndexRoute = EsPrivacyPolicyIndexRouteImport.update({
   id: '/es/privacy-policy/',
   path: '/es/privacy-policy/',
@@ -463,6 +470,7 @@ export interface FileRoutesByFullPath {
   '/es/piano-movers-tampa/': typeof EsPianoMoversTampaIndexRoute
   '/es/piano-movers/': typeof EsPianoMoversIndexRoute
   '/es/privacy-policy/': typeof EsPrivacyPolicyIndexRoute
+  '/es/senior-moving-services/': typeof EsSeniorMovingServicesIndexRoute
   '/es/storage-solutions/': typeof EsStorageSolutionsIndexRoute
   '/es/terms/': typeof EsTermsIndexRoute
 }
@@ -528,6 +536,7 @@ export interface FileRoutesByTo {
   '/es/piano-movers-tampa': typeof EsPianoMoversTampaIndexRoute
   '/es/piano-movers': typeof EsPianoMoversIndexRoute
   '/es/privacy-policy': typeof EsPrivacyPolicyIndexRoute
+  '/es/senior-moving-services': typeof EsSeniorMovingServicesIndexRoute
   '/es/storage-solutions': typeof EsStorageSolutionsIndexRoute
   '/es/terms': typeof EsTermsIndexRoute
 }
@@ -594,6 +603,7 @@ export interface FileRoutesById {
   '/es/piano-movers-tampa/': typeof EsPianoMoversTampaIndexRoute
   '/es/piano-movers/': typeof EsPianoMoversIndexRoute
   '/es/privacy-policy/': typeof EsPrivacyPolicyIndexRoute
+  '/es/senior-moving-services/': typeof EsSeniorMovingServicesIndexRoute
   '/es/storage-solutions/': typeof EsStorageSolutionsIndexRoute
   '/es/terms/': typeof EsTermsIndexRoute
 }
@@ -661,6 +671,7 @@ export interface FileRouteTypes {
     | '/es/piano-movers-tampa/'
     | '/es/piano-movers/'
     | '/es/privacy-policy/'
+    | '/es/senior-moving-services/'
     | '/es/storage-solutions/'
     | '/es/terms/'
   fileRoutesByTo: FileRoutesByTo
@@ -726,6 +737,7 @@ export interface FileRouteTypes {
     | '/es/piano-movers-tampa'
     | '/es/piano-movers'
     | '/es/privacy-policy'
+    | '/es/senior-moving-services'
     | '/es/storage-solutions'
     | '/es/terms'
   id:
@@ -791,6 +803,7 @@ export interface FileRouteTypes {
     | '/es/piano-movers-tampa/'
     | '/es/piano-movers/'
     | '/es/privacy-policy/'
+    | '/es/senior-moving-services/'
     | '/es/storage-solutions/'
     | '/es/terms/'
   fileRoutesById: FileRoutesById
@@ -857,6 +870,7 @@ export interface RootRouteChildren {
   EsPianoMoversTampaIndexRoute: typeof EsPianoMoversTampaIndexRoute
   EsPianoMoversIndexRoute: typeof EsPianoMoversIndexRoute
   EsPrivacyPolicyIndexRoute: typeof EsPrivacyPolicyIndexRoute
+  EsSeniorMovingServicesIndexRoute: typeof EsSeniorMovingServicesIndexRoute
   EsStorageSolutionsIndexRoute: typeof EsStorageSolutionsIndexRoute
   EsTermsIndexRoute: typeof EsTermsIndexRoute
 }
@@ -1171,6 +1185,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EsStorageSolutionsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/es/senior-moving-services/': {
+      id: '/es/senior-moving-services/'
+      path: '/es/senior-moving-services'
+      fullPath: '/es/senior-moving-services/'
+      preLoaderRoute: typeof EsSeniorMovingServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/es/privacy-policy/': {
       id: '/es/privacy-policy/'
       path: '/es/privacy-policy'
@@ -1369,6 +1390,7 @@ const rootRouteChildren: RootRouteChildren = {
   EsPianoMoversTampaIndexRoute: EsPianoMoversTampaIndexRoute,
   EsPianoMoversIndexRoute: EsPianoMoversIndexRoute,
   EsPrivacyPolicyIndexRoute: EsPrivacyPolicyIndexRoute,
+  EsSeniorMovingServicesIndexRoute: EsSeniorMovingServicesIndexRoute,
   EsStorageSolutionsIndexRoute: EsStorageSolutionsIndexRoute,
   EsTermsIndexRoute: EsTermsIndexRoute,
 }

@@ -24,7 +24,7 @@ export const Route = createFileRoute("/es/piano-movers-tampa/")({
       <PageHero
         eyebrow="Tampa · Pianos"
         h1="Empresas de Mudanzas de Pianos en Tampa, Florida"
-        intro="Especialistas certificados para pianos verticales, baby grand y de cola en toda el área de Tampa Bay. Camión con clima y cobertura full-value."
+        intro="En Tampa, mover un piano vertical cuesta $150-$500 y uno de cola $300-$800; transporte interestatal $450-$2,300. Especialistas certificados para verticales, baby grand y de cola en toda Tampa Bay, con camión climatizado y cobertura full-value."
         ctaLabel="Cotización Gratis"
         ctaHref="/es/contact/"
       />

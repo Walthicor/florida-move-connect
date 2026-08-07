@@ -35,7 +35,7 @@ export const Route = createFileRoute("/grand-piano-movers/")({
       <PageHero
         eyebrow="Grand piano specialists"
         h1={<>Grand Piano Movers in <span className="text-brand">Florida</span></>}
-        intro="Baby grands through concert grands, moved the way they should be: disassembled, wrapped, strapped to a skid board and rolled — never lifted and carried. Compare licensed, insured Florida crews."
+        intro="Moving a grand piano in Florida costs $300-$800 locally and $450-$2,300 interstate, with crane or window removals quoted separately. Baby grands through concert grands are disassembled, wrapped, strapped to a skid board and rolled — never lifted and carried. Compare up to 4 licensed, insured Florida crews free."
         ctaLabel="Get Grand Piano Quotes"
         ctaHref="/contact/"
       />

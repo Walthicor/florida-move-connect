@@ -20,6 +20,7 @@ import { QuoteBand } from "../components/site/QuoteBand";
 import { TrustBar } from "../components/site/TrustBar";
 import { FloatingActions } from "../components/site/FloatingActions";
 import { ScrollReveal } from "../components/site/ScrollReveal";
+import { Breadcrumbs } from "../components/site/Breadcrumbs";
 
 const TOP_SERVICES = [
   { to: "/local-movers-in-florida/", label: "Local Movers" },
@@ -207,6 +208,7 @@ function RootComponent() {
       <div className="flex min-h-screen flex-col bg-background">
         <Header />
         <TrustBar />
+        <Breadcrumbs />
         {showQuoteBand && <QuoteBand />}
         <main className="flex-1">
           <Outlet />

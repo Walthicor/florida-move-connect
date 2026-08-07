@@ -53,6 +53,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/about/" className="hover:text-white">
+                  {lang === "es" ? "Quiénes Somos" : "About Us"}
+                </Link>
+              </li>
+              <li>
                 <Link to={blogHref as "/blog/"} className="hover:text-white">
                   {dict.blog}
                 </Link>

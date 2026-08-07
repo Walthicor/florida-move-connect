@@ -24,7 +24,7 @@ export const Route = createFileRoute("/es/movers-in-tampa/")({
       <PageHero
         eyebrow="Tampa · Licenciadas FDACS"
         h1="Empresas de Mudanzas en Tampa"
-        intro="De Hyde Park a Westchase, Downtown a Brandon, y todo Tampa Bay incluyendo St. Petersburg y Clearwater."
+        intro="Las mudanzas locales en Tampa cuestan $95-$150 por hora con equipo de 2 personas y camión: $600-$1,100 para 2 habitaciones. De Hyde Park a Westchase, Downtown a Brandon, y todo Tampa Bay incluyendo St. Petersburg y Clearwater. Compare hasta 4 cotizaciones gratis."
         ctaLabel="Cotización Gratis"
         ctaHref="/es/contact/"
       />

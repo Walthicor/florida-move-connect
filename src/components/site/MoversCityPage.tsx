@@ -92,18 +92,6 @@ export function moversCitySchema(city: string, path: string) {
         provider: { "@id": `${SITE_URL}/#organization` },
       }),
     },
-    {
-      type: "application/ld+json",
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
-          { "@type": "ListItem", position: 2, name: "Florida Movers", item: `${SITE_URL}/local-movers-in-florida/` },
-          { "@type": "ListItem", position: 3, name: city, item: `${SITE_URL}${path}` },
-        ],
-      }),
-    },
   ];
 }
 

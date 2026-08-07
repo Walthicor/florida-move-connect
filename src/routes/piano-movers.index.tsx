@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { pageHead, SITE_URL } from "@/lib/seo";
+import { pageHead } from "@/lib/seo";
 import { HeroQuoteForm } from "@/components/site/QuoteForm";
 import { useState } from "react";
 import {
@@ -93,16 +93,6 @@ const FAQS = [
   },
 ];
 
-const BREADCRUMB_SCHEMA = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
-    { "@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/local-movers-in-florida/` },
-    { "@type": "ListItem", position: 3, name: "Piano Movers", item: `${SITE_URL}${PATH}` },
-  ],
-};
-
 export const Route = createFileRoute("/piano-movers/")({
   head: () => {
     const base = pageHead({
@@ -113,13 +103,7 @@ export const Route = createFileRoute("/piano-movers/")({
       service: { serviceType: "Piano Moving", areaServed: "Florida" },
       faqs: FAQS,
     });
-    return {
-      ...base,
-      scripts: [
-        ...base.scripts,
-        { type: "application/ld+json", children: JSON.stringify(BREADCRUMB_SCHEMA) },
-      ],
-    };
+    return base;
   },
   component: PianoMoversPage,
 });

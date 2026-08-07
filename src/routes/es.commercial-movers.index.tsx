@@ -24,7 +24,7 @@ export const Route = createFileRoute("/es/commercial-movers/")({
       <PageHero
         eyebrow="Mudanzas comerciales"
         h1="Empresas de Mudanzas Comerciales en Florida"
-        intro="Oficinas, retail y clínicas. Programamos fines de semana, manejamos servidores, elevamos COIs para el edificio y minimizamos días fuera del trabajo."
+        intro="Las mudanzas comerciales en Florida cuestan $1,500-$10,000+ según metros cuadrados y estaciones de trabajo, con equipos desde $130 por hora. Oficinas, retail y clínicas: programamos fines de semana, manejamos servidores, tramitamos COIs y minimizamos días fuera del trabajo."
         ctaLabel="Cotización Gratis"
         ctaHref="/es/contact/"
       />

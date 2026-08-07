@@ -35,7 +35,7 @@ export const Route = createFileRoute("/piano-moving-cost/")({
       <PageHero
         eyebrow="Pricing guide"
         h1={<>Piano Moving Cost in <span className="text-brand">Florida</span></>}
-        intro="Every number a piano movers quote is built from — instrument type, crew size, stairs, floor placement, disassembly and interstate crating. No estimates invented, no hidden line items."
+        intro="Piano moving in Florida costs $150-$500 for an upright, $300-$800 for a grand and $450-$2,300 for interstate transport, with stairs adding $25-$75 per flight. Below is every number a piano quote is built from — instrument type, crew size, stairs, floor placement, disassembly and crating. No hidden line items."
         ctaLabel="Compare Piano Moving Quotes"
         ctaHref="/contact/"
       />

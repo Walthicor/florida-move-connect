@@ -24,7 +24,7 @@ export const Route = createFileRoute("/es/movers-in-ocala/")({
       <PageHero
         eyebrow="Ocala · Marion County"
         h1="Empresas de Mudanzas en Ocala"
-        intro="Casas suburbanas, fincas ecuestres y The Villages. Empresas licenciadas con experiencia en el norte-centro de Florida."
+        intro="Las mudanzas locales en Ocala cuestan $350-$700 para 1 habitación y $700-$1,200 para 2-3 habitaciones — entre las tarifas más económicas de Florida. Casas suburbanas, fincas ecuestres y The Villages, con empresas licenciadas del norte-centro de Florida."
         ctaLabel="Cotización Gratis"
         ctaHref="/es/contact/"
       />

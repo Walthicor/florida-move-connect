@@ -104,6 +104,7 @@ export const SERVICES_BY_LANG = {
     { label: "Piano Movers", to: "/piano-movers/" },
     { label: "Piano Movers Tampa", to: "/piano-movers-tampa/" },
     { label: "Apartment Movers", to: "/apartment-movers/" },
+    { label: "Senior Moving Services", to: "/senior-moving-services/" },
   ],
   es: [
     { label: "Mudanzas Locales en Florida", to: "/es/local-movers-in-florida/" },
@@ -114,6 +115,7 @@ export const SERVICES_BY_LANG = {
     { label: "Mudanzas de Pianos", to: "/es/piano-movers/" },
     { label: "Mudanzas de Pianos en Tampa", to: "/es/piano-movers-tampa/" },
     { label: "Mudanzas de Apartamentos", to: "/es/apartment-movers/" },
+    { label: "Mudanzas para Adultos Mayores", to: "/es/senior-moving-services/" },
   ],
 } as const;
 

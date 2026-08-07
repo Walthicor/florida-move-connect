@@ -13,6 +13,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TermsIndexRouteImport } from './routes/terms.index'
 import { Route as StorageSolutionsIndexRouteImport } from './routes/storage-solutions.index'
+import { Route as SeniorMovingServicesIndexRouteImport } from './routes/senior-moving-services.index'
 import { Route as PrivacyPolicyIndexRouteImport } from './routes/privacy-policy.index'
 import { Route as PianoMovingCostIndexRouteImport } from './routes/piano-moving-cost.index'
 import { Route as PianoMoversIndexRouteImport } from './routes/piano-movers.index'
@@ -92,6 +93,12 @@ const StorageSolutionsIndexRoute = StorageSolutionsIndexRouteImport.update({
   path: '/storage-solutions/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SeniorMovingServicesIndexRoute =
+  SeniorMovingServicesIndexRouteImport.update({
+    id: '/senior-moving-services/',
+    path: '/senior-moving-services/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const PrivacyPolicyIndexRoute = PrivacyPolicyIndexRouteImport.update({
   id: '/privacy-policy/',
   path: '/privacy-policy/',
@@ -434,6 +441,7 @@ export interface FileRoutesByFullPath {
   '/piano-movers/': typeof PianoMoversIndexRoute
   '/piano-moving-cost/': typeof PianoMovingCostIndexRoute
   '/privacy-policy/': typeof PrivacyPolicyIndexRoute
+  '/senior-moving-services/': typeof SeniorMovingServicesIndexRoute
   '/storage-solutions/': typeof StorageSolutionsIndexRoute
   '/terms/': typeof TermsIndexRoute
   '/blog/$slug/': typeof BlogSlugIndexRoute
@@ -498,6 +506,7 @@ export interface FileRoutesByTo {
   '/piano-movers': typeof PianoMoversIndexRoute
   '/piano-moving-cost': typeof PianoMovingCostIndexRoute
   '/privacy-policy': typeof PrivacyPolicyIndexRoute
+  '/senior-moving-services': typeof SeniorMovingServicesIndexRoute
   '/storage-solutions': typeof StorageSolutionsIndexRoute
   '/terms': typeof TermsIndexRoute
   '/blog/$slug': typeof BlogSlugIndexRoute
@@ -563,6 +572,7 @@ export interface FileRoutesById {
   '/piano-movers/': typeof PianoMoversIndexRoute
   '/piano-moving-cost/': typeof PianoMovingCostIndexRoute
   '/privacy-policy/': typeof PrivacyPolicyIndexRoute
+  '/senior-moving-services/': typeof SeniorMovingServicesIndexRoute
   '/storage-solutions/': typeof StorageSolutionsIndexRoute
   '/terms/': typeof TermsIndexRoute
   '/blog/$slug/': typeof BlogSlugIndexRoute
@@ -629,6 +639,7 @@ export interface FileRouteTypes {
     | '/piano-movers/'
     | '/piano-moving-cost/'
     | '/privacy-policy/'
+    | '/senior-moving-services/'
     | '/storage-solutions/'
     | '/terms/'
     | '/blog/$slug/'
@@ -693,6 +704,7 @@ export interface FileRouteTypes {
     | '/piano-movers'
     | '/piano-moving-cost'
     | '/privacy-policy'
+    | '/senior-moving-services'
     | '/storage-solutions'
     | '/terms'
     | '/blog/$slug'
@@ -757,6 +769,7 @@ export interface FileRouteTypes {
     | '/piano-movers/'
     | '/piano-moving-cost/'
     | '/privacy-policy/'
+    | '/senior-moving-services/'
     | '/storage-solutions/'
     | '/terms/'
     | '/blog/$slug/'
@@ -822,6 +835,7 @@ export interface RootRouteChildren {
   PianoMoversIndexRoute: typeof PianoMoversIndexRoute
   PianoMovingCostIndexRoute: typeof PianoMovingCostIndexRoute
   PrivacyPolicyIndexRoute: typeof PrivacyPolicyIndexRoute
+  SeniorMovingServicesIndexRoute: typeof SeniorMovingServicesIndexRoute
   StorageSolutionsIndexRoute: typeof StorageSolutionsIndexRoute
   TermsIndexRoute: typeof TermsIndexRoute
   BlogSlugIndexRoute: typeof BlogSlugIndexRoute
@@ -875,6 +889,13 @@ declare module '@tanstack/react-router' {
       path: '/storage-solutions'
       fullPath: '/storage-solutions/'
       preLoaderRoute: typeof StorageSolutionsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/senior-moving-services/': {
+      id: '/senior-moving-services/'
+      path: '/senior-moving-services'
+      fullPath: '/senior-moving-services/'
+      preLoaderRoute: typeof SeniorMovingServicesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy-policy/': {
@@ -1326,6 +1347,7 @@ const rootRouteChildren: RootRouteChildren = {
   PianoMoversIndexRoute: PianoMoversIndexRoute,
   PianoMovingCostIndexRoute: PianoMovingCostIndexRoute,
   PrivacyPolicyIndexRoute: PrivacyPolicyIndexRoute,
+  SeniorMovingServicesIndexRoute: SeniorMovingServicesIndexRoute,
   StorageSolutionsIndexRoute: StorageSolutionsIndexRoute,
   TermsIndexRoute: TermsIndexRoute,
   BlogSlugIndexRoute: BlogSlugIndexRoute,
@@ -1353,3 +1375,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

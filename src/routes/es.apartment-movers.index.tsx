@@ -24,7 +24,7 @@ export const Route = createFileRoute("/es/apartment-movers/")({
       <PageHero
         eyebrow="Apartamentos y condos"
         h1="Empresas de Mudanzas de Apartamentos en Florida"
-        intro="Manejamos COIs, reservas de ascensor de carga, ventanas de mudanza HOA y accesos con guard-house. Sin sorpresas al llegar al edificio."
+        intro="Una mudanza de apartamento en Florida cuesta $400-$1,200 según el tamaño y los pisos, con $95-$150 por hora como base. Manejamos COIs, reservas de ascensor de carga, ventanas de mudanza del HOA y accesos con guard-house. Sin sorpresas al llegar al edificio."
         ctaLabel="Cotización Gratis"
         ctaHref="/es/contact/"
       />

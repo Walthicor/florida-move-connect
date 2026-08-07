@@ -24,7 +24,7 @@ export const Route = createFileRoute("/es/movers-in-miami/")({
       <PageHero
         eyebrow="Miami · Licenciadas FDACS"
         h1="Empresas de Mudanzas en Miami"
-        intro="Especialistas en condos de Brickell y Miami Beach, casas en Coral Gables y Coconut Grove. Manejamos COIs, ascensores de carga y reglas de building."
+        intro="Las mudanzas locales en Miami cuestan $95-$150 por hora: $700-$1,300 para 2 habitaciones y $1,100-$1,900 desde un condo en torre. Especialistas en Brickell y Miami Beach, Coral Gables y Coconut Grove. Manejamos COIs, ascensores de carga y reglas del building."
         ctaLabel="Cotización Gratis"
         ctaHref="/es/contact/"
       />

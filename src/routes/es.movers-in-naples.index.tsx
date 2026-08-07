@@ -24,7 +24,7 @@ export const Route = createFileRoute("/es/movers-in-naples/")({
       <PageHero
         eyebrow="Naples · Costa Suroeste"
         h1="Empresas de Mudanzas en Naples"
-        intro="Especialistas en snowbird season y comunidades exclusivas: Port Royal, Pelican Bay, Aqualane Shores y toda Collier County."
+        intro="Las mudanzas locales en Naples cuestan $450-$900 para 1 habitación y $850-$1,500 para 2-3 habitaciones. Especialistas en temporada de snowbirds (octubre a abril) y comunidades exclusivas: Port Royal, Pelican Bay, Aqualane Shores y toda Collier County."
         ctaLabel="Cotización Gratis"
         ctaHref="/es/contact/"
       />

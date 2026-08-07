@@ -24,7 +24,7 @@ export const Route = createFileRoute("/es/piano-movers/")({
       <PageHero
         eyebrow="Especialistas en pianos"
         h1="Empresas Especializadas en Mudanzas de Pianos en Florida"
-        intro="Verticales, de cola y de concierto. Personal certificado con skid boards, dollies especializados y protección full-value."
+        intro="Mover un piano vertical en Florida cuesta $150-$500 y uno de cola $300-$800 localmente; interestatal $450-$2,300. Verticales, de cola y de concierto con personal certificado, skid boards, dollies especializados y protección full-value."
         ctaLabel="Cotización Gratis"
         ctaHref="/es/contact/"
       />

@@ -26,7 +26,7 @@ export const Route = createFileRoute("/es/packing-services/")({
       <PageHero
         eyebrow="Embalaje profesional"
         h1="Servicios Profesionales de Embalaje en Florida"
-        intro="Empaque completo, solo frágiles y materiales. Ahorra tiempo, protege inversión y activa cobertura full-value de la empresa de mudanzas."
+        intro="El empaque profesional en Florida cuesta $300-$600 solo para frágiles y $800-$2,500 para empaque completo de una casa, más $50-$250 en materiales. Ahorra tiempo, protege su inversión y activa la cobertura full-value de la empresa de mudanzas."
         ctaLabel="Cotización Gratis"
         ctaHref="/es/contact/"
       />

@@ -24,7 +24,7 @@ export const Route = createFileRoute("/es/movers-in-orlando/")({
       <PageHero
         eyebrow="Orlando · Licenciadas FDACS"
         h1="Empresas de Mudanzas en Orlando"
-        intro="Servicio en toda el área metro: Downtown, Winter Park, Lake Nona, Dr. Phillips, Kissimmee y Windermere. Manejamos tráfico turístico y rotación de fin de mes."
+        intro="Las mudanzas locales en Orlando cuestan $95-$140 por hora: $600-$1,150 para un apartamento de 2 habitaciones. Servicio en toda el área metro: Downtown, Winter Park, Lake Nona, Dr. Phillips, Kissimmee y Windermere. Hasta 4 cotizaciones gratis de empresas licenciadas."
         ctaLabel="Cotización Gratis"
         ctaHref="/es/contact/"
       />

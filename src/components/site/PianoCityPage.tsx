@@ -336,7 +336,7 @@ function Related({ city, related }: { city: string; related: PianoCityLink[] }) 
               <h3 className="font-display text-lg font-bold text-ink group-hover:text-brand">{r.label}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{r.d}</p>
               <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand">
-                Read more <ArrowRight className="h-4 w-4" />
+                {r.label} <ArrowRight className="h-4 w-4" />
               </span>
             </Link>
           ))}

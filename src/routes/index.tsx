@@ -88,6 +88,14 @@ const SERVICES = [
     to: "/apartment-movers/",
   },
   {
+    icon: Users,
+    title: "Senior Moving Services",
+    body:
+      "Downsizing help, 55+ community move-in rules and donation coordination — $600-$2,500 for most senior moves.",
+    anchor: "Senior Moving Services",
+    to: "/senior-moving-services/",
+  },
+  {
     icon: Piano,
     title: "Piano and Specialty Movers",
     body:

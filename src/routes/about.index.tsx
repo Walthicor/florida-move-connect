@@ -38,7 +38,7 @@ const ABOUT_SCHEMA = {
   foundingLocation: { "@type": "Place", name: "Florida, United States" },
   founder: {
     "@type": "Person",
-    name: "Mar Digital LLC",
+    name: "MarDigital SAS",
     jobTitle: "Founder & Operator",
   },
   knowsAbout: [
@@ -88,7 +88,7 @@ function AboutPage() {
 
       <ProseSection eyebrow="Who we are" title="A Florida-only matching service, not a broker network">
         <p>
-          We are an independent Florida company operated by Mar Digital LLC. Our job is narrow on
+        We are an independent Florida company operated by MarDigital SAS. Our job is narrow on
           purpose: collect your move details once, hand them to a small set of licensed companies
           that actually serve your ZIP code, and get out of the way. The movers quote you directly
           and you contract with them directly — we do not take a cut of your move, mark up rates, or

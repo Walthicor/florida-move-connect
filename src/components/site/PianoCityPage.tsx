@@ -97,18 +97,6 @@ export function pianoCitySchema(city: string, path: string) {
         provider: { "@id": `${SITE_URL}/#organization` },
       }),
     },
-    {
-      type: "application/ld+json",
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
-          { "@type": "ListItem", position: 2, name: "Piano Movers", item: `${SITE_URL}/piano-movers/` },
-          { "@type": "ListItem", position: 3, name: city, item: `${SITE_URL}${path}` },
-        ],
-      }),
-    },
   ];
 }
 

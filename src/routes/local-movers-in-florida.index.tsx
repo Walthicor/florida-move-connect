@@ -14,8 +14,8 @@ import {
 export const Route = createFileRoute("/local-movers-in-florida/")({
   head: () => pageHead({
     path: "/local-movers-in-florida/",
-    title: 'Local Movers in Florida | Hourly Rates & Free Quotes 2026',
-    description: 'Compare licensed local moving companies across Florida. Hourly rates from $95/hr, FDACS-verified movers, same-week availability. Get up to 4 free quotes.',
+    title: "Local Movers in Florida | Rates & Free Moving Quotes",
+    description: "Compare licensed local movers in Florida. See typical hourly rates and cost factors, then request free moving quotes with no obligation.",
     service: { serviceType: 'Local Moving', areaServed: 'Florida' },
     faqs: FAQS,
   }),
@@ -208,7 +208,7 @@ function CityLinks() {
               <h3 className="font-display text-lg font-bold text-ink group-hover:text-brand">{c.label}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.d}</p>
               <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand">
-                View rates <ArrowRight className="h-4 w-4" />
+                See {c.label} rates <ArrowRight className="h-4 w-4" />
               </span>
             </Link>
           ))}

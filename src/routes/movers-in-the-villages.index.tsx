@@ -32,8 +32,7 @@ export const Route = createFileRoute("/movers-in-the-villages/")({
     const base = pageHead({
       path: PATH,
       title: "Movers in The Villages FL | Senior & Downsizing Moves",
-      description:
-        "Licensed movers in The Villages FL. Downsizing, partial loads and storage overlap handled. $95-$150/hr crews. Compare up to 4 free quotes today.",
+      description: "Licensed movers in The Villages handle downsizing, partial loads and storage overlap with crews at $95-$150 an hour. Compare up to four free quotes today.",
       faqs: FAQS,
       noAlternates: true,
     });

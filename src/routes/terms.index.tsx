@@ -7,8 +7,7 @@ export const Route = createFileRoute("/terms/")({
     pageHead({
       path: "/terms/",
       title: "Terms of Service | Florida Movers Direct Quotes",
-      description:
-        "Terms governing your use of Florida Movers Direct, our free lead-matching service, TCPA consent, disclaimers and limitation of liability in Florida.",
+      description: "The terms governing your use of Florida Movers Direct, our free quote-matching service, including TCPA consent, disclaimers and limitation of liability rules.",
       noAlternates: true,
     }),
   component: TermsPage,

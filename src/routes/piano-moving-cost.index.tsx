@@ -24,8 +24,7 @@ export const Route = createFileRoute("/piano-moving-cost/")({
     pageHead({
       path: PATH,
       title: "Piano Moving Cost in Florida 2026 | Prices & Surcharges",
-      description:
-        "Piano moving cost in Florida: uprights $150-$500, grands $300-$800, interstate $450-$2,300. Stairs, crating and disassembly fees explained.",
+      description: "Piano moving cost in Florida runs $150-$500 for uprights, $300-$800 for grands and $450-$2,300 interstate, with stairs, crating and disassembly fees explained.",
       faqs: FAQS,
       service: { serviceType: "Piano Moving", areaServed: "Florida" },
       noAlternates: true,

@@ -15,7 +15,7 @@ export const Route = createFileRoute("/es/movers-in-naples/")({
       path: PATH,
       lang: "es",
       title: "Mudanzas en Naples FL | Empresas Licenciadas 2026",
-      description: "Empresas de mudanzas licenciadas en Naples y Collier County: precios 2026, temporada snowbird y comunidades cerradas. Compare 4 cotizaciones gratis.",
+      description: "Empresas de mudanzas licenciadas en Naples y Collier County: precios 2026, temporada snowbird y comunidades cerradas. Compare 4 cotizaciones gratis sin costo.",
       faqs: FAQS,
       service: { serviceType: "Moving Services", areaServed: "Naples, FL" },
     }),

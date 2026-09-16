@@ -8,7 +8,7 @@ export const Route = createFileRoute("/movers-in-boca-raton/")({
   head: () => pageHead({
     path: "/movers-in-boca-raton/",
     title: 'Movers in Boca Raton FL | Condo Moving Specialists',
-    description: 'Compare free quotes from licensed Boca Raton movers. COI-ready crews for condos and 55+ communities, from $450. Palm Beach County coverage.',
+    description: "Compare licensed Boca Raton movers with COI-ready crews for high-rise condos and 55+ communities, from about $450. Palm Beach County coverage, free quotes.",
     service: { serviceType: 'Moving Services', areaServed: 'Boca Raton, Florida' },
     faqs: FAQS,
   }),

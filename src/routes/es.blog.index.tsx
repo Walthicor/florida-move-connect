@@ -10,8 +10,7 @@ export const Route = createFileRoute("/es/blog/")({
       path: PATH,
       lang: "es",
       title: "Blog | Guías de Mudanzas en Florida — Florida Movers Direct",
-      description:
-        "Guías, consejos y precios reales de mudanzas en Florida: costos 2026, comparativos de empresas licenciadas y cómo prepararse para el día de mudanza.",
+      description: "Guías, consejos y precios reales de mudanzas en Florida: costos 2026, comparativos de empresas licenciadas y cómo prepararse bien para el día de la mudanza.",
     }),
   component: Page,
 });

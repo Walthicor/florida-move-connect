@@ -15,8 +15,8 @@ import {
 export const Route = createFileRoute("/commercial-movers/")({
   head: () => pageHead({
     path: "/commercial-movers/",
-    title: 'Commercial Movers in Florida | Office & Business Relocation',
-    description: 'Licensed commercial moving companies in Florida for offices, retail and warehouses. After-hours & weekend moves, IT handling, minimal downtime. Free quotes.',
+    title: "Commercial Movers in Florida | Compare Free Quotes",
+    description: "Compare licensed commercial movers in Florida for office, retail and business relocations. Request free quotes with no obligation.",
     service: { serviceType: 'Commercial and Office Moving', areaServed: 'Florida' },
     faqs: FAQS,
   }),

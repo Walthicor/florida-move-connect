@@ -6,7 +6,7 @@ export const Route = createFileRoute("/movers-in-naples/")({
   head: () => pageHead({
     path: "/movers-in-naples/",
     title: 'Movers in Naples FL | Compare Licensed Moving Companies',
-    description: 'Compare free quotes from licensed Naples movers. Gated communities, white-glove and antique handling, season-smart scheduling. Collier County.',
+    description: "Compare licensed Naples movers experienced with gated communities, white-glove handling and season-smart scheduling across Collier County. Free quotes today.",
     service: { serviceType: 'Moving Services', areaServed: 'Naples, Florida' },
     faqs: FAQS,
   }),

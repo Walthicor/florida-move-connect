@@ -24,8 +24,8 @@ import { HeroQuoteForm } from "@/components/site/QuoteForm";
 export const Route = createFileRoute("/")({
   head: () => pageHead({
     path: "/",
-    title: 'Movers in Florida | Compare Licensed Moving Companies & Save',
-    description: 'Compare free quotes from licensed Florida movers. Local, long-distance & commercial moving companies verified by FDACS & FMCSA. Save up to 40% today.',
+    title: "Movers in Florida | Compare Licensed Movers & Free Quotes",
+    description: "Compare licensed Florida movers and request free quotes for local, long-distance, commercial and specialty moves. Free to use, no obligation.",
     service: { serviceType: 'Moving Company Lead Matching', areaServed: 'Florida' },
     faqs: FAQS,
   }),

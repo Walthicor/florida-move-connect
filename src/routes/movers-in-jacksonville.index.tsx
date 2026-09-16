@@ -6,7 +6,7 @@ export const Route = createFileRoute("/movers-in-jacksonville/")({
   head: () => pageHead({
     path: "/movers-in-jacksonville/",
     title: 'Movers in Jacksonville FL | Compare Moving Companies',
-    description: 'Compare free quotes from licensed Jacksonville movers. Cross-town pricing done right, military PCS experience, from $400. Duval County crews.',
+    description: "Compare licensed Jacksonville movers for cross-town, bridge-heavy and military PCS relocations from about $400. Duval County crews and free written quotes.",
     service: { serviceType: 'Moving Services', areaServed: 'Jacksonville, Florida' },
     faqs: FAQS,
   }),

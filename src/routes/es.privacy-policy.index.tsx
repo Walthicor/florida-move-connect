@@ -9,8 +9,7 @@ export const Route = createFileRoute("/es/privacy-policy/")({
       path: PATH,
       lang: "es",
       title: "Política de Privacidad | Florida Movers Direct",
-      description:
-        "Cómo Florida Movers Direct recopila, usa y comparte su información al solicitar cotizaciones de mudanza. Consentimiento TCPA y derechos CCPA.",
+      description: "Cómo Florida Movers Direct recopila, usa y comparte su información al solicitar cotizaciones de mudanza, incluido el consentimiento TCPA y sus derechos CCPA.",
     }),
   component: Page,
 });

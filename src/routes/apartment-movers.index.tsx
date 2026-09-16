@@ -14,7 +14,7 @@ export const Route = createFileRoute("/apartment-movers/")({
   head: () => pageHead({
     path: "/apartment-movers/",
     title: 'Apartment Movers in Florida | Condo & High-Rise Specialists',
-    description: 'Apartment and condo movers across Florida. COI for your building, elevator reservations, stairs crews. Compare free quotes from licensed movers.',
+    description: "Apartment and condo movers across Florida handle building COIs, elevator reservations and stair carries. Compare free quotes from licensed local crews today.",
     service: { serviceType: 'Apartment and Condo Moving', areaServed: 'Florida' },
     faqs: FAQS,
   }),

@@ -7,8 +7,8 @@ import { ArrowRight, ShieldCheck, ChevronDown, DollarSign, Building2, MapPin, Ro
 export const Route = createFileRoute("/movers-in-miami/")({
   head: () => pageHead({
     path: "/movers-in-miami/",
-    title: 'Movers in Miami FL | Compare Licensed Moving Companies',
-    description: 'Compare free quotes from licensed movers in Miami. Condo & high-rise specialists, COI provided, from $450. Brickell to Kendall — verified companies.',
+    title: "Miami Movers | Compare Licensed Moving Companies",
+    description: "Compare licensed Miami movers for local, apartment, condo and long-distance moves across Miami-Dade. Request free moving quotes today.",
     service: { serviceType: 'Moving Services', areaServed: 'Miami, Florida' },
     faqs: FAQS,
   }),

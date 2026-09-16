@@ -15,7 +15,7 @@ export const Route = createFileRoute("/es/apartment-movers/")({
       path: PATH,
       lang: "es",
       title: "Empresas de Mudanzas de Apartamentos en Florida | COI y HOA",
-      description: "Especialistas en mudanzas de apartamentos y condos en Florida. Manejamos COIs, reserva de ascensores y reglas HOA. Compare 4 cotizaciones gratis.",
+      description: "Especialistas en mudanzas de apartamentos y condos en Florida que manejan COIs, reserva de ascensores y reglas de HOA. Compare 4 cotizaciones gratis hoy mismo.",
       faqs: FAQS,
       service: { serviceType: "Apartment and Condo Moving Services", areaServed: "Florida" },
     }),

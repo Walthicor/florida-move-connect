@@ -9,8 +9,7 @@ export const Route = createFileRoute("/es/terms/")({
       path: PATH,
       lang: "es",
       title: "Términos de Servicio | Mudanzas en Florida — FMD",
-      description:
-        "Términos y condiciones del servicio gratuito de emparejamiento con empresas de mudanzas licenciadas en Florida, incluido el consentimiento TCPA.",
+      description: "Términos y condiciones del servicio gratuito de emparejamiento con empresas de mudanzas licenciadas en Florida, incluido el consentimiento TCPA del usuario.",
     }),
   component: Page,
 });

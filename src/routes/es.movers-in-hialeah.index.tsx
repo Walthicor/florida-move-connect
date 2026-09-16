@@ -35,8 +35,7 @@ export const Route = createFileRoute("/es/movers-in-hialeah/")({
       path: PATH,
       lang: "es",
       title: "Mudanzas en Hialeah FL | Empresas Licenciadas · Gratis",
-      description:
-        "Empresas de mudanzas en Hialeah con atención en español. Desde $95/hora, apartamentos y mudanzas dentro de Miami-Dade. Compare hasta 4 cotizaciones gratis.",
+      description: "Empresas de mudanzas en Hialeah con atención en español desde $95 la hora, para apartamentos y traslados dentro de Miami-Dade. Compare 4 cotizaciones gratis.",
       faqs: FAQS,
       service: { serviceType: "Moving Services", areaServed: "Hialeah, FL" },
     });

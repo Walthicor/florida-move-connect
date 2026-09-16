@@ -65,8 +65,7 @@ export const Route = createFileRoute("/about/")({
     const base = pageHead({
       path: PATH,
       title: "About Florida Movers Direct | How We Verify Florida Movers",
-      description:
-        "We match Florida residents with up to 4 licensed movers, verified against the FDACS state registry and FMCSA SAFER database. Florida only — here's why.",
+      description: "Florida Movers Direct is a Florida-only quote service that checks FDACS and FMCSA licensing before matching your move with up to four vetted moving companies.",
       faqs: FAQS,
       noAlternates: true,
     });

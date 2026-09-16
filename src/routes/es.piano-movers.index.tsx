@@ -15,7 +15,7 @@ export const Route = createFileRoute("/es/piano-movers/")({
       path: PATH,
       lang: "es",
       title: "Empresas Especializadas en Mudanzas de Pianos en Florida",
-      description: "Especialistas certificados para pianos verticales, de cola y de concierto. Costos 2026 y cobertura full-value. Compare cotizaciones gratis.",
+      description: "Especialistas certificados en mudanzas de pianos verticales, de cola y de concierto en Florida, con costos 2026 y cobertura full value. Cotice gratis hoy mismo.",
       faqs: FAQS,
       service: { serviceType: "Piano Moving Services", areaServed: "Florida" },
     }),

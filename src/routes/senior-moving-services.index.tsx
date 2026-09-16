@@ -50,9 +50,8 @@ export const Route = createFileRoute("/senior-moving-services/")({
   head: () =>
     pageHead({
       path: "/senior-moving-services/",
-      title: "Senior Moving Services in Florida | Downsizing & 55+ Communities",
-      description:
-        "Senior moving services across Florida: downsizing help, 55+ community moves, sorting and donation coordination. Compassionate licensed crews. Free quotes.",
+      title: "Senior Moving Services in Florida | Free Quotes",
+      description: "Compare Florida senior moving help for downsizing, 55+ communities, packing, storage and assisted-living moves. Free quotes, no obligation.",
       service: { serviceType: "Senior Moving Services", areaServed: "Florida" },
       faqs: FAQS,
     }),

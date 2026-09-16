@@ -33,8 +33,7 @@ export const Route = createFileRoute("/piano-movers-miami/")({
     const base = pageHead({
       path: PATH,
       title: "Piano Movers in Miami FL | Grand & Upright Piano Moving",
-      description:
-        "Miami piano movers for condos and homes. Uprights $150-$500, grands $300-$800. COI-ready, insured, CPM-trained crews. Up to 4 free quotes.",
+      description: "Miami piano movers serve condos and houses with uprights at $150-$500 and grands at $300-$800, using COI-ready, insured, CPM-trained crews. Four free quotes.",
       faqs: FAQS,
       noAlternates: true,
     });

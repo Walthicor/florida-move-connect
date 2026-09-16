@@ -15,7 +15,7 @@ export const Route = createFileRoute("/es/movers-in-jacksonville/")({
       path: PATH,
       lang: "es",
       title: "Mudanzas en Jacksonville FL | Empresas Licenciadas",
-      description: "Empresas de mudanzas licenciadas en Jacksonville y Duval County: precios 2026, traslados militares PCS (NAS Jax) y puentes. Cotice gratis hoy.",
+      description: "Empresas de mudanzas licenciadas en Jacksonville y Duval County: precios 2026, traslados militares PCS de NAS Jax y rutas con puentes. Cotice gratis hoy mismo.",
       faqs: FAQS,
       service: { serviceType: "Moving Services", areaServed: "Jacksonville, FL" },
     }),

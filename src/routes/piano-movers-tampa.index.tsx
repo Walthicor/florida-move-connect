@@ -15,8 +15,8 @@ import {
 export const Route = createFileRoute("/piano-movers-tampa/")({
   head: () => pageHead({
     path: "/piano-movers-tampa/",
-    title: 'Piano Movers in Tampa FL | Upright & Grand From $150',
-    description: 'Specialty piano movers in Tampa. Uprights from $150, grand pianos from $300. Stairs, crating & climate-aware handling. Compare free quotes today.',
+    title: "Piano Movers in Tampa, FL | Free Piano Moving Quotes",
+    description: "Compare licensed piano movers in Tampa for uprights, baby grands and grand pianos. Get free quotes based on your piano, stairs and access.",
     service: { serviceType: 'Piano Moving', areaServed: 'Tampa, Florida' },
     faqs: FAQS,
   }),

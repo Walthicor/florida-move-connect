@@ -24,8 +24,7 @@ export const Route = createFileRoute("/grand-piano-movers/")({
     pageHead({
       path: PATH,
       title: "Grand Piano Movers in Florida | Baby & Concert Grands",
-      description:
-        "Florida grand piano movers. Baby grands $300-$800, concert grands $500-$1,500 locally. Skid boards, crating, crane exits. Up to 4 free quotes.",
+      description: "Florida grand piano movers price baby grands at $300-$800 and concert grands at $500-$1,500 locally, using skid boards, crating and crane exits when needed.",
       faqs: FAQS,
       service: { serviceType: "Grand Piano Moving", areaServed: "Florida" },
       noAlternates: true,

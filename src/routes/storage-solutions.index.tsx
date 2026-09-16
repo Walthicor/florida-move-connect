@@ -15,7 +15,7 @@ export const Route = createFileRoute("/storage-solutions/")({
   head: () => pageHead({
     path: "/storage-solutions/",
     title: 'Moving and Storage in Florida | Climate-Controlled Options',
-    description: 'Compare Florida moving companies with storage: climate-controlled units, storage-in-transit and flexible terms from $80/month. Free quotes in 2 minutes.',
+    description: "Compare Florida moving companies with storage, including climate-controlled units, storage-in-transit and flexible terms from about $80 a month. Free quotes.",
     service: { serviceType: 'Moving and Storage', areaServed: 'Florida' },
     faqs: FAQS,
   }),

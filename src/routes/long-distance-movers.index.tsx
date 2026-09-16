@@ -17,8 +17,8 @@ import {
 export const Route = createFileRoute("/long-distance-movers/")({
   head: () => pageHead({
     path: "/long-distance-movers/",
-    title: 'Long Distance Movers in Florida | Compare Quotes & Save 40%',
-    description: 'Compare free quotes from licensed long distance moving companies in Florida. Binding estimates, FMCSA-verified movers, routes to all 50 states. 2026 rates inside.',
+    title: "Long Distance Movers in Florida | Free Quotes",
+    description: "Compare FMCSA-registered long-distance movers from Florida. Request free quotes, compare delivery windows and ask for written estimates.",
     service: { serviceType: 'Long Distance Moving', areaServed: 'Florida' },
     faqs: FAQS,
   }),

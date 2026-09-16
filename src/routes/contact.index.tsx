@@ -7,7 +7,7 @@ export const Route = createFileRoute("/contact/")({
   head: () => pageHead({
     path: "/contact/",
     title: 'Get Free Moving Quotes | Florida Movers Direct',
-    description: 'Get up to 4 free quotes from licensed Florida moving companies in 2 minutes. No obligation, no spam — just verified movers competing for your move.',
+    description: "Request up to four free quotes from licensed Florida moving companies in about two minutes. No obligation and no spam, just verified movers competing for you.",
   }),
   component: ContactPage,
 });

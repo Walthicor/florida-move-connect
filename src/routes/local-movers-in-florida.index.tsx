@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { NetworkDisclosure } from "@/components/site/NetworkDisclosure";
 import { pageHead } from "@/lib/seo";
 import { ProseSection, CheckList } from "@/components/site/ContentSections";
+import { PageEstimateNote } from "@/components/site/PageBlocks";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -50,6 +51,18 @@ const DRIVERS = [
       "Everything boxed, disassembled and staged near the door before the crew arrives can cut 1-2 billable hours. At $130/hour, your prep pays like a job.",
   },
   {
+    direction: "up" as const,
+    title: "Distance between homes",
+    body:
+      "The drive between addresses is billable time on an hourly job — a 40-minute haul across town is 40 minutes of crew pay, and some companies add a separate travel or fuel fee.",
+  },
+  {
+    direction: "up" as const,
+    title: "Packing and specialty items",
+    body:
+      "Crew packing runs by the hour plus materials, and pianos, safes and pool tables are priced as separate line items. Quote them before move day, not after — see our piano movers guide for instrument pricing.",
+  },
+  {
     direction: "down" as const,
     title: "Mid-month weekdays",
     body:
@@ -82,6 +95,14 @@ const FAQS = [
     q: "Do condo and high-rise buildings change what a local move costs?",
     a: "Yes. Condo movers in Florida budget extra time for reserved service elevators, loading-dock windows and long carries, which typically adds $100-$300 to an otherwise standard job.",
   },
+  {
+    q: "How do I find local movers near me in Florida?",
+    a: "Start with the city directory on this page — rates, access rules and seasonality differ between Miami, Tampa, Orlando and the smaller markets. Then compare written quotes from at least three licensed local moving companies in your city; one form here reaches up to four.",
+  },
+  {
+    q: "What should a written estimate from a local mover include?",
+    a: "The hourly rate, crew size, minimum hours, travel or fuel fees, charges for stairs and specialty items, and the mover's FDACS registration number. If any of those are missing or the mover refuses to put terms in writing, choose a different company.",
+  },
 ];
 
 function LocalMoversPage() {
@@ -96,7 +117,29 @@ function LocalMoversPage() {
       <FdacsSection />
       <CityLinks />
       <Faq />
+      <BottomCta />
     </>
+  );
+}
+
+function BottomCta() {
+  return (
+    <section className="bg-background">
+      <div className="container-page py-16 text-center max-w-2xl">
+        <h2 className="font-display text-3xl md:text-4xl font-bold text-ink">
+          Compare Local Moving Quotes in Your City — Free
+        </h2>
+        <p className="mt-4 text-muted-foreground">
+          One form, up to four licensed Florida movers, no obligation. Verify each registration and
+          hire the quote that fits your move — or no one.
+        </p>
+        <div className="mt-7">
+          <Link to="/contact/" className="btn-cta btn-cta-hover text-base">
+            Get Free Local Quotes <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -192,7 +235,7 @@ function CityLinks() {
         <div className="max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-wider text-brand">By city</span>
           <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
-            Cities We Serve Across Florida
+            Local Movers by City in Florida
           </h2>
           <p className="mt-3 text-muted-foreground">
             Hourly rates are statewide, but access, seasonality and building rules are not. This is
@@ -311,10 +354,48 @@ function RatesTable() {
             ))}
           </div>
         </div>
+        <PageEstimateNote />
+
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
+          {SCENARIOS.map((s) => (
+            <div key={s.title} className="rounded-2xl border border-border bg-white p-6 shadow-soft">
+              <h3 className="font-display text-lg font-bold text-ink">{s.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
+              <p className="mt-3 text-sm font-semibold text-brand">{s.estimate}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-4 text-xs text-muted-foreground">
+          Scenarios are illustrative estimates, not quotes — your actual price comes only from a written estimate by the mover.
+        </p>
       </div>
     </section>
   );
 }
+
+const SCENARIOS = [
+  {
+    title: "Studio across town",
+    body: "Furnished studio, ground floor to ground floor, 8 miles, everything boxed in advance. Two movers, about 3 hours including load and unload.",
+    estimate: "Typical estimate: $400 – $550",
+  },
+  {
+    title: "2-bedroom apartment, third floor",
+    body: "Walk-up with no elevator, 15 miles, some furniture disassembly. Three movers, 5-6 hours — the stairs are the single biggest line item.",
+    estimate: "Typical estimate: $800 – $1,200",
+  },
+  {
+    title: "4-bedroom house, same suburb",
+    body: "Full household with garage and patio, 10 miles, mid-month weekday. Four movers, 8-10 hours with two trucks or two trips.",
+    estimate: "Typical estimate: $1,600 – $2,600",
+  },
+];
+
+const MOVE_TYPES = [
+  { type: "Local move", example: "Tampa to St. Pete, Kendall to Doral", distance: "Under ~50 miles, inside Florida", pricing: "Hourly (crew size × hours)", oversight: "FDACS registration required" },
+  { type: "Intrastate move", example: "Orlando to Miami, Tampa to Jacksonville", distance: "Over ~50 miles, inside Florida", pricing: "By inventory / weight and distance", oversight: "FDACS registration required" },
+  { type: "Interstate move", example: "Miami to Atlanta, Orlando to New York", distance: "Crossing any state line", pricing: "By weight and mileage, written estimate", oversight: "FMCSA USDOT number required" },
+];
 
 function WhatCounts() {
   return (
@@ -324,11 +405,38 @@ function WhatCounts() {
           What Counts as a Local Move in Florida?
         </h2>
         <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
-          Any move under 50 miles that starts and ends inside Florida. Local
-          moves bill hourly; anything over 50 miles or crossing state lines is
-          priced by weight and distance. Tampa to St. Pete is local. Orlando to
-          Miami is not — that is an intrastate long distance move.
+          Any move under roughly 50 miles that starts and ends inside Florida. Local
+          moves bill hourly; anything longer or crossing state lines is priced by
+          inventory or weight and distance — and the paperwork changes with it.
+          Tampa to St. Pete is local. Orlando to Miami is not — that is an
+          intrastate long-distance move.
         </p>
+        <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-white shadow-card">
+          <div className="overflow-x-auto">
+            <table className="w-full text-left min-w-[640px]">
+              <thead className="bg-navy text-navy-foreground">
+                <tr>
+                  <th className="px-5 py-3.5 font-display text-sm font-bold uppercase tracking-wider">Move Type</th>
+                  <th className="px-5 py-3.5 font-display text-sm font-bold uppercase tracking-wider">Example</th>
+                  <th className="px-5 py-3.5 font-display text-sm font-bold uppercase tracking-wider">Distance</th>
+                  <th className="px-5 py-3.5 font-display text-sm font-bold uppercase tracking-wider">How It Is Priced</th>
+                  <th className="px-5 py-3.5 font-display text-sm font-bold uppercase tracking-wider">Oversight</th>
+                </tr>
+              </thead>
+              <tbody>
+                {MOVE_TYPES.map((r, i) => (
+                  <tr key={r.type} className={i % 2 === 0 ? "bg-white" : "bg-surface-alt"}>
+                    <td className="px-5 py-4 font-semibold text-ink">{r.type}</td>
+                    <td className="px-5 py-4 text-ink">{r.example}</td>
+                    <td className="px-5 py-4 text-ink">{r.distance}</td>
+                    <td className="px-5 py-4 text-ink">{r.pricing}</td>
+                    <td className="px-5 py-4 text-ink">{r.oversight}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </section>
   );

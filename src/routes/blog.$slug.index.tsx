@@ -604,6 +604,22 @@ function ChecklistBody() {
           mover's COI to your building — Miami and Boca associations often
           need 2-3 weeks to approve. Reserve the service elevator.
         </p>
+        <p className="mt-3 text-ink">
+          If your closing and move-in dates do not line up, ask each mover about{" "}
+          <Link to="/storage-solutions/" className="text-brand underline">
+            climate-controlled storage and storage-in-transit in Florida
+          </Link>{" "}
+          before you sign. Helping a parent downsize into a 55+ community? Our{" "}
+          <Link to="/senior-moving-services/" className="text-brand underline">
+            senior moving services
+          </Link>{" "}
+          page covers sorting days, community move-in paperwork and donation pickups, and the crew
+          rates behind it all sit on our{" "}
+          <Link to="/local-movers-in-florida/" className="text-brand underline">
+            Florida local moving rate guide
+          </Link>
+          .
+        </p>
       </div>
 
       <MidCta />

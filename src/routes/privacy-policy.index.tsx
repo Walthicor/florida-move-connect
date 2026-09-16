@@ -8,7 +8,6 @@ export const Route = createFileRoute("/privacy-policy/")({
       path: "/privacy-policy/",
       title: "Privacy Policy | Florida Movers Direct Quote Service",
       description: "How Florida Movers Direct collects, uses and shares the details you submit when requesting moving quotes, including TCPA consent and Florida and CCPA rights.",
-      noAlternates: true,
     }),
   component: PrivacyPage,
 });

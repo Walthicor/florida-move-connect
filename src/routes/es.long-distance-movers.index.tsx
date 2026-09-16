@@ -16,7 +16,7 @@ export const Route = createFileRoute("/es/long-distance-movers/")({
       path: PATH,
       lang: "es",
       title: "Mudanzas de Larga Distancia desde Florida | Cotice Gratis",
-      description: "Empresas de mudanzas de larga distancia verificadas por FMCSA, con costos 2026 entre $1,800 y $8,000. Compare 4 cotizaciones gratis con estimados por escrito.",
+      description: "Empresas de mudanzas de larga distancia con licencia FMCSA y costos 2026 entre $1,800 y $8,000. Compare 4 cotizaciones gratis con estimados por escrito.",
       faqs: FAQS,
       service: { serviceType: "Long Distance Moving Services", areaServed: "Florida" },
     }),

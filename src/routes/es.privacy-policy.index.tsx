@@ -29,7 +29,7 @@ function Page() {
 
           <h2 className="font-display text-2xl font-bold text-ink mt-10">2. Cómo usamos y compartimos su información</h2>
           <p className="text-ink/90 leading-relaxed mt-3">
-            Compartimos la información enviada con hasta 4 empresas de mudanzas licenciadas asociadas con el único propósito de proporcionarle las cotizaciones solicitadas. Estas empresas están verificadas por FDACS (mudanzas locales) o FMCSA (larga distancia).
+            Compartimos la información enviada con hasta 4 empresas de mudanzas licenciadas asociadas con el único propósito de proporcionarle las cotizaciones solicitadas. Estas empresas deben estar registradas ante FDACS (mudanzas locales) o FMCSA (larga distancia); usted puede consultar cada licencia en esos registros públicos.
           </p>
 
           <h2 className="font-display text-2xl font-bold text-ink mt-10">3. Consentimiento TCPA</h2>

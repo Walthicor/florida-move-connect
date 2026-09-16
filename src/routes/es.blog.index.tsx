@@ -32,7 +32,7 @@ function Page() {
         <ul className="mt-8 space-y-3">
           {[
             { label: "Guía completa: mudanzas locales en Florida", to: "/es/local-movers-in-florida/" },
-            { label: "Larga distancia: costos y empresas verificadas", to: "/es/long-distance-movers/" },
+            { label: "Larga distancia: costos y empresas licenciadas", to: "/es/long-distance-movers/" },
             { label: "Almacenamiento y storage-in-transit", to: "/es/storage-solutions/" },
             { label: "Mudanzas en Miami: condos y COIs", to: "/es/movers-in-miami/" },
           ].map((l) => (

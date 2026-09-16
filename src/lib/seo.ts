@@ -126,7 +126,10 @@ export function pageHead(opts: PageHeadOptions) {
       { property: "og:image", content: image },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: ogLocale },
-      { property: "og:locale:alternate", content: ogLocaleAlt },
+      // Only advertise the other locale when a real translated twin exists.
+      ...(opts.noAlternates
+        ? []
+        : [{ property: "og:locale:alternate", content: ogLocaleAlt }]),
       { name: "twitter:title", content: opts.title },
       { name: "twitter:description", content: opts.description },
       { name: "twitter:image", content: image },
@@ -136,9 +139,9 @@ export function pageHead(opts: PageHeadOptions) {
       ...(opts.noAlternates
         ? []
         : [
-            { rel: "alternate", hrefLang: "en", href: enUrl },
-            { rel: "alternate", hrefLang: "es", href: esUrl },
-            { rel: "alternate", hrefLang: "x-default", href: enUrl },
+            { rel: "alternate", hreflang: "en-US", href: enUrl },
+            { rel: "alternate", hreflang: "es-US", href: esUrl },
+            { rel: "alternate", hreflang: "x-default", href: enUrl },
           ]),
     ],
     scripts,

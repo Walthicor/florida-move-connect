@@ -235,7 +235,7 @@ function CityLinks() {
         <div className="max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-wider text-brand">By city</span>
           <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
-            Cities We Serve Across Florida
+            Local Movers by City in Florida
           </h2>
           <p className="mt-3 text-muted-foreground">
             Hourly rates are statewide, but access, seasonality and building rules are not. This is

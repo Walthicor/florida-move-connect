@@ -61,6 +61,18 @@ const FAQS = [
     q: "Do you move pianos into downtown high-rise condos?",
     a: "Yes — downtown and Channelside buildings need a COI and a service elevator reservation; grands that cannot fit the elevator are hoisted, quoted case by case. Give us the building name and the movers arrange it with your association.",
   },
+  {
+    q: "Can a piano moving company in Tampa handle a digital piano?",
+    a: "Yes. Digitals are lighter but still top-heavy and easy to crack at the cabinet corners. Most Tampa specialists move them for $100-$250 locally, often as an add-on to a household move. Consoles with wooden cabinets (Clavinova-style) are treated like small uprights.",
+  },
+  {
+    q: "How do I find piano movers near me in Tampa?",
+    a: "Ask three questions before comparing price: do you carry a skid board and piano straps, are you insured for the instrument's full value, and have you worked my building or neighborhood before? One form here sends those questions to up to 4 Tampa Bay specialists at once.",
+  },
+  {
+    q: "What happens if my piano is damaged during the move?",
+    a: "Basic valuation included in most quotes pays by weight — a fraction of what a piano is worth. Ask for full-value coverage in writing before pickup, photograph the piano from all sides, and note any existing marks on the bill of lading before the crew leaves.",
+  },
 ];
 
 function PianoMoversTampaPage() {
@@ -68,10 +80,14 @@ function PianoMoversTampaPage() {
     <>
       <Hero />
       <NetworkDisclosure />
+      <PianoTypes />
       <CostTable />
+      <AccessChallenges />
       <HowItWorks />
+      <Insurance />
       <Areas />
       <Faq />
+      <BottomCta />
     </>
   );
 }
@@ -91,9 +107,9 @@ function Hero() {
           Moving a piano in Tampa costs $150-$400 for an upright and $300-$800 for a grand,
           depending on stairs, distance and crating. Through Florida Movers Direct you
           compare free quotes from specialty piano movers in Tampa — crews with skid boards,
-          locking straps and the humidity know-how a 600-pound instrument demands. Standard
-          crews damage pianos at many times the specialist rate; with an instrument worth
-          thousands, the right crew costs less than the wrong repair.
+          locking straps and the humidity know-how a 600-pound instrument demands. A general
+          crew improvising with furniture dollies is how soundboards crack; with an
+          instrument worth thousands, the right crew costs less than the wrong repair.
         </p>
         <div className="mt-7">
           <Link to="/contact/" className="btn-cta btn-cta-hover text-base">
@@ -163,9 +179,15 @@ function CostTable() {
           </div>
         </div>
         <p className="mt-6 text-sm text-muted-foreground leading-relaxed max-w-3xl">
-          Local Tampa Bay pricing. Long-distance piano transport (Tampa to Miami, Orlando or
-          out of state) is quoted by route — typically $700-$2,500. Every quote includes
-          padding, straps, skid board and basic valuation.
+          Local Tampa Bay pricing — typical ranges labeled as estimates; your quote depends
+          on piano type, stair count, distance between addresses and access at both ends.
+          Long-distance piano transport (Tampa to Miami, Orlando or out of state) is quoted
+          by route — typically $700-$2,500. Every quote includes padding, straps, skid board
+          and basic valuation. For a deeper breakdown by piano type and scenario, see{" "}
+          <Link to="/piano-moving-cost/" className="text-brand font-semibold underline underline-offset-2">
+            what piano moving costs in Florida
+          </Link>
+          .
         </p>
       </div>
     </section>
@@ -179,8 +201,15 @@ function HowItWorks() {
         <div className="max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-wider text-brand">Process</span>
           <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
-            How Professional Piano Movers Work
+            Equipment and Process: How Professional Piano Movers Work
           </h2>
+          <p className="mt-4 text-base md:text-lg text-muted-foreground max-w-3xl leading-relaxed">
+            Piano moving is a rigging job, not a carrying job. The crews we match you with
+            arrive with a piano board (skid), locking straps, thick moving pads and
+            stair-climbing dollies — and for grands, they remove the legs and lyre and
+            travel the body on its side on the skid. That disassembly is standard, not an
+            upsell: it is what lets a 6-foot grand fit a doorway safely.
+          </p>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {STEPS.map((s) => {
@@ -223,6 +252,146 @@ function Areas() {
         <p className="mt-6 text-sm text-muted-foreground leading-relaxed">
           Plus Clearwater, Largo and St. Petersburg across the bay. Hillsborough, Pinellas
           and Pasco counties, daily.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+const PIANO_TYPES = [
+  { t: "Upright", d: "The Tampa standard — 300-500 lbs, moved upright on a dolly and skid. Full uprights need 3 movers on stairs; the cabinet wraps fully in pads before it leaves the room." },
+  { t: "Spinet and console", d: "The shortest uprights, common in Tampa apartments. Light enough for a 2-person crew, but the legs and pedals still come off on consoles before wrapping." },
+  { t: "Baby grand (under 6 ft)", d: "Legs and lyre removed, body traveled on its side on the skid board. Fits most Tampa doorways and service elevators — measure the turn at the door, not just the doorway width." },
+  { t: "Grand and concert grand", d: "6 ft and up: full disassembly, skid board, and frequently a 4-person crew. Some downtown elevators will not take one — that is when hoisting is quoted case by case." },
+  { t: "Digital", d: "Lighter but top-heavy with fragile cabinet corners. Moved like furniture with piano-level padding; cabinet-style digitals are handled like small uprights." },
+];
+
+function PianoTypes() {
+  return (
+    <section className="bg-surface-alt">
+      <div className="container-page py-16 md:py-20">
+        <div className="max-w-2xl">
+          <span className="text-xs font-semibold uppercase tracking-wider text-brand">Instruments</span>
+          <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
+            Piano Types We Get Quotes For
+          </h2>
+        </div>
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {PIANO_TYPES.map((p) => (
+            <div key={p.t} className="rounded-2xl border border-border bg-white p-6 shadow-soft">
+              <h3 className="font-display text-lg font-bold text-ink">{p.t}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.d}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-sm text-muted-foreground leading-relaxed max-w-3xl">
+          Statewide coverage for every type — see the{" "}
+          <Link to="/piano-movers/" className="text-brand font-semibold underline underline-offset-2">
+            Florida piano moving hub
+          </Link>
+          , or the dedicated guide for{" "}
+          <Link to="/grand-piano-movers/" className="text-brand font-semibold underline underline-offset-2">
+            grand and baby grand piano movers
+          </Link>
+          .
+        </p>
+      </div>
+    </section>
+  );
+}
+
+const ACCESS = [
+  { t: "Stairs and tight doorways", d: "Each flight adds crew time and cost — typically $40-$100 per flight as an estimate. Bungalow doorways under 32 inches and tight landing turns are measured during the quote, not discovered on moving day." },
+  { t: "Downtown and Channelside condos", d: "High-rises require a certificate of insurance naming the association, plus a reserved service elevator and loading dock window. Send the building rules with your quote request so the crew books both." },
+  { t: "Hyde Park and Seminole Heights historic homes", d: "Narrow halls, original wood floors and porch steps are the norm. Crews pad door frames and run floor protection; grands may need a doorway turn rehearsed before the skid rolls." },
+  { t: "Tampa humidity", d: "Gulf humidity and AC swings detune pianos fast. Specialists place the instrument away from vents and exterior walls, and you should plan a tuning 2-4 weeks after the move." },
+];
+
+function AccessChallenges() {
+  return (
+    <section className="bg-background">
+      <div className="container-page py-16 md:py-20">
+        <div className="max-w-3xl">
+          <span className="text-xs font-semibold uppercase tracking-wider text-brand">Local knowledge</span>
+          <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
+            Tampa Access Challenges a Piano Crew Plans Around
+          </h2>
+        </div>
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
+          {ACCESS.map((a) => (
+            <div key={a.t} className="rounded-2xl border border-border bg-white p-6 shadow-soft">
+              <h3 className="font-display text-lg font-bold text-ink">{a.t}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{a.d}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-sm text-muted-foreground leading-relaxed max-w-3xl">
+          Moving the rest of the house too? Our{" "}
+          <Link to="/movers-in-tampa/" className="text-brand font-semibold underline underline-offset-2">
+            Tampa movers cost and neighborhood guide
+          </Link>{" "}
+          covers full-household pricing across the bay.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+const INSURANCE_ASKS = [
+  "Is the piano covered for its full replacement value, or basic released-value by weight? Get full-value coverage in writing before pickup.",
+  "Who physically moves the piano — your trained crew or a subcontractor? Either is fine; an unqualified crew is not.",
+  "What equipment comes to the job: skid board, piano straps, pads, stair-climbing dolly?",
+  "How are claims filed and within how many days? Photograph the piano before pickup and note existing marks on the paperwork.",
+];
+
+function Insurance() {
+  return (
+    <section className="bg-surface-alt">
+      <div className="container-page py-16 md:py-20 max-w-4xl">
+        <span className="text-xs font-semibold uppercase tracking-wider text-brand">Protection</span>
+        <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
+          Insurance and What to Ask Before Hiring a Tampa Piano Mover
+        </h2>
+        <p className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
+          The default coverage on most moves pays by weight — roughly $0.60 per
+          pound on long-distance shipments — which values a $10,000 grand at a
+          few hundred dollars. Before you book, ask:
+        </p>
+        <ul className="mt-8 space-y-4">
+          {INSURANCE_ASKS.map((q) => (
+            <li key={q} className="flex items-start gap-3 rounded-2xl border border-border bg-white p-5 shadow-soft">
+              <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand" />
+              <span className="text-sm md:text-base leading-relaxed text-ink">{q}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+function BottomCta() {
+  return (
+    <section className="bg-navy text-navy-foreground">
+      <div className="container-page py-16 md:py-20 text-center max-w-3xl">
+        <h2 className="font-display text-3xl md:text-4xl font-bold">
+          Compare Tampa Piano Moving Quotes
+        </h2>
+        <p className="mt-4 text-base md:text-lg opacity-90 leading-relaxed">
+          Tell us the piano type, the stairs and the addresses — we match you
+          with up to 4 Tampa Bay piano specialists. Free, no obligation.
+        </p>
+        <div className="mt-8">
+          <Link to="/contact/" className="btn-cta btn-cta-hover text-base">
+            Get Tampa Piano Quotes <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+        <p className="mt-6 text-sm opacity-80">
+          ¿Prefieres ayuda en español?{" "}
+          <Link to="/es/piano-movers-tampa/" className="underline font-semibold">
+            Mudanzas de pianos en Tampa
+          </Link>
+          .
         </p>
       </div>
     </section>

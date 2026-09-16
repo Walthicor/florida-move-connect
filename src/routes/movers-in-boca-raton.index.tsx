@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { NetworkDisclosure } from "@/components/site/NetworkDisclosure";
 import { pageHead } from "@/lib/seo";
 import { Link } from "@tanstack/react-router";
 import { CityHero, SimpleCostTable, LocalKnowledge, Faq } from "./movers-in-ocala.index";
@@ -44,6 +45,7 @@ function BocaPage() {
         h1={<>Movers in <span className="text-brand">Boca Raton</span>, Florida</>}
         intro="Local Boca Raton moves average $450-$900 for a 1-bedroom and $850-$1,500 for a 2-3 bedroom home. Boca is condo country: from Mizner Park to the beachfront towers, moves here run on COIs, service elevators and association calendars. Our Palm Beach County movers handle that paperwork daily — so your building lets your move happen."
       />
+      <NetworkDisclosure />
       <SimpleCostTable title="Boca Raton Moving Costs (2026)" rows={COSTS} />
       <LocalKnowledge title="Moving in Boca Raton: Condo Rules Run the Show" items={LOCAL} />
       <ProseSection title="Pianos, Antiques and Other Specialty Items in Boca Raton">

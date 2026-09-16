@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { NetworkDisclosure } from "./NetworkDisclosure";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -144,6 +145,7 @@ function Hero({ city, eyebrow, opening }: PianoCityPageProps) {
           </Link>
         </div>
       </div>
+      <NetworkDisclosure />
     </section>
   );
 }
@@ -214,6 +216,7 @@ function Costs({ city }: { city: string }) {
             ))}
           </div>
         </div>
+        <p className="mt-3 text-xs text-muted-foreground">Typical ranges only — estimates vary by home size, access, stairs, distance and season. Only a written quote from a mover is binding.</p>
 
         <div className="mt-10 max-w-3xl">
           <h3 className="font-display text-xl font-bold text-ink">Surcharges that change the total</h3>

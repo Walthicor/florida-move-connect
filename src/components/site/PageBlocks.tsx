@@ -3,6 +3,8 @@
 
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
+import { NetworkDisclosure } from "./NetworkDisclosure";
+import { useLang } from "@/lib/i18n";
 import {
   ArrowRight,
   ShieldCheck,
@@ -12,6 +14,21 @@ import {
   MapPin,
   Route as RouteIcon,
 } from "lucide-react";
+
+/* ---------------------------------------------------------------------- */
+/* Estimate disclaimer shown under every price table                       */
+/* ---------------------------------------------------------------------- */
+
+export function PageEstimateNote() {
+  const lang = useLang();
+  return (
+    <p className="mt-3 text-xs text-muted-foreground">
+      {lang === "es"
+        ? "Solo rangos típicos — los estimados varían según el tamaño de la vivienda, acceso, escaleras, distancia y temporada. Solo una cotización por escrito es vinculante."
+        : "Typical ranges only — estimates vary by home size, access, stairs, distance and season. Only a written quote from a mover is binding."}
+    </p>
+  );
+}
 
 /* ---------------------------------------------------------------------- */
 /* Hero                                                                    */
@@ -49,6 +66,7 @@ export function PageHero({
           </Link>
         </div>
       </div>
+      <NetworkDisclosure />
     </section>
   );
 }
@@ -125,6 +143,7 @@ export function PageCostTable({
             ))}
           </div>
         </div>
+        <PageEstimateNote />
       </div>
     </section>
   );

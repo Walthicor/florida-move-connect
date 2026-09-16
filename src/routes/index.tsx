@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { pageHead } from "@/lib/seo";
+import { pageHead, WEBSITE_SCHEMA } from "@/lib/seo";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -20,15 +20,25 @@ import {
 import { CITIES } from "../components/site/data";
 import heroVideo from "@/assets/hero-cinematic.mp4.asset.json";
 import { HeroQuoteForm } from "@/components/site/QuoteForm";
+import { NetworkDisclosure } from "@/components/site/NetworkDisclosure";
 
 export const Route = createFileRoute("/")({
-  head: () => pageHead({
-    path: "/",
-    title: "Movers in Florida | Compare Licensed Movers & Free Quotes",
-    description: "Compare licensed Florida movers and request free quotes for local, long-distance, commercial and specialty moves. Free to use, no obligation.",
-    service: { serviceType: 'Moving Company Lead Matching', areaServed: 'Florida' },
-    faqs: FAQS,
-  }),
+  head: () => {
+    const head = pageHead({
+      path: "/",
+      title: "Movers in Florida | Compare Licensed Movers & Free Quotes",
+      description: "Compare licensed Florida movers and request free quotes for local, long-distance, commercial and specialty moves. Free to use, no obligation.",
+      service: { serviceType: 'Moving Company Lead Matching', areaServed: 'Florida' },
+      faqs: FAQS,
+    });
+    return {
+      ...head,
+      scripts: [
+        ...head.scripts,
+        { type: "application/ld+json", children: JSON.stringify(WEBSITE_SCHEMA) },
+      ],
+    };
+  },
   component: Home,
 });
 
@@ -109,7 +119,7 @@ const SERVICES = [
 const FAQS = [
   {
     q: "How much do movers cost in Florida?",
-    a: "Local moves typically cost $400-$1,600 depending on home size; long-distance moves from Florida range $2,200-$6,500+. A 2-3 bedroom local move averages $850-$1,500. Peak season adds 20-30%.",
+    a: "Typical ranges: $400-$1,600 for a local move depending on home size, and $2,200-$6,500+ for a long-distance move from Florida. A 2-3 bedroom local move usually falls between $850 and $1,500. Estimates vary by home size, access and season, and peak-season dates normally price higher. Only a written quote is binding.",
   },
   {
     q: "Are the moving companies in your network licensed and insured?",
@@ -129,7 +139,7 @@ const FAQS = [
   },
   {
     q: "When is the cheapest time to move in Florida?",
-    a: "October through April, mid-month, on a weekday. Avoiding just the last weekend of the month saves most people 10-20%.",
+    a: "October through April, mid-month, on a weekday. Month-end weekends are the busiest slots and typically the most expensive, so flexible dates usually quote lower.",
   },
 ];
 
@@ -262,7 +272,7 @@ function Hero() {
         <div>
           <span className="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur border border-white/25 px-3 py-1 text-xs font-semibold text-white shadow-soft">
             <ShieldCheck className="h-3.5 w-3.5" />
-            FDACS & FMCSA Verified Movers
+            Licensed Florida Movers — Verify Any License Yourself
           </span>
           <h1 className="mt-5 font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.05] drop-shadow-[0_2px_20px_rgba(0,0,0,0.35)]">
             Movers in Florida —{" "}
@@ -271,10 +281,12 @@ function Hero() {
           </h1>
           <p className="mt-5 text-base md:text-lg text-white/90 max-w-xl">
             Compare free quotes from licensed movers in Florida in under 2
-            minutes. One simple form connects you with up to 4 FDACS- and
-            FMCSA-verified moving companies competing for your move — local,
-            long distance, or commercial. No calls from random brokers, no spam,
-            no obligation. Just Florida movers, verified the Florida way.
+            minutes. One simple form connects you with up to 4 independent
+            licensed moving companies competing for your move — local, long
+            distance, or commercial. You can confirm any mover's credentials
+            yourself: USDOT number in the FMCSA SAFER database for interstate
+            moves, FDACS registration for moves inside Florida. No calls from
+            random brokers, no spam, no obligation.
           </p>
 
           <ul className="mt-7 flex flex-wrap gap-2">
@@ -292,6 +304,7 @@ function Hero() {
 
         <QuoteFormCard />
       </div>
+      <NetworkDisclosure />
     </section>
   );
 }
@@ -319,7 +332,7 @@ function HowItWorks() {
     {
       n: "03",
       t: "Compare Quotes and Choose",
-      d: "Up to 4 licensed movers send their best price. Customers who compare 3+ quotes save 30-40% versus taking the first offer.",
+      d: "Up to 4 licensed movers send their best price. Comparing three or more written quotes is the simplest way to see the real price spread for your move.",
     },
   ];
 
@@ -499,10 +512,11 @@ function CostTable() {
             ))}
           </div>
         </div>
+        <p className="mt-3 text-xs text-muted-foreground">Typical ranges only — estimates vary by home size, access, stairs, distance and season. Only a written quote from a mover is binding.</p>
 
         <p className="mt-6 text-sm md:text-base text-muted-foreground max-w-3xl leading-relaxed">
-          Florida moving prices rise 20-30% during peak season (May-September)
-          and drop to their annual low January-March. Mid-month weekdays are
+          Florida moving prices typically climb during peak season
+          (May-September) and are usually at their lowest January-March. Mid-month weekdays are
           consistently the cheapest dates statewide. For a personal number
           instead of a range,{" "}
           <Link to="/contact/" className="font-semibold text-brand hover:underline">

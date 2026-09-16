@@ -478,7 +478,7 @@ function CostGuideBody() {
         <ul className="mt-5 space-y-4 text-ink">
           <li><strong>Distance and access:</strong> stairs, elevators, long carries — each adds time or flat fees ($40-$100 per flight of stairs).</li>
           <li><strong>Season:</strong> May through September is peak (school calendars + lease turnovers). Expect 20-30% higher rates than winter.</li>
-          <li><strong>Date:</strong> the last weekend of any month is the most expensive 72 hours in moving. Mid-month weekdays are cheapest.</li>
+          <li><strong>Date:</strong> the last weekend of any month is typically the busiest and highest-priced window. Mid-month weekdays are usually the cheapest.</li>
           <li><strong>Packing:</strong> full professional packing adds $600-$1,200 for a typical home but saves 3-4 days of your labor.</li>
           <li><strong>Specialty items:</strong> pianos ($150-$800), safes, pool tables and art crating are quoted separately.</li>
           <li><strong>Storage:</strong> if your new home is not ready, storage-in-transit runs $150-$400/month.</li>
@@ -493,7 +493,7 @@ function CostGuideBody() {
         </h2>
         <p className="mt-4 text-ink">
           Compare 3-4 licensed movers — prices for the identical job routinely
-          vary 30-40%. Move mid-month on a weekday. Declutter first: movers
+          can vary widely — estimates change with home size, access and dates. Move mid-month on a weekday. Declutter first: movers
           price by time or weight, and the average family pays to transport
           hundreds of pounds it will never use. Book 4+ weeks ahead in peak
           season. And never choose a mover just because the quote is
@@ -1742,7 +1742,7 @@ function AuthorAndEnd({ slug, faqs }: { slug: string; faqs: { q: string; a: stri
               Florida Movers Direct Team
             </div>
             <p className="mt-1 text-sm text-muted-foreground">
-              We connect Florida residents with FDACS and FMCSA-verified
+              We connect Florida residents with independent licensed, FDACS- and FMCSA-registered
               licensed movers. Our editorial team publishes practical,
               no-fluff guides based on real 2026 pricing across the state.
             </p>
@@ -1838,7 +1838,7 @@ function MidCta({ variant = "mid" }: { variant?: "mid" | "end" }) {
               : "See what your move actually costs"}
           </h3>
           <p className="mt-1 text-white/90 text-sm">
-            Get up to 4 free quotes from licensed FDACS-verified movers.
+            Get up to 4 free quotes from independent licensed, FDACS-registered movers.
           </p>
         </div>
         <Link

@@ -11,12 +11,12 @@ const FAQS = [
     a: "No. We are a Florida-only matching service. We collect your move details once and pass them to up to 4 licensed moving companies, who then quote you directly. You never pay us anything.",
   },
   {
-    q: "How do you verify the movers you send me to?",
-    a: "Every intrastate mover is checked against the FDACS Household Moving Services registry (Florida requires state registration for in-state moves). Interstate carriers must hold an active USDOT and MC number in the FMCSA SAFER system with active insurance on file. We re-check registrations at least quarterly and remove any company that lapses.",
+    q: "How can I verify the movers you send me to?",
+    a: "Ask each company for its licence numbers and check them yourself, free of charge. For moves inside Florida, look the company up in the FDACS Household Moving Services registry (Florida requires state registration for in-state moves). For interstate moves, enter the USDOT or MC number at safer.fmcsa.dot.gov to confirm active operating authority and insurance on file. We only refer companies that state they hold current registration, but the public registries are the authoritative source.",
   },
   {
     q: "Why do you only cover Florida?",
-    a: "Because move pricing and licensing rules are local. Florida has its own FDACS registration regime, condo COI culture, hurricane season windows and snowbird seasonality. Covering one state lets us keep the mover list verified and the cost ranges accurate instead of publishing national averages.",
+    a: "Because move pricing and licensing rules are local. Florida has its own FDACS registration regime, condo COI culture, hurricane season windows and snowbird seasonality. Covering one state lets us keep the mover list current and the cost ranges realistic instead of publishing national averages.",
   },
   {
     q: "How many quotes will I receive?",
@@ -33,7 +33,7 @@ const ABOUT_SCHEMA = {
   url: SITE_URL,
   logo: ORG_LOGO,
   description:
-    "Florida-only lead-matching service connecting residents with FDACS and FMCSA verified licensed moving companies. Up to 4 free quotes per request.",
+    "Florida-only referral service connecting residents with independent licensed moving companies. Not a moving company. Up to 4 free quotes per request.",
   foundingDate: "2024",
   foundingLocation: { "@type": "Place", name: "Florida, United States" },
   founder: {
@@ -44,8 +44,8 @@ const ABOUT_SCHEMA = {
   knowsAbout: [
     "Local moving in Florida",
     "Long-distance and interstate moving",
-    "FDACS mover registration",
-    "FMCSA carrier verification",
+    "How to check FDACS mover registration",
+    "How to check an FMCSA / USDOT record",
     "Piano and specialty moving",
     "Storage-in-transit",
   ],
@@ -78,9 +78,9 @@ function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="About us · FDACS & FMCSA verified"
+        eyebrow="About us · A Florida referral service, not a moving company"
         h1="About Florida Movers Direct"
-        intro="Florida Movers Direct is a free, Florida-only quote-matching service. One request gets you up to 4 written quotes from moving companies we verify against the FDACS Household Moving Services registry and the FMCSA SAFER database — typically matched within 1 business hour, with quotes back inside 24 hours. We are not a moving company, we never charge consumers, and we operate in exactly one state: Florida."
+        intro="Florida Movers Direct is a free, Florida-only quote-matching service. One request gets you up to 4 written quotes from independent licensed moving companies, and we show you how to confirm each one yourself in the FDACS Household Moving Services registry or the FMCSA SAFER database — typically matched within 1 business hour, with quotes back inside 24 hours. We are not a moving company, we never charge consumers, and we operate in exactly one state: Florida."
         ctaLabel="Get Free Quotes"
         ctaHref="/contact/"
       />

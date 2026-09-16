@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { NetworkDisclosure } from "@/components/site/NetworkDisclosure";
 import { pageHead } from "@/lib/seo";
 import { useState } from "react";
 import { ArrowRight, ShieldCheck, ChevronDown, DollarSign, Building2, MapPin, Route as RouteIcon } from "lucide-react";
@@ -28,7 +29,7 @@ const LOCAL = [
   },
   {
     t: "The month-end squeeze",
-    d: "Orlando is one of Florida biggest renter markets, which means the last weekend of every month books out first in the entire state. If your lease turns over at month-end, book 3-4 weeks ahead — or negotiate a mid-month overlap and save 15-25%.",
+    d: "Orlando is one of Florida biggest renter markets, which means the last weekend of every month books out first in the entire state. If your lease turns over at month-end, book 3-4 weeks ahead — or negotiate a mid-month overlap, which typically quotes lower.",
   },
 ];
 
@@ -37,7 +38,7 @@ const NEIGHBORHOODS = ["Downtown", "Lake Nona", "Winter Park", "Dr. Phillips", "
 const ROUTES = [
   "Orlando to Miami (235 mi): $900-$1,600 for a 1BR, same-day standard.",
   "Orlando to Tampa (85 mi): often same-day round trip; priced as intrastate distance moves.",
-  "Orlando to out of state: FMCSA-verified carriers on our long distance movers page.",
+  "Orlando to out of state: FMCSA-registered carriers on our long distance movers page.",
 ];
 
 const FAQS = [
@@ -50,6 +51,7 @@ function OrlandoPage() {
   return (
     <>
       <Hero />
+      <NetworkDisclosure />
       <CostTable />
       <LocalKnowledge />
       <Neighborhoods />

@@ -15,7 +15,7 @@ const FAQS = [
   },
   {
     q: "Why do August and May cost more in Tallahassee?",
-    a: "FSU and FAMU turn over tens of thousands of leases in those two months, so crews book out and month-end weekends sell first. Moving mid-month on a Tuesday or Wednesday routinely quotes 10-20% under the same job on an August Saturday.",
+    a: "FSU and FAMU turn over tens of thousands of leases in those two months, so crews book out and month-end weekends sell first. Moving mid-month on a Tuesday or Wednesday typically quotes lower than the same job on an August Saturday; the exact difference varies by crew size, access and availability.",
   },
   {
     q: "How can I lower my Tallahassee moving cost?",
@@ -64,7 +64,7 @@ export const Route = createFileRoute("/movers-in-tallahassee/")({
       challenges={[
         {
           t: "August and May move the whole market",
-          d: "FSU and FAMU lease turnover concentrates an enormous share of the year's moves into two months. Crews, trucks and even elevator slots in student buildings are spoken for weeks ahead, and the last weekend of August is the single most expensive moving day in Leon County.",
+          d: "FSU and FAMU lease turnover concentrates an enormous share of the year's moves into two months. Crews, trucks and even elevator slots in student buildings are spoken for weeks ahead, and the last weekend of August is typically the busiest and highest-priced slot in Leon County.",
         },
         {
           t: "Apartment-heavy demand",

@@ -21,6 +21,18 @@ export const ORG_SCHEMA = {
     "Free referral platform that connects Florida residents with independent licensed moving companies. Florida Movers Direct is not a moving company.",
 };
 
+export const WEBSITE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  name: "Florida Movers Direct",
+  url: SITE_URL,
+  inLanguage: ["en-US", "es-US"],
+  description:
+    "Compare free quotes from independent licensed Florida moving companies. Florida Movers Direct is a referral service, not a moving company.",
+  publisher: { "@id": `${SITE_URL}/#organization` },
+};
+
 export type FaqItem = { q: string; a: string };
 export type ServiceMeta = { serviceType: string; areaServed?: string };
 

@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { pageHead } from "@/lib/seo";
+import { pageHead, WEBSITE_SCHEMA } from "@/lib/seo";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -23,13 +23,22 @@ import { HeroQuoteForm } from "@/components/site/QuoteForm";
 import { NetworkDisclosure } from "@/components/site/NetworkDisclosure";
 
 export const Route = createFileRoute("/")({
-  head: () => pageHead({
-    path: "/",
-    title: "Movers in Florida | Compare Licensed Movers & Free Quotes",
-    description: "Compare licensed Florida movers and request free quotes for local, long-distance, commercial and specialty moves. Free to use, no obligation.",
-    service: { serviceType: 'Moving Company Lead Matching', areaServed: 'Florida' },
-    faqs: FAQS,
-  }),
+  head: () => {
+    const head = pageHead({
+      path: "/",
+      title: "Movers in Florida | Compare Licensed Movers & Free Quotes",
+      description: "Compare licensed Florida movers and request free quotes for local, long-distance, commercial and specialty moves. Free to use, no obligation.",
+      service: { serviceType: 'Moving Company Lead Matching', areaServed: 'Florida' },
+      faqs: FAQS,
+    });
+    return {
+      ...head,
+      scripts: [
+        ...head.scripts,
+        { type: "application/ld+json", children: JSON.stringify(WEBSITE_SCHEMA) },
+      ],
+    };
+  },
   component: Home,
 });
 

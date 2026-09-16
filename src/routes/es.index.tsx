@@ -14,7 +14,7 @@ import {
   CheckCircle2,
   DollarSign,
 } from "lucide-react";
-import { pageHead } from "@/lib/seo";
+import { pageHead, WEBSITE_SCHEMA } from "@/lib/seo";
 import { HeroQuoteForm } from "@/components/site/QuoteForm";
 import { NetworkDisclosure } from "@/components/site/NetworkDisclosure";
 import heroVideo from "@/assets/hero-cinematic.mp4.asset.json";
@@ -66,14 +66,22 @@ const COST_ROWS = [
 ];
 
 export const Route = createFileRoute("/es/")({
-  head: () =>
-    pageHead({
+  head: () => {
+    const head = pageHead({
       path: PATH,
       lang: "es",
       title: "Mudanzas en Florida | Compare Cotizaciones Gratis",
       description: "Compare hasta 4 cotizaciones gratis de empresas de mudanzas licenciadas en Florida, verificadas por FDACS y FMCSA, para mudanzas locales y de larga distancia.",
       faqs: FAQS,
-    }),
+    });
+    return {
+      ...head,
+      scripts: [
+        ...head.scripts,
+        { type: "application/ld+json", children: JSON.stringify(WEBSITE_SCHEMA) },
+      ],
+    };
+  },
   component: Page,
 });
 

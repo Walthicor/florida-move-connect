@@ -151,7 +151,7 @@ function AccurateQuotes() {
       />
       <p>
         Our guide to{" "}
-        <Link to="/blog/how-much-do-movers-cost-florida/">
+        <Link to="/blog/$slug/" params={{ slug: "how-much-do-movers-cost-florida" }}>
           what movers cost in Florida by home size and route
         </Link>{" "}
         has the full price breakdown before you request anything.
@@ -291,7 +291,7 @@ function BindingBlog() {
       <p>
         For how these estimate types play out in real Florida pricing by home
         size and route, see{" "}
-        <Link to="/blog/how-much-do-movers-cost-florida/">
+        <Link to="/blog/$slug/" params={{ slug: "how-much-do-movers-cost-florida" }}>
           how much movers cost in Florida
         </Link>
         .

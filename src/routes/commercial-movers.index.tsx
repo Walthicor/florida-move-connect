@@ -248,7 +248,7 @@ function CityCoverage() {
           <>
             <strong className="text-ink">Boca Raton and Palm Beach County</strong> —
             professional-services offices;{" "}
-            <Link to="/movers-in-boca-raton/">see local rates</Link>.
+            <Link to="/movers-in-boca-raton/">Boca Raton moving rates</Link>.
           </>,
         ]}
       />

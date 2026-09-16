@@ -316,6 +316,12 @@ function RatesTable() {
   );
 }
 
+const MOVE_TYPES = [
+  { type: "Local move", example: "Tampa to St. Pete, Kendall to Doral", distance: "Under ~50 miles, inside Florida", pricing: "Hourly (crew size × hours)", oversight: "FDACS registration required" },
+  { type: "Intrastate move", example: "Orlando to Miami, Tampa to Jacksonville", distance: "Over ~50 miles, inside Florida", pricing: "By inventory / weight and distance", oversight: "FDACS registration required" },
+  { type: "Interstate move", example: "Miami to Atlanta, Orlando to New York", distance: "Crossing any state line", pricing: "By weight and mileage, written estimate", oversight: "FMCSA USDOT number required" },
+];
+
 function WhatCounts() {
   return (
     <section className="bg-surface-alt">
@@ -324,11 +330,38 @@ function WhatCounts() {
           What Counts as a Local Move in Florida?
         </h2>
         <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
-          Any move under 50 miles that starts and ends inside Florida. Local
-          moves bill hourly; anything over 50 miles or crossing state lines is
-          priced by weight and distance. Tampa to St. Pete is local. Orlando to
-          Miami is not — that is an intrastate long distance move.
+          Any move under roughly 50 miles that starts and ends inside Florida. Local
+          moves bill hourly; anything longer or crossing state lines is priced by
+          inventory or weight and distance — and the paperwork changes with it.
+          Tampa to St. Pete is local. Orlando to Miami is not — that is an
+          intrastate long-distance move.
         </p>
+        <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-white shadow-card">
+          <div className="overflow-x-auto">
+            <table className="w-full text-left min-w-[640px]">
+              <thead className="bg-navy text-navy-foreground">
+                <tr>
+                  <th className="px-5 py-3.5 font-display text-sm font-bold uppercase tracking-wider">Move Type</th>
+                  <th className="px-5 py-3.5 font-display text-sm font-bold uppercase tracking-wider">Example</th>
+                  <th className="px-5 py-3.5 font-display text-sm font-bold uppercase tracking-wider">Distance</th>
+                  <th className="px-5 py-3.5 font-display text-sm font-bold uppercase tracking-wider">How It Is Priced</th>
+                  <th className="px-5 py-3.5 font-display text-sm font-bold uppercase tracking-wider">Oversight</th>
+                </tr>
+              </thead>
+              <tbody>
+                {MOVE_TYPES.map((r, i) => (
+                  <tr key={r.type} className={i % 2 === 0 ? "bg-white" : "bg-surface-alt"}>
+                    <td className="px-5 py-4 font-semibold text-ink">{r.type}</td>
+                    <td className="px-5 py-4 text-ink">{r.example}</td>
+                    <td className="px-5 py-4 text-ink">{r.distance}</td>
+                    <td className="px-5 py-4 text-ink">{r.pricing}</td>
+                    <td className="px-5 py-4 text-ink">{r.oversight}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </section>
   );

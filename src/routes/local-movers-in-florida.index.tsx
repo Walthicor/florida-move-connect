@@ -208,7 +208,7 @@ function CityLinks() {
               <h3 className="font-display text-lg font-bold text-ink group-hover:text-brand">{c.label}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.d}</p>
               <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand">
-                View rates <ArrowRight className="h-4 w-4" />
+                {c.label} <ArrowRight className="h-4 w-4" />
               </span>
             </Link>
           ))}

@@ -48,13 +48,13 @@ const FAQS = [
 ];
 
 const SERVICES = [
-  { icon: HomeIcon, title: "Mudanzas Locales", desc: "Empresas por hora dentro de Florida. Desde $95-$150/hora según el tamaño de la vivienda.", to: "/es/local-movers-in-florida/" },
-  { icon: Truck, title: "Larga Distancia", desc: "Mudanzas interestatales verificadas por FMCSA. Precio fijo o por peso.", to: "/es/long-distance-movers/" },
-  { icon: Warehouse, title: "Almacenamiento", desc: "Storage-in-transit y bodegas con clima controlado.", to: "/es/storage-solutions/" },
-  { icon: Building2, title: "Mudanzas Comerciales", desc: "Oficinas y comercios. Fines de semana, IT y COIs.", to: "/es/commercial-movers/" },
-  { icon: Package, title: "Servicios de Embalaje", desc: "Embalaje profesional completo o solo frágiles.", to: "/es/packing-services/" },
-  { icon: Piano, title: "Mudanzas de Pianos", desc: "Especialistas certificados para pianos verticales y de cola.", to: "/es/piano-movers/" },
-  { icon: Sofa, title: "Mudanzas de Apartamentos", desc: "Complejos con COI, ascensores y HOAs.", to: "/es/apartment-movers/" },
+  { icon: HomeIcon, title: "Mudanzas Locales", desc: "Empresas por hora dentro de Florida. Desde $95-$150/hora según el tamaño de la vivienda.", anchor: "Mudanzas locales en Florida", to: "/es/local-movers-in-florida/" },
+  { icon: Truck, title: "Larga Distancia", desc: "Mudanzas interestatales verificadas por FMCSA. Precio fijo o por peso.", anchor: "Mudanzas de larga distancia", to: "/es/long-distance-movers/" },
+  { icon: Warehouse, title: "Almacenamiento", desc: "Storage-in-transit y bodegas con clima controlado.", anchor: "Almacenamiento y mudanzas", to: "/es/storage-solutions/" },
+  { icon: Building2, title: "Mudanzas Comerciales", desc: "Oficinas y comercios. Fines de semana, IT y COIs.", anchor: "Mudanzas comerciales en Florida", to: "/es/commercial-movers/" },
+  { icon: Package, title: "Servicios de Embalaje", desc: "Embalaje profesional completo o solo frágiles.", anchor: "Servicios de embalaje profesional", to: "/es/packing-services/" },
+  { icon: Piano, title: "Mudanzas de Pianos", desc: "Especialistas certificados para pianos verticales y de cola.", anchor: "Mudanzas de pianos en Florida", to: "/es/piano-movers/" },
+  { icon: Sofa, title: "Mudanzas de Apartamentos", desc: "Complejos con COI, ascensores y HOAs.", anchor: "Mudanzas de apartamentos y condos", to: "/es/apartment-movers/" },
 ];
 
 const COST_ROWS = [

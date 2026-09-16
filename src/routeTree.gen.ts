@@ -32,6 +32,7 @@ import { Route as MovingAndStorageInFloridaIndexRouteImport } from './routes/mov
 import { Route as MoversInTheVillagesIndexRouteImport } from './routes/movers-in-the-villages.index'
 import { Route as MoversInTampaIndexRouteImport } from './routes/movers-in-tampa.index'
 import { Route as MoversInTallahasseeIndexRouteImport } from './routes/movers-in-tallahassee.index'
+import { Route as MoversInSarasotaIndexRouteImport } from './routes/movers-in-sarasota.index'
 import { Route as MoversInRiverviewIndexRouteImport } from './routes/movers-in-riverview.index'
 import { Route as MoversInPensacolaIndexRouteImport } from './routes/movers-in-pensacola.index'
 import { Route as MoversInOrlandoIndexRouteImport } from './routes/movers-in-orlando.index'
@@ -202,6 +203,11 @@ const MoversInTallahasseeIndexRoute =
     path: '/movers-in-tallahassee/',
     getParentRoute: () => rootRouteImport,
   } as any)
+const MoversInSarasotaIndexRoute = MoversInSarasotaIndexRouteImport.update({
+  id: '/movers-in-sarasota/',
+  path: '/movers-in-sarasota/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MoversInRiverviewIndexRoute = MoversInRiverviewIndexRouteImport.update({
   id: '/movers-in-riverview/',
   path: '/movers-in-riverview/',
@@ -473,6 +479,7 @@ export interface FileRoutesByFullPath {
   '/movers-in-orlando/': typeof MoversInOrlandoIndexRoute
   '/movers-in-pensacola/': typeof MoversInPensacolaIndexRoute
   '/movers-in-riverview/': typeof MoversInRiverviewIndexRoute
+  '/movers-in-sarasota/': typeof MoversInSarasotaIndexRoute
   '/movers-in-tallahassee/': typeof MoversInTallahasseeIndexRoute
   '/movers-in-tampa/': typeof MoversInTampaIndexRoute
   '/movers-in-the-villages/': typeof MoversInTheVillagesIndexRoute
@@ -545,6 +552,7 @@ export interface FileRoutesByTo {
   '/movers-in-orlando': typeof MoversInOrlandoIndexRoute
   '/movers-in-pensacola': typeof MoversInPensacolaIndexRoute
   '/movers-in-riverview': typeof MoversInRiverviewIndexRoute
+  '/movers-in-sarasota': typeof MoversInSarasotaIndexRoute
   '/movers-in-tallahassee': typeof MoversInTallahasseeIndexRoute
   '/movers-in-tampa': typeof MoversInTampaIndexRoute
   '/movers-in-the-villages': typeof MoversInTheVillagesIndexRoute
@@ -618,6 +626,7 @@ export interface FileRoutesById {
   '/movers-in-orlando/': typeof MoversInOrlandoIndexRoute
   '/movers-in-pensacola/': typeof MoversInPensacolaIndexRoute
   '/movers-in-riverview/': typeof MoversInRiverviewIndexRoute
+  '/movers-in-sarasota/': typeof MoversInSarasotaIndexRoute
   '/movers-in-tallahassee/': typeof MoversInTallahasseeIndexRoute
   '/movers-in-tampa/': typeof MoversInTampaIndexRoute
   '/movers-in-the-villages/': typeof MoversInTheVillagesIndexRoute
@@ -692,6 +701,7 @@ export interface FileRouteTypes {
     | '/movers-in-orlando/'
     | '/movers-in-pensacola/'
     | '/movers-in-riverview/'
+    | '/movers-in-sarasota/'
     | '/movers-in-tallahassee/'
     | '/movers-in-tampa/'
     | '/movers-in-the-villages/'
@@ -764,6 +774,7 @@ export interface FileRouteTypes {
     | '/movers-in-orlando'
     | '/movers-in-pensacola'
     | '/movers-in-riverview'
+    | '/movers-in-sarasota'
     | '/movers-in-tallahassee'
     | '/movers-in-tampa'
     | '/movers-in-the-villages'
@@ -836,6 +847,7 @@ export interface FileRouteTypes {
     | '/movers-in-orlando/'
     | '/movers-in-pensacola/'
     | '/movers-in-riverview/'
+    | '/movers-in-sarasota/'
     | '/movers-in-tallahassee/'
     | '/movers-in-tampa/'
     | '/movers-in-the-villages/'
@@ -909,6 +921,7 @@ export interface RootRouteChildren {
   MoversInOrlandoIndexRoute: typeof MoversInOrlandoIndexRoute
   MoversInPensacolaIndexRoute: typeof MoversInPensacolaIndexRoute
   MoversInRiverviewIndexRoute: typeof MoversInRiverviewIndexRoute
+  MoversInSarasotaIndexRoute: typeof MoversInSarasotaIndexRoute
   MoversInTallahasseeIndexRoute: typeof MoversInTallahasseeIndexRoute
   MoversInTampaIndexRoute: typeof MoversInTampaIndexRoute
   MoversInTheVillagesIndexRoute: typeof MoversInTheVillagesIndexRoute
@@ -1116,6 +1129,13 @@ declare module '@tanstack/react-router' {
       path: '/movers-in-tallahassee'
       fullPath: '/movers-in-tallahassee/'
       preLoaderRoute: typeof MoversInTallahasseeIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/movers-in-sarasota/': {
+      id: '/movers-in-sarasota/'
+      path: '/movers-in-sarasota'
+      fullPath: '/movers-in-sarasota/'
+      preLoaderRoute: typeof MoversInSarasotaIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/movers-in-riverview/': {
@@ -1477,6 +1497,7 @@ const rootRouteChildren: RootRouteChildren = {
   MoversInOrlandoIndexRoute: MoversInOrlandoIndexRoute,
   MoversInPensacolaIndexRoute: MoversInPensacolaIndexRoute,
   MoversInRiverviewIndexRoute: MoversInRiverviewIndexRoute,
+  MoversInSarasotaIndexRoute: MoversInSarasotaIndexRoute,
   MoversInTallahasseeIndexRoute: MoversInTallahasseeIndexRoute,
   MoversInTampaIndexRoute: MoversInTampaIndexRoute,
   MoversInTheVillagesIndexRoute: MoversInTheVillagesIndexRoute,

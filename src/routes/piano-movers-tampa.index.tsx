@@ -258,6 +258,146 @@ function Areas() {
   );
 }
 
+const PIANO_TYPES = [
+  { t: "Upright", d: "The Tampa standard — 300-500 lbs, moved upright on a dolly and skid. Full uprights need 3 movers on stairs; the cabinet wraps fully in pads before it leaves the room." },
+  { t: "Spinet and console", d: "The shortest uprights, common in Tampa apartments. Light enough for a 2-person crew, but the legs and pedals still come off on consoles before wrapping." },
+  { t: "Baby grand (under 6 ft)", d: "Legs and lyre removed, body traveled on its side on the skid board. Fits most Tampa doorways and service elevators — measure the turn at the door, not just the doorway width." },
+  { t: "Grand and concert grand", d: "6 ft and up: full disassembly, skid board, and frequently a 4-person crew. Some downtown elevators will not take one — that is when hoisting is quoted case by case." },
+  { t: "Digital", d: "Lighter but top-heavy with fragile cabinet corners. Moved like furniture with piano-level padding; cabinet-style digitals are handled like small uprights." },
+];
+
+function PianoTypes() {
+  return (
+    <section className="bg-surface-alt">
+      <div className="container-page py-16 md:py-20">
+        <div className="max-w-2xl">
+          <span className="text-xs font-semibold uppercase tracking-wider text-brand">Instruments</span>
+          <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
+            Piano Types We Get Quotes For
+          </h2>
+        </div>
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {PIANO_TYPES.map((p) => (
+            <div key={p.t} className="rounded-2xl border border-border bg-white p-6 shadow-soft">
+              <h3 className="font-display text-lg font-bold text-ink">{p.t}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.d}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-sm text-muted-foreground leading-relaxed max-w-3xl">
+          Statewide coverage for every type — see the{" "}
+          <Link to="/piano-movers/" className="text-brand font-semibold underline underline-offset-2">
+            Florida piano moving hub
+          </Link>
+          , or the dedicated guide for{" "}
+          <Link to="/grand-piano-movers/" className="text-brand font-semibold underline underline-offset-2">
+            grand and baby grand piano movers
+          </Link>
+          .
+        </p>
+      </div>
+    </section>
+  );
+}
+
+const ACCESS = [
+  { t: "Stairs and tight doorways", d: "Each flight adds crew time and cost — typically $40-$100 per flight as an estimate. Bungalow doorways under 32 inches and tight landing turns are measured during the quote, not discovered on moving day." },
+  { t: "Downtown and Channelside condos", d: "High-rises require a certificate of insurance naming the association, plus a reserved service elevator and loading dock window. Send the building rules with your quote request so the crew books both." },
+  { t: "Hyde Park and Seminole Heights historic homes", d: "Narrow halls, original wood floors and porch steps are the norm. Crews pad door frames and run floor protection; grands may need a doorway turn rehearsed before the skid rolls." },
+  { t: "Tampa humidity", d: "Gulf humidity and AC swings detune pianos fast. Specialists place the instrument away from vents and exterior walls, and you should plan a tuning 2-4 weeks after the move." },
+];
+
+function AccessChallenges() {
+  return (
+    <section className="bg-background">
+      <div className="container-page py-16 md:py-20">
+        <div className="max-w-3xl">
+          <span className="text-xs font-semibold uppercase tracking-wider text-brand">Local knowledge</span>
+          <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
+            Tampa Access Challenges a Piano Crew Plans Around
+          </h2>
+        </div>
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
+          {ACCESS.map((a) => (
+            <div key={a.t} className="rounded-2xl border border-border bg-white p-6 shadow-soft">
+              <h3 className="font-display text-lg font-bold text-ink">{a.t}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{a.d}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-sm text-muted-foreground leading-relaxed max-w-3xl">
+          Moving the rest of the house too? Our{" "}
+          <Link to="/movers-in-tampa/" className="text-brand font-semibold underline underline-offset-2">
+            Tampa movers cost and neighborhood guide
+          </Link>{" "}
+          covers full-household pricing across the bay.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+const INSURANCE_ASKS = [
+  "Is the piano covered for its full replacement value, or basic released-value by weight? Get full-value coverage in writing before pickup.",
+  "Who physically moves the piano — your trained crew or a subcontractor? Either is fine; an unqualified crew is not.",
+  "What equipment comes to the job: skid board, piano straps, pads, stair-climbing dolly?",
+  "How are claims filed and within how many days? Photograph the piano before pickup and note existing marks on the paperwork.",
+];
+
+function Insurance() {
+  return (
+    <section className="bg-surface-alt">
+      <div className="container-page py-16 md:py-20 max-w-4xl">
+        <span className="text-xs font-semibold uppercase tracking-wider text-brand">Protection</span>
+        <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
+          Insurance and What to Ask Before Hiring a Tampa Piano Mover
+        </h2>
+        <p className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
+          The default coverage on most moves pays by weight — roughly $0.60 per
+          pound on long-distance shipments — which values a $10,000 grand at a
+          few hundred dollars. Before you book, ask:
+        </p>
+        <ul className="mt-8 space-y-4">
+          {INSURANCE_ASKS.map((q) => (
+            <li key={q} className="flex items-start gap-3 rounded-2xl border border-border bg-white p-5 shadow-soft">
+              <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand" />
+              <span className="text-sm md:text-base leading-relaxed text-ink">{q}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+function BottomCta() {
+  return (
+    <section className="bg-navy text-navy-foreground">
+      <div className="container-page py-16 md:py-20 text-center max-w-3xl">
+        <h2 className="font-display text-3xl md:text-4xl font-bold">
+          Compare Tampa Piano Moving Quotes
+        </h2>
+        <p className="mt-4 text-base md:text-lg opacity-90 leading-relaxed">
+          Tell us the piano type, the stairs and the addresses — we match you
+          with up to 4 Tampa Bay piano specialists. Free, no obligation.
+        </p>
+        <div className="mt-8">
+          <Link to="/contact/" className="btn-cta btn-cta-hover text-base">
+            Get Tampa Piano Quotes <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+        <p className="mt-6 text-sm opacity-80">
+          ¿Prefieres ayuda en español?{" "}
+          <Link to="/es/piano-movers-tampa/" className="underline font-semibold">
+            Mudanzas de pianos en Tampa
+          </Link>
+          .
+        </p>
+      </div>
+    </section>
+  );
+}
+
 function Faq() {
   const [open, setOpen] = useState<number | null>(0);
   return (

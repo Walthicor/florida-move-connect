@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { NetworkDisclosure } from "@/components/site/NetworkDisclosure";
 import { pageHead } from "@/lib/seo";
 import { CityHero, SimpleCostTable, LocalKnowledge, Faq } from "./movers-in-ocala.index";
 
@@ -40,6 +41,7 @@ function NaplesPage() {
         h1={<>Movers in <span className="text-brand">Naples</span>, Florida</>}
         intro="Local Naples moves run $450-$900 for a 1-bedroom and $850-$1,500 for a 2-3 bedroom home — with a market rhythm unlike anywhere else in Florida. Naples runs on the season: October through April, the snowbird wave multiplies demand and gated-community move-in rules do the scheduling. Our Collier County movers live on that calendar."
       />
+      <NetworkDisclosure />
       <SimpleCostTable title="Naples Moving Costs (2026)" rows={COSTS} />
       <LocalKnowledge title="Moving in Naples: The Season Sets the Rules" items={LOCAL} />
       <section className="bg-surface-alt">

@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { NetworkDisclosure } from "@/components/site/NetworkDisclosure";
 import { pageHead } from "@/lib/seo";
 import { ProseSection, SubBlock, CardGrid, CheckList } from "@/components/site/ContentSections";
 import { useState } from "react";
@@ -62,6 +63,7 @@ function MiamiPage() {
         h1={<>Movers in <span className="text-brand">Miami</span>, Florida</>}
         intro="Local moves in Miami cost $450-$900 for a studio or 1-bedroom and $850-$1,500 for a 2-3 bedroom home — and the difference between a smooth Miami move and a nightmare is a crew that knows the buildings. COIs in Brickell, elevator slots in Sunny Isles, parking permits in Coconut Grove: our Miami movers handle all of it daily. Compare free quotes from licensed Miami moving companies in 2 minutes."
       />
+      <NetworkDisclosure />
       <CostTable title="Local Mover Rates in Miami-Dade County" col2="Price Range" col3="Crew & Time" rows={COSTS} />
       <RatesExplainer />
       <HighRiseSection />

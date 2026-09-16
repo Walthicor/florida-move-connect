@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { NetworkDisclosure } from "@/components/site/NetworkDisclosure";
 import { pageHead } from "@/lib/seo";
 import { CityHero, SimpleCostTable, LocalKnowledge, Neighborhoods, Faq } from "./movers-in-ocala.index";
 
@@ -42,6 +43,7 @@ function JacksonvillePage() {
         h1={<>Movers in <span className="text-brand">Jacksonville</span>, Florida</>}
         intro="Local Jacksonville moves average $400-$800 for a 1-bedroom and $750-$1,300 for a 2-3 bedroom home. Here is what outsiders miss: Jacksonville is the largest city by land area in the continental U.S. — a move from the Beaches to the Westside is a local move that behaves like a road trip. Our Duval County movers price it right the first time."
       />
+      <NetworkDisclosure />
       <SimpleCostTable title="Jacksonville Moving Costs (2026)" rows={COSTS} />
       <LocalKnowledge title="Moving in Jacksonville: Distance Inside the City Limits" items={LOCAL} />
       <Neighborhoods title="Jacksonville Areas We Cover" items={AREAS} tail="— and greater Duval-St. Johns." />

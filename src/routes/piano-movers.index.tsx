@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { NetworkDisclosure } from "@/components/site/NetworkDisclosure";
 import { pageHead } from "@/lib/seo";
 import { HeroQuoteForm } from "@/components/site/QuoteForm";
 import { useState } from "react";
@@ -111,6 +112,7 @@ function PianoMoversPage() {
   return (
     <>
       <Hero />
+      <NetworkDisclosure />
       <Rates />
       <Transport />
       <Insurance />

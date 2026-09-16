@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { NetworkDisclosure } from "@/components/site/NetworkDisclosure";
 import { pageHead } from "@/lib/seo";
 import { ProseSection, SubBlock, CardGrid, CheckList } from "@/components/site/ContentSections";
 import { useState } from "react";
@@ -62,6 +63,7 @@ function SeniorMovingServicesPage() {
   return (
     <>
       <Hero />
+      <NetworkDisclosure />
       <CostTable />
       <WhatMakesItDifferent />
       <Communities />

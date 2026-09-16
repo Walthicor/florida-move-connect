@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { NetworkDisclosure } from "@/components/site/NetworkDisclosure";
 import { pageHead } from "@/lib/seo";
 import { ProseSection, CheckList } from "@/components/site/ContentSections";
 import { useState } from "react";
@@ -87,6 +88,7 @@ function LocalMoversPage() {
   return (
     <>
       <Hero />
+      <NetworkDisclosure />
       <RatesTable />
       <WhatCounts />
       <Drivers />

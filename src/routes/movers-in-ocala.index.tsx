@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { NetworkDisclosure } from "@/components/site/NetworkDisclosure";
 import { pageHead } from "@/lib/seo";
 import { useState } from "react";
 import { ArrowRight, ShieldCheck, ChevronDown, DollarSign, Building2, MapPin } from "lucide-react";
@@ -56,6 +57,7 @@ function OcalaPage() {
         h1={<>Movers in <span className="text-brand">Ocala</span>, Florida</>}
         intro="Local moves in Ocala run $350-$700 for a 1-bedroom and $700-$1,200 for a 2-3 bedroom home — among the friendliest moving rates in Florida. Ocala moves have their own character: horse-country properties with long private drives, a fast-growing retiree corridor toward The Villages, and distances that stay easy. Our licensed Marion County movers know all three."
       />
+      <NetworkDisclosure />
 
       <Neighborhoods
         title="Marion County Coverage"

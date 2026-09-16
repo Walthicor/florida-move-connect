@@ -16,11 +16,51 @@ export function stripLang(pathname: string): string {
   return pathname;
 }
 
-/** Return the twin path in the other language. Same slug, opposite tree. */
+/**
+ * Bare slugs that have a real Spanish twin under /es/. Keep in sync with the
+ * es.* route files — the language switcher falls back to /es/ or / when a slug
+ * is missing here, so no link ever points at a 404.
+ */
+export const ES_TWIN_SLUGS = new Set<string>([
+  "/",
+  "/apartment-movers/",
+  "/blog/",
+  "/commercial-movers/",
+  "/contact/",
+  "/local-movers-in-florida/",
+  "/long-distance-movers/",
+  "/movers-in-boca-raton/",
+  "/movers-in-hialeah/",
+  "/movers-in-jacksonville/",
+  "/movers-in-miami/",
+  "/movers-in-naples/",
+  "/movers-in-ocala/",
+  "/movers-in-orlando/",
+  "/movers-in-tampa/",
+  "/packing-services/",
+  "/piano-movers/",
+  "/piano-movers-tampa/",
+  "/privacy-policy/",
+  "/senior-moving-services/",
+  "/storage-solutions/",
+  "/terms/",
+]);
+
+/** True when the given bare slug has a Spanish twin page. */
+export function hasEsTwin(bareSlug: string): boolean {
+  return ES_TWIN_SLUGS.has(bareSlug);
+}
+
+/**
+ * Return the twin path in the other language. Same slug, opposite tree.
+ * When no twin exists, fall back to the other language's home page.
+ */
 export function twinPath(pathname: string): string {
   const lang = langFromPath(pathname);
   const bare = stripLang(pathname);
-  return lang === "es" ? bare : bare === "/" ? "/es/" : `/es${bare}`;
+  if (lang === "es") return bare;
+  if (bare === "/") return "/es/";
+  return hasEsTwin(bare) ? `/es${bare}` : "/es/";
 }
 
 /** URL builders for hreflang. */

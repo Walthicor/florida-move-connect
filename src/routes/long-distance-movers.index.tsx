@@ -104,15 +104,92 @@ function LongDistancePage() {
       <Hero />
       <NetworkDisclosure />
       <CostTable />
-      <InboundMoves />
+      <AccurateQuotes />
       <Estimates />
       <BindingBlog />
+      <IntrastateVsInterstate />
+      <InboundMoves />
       <PianoTransport />
       <SouthwestCoverage />
       <Verify />
       <Timeline />
       <Faq />
+      <BottomCta />
     </>
+  );
+}
+
+function AccurateQuotes() {
+  return (
+    <ProseSection
+      eyebrow="Quoting"
+      title="How to Get Accurate Long-Distance Moving Quotes"
+      bg="bg-surface-alt"
+    >
+      <p>
+        A long-distance moving quote is only as good as the inventory behind it.
+        Phone quotes built on "about how much stuff do you have?" are guesses —
+        the numbers that hold up on delivery day come from a survey. To get
+        quotes you can actually compare:
+      </p>
+      <CheckList
+        items={[
+          "Ask for an in-home or video survey. The mover sees every room, closet and the garage, and the estimate is built on what they counted — not what you remembered.",
+          "Give every mover the same inventory. Two quotes on different inventories are not comparable; the cheaper one is usually just missing items.",
+          "Get it in writing. A written estimate lists the inventory, the rate basis (weight or volume), accessorial charges and the delivery window.",
+          "Mention access at both addresses — stairs, elevators, long carries, gated communities and high-rise loading docks all change the price.",
+        ]}
+      />
+      <p>
+        Our guide to{" "}
+        <Link to="/blog/how-much-do-movers-cost-florida/">
+          what movers cost in Florida by home size and route
+        </Link>{" "}
+        has the full price breakdown before you request anything.
+      </p>
+    </ProseSection>
+  );
+}
+
+function IntrastateVsInterstate() {
+  return (
+    <ProseSection
+      eyebrow="Regulation"
+      title="Intrastate vs. Interstate Moves: Who Regulates Your Mover"
+      bg="bg-background"
+    >
+      <p>
+        "Long distance" covers two legally different moves, and the regulator —
+        and the paperwork that protects you — changes depending on which one
+        yours is:
+      </p>
+      <CardGrid>
+        <SubBlock title="Intrastate: staying inside Florida">
+          <p>
+            A Miami to Orlando move crosses half the state but never crosses a
+            state line, so it is regulated by the Florida Department of
+            Agriculture and Consumer Services (FDACS). The mover must hold an
+            active FDACS registration — ask for the registration number and
+            look it up before signing. Pricing is by inventory and distance,
+            not by the hour.
+          </p>
+        </SubBlock>
+        <SubBlock title="Interstate: crossing a state line">
+          <p>
+            Any move that crosses into Georgia, Alabama or beyond falls under
+            the Federal Motor Carrier Safety Administration (FMCSA). The carrier
+            must have an active USDOT number with operating authority and
+            insurance on file, and federal rules govern the estimate types and
+            your rights at delivery.
+          </p>
+        </SubBlock>
+      </CardGrid>
+      <p>
+        Not sure which yours is? If the truck never leaves Florida, it is
+        intrastate. For shorter in-town work priced by the hour, see{" "}
+        <Link to="/local-movers-in-florida/">local movers in Florida</Link>.
+      </p>
+    </ProseSection>
   );
 }
 
@@ -192,12 +269,11 @@ function BindingBlog() {
         written estimate — with the balance billed afterwards.
       </p>
       <p>
-        We wrote a full walkthrough of how each one behaves when the inventory
-        changes, what a reweigh looks like, and the language to ask for before
-        signing:{" "}
-        <a href="/blog/binding-vs-non-binding-moving-estimates/">
-          how binding and non-binding moving estimates differ in practice
-        </a>
+        For how these estimate types play out in real Florida pricing by home
+        size and route, see{" "}
+        <Link to="/blog/how-much-do-movers-cost-florida/">
+          how much movers cost in Florida
+        </Link>
         .
       </p>
     </ProseSection>

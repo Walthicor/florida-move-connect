@@ -296,6 +296,23 @@ function MiamiPage() {
         </CardGrid>
       </ProseSection>
 
+      <ProseSection eyebrow="Nearby" title="Nearby Cities and Miami Specialty Moves" bg="bg-surface-alt">
+        <p>
+          Staying in South Florida? Compare{" "}
+          <Link to="/movers-in-hialeah/">Hialeah moving companies</Link> and{" "}
+          <Link to="/movers-in-boca-raton/">Boca Raton condo movers</Link> in Palm Beach County, or
+          cross the state to <Link to="/movers-in-naples/">Naples movers on the Gulf coast</Link>.
+          For the hourly rate structure behind every quote, see our{" "}
+          <Link to="/local-movers-in-florida/">Florida local moving rate guide</Link>.
+        </p>
+        <p>
+          Households with an instrument should start with{" "}
+          <Link to="/piano-movers-miami/">Miami piano movers and high-rise staging</Link>, and
+          business relocations in Brickell or Doral with{" "}
+          <Link to="/commercial-movers/">after-hours commercial moving services</Link>.
+        </p>
+      </ProseSection>
+
       <Faq faqs={FAQS} />
 
       <section className="bg-surface-alt">

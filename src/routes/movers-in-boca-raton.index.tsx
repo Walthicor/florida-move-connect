@@ -71,6 +71,21 @@ function BocaPage() {
           Village and Kings Point move-in rules and donation pickups.
         </p>
       </ProseSection>
+      <ProseSection title="Nearby Cities and Statewide Moving Rates" bg="bg-surface-alt">
+        <p>
+          Boca sits between two very different moving markets. Compare{" "}
+          <Link to="/movers-in-miami/">Miami moving companies and high-rise rules</Link> to the south
+          and <Link to="/movers-in-naples/">Naples movers on the Gulf coast</Link> if you are
+          crossing the state. For the hourly math behind every South Florida quote, read our{" "}
+          <Link to="/local-movers-in-florida/">Florida local moving rate guide</Link>.
+        </p>
+        <p>
+          Heading out of state from Palm Beach County? Compare{" "}
+          <Link to="/long-distance-movers/">interstate moving estimates and delivery windows</Link>.
+          Condo residents waiting on a closing date usually add{" "}
+          <Link to="/storage-solutions/">short-term storage between moves</Link>.
+        </p>
+      </ProseSection>
       <Faq faqs={FAQS} />
     </>
   );

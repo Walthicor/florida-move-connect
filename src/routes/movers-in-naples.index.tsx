@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { NetworkDisclosure } from "@/components/site/NetworkDisclosure";
+import { ProseSection } from "@/components/site/ContentSections";
 import { pageHead } from "@/lib/seo";
 import { CityHero, SimpleCostTable, LocalKnowledge, Faq } from "./movers-in-ocala.index";
 
@@ -59,6 +60,24 @@ function NaplesPage() {
           </p>
         </div>
       </section>
+      <ProseSection title="Nearby Cities and Services for a Naples Move">
+        <p>
+          Collier County crews bill by the hour like the rest of the state — our{" "}
+          <Link to="/local-movers-in-florida/">Florida local moving rate guide</Link> shows what each
+          crew size realistically costs, and{" "}
+          <Link to="/long-distance-movers/">long-distance moving quotes</Link> explain how pricing
+          changes once the truck leaves Florida.
+        </p>
+        <p>
+          Comparing the coast? Look at{" "}
+          <Link to="/movers-in-boca-raton/">Boca Raton condo movers</Link> across Alligator Alley and{" "}
+          <Link to="/movers-in-miami/">Miami moving companies</Link> for Miami-Dade rates. Seasonal
+          residents often pair a move with{" "}
+          <Link to="/storage-solutions/">climate-controlled storage in Florida</Link>, and
+          white-glove households usually add{" "}
+          <Link to="/packing-services/">fragile packing and custom crating</Link>.
+        </p>
+      </ProseSection>
       <Faq faqs={FAQS} />
     </>
   );

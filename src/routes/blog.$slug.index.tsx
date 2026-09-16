@@ -500,6 +500,22 @@ function CostGuideBody() {
           dramatically lowest — quotes 40% under market are the classic setup
           for hostage-load scams.
         </p>
+
+        <p className="mt-8 text-ink">
+          Next step: see hourly rates and example scenarios by home size on our{" "}
+          <Link to="/local-movers-in-florida/" className="text-brand underline">
+            Florida local moving rate guide
+          </Link>
+          , or compare{" "}
+          <Link to="/long-distance-movers/" className="text-brand underline">
+            long-distance moving quotes and delivery windows
+          </Link>{" "}
+          if your move leaves the state. When you want real numbers instead of ranges,{" "}
+          <Link to="/contact/" className="text-brand underline">
+            request free quotes from licensed Florida movers
+          </Link>
+          .
+        </p>
       </div>
     </>
   );
@@ -587,6 +603,22 @@ function ChecklistBody() {
           (electric FPL/Duke, water, internet). For condo moves: submit the
           mover's COI to your building — Miami and Boca associations often
           need 2-3 weeks to approve. Reserve the service elevator.
+        </p>
+        <p className="mt-3 text-ink">
+          If your closing and move-in dates do not line up, ask each mover about{" "}
+          <Link to="/storage-solutions/" className="text-brand underline">
+            climate-controlled storage and storage-in-transit in Florida
+          </Link>{" "}
+          before you sign. Helping a parent downsize into a 55+ community? Our{" "}
+          <Link to="/senior-moving-services/" className="text-brand underline">
+            senior moving services
+          </Link>{" "}
+          page covers sorting days, community move-in paperwork and donation pickups, and the crew
+          rates behind it all sit on our{" "}
+          <Link to="/local-movers-in-florida/" className="text-brand underline">
+            Florida local moving rate guide
+          </Link>
+          .
         </p>
       </div>
 
@@ -1554,14 +1586,14 @@ function InsuranceBody() {
           >
             hurricane-season moving guide
           </Link>
-          , learn about{" "}
-          <a href="/blog/binding-vs-non-binding-moving-estimates/" className="text-brand underline">
-            binding vs. non-binding estimates
-          </a>
-          , and see how to{" "}
-          <a href="/blog/verify-florida-moving-company-license/" className="text-brand underline">
-            verify a Florida moving company license
-          </a>
+          , check hourly coverage limits on our{" "}
+          <Link to="/local-movers-in-florida/" className="text-brand underline">
+            Florida local moving rate guide
+          </Link>
+          , and see how declared value works for{" "}
+          <Link to="/piano-movers/" className="text-brand underline">
+            piano and specialty item moves
+          </Link>
           .
         </p>
       </div>

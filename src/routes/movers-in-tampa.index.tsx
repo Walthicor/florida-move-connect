@@ -98,6 +98,7 @@ function TampaPage() {
       <StorageSection />
       <VerifySection />
       <Faq />
+      <RelatedLinks />
       <BottomCta />
     </>
   );
@@ -401,6 +402,29 @@ function Faq() {
         </div>
       </div>
     </section>
+  );
+}
+
+function RelatedLinks() {
+  return (
+    <ProseSection title="Nearby Cities and Related Tampa Bay Services" bg="bg-surface-alt">
+      <p>
+        Every Tampa quote is built on the same hourly structure explained in our{" "}
+        <Link to="/local-movers-in-florida/">Florida local moving rate guide</Link>, which also lists
+        crew sizes and example scenarios by home size. Crossing a state line instead? Compare{" "}
+        <Link to="/long-distance-movers/">interstate movers and binding estimate options</Link>.
+      </p>
+      <p>
+        Along the I-4 corridor, compare{" "}
+        <Link to="/movers-in-orlando/">Orlando moving companies</Link>; heading north, see{" "}
+        <Link to="/movers-in-ocala/">Ocala movers in Marion County</Link>, or read our{" "}
+        <Link to="/movers-in-the-villages/">guide to moving into The Villages</Link> for retirement
+        community rules. Bay-area households with an instrument should start with{" "}
+        <Link to="/piano-movers-tampa/">Tampa piano moving crews and pricing</Link>, and offices
+        relocating downtown with{" "}
+        <Link to="/commercial-movers/">after-hours commercial moving services</Link>.
+      </p>
+    </ProseSection>
   );
 }
 

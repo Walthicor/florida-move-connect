@@ -47,6 +47,27 @@ function JacksonvillePage() {
       <SimpleCostTable title="Jacksonville Moving Costs (2026)" rows={COSTS} />
       <LocalKnowledge title="Moving in Jacksonville: Distance Inside the City Limits" items={LOCAL} />
       <Neighborhoods title="Jacksonville Areas We Cover" items={AREAS} tail="— and greater Duval-St. Johns." />
+      <ProseSection title="Related Moving Help Around Jacksonville">
+        <p>
+          Pricing inside Duval County follows the same hourly logic explained on our{" "}
+          <Link to="/local-movers-in-florida/">Florida local moving rate guide</Link>, so start
+          there if you want to understand crew sizes before you compare quotes. Leaving the state
+          after a PCS order or a job change? Compare{" "}
+          <Link to="/long-distance-movers/">interstate movers with written delivery windows</Link>{" "}
+          instead of hourly crews.
+        </p>
+        <p>
+          Moving along the I-95 or I-4 corridor? See rates for{" "}
+          <Link to="/movers-in-orlando/">Orlando moving companies</Link> and{" "}
+          <Link to="/movers-in-ocala/">Ocala movers in Marion County</Link>, or read our{" "}
+          <Link to="/movers-in-the-villages/">guide to moving into The Villages</Link> if the
+          destination is a 55+ community. If closing dates do not line up,{" "}
+          <Link to="/storage-solutions/">storage-in-transit options in Florida</Link> bridge the gap,
+          and{" "}
+          <Link to="/piano-movers-jacksonville/">Jacksonville piano moving specialists</Link> handle
+          instruments the hourly crew should not touch.
+        </p>
+      </ProseSection>
       <Faq faqs={FAQS} />
     </>
   );

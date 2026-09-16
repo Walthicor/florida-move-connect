@@ -95,9 +95,9 @@ function Hero() {
           Moving a piano in Tampa costs $150-$400 for an upright and $300-$800 for a grand,
           depending on stairs, distance and crating. Through Florida Movers Direct you
           compare free quotes from specialty piano movers in Tampa — crews with skid boards,
-          locking straps and the humidity know-how a 600-pound instrument demands. Standard
-          crews damage pianos at many times the specialist rate; with an instrument worth
-          thousands, the right crew costs less than the wrong repair.
+          locking straps and the humidity know-how a 600-pound instrument demands. A general
+          crew improvising with furniture dollies is how soundboards crack; with an
+          instrument worth thousands, the right crew costs less than the wrong repair.
         </p>
         <div className="mt-7">
           <Link to="/contact/" className="btn-cta btn-cta-hover text-base">
@@ -167,9 +167,15 @@ function CostTable() {
           </div>
         </div>
         <p className="mt-6 text-sm text-muted-foreground leading-relaxed max-w-3xl">
-          Local Tampa Bay pricing. Long-distance piano transport (Tampa to Miami, Orlando or
-          out of state) is quoted by route — typically $700-$2,500. Every quote includes
-          padding, straps, skid board and basic valuation.
+          Local Tampa Bay pricing — typical ranges labeled as estimates; your quote depends
+          on piano type, stair count, distance between addresses and access at both ends.
+          Long-distance piano transport (Tampa to Miami, Orlando or out of state) is quoted
+          by route — typically $700-$2,500. Every quote includes padding, straps, skid board
+          and basic valuation. For a deeper breakdown by piano type and scenario, see{" "}
+          <Link to="/piano-moving-cost/" className="text-brand font-semibold underline underline-offset-2">
+            what piano moving costs in Florida
+          </Link>
+          .
         </p>
       </div>
     </section>

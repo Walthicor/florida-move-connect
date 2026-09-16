@@ -104,19 +104,16 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
+    // Global tags only. Title, description, canonical, og:* and twitter:*
+    // title/description/url/image are emitted exactly once per route by
+    // pageHead() so they can never be duplicated here.
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Florida Movers Direct — Free Quotes from Licensed Movers" },
-      {
-        name: "description",
-        content:
-          "Get up to 4 free quotes from licensed, FDACS and FMCSA verified Florida moving companies for local, long-distance, storage and commercial moves.",
-      },
       { name: "author", content: "Florida Movers Direct" },
-      // Sitewide defaults only. Per-page title, description, og:* and
-      // twitter:* tags are emitted once per route via pageHead().
+      { name: "theme-color", content: "#0B1F3A" },
       { property: "og:site_name", content: "Florida Movers Direct" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

@@ -97,6 +97,14 @@ const FAQS = [
     q: "Can I get a long distance moving instant quote?",
     a: "You can get instant ballpark ranges online, but a price you can hold a mover to comes from a video or in-home survey. Use the instant number to shortlist, then convert it into a binding written estimate.",
   },
+  {
+    q: "Do interstate movers in Florida need a special license?",
+    a: "Yes. Interstate carriers need an active USDOT number with FMCSA operating authority and insurance on file — you can look both up free at fmcsa.dot.gov. Moves that stay inside Florida are regulated by FDACS instead, and the mover must hold a state registration.",
+  },
+  {
+    q: "How far in advance should I book a long distance move from Florida?",
+    a: "Four to eight weeks is the comfortable window, and earlier for summer moves or month-end dates, when Florida outbound lanes book up first. A written, survey-based estimate can still be adjusted if your date moves — ask the mover how their estimate handles a rescheduled pickup.",
+  },
 ];
 
 function LongDistancePage() {
@@ -557,9 +565,15 @@ function Timeline() {
           <span className="text-xs font-semibold uppercase tracking-wider text-brand">
             Delivery Windows
           </span>
-          <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
-            How Long Does a Long Distance Move Take?
-          </h2>
+        <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
+          Delivery Windows and What to Expect
+        </h2>
+        <p className="mt-4 text-base md:text-lg text-muted-foreground max-w-3xl leading-relaxed">
+          Long-haul shipments usually share trailer space with other households,
+          so the mover commits to a delivery spread in writing — a range of days,
+          not one date. The driver typically calls 24 hours before arrival inside
+          that window. Typical spreads by region:
+        </p>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {TIMELINE.map((t) => (
@@ -581,7 +595,12 @@ function Timeline() {
         </div>
         <p className="mt-8 text-base md:text-lg leading-relaxed text-muted-foreground max-w-3xl">
           Carriers quote a delivery window, not an exact date — dedicated or
-          expedited service shrinks the window for a premium.
+          expedited service shrinks the window for a premium. If your new home
+          is not ready when the window opens,{" "}
+          <Link to="/storage-solutions/">
+            storage solutions in Florida
+          </Link>{" "}
+          (including storage-in-transit with the carrier) bridge the gap.
         </p>
       </div>
     </section>

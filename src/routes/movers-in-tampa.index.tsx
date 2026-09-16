@@ -1,8 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { NetworkDisclosure } from "@/components/site/NetworkDisclosure";
+import { PageEstimateNote } from "@/components/site/PageBlocks";
+import { ProseSection, SubBlock, CardGrid, CheckList } from "@/components/site/ContentSections";
 import { pageHead } from "@/lib/seo";
 import { useState } from "react";
-import { ArrowRight, ShieldCheck, ChevronDown, DollarSign, Building2, MapPin, Music } from "lucide-react";
+import { ArrowRight, ShieldCheck, ChevronDown, DollarSign, Building2, MapPin, Music, Boxes } from "lucide-react";
 
 export const Route = createFileRoute("/movers-in-tampa/")({
   head: () => pageHead({
@@ -24,28 +26,63 @@ const COSTS = [
 
 const LOCAL = [
   {
+    t: "I-275 and I-4 congestion",
+    d: "Tampa's two main corridors decide your timeline. I-275 backs up from Carrollwood through downtown at rush hour, and the I-4 interchange near Ybor City is one of the region's worst bottlenecks. Crews that know Tampa quote realistic drive times between neighborhoods instead of straight-line miles.",
+  },
+  {
     t: "The bay crossing rule",
-    d: "South Tampa to St. Petersburg is only 25 miles — across a bridge that becomes a parking lot at rush hour. Experienced crews schedule bay crossings before 7 AM or after 7 PM on hourly jobs. That one scheduling choice can save $150-$300.",
+    d: "South Tampa to St. Petersburg is only about 25 miles — across the Howard Frankland or Gandy bridges, which become parking lots at peak times. Experienced crews schedule bay crossings before 7 AM or after 7 PM on hourly jobs. That one scheduling choice can save $150-$300.",
   },
   {
     t: "Summer storm strategy",
     d: "July-September brings near-daily afternoon downpours that can shut a loading dock for an hour while the clock runs. Reputable Tampa crews start 7-8 AM to beat both the heat and the rain.",
   },
   {
-    t: "Downtown and Channelside high-rises",
-    d: "COI requirements and service-elevator reservations, same as Miami. Tell your mover the building name when quoting and the paperwork is handled before moving day.",
+    t: "Apartment move-in rules",
+    d: "Large Tampa apartment communities — especially in New Tampa, Westshore and the USF area — often require a certificate of insurance, a reserved freight elevator or a loading-zone permit before the truck doors open. Some restrict moves to weekdays or specific hours. Tell your mover the community name at the time of quoting so the paperwork is ready before moving day.",
   },
 ];
 
-const NEIGHBORHOODS = ["Hyde Park", "South Tampa", "Channelside", "Ybor City", "Seminole Heights", "Carrollwood", "Westchase", "New Tampa", "Brandon", "Riverview", "Wesley Chapel", "Temple Terrace"];
+const AREAS = [
+  {
+    t: "South Tampa",
+    d: "Older bungalows in Hyde Park and Virginia Park mean narrow driveways, mature oaks and on-street parking. Crews often shuttle from the truck with dollies — mention if there's no alley access.",
+  },
+  {
+    t: "Westshore",
+    d: "High-rise apartments and condos near the airport and business district. Expect COI requirements, freight-elevator reservations and loading-dock time windows from building management.",
+  },
+  {
+    t: "Downtown and Channelside",
+    d: "Waterfront towers with strict dock schedules and security check-ins. Weekend moves may be limited; book the service elevator as soon as your date is set.",
+  },
+  {
+    t: "Seminole Heights",
+    d: "Historic craft homes with steep stairs, tight turns and porches that complicate large furniture. It pays to hire a crew used to pre-war floor plans rather than a crew from a newer suburb.",
+  },
+  {
+    t: "New Tampa",
+    d: "Subdivisions off Bruce B. Downs with HOA rules on truck parking and long drive times from central Tampa. Confirm where the truck can stage before move day.",
+  },
+  {
+    t: "Brandon and Riverview",
+    d: "Fast-growing suburbs south and east of the city. Mostly single-family homes with driveway access, but new construction often lacks paved driveways — crews may pad the truck path.",
+  },
+  {
+    t: "Wesley Chapel",
+    d: "Far north on I-75 with gated communities that require guest registration for movers. Longer transit times mean the hourly clock starts earlier — an early start keeps the bill down.",
+  },
+];
 
 const FAQS = [
   { q: "How much do movers cost in Tampa?", a: "$400-$800 for a 1-bedroom, $800-$1,400 for a 2-3 bedroom home, at hourly rates of $95-$150 for two movers — typically below Miami for the identical job, though estimates vary by home size and access." },
   { q: "Do you have piano movers in Tampa?", a: "Yes — one of our most requested Tampa services. Uprights from $150, grands from $300, including stairs and crating. See the dedicated Tampa piano movers page for the full price table." },
   { q: "When is the best time to schedule a Tampa move?", a: "Early morning, mid-month, on a weekday. In summer, a 7-8 AM start beats the heat and the daily storms; if crossing the bay, avoid 7-9 AM and 4-7 PM bridge traffic." },
   { q: "Do Tampa movers cover St. Petersburg and Clearwater?", a: "Yes — Pinellas County is standard territory. Cross-bay moves bill the same hourly rates; only the drive time differs, which smart scheduling minimizes." },
-  { q: "Do Tampa buildings require a certificate of insurance?", a: "Channelside, downtown and most Westshore-area towers do. The association or property manager wants the COI on file before the service elevator is released, so send it over as soon as your date is set." },
+  { q: "Do Tampa buildings require a certificate of insurance?", a: "Channelside, downtown and most Westshore-area towers do, and many large apartment communities in New Tampa and the USF area ask for one too. The association or property manager wants the COI on file before the service elevator is released, so send it over as soon as your date is set." },
+  { q: "Can Tampa movers store my things between leases?", a: "Many Tampa movers partner with local storage facilities or offer container storage, which is useful when closing dates don't line up. Tell us you need storage in the quote form and movers will include it in their quotes. See our storage solutions page for the options." },
   { q: "How far ahead should I book movers in Tampa?", a: "One to two weeks off-season is usually enough. For summer, month-end dates or any move needing a reserved elevator, give it three to four weeks." },
+  { q: "What should I tell my Tampa mover before move day?", a: "Building or community names, elevator or dock reservation details, stairs, and anything oversized like a piano or safe. Tampa access varies a lot between a Channelside high-rise and a Seminole Heights bungalow — the details change the crew size and the price." },
 ];
 
 function TampaPage() {
@@ -55,9 +92,13 @@ function TampaPage() {
       <NetworkDisclosure />
       <CostTable />
       <LocalKnowledge />
-      <PianoCard />
+      <BuildingMoves />
       <Neighborhoods />
+      <PianoCard />
+      <StorageSection />
+      <VerifySection />
       <Faq />
+      <BottomCta />
     </>
   );
 }
@@ -71,10 +112,10 @@ function Hero() {
           Licensed Tampa Movers
         </span>
         <h1 className="mt-5 font-display text-4xl md:text-5xl lg:text-6xl font-bold text-ink leading-[1.05]">
-          Movers in <span className="text-brand">Tampa</span>, Florida
+          Movers in <span className="text-brand">Tampa</span>, FL
         </h1>
         <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
-          Local Tampa moves average $400-$800 for a 1-bedroom and $800-$1,400 for a 2-3 bedroom home, with hourly crews from $95-$150. Tampa Bay has its own moving logic — a bay that splits the metro, daily summer storms, and one of the busiest piano-moving markets in Florida. Our licensed Tampa movers plan around all three. Compare free quotes in 2 minutes.
+          Local Tampa moves average $400-$800 for a 1-bedroom and $800-$1,400 for a 2-3 bedroom home, with hourly crews from $95-$150. Tampa Bay has its own moving logic — a bay that splits the metro, the I-275 and I-4 corridors, daily summer storms, and one of the busiest piano-moving markets in Florida. Our licensed Tampa movers plan around all four. Compare free quotes in 2 minutes.
         </p>
         <div className="mt-7">
           <Link to="/contact/" className="btn-cta btn-cta-hover text-base">
@@ -136,6 +177,7 @@ function CostTable() {
             ))}
           </div>
         </div>
+        <PageEstimateNote />
       </div>
     </section>
   );
@@ -147,9 +189,9 @@ function LocalKnowledge() {
       <div className="container-page py-16 md:py-20">
         <div className="max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-wider text-brand">Local Knowledge</span>
-          <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">Moving in Tampa: Local Knowledge That Saves You Money</h2>
+          <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">What Moves the Price in Tampa</h2>
         </div>
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
           {LOCAL.map((it) => (
             <div key={it.t} className="rounded-2xl border border-border bg-white p-6 shadow-soft">
               <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand/10 text-brand">
@@ -165,12 +207,82 @@ function LocalKnowledge() {
   );
 }
 
+function BuildingMoves() {
+  return (
+    <ProseSection
+      eyebrow="Building moves"
+      title="Apartment, Condo and Commercial Moves in Tampa"
+      bg="bg-background"
+    >
+      <p>
+        Tampa is a city of both extremes: waterfront high-rises downtown and in Westshore, and
+        sprawling apartment communities from New Tampa to Brandon. Each type of building changes
+        the job — and the crew you need.
+      </p>
+      <CheckList
+        items={[
+          <>
+            <strong className="text-ink">Apartments and condos:</strong> freight-elevator
+            reservations, COI filings and dock time windows are common in downtown towers and
+            large communities. Our{" "}
+            <Link to="/apartment-movers/" className="font-semibold text-brand hover:underline">
+              apartment moving guide for Florida
+            </Link>{" "}
+            walks through what to arrange with your building before the truck arrives.
+          </>,
+          <>
+            <strong className="text-ink">Offices and commercial spaces:</strong> moves out of the
+            Westshore business district or downtown office towers usually need after-hours or
+            weekend work to avoid downtime. See our{" "}
+            <Link to="/commercial-movers/" className="font-semibold text-brand hover:underline">
+              commercial moving services in Florida
+            </Link>{" "}
+            for how those jobs are planned and priced.
+          </>,
+        ]}
+      />
+    </ProseSection>
+  );
+}
+
+function Neighborhoods() {
+  return (
+    <section className="bg-surface-alt">
+      <div className="container-page py-16 md:py-20 max-w-5xl">
+        <div className="max-w-3xl">
+          <span className="text-xs font-semibold uppercase tracking-wider text-brand">Coverage</span>
+          <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">Tampa Neighborhoods and Nearby Areas</h2>
+          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+            Every Tampa neighborhood moves a little differently. Here is what local crews watch
+            for in the areas we cover most.
+          </p>
+        </div>
+        <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {AREAS.map((a) => (
+            <div key={a.t} className="rounded-2xl border border-border bg-white p-5 shadow-soft">
+              <h3 className="flex items-center gap-2 font-display text-base font-bold text-ink">
+                <MapPin className="h-4 w-4 shrink-0 text-brand" />
+                {a.t}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{a.d}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-6 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+          — plus Clearwater, Largo and St. Petersburg across the bay, and Temple Terrace and
+          Carrollwood inside the city.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 function PianoCard() {
   return (
     <section className="bg-background">
       <div className="container-page py-16 md:py-20 max-w-4xl">
         <span className="text-xs font-semibold uppercase tracking-wider text-brand">Specialty</span>
-        <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">Need a Piano Moved in Tampa?</h2>
+        <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">Piano Moving in Tampa</h2>
         <div className="mt-6 rounded-2xl border border-border bg-gradient-to-br from-white to-surface-alt p-6 md:p-8 shadow-card">
           <div className="flex items-start gap-4">
             <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-cta/10 text-cta flex-shrink-0">
@@ -197,30 +309,76 @@ function PianoCard() {
   );
 }
 
-function Neighborhoods() {
+function StorageSection() {
   return (
-    <section className="bg-surface-alt">
-      <div className="container-page py-16 md:py-20 max-w-4xl">
-        <span className="text-xs font-semibold uppercase tracking-wider text-brand">Coverage</span>
-        <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">Areas Our Tampa Movers Cover Daily</h2>
-        <div className="mt-8 flex flex-wrap gap-2">
-          {NEIGHBORHOODS.map((n) => (
-            <span key={n} className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white px-3 py-1.5 text-sm text-ink shadow-soft">
-              <MapPin className="h-3.5 w-3.5 text-brand" />
-              {n}
-            </span>
-          ))}
-        </div>
-        <p className="mt-5 text-sm text-muted-foreground">— plus Clearwater, Largo and St. Petersburg across the bay.</p>
-      </div>
-    </section>
+    <ProseSection
+      eyebrow="Between homes"
+      title="Storage Options in Tampa"
+      bg="bg-surface-alt"
+    >
+      <p>
+        Closing dates and lease start dates rarely line up perfectly, and in a growing metro like
+        Tampa — where new construction in Wesley Chapel and Riverview moves on builder schedules —
+        a gap of a few weeks is common. Many Tampa movers offer storage-in-transit or partner with
+        local facilities, so your furniture moves once and stays handled.
+      </p>
+      <p>
+        Compare the{" "}
+        <Link to="/storage-solutions/" className="font-semibold text-brand hover:underline">
+          moving and storage options available across Florida
+        </Link>
+        , or mention storage in your quote form so movers price the full job door to door.
+      </p>
+    </ProseSection>
+  );
+}
+
+function VerifySection() {
+  return (
+    <ProseSection eyebrow="Verify before you book" title="How to Verify a Tampa Mover" bg="bg-background">
+      <p>
+        Florida Movers Direct is a free matching service — we are not a moving company and we do
+        not verify licenses on your behalf. Verifying takes two minutes and you should do it
+        yourself before paying any deposit:
+      </p>
+      <CardGrid>
+        <SubBlock title="Moves inside Florida: FDACS">
+          <p>
+            Ask for the mover's FDACS registration number (Florida requires it for intrastate
+            household moves) and confirm it in the Florida Department of Agriculture's public
+            license search.
+          </p>
+        </SubBlock>
+        <SubBlock title="Moves out of state: FMCSA / USDOT">
+          <p>
+            For any move leaving Florida — a Tampa-to-Georgia relocation, for example — ask for
+            the company's USDOT number and look it up on the FMCSA SAFER system to see its
+            operating status and insurance filing.
+          </p>
+        </SubBlock>
+        <SubBlock title="How our matching works">
+          <p>
+            You tell us about your move once; up to four independent licensed Tampa movers in our
+            network contact you with quotes. You compare, verify each license, and hire whoever
+            you prefer — or no one. It is free and there is no obligation.
+          </p>
+        </SubBlock>
+        <SubBlock title="Get everything in writing">
+          <p>
+            A written estimate, the COI your building requests, and the mover's registration
+            numbers should all be on paper before move day — especially in Tampa towers where the
+            dock will not release an elevator without them.
+          </p>
+        </SubBlock>
+      </CardGrid>
+    </ProseSection>
   );
 }
 
 function Faq() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section className="bg-background">
+    <section className="bg-surface-alt">
       <div className="container-page py-16 md:py-20 max-w-3xl">
         <h2 className="font-display text-3xl md:text-4xl font-bold text-ink">Frequently Asked Questions</h2>
         <div className="mt-8 divide-y divide-border rounded-2xl border border-border bg-white shadow-soft">
@@ -240,6 +398,30 @@ function Faq() {
               </div>
             );
           })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function BottomCta() {
+  return (
+    <section className="bg-background">
+      <div className="container-page py-16 text-center max-w-2xl">
+        <div className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand/10 text-brand">
+          <Boxes className="h-6 w-6" />
+        </div>
+        <h2 className="mt-4 font-display text-3xl md:text-4xl font-bold text-ink">
+          Compare Tampa Moving Quotes — Free
+        </h2>
+        <p className="mt-4 text-muted-foreground">
+          One form, up to four licensed Tampa movers, no obligation. Verify each registration and
+          choose the quote that fits your move — or no one.
+        </p>
+        <div className="mt-7">
+          <Link to="/contact/" className="btn-cta btn-cta-hover text-base">
+            Get Free Quotes <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>

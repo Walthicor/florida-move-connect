@@ -473,7 +473,12 @@ function CostTable() {
 
         <p className="mt-6 text-sm md:text-base text-muted-foreground max-w-3xl leading-relaxed">
           Rates include linehaul, fuel and basic valuation. Your exact price
-          depends on actual weight, access at both homes, and season.
+          depends on actual weight, access at both homes, and season. Full or
+          partial packing is quoted separately — see{" "}
+          <Link to="/packing-services/">
+            professional packing services in Florida
+          </Link>{" "}
+          for what crews pack and what it typically adds.
         </p>
       </div>
     </section>
@@ -642,6 +647,35 @@ function Faq() {
             );
           })}
         </div>
+      </div>
+    </section>
+  );
+}
+
+function BottomCta() {
+  return (
+    <section className="bg-navy text-navy-foreground">
+      <div className="container-page py-16 md:py-20 text-center max-w-3xl">
+        <h2 className="font-display text-3xl md:text-4xl font-bold">
+          Compare Long Distance Moving Quotes in Minutes
+        </h2>
+        <p className="mt-4 text-base md:text-lg opacity-90 leading-relaxed">
+          Tell us your route and home size, and we match you with independent
+          carriers on that lane. One form, up to 4 written quotes, no
+          obligation.
+        </p>
+        <div className="mt-8">
+          <Link to="/contact/" className="btn-cta btn-cta-hover text-base">
+            Get Free Long Distance Quotes <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+        <p className="mt-6 text-sm opacity-80">
+          ¿Prefieres ayuda en español?{" "}
+          <Link to="/es/long-distance-movers/" className="underline font-semibold">
+            Mudanzas de larga distancia en Florida
+          </Link>
+          .
+        </p>
       </div>
     </section>
   );

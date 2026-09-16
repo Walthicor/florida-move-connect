@@ -61,6 +61,18 @@ const FAQS = [
     q: "Do you move pianos into downtown high-rise condos?",
     a: "Yes — downtown and Channelside buildings need a COI and a service elevator reservation; grands that cannot fit the elevator are hoisted, quoted case by case. Give us the building name and the movers arrange it with your association.",
   },
+  {
+    q: "Can a piano moving company in Tampa handle a digital piano?",
+    a: "Yes. Digitals are lighter but still top-heavy and easy to crack at the cabinet corners. Most Tampa specialists move them for $100-$250 locally, often as an add-on to a household move. Consoles with wooden cabinets (Clavinova-style) are treated like small uprights.",
+  },
+  {
+    q: "How do I find piano movers near me in Tampa?",
+    a: "Ask three questions before comparing price: do you carry a skid board and piano straps, are you insured for the instrument's full value, and have you worked my building or neighborhood before? One form here sends those questions to up to 4 Tampa Bay specialists at once.",
+  },
+  {
+    q: "What happens if my piano is damaged during the move?",
+    a: "Basic valuation included in most quotes pays by weight — a fraction of what a piano is worth. Ask for full-value coverage in writing before pickup, photograph the piano from all sides, and note any existing marks on the bill of lading before the crew leaves.",
+  },
 ];
 
 function PianoMoversTampaPage() {
@@ -189,8 +201,15 @@ function HowItWorks() {
         <div className="max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-wider text-brand">Process</span>
           <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
-            How Professional Piano Movers Work
+            Equipment and Process: How Professional Piano Movers Work
           </h2>
+          <p className="mt-4 text-base md:text-lg text-muted-foreground max-w-3xl leading-relaxed">
+            Piano moving is a rigging job, not a carrying job. The crews we match you with
+            arrive with a piano board (skid), locking straps, thick moving pads and
+            stair-climbing dollies — and for grands, they remove the legs and lyre and
+            travel the body on its side on the skid. That disassembly is standard, not an
+            upsell: it is what lets a 6-foot grand fit a doorway safely.
+          </p>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {STEPS.map((s) => {

@@ -1,5 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { pageHead } from "@/lib/seo";
+import { ProseSection } from "@/components/site/ContentSections";
 import { PianoCityPage, pianoCitySchema, type PianoFaq } from "@/components/site/PianoCityPage";
 
 const PATH = "/piano-movers-the-villages/";
@@ -68,6 +69,36 @@ export const Route = createFileRoute("/piano-movers-the-villages/")({
         "Lady Lake",
         "Wildwood",
       ]}
+      extra={
+        <ProseSection title="Downsizing, Villas and Out-of-State Arrivals" bg="bg-surface-alt">
+          <p>
+            Almost no piano move in The Villages is a routine cross-town job. Two patterns dominate:
+            an instrument arriving from a northern family home as part of a retirement relocation,
+            and a piano moving between homes inside the community as residents change villas or
+            hand the instrument to a family member. The first is interstate transport, priced by
+            route and instrument and often needing crating. The second is a short local hop still
+            priced on crew size, stairs and disassembly rather than distance.
+          </p>
+          <p>
+            The housing here is genuinely unusual. Designer and patio villas are compact and
+            single-story with narrow garage entries, and the street network is built around golf
+            carts rather than 26-foot trucks. Crews frequently stage at a distance and roll the
+            instrument in on a piano board — that staging distance, not the piano, is what changes
+            the estimate. Courtyard villas add a gated wall and a turn most grands cannot make fully
+            assembled, and recreation centers and church halls around the town squares move consoles
+            over ramps and platform steps.
+          </p>
+          <p>
+            Because so many of these moves are downsizing decisions, the piano question is often
+            part of a larger one: what fits in the new home at all. Our{" "}
+            <Link to="/senior-moving-services/">senior moving services</Link> cover the sorting and
+            timeline side, <Link to="/movers-in-the-villages/">movers in The Villages</Link> handle
+            the rest of the household, and{" "}
+            <Link to="/piano-moving-cost/">piano moving costs by instrument</Link> explains what the
+            instrument itself should run.
+          </p>
+        </ProseSection>
+      }
       faqs={FAQS}
       related={[
         { to: "/movers-in-ocala/", label: "Full-service movers in Ocala and the north Villages area", d: "Whole-home and downsizing moves nearby, with an upright bundled in for $75 - $150 extra." },

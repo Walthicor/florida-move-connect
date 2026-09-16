@@ -1,5 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { pageHead } from "@/lib/seo";
+import { ProseSection } from "@/components/site/ContentSections";
 import { PianoCityPage, pianoCitySchema, type PianoFaq } from "@/components/site/PianoCityPage";
 
 const PATH = "/piano-movers-orlando/";
@@ -69,6 +70,35 @@ export const Route = createFileRoute("/piano-movers-orlando/")({
         "Oviedo",
         "Apopka",
       ]}
+      extra={
+        <ProseSection title="Orlando Housing Types and What They Mean for a Piano" bg="bg-surface-alt">
+          <p>
+            Orlando piano moves fall into a few very different buckets, and the quote follows the
+            building more than the instrument. Winter Park and College Park bungalows from the 1920s
+            have porch steps, period doorways and tight interior turns, so a baby grand there is
+            usually a partial-disassembly job. Lake Nona, Horizon West and Windermere are newer
+            two-story homes behind gates, which means guardhouse registration, truck-size limits and
+            a stair carry to a second-floor music room. Downtown and Thornton Park condos add a
+            certificate of insurance, a reserved service elevator and a loading window.
+          </p>
+          <p>
+            The metro's vacation-home and short-term-rental stock creates a request you rarely see
+            elsewhere: instruments delivered to a property with no owner on site. Tile floors, sliding
+            lanai doors and pool-deck routes all shape the plan. Central Florida also has an unusual
+            density of churches, studios and retirement-community halls moving consoles between
+            campuses, where double doors, ramps and platform steps decide the crew size.
+          </p>
+          <p>
+            One local logistics note: the I-4 corridor through downtown and the tourist district
+            slows crews for much of the day, so Orlando piano jobs are commonly scheduled early
+            morning. If the piano is part of a whole-home move, compare{" "}
+            <Link to="/movers-in-orlando/">Orlando moving companies and Central Florida rates</Link>{" "}
+            instead of booking a specialist separately, and see{" "}
+            <Link to="/piano-moving-cost/">what piano moving costs by instrument type</Link> before
+            you accept a price.
+          </p>
+        </ProseSection>
+      }
       faqs={FAQS}
       related={[
         { to: "/movers-in-orlando/", label: "Full-service movers in Orlando", d: "Moving the whole house too? Adding an upright to a household move costs $75 - $150 extra." },

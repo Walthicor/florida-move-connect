@@ -218,6 +218,7 @@ function Costs({ city, intro, alt }: { city: string; intro?: React.ReactNode; al
             ))}
           </div>
         </div>
+        <p className="mt-3 text-xs text-muted-foreground">Typical ranges only — estimates vary by home size, access, stairs, distance and season. Only a written quote from a mover is binding.</p>
         <p className="mt-4 text-sm text-muted-foreground">
           Ranges cover a standard ground-floor move inside {city}. Stairs, long carries, month-end
           weekends and packing labor push totals toward the upper end.

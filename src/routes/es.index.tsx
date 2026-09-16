@@ -251,6 +251,7 @@ function CostTable() {
             ))}
           </div>
         </div>
+        <p className="mt-3 text-xs text-muted-foreground">Solo rangos típicos — los estimados varían según el tamaño de la vivienda, acceso, escaleras, distancia y temporada. Solo una cotización por escrito es vinculante.</p>
       </div>
     </section>
   );

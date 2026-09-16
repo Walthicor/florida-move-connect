@@ -503,6 +503,7 @@ function CostTable() {
             ))}
           </div>
         </div>
+        <p className="mt-3 text-xs text-muted-foreground">Typical ranges only — estimates vary by home size, access, stairs, distance and season. Only a written quote from a mover is binding.</p>
 
         <p className="mt-6 text-sm md:text-base text-muted-foreground max-w-3xl leading-relaxed">
           Florida moving prices rise 20-30% during peak season (May-September)

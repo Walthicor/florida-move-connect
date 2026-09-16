@@ -127,6 +127,7 @@ export function PageCostTable({
             ))}
           </div>
         </div>
+        <PageEstimateNote />
       </div>
     </section>
   );

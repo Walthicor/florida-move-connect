@@ -83,7 +83,7 @@ export const Route = createFileRoute("/piano-movers-miami/")({
               terms are published on our Spanish site.
             </p>
             <p className="mt-4 text-base leading-relaxed text-ink">
-              Puede solicitar sus cotizaciones en español: mismos precios verificados, mismas
+              Puede solicitar sus cotizaciones en español: mismos precios, mismas
               empresas licenciadas y aseguradas.{" "}
               <Link to="/es/movers-in-miami/" className="font-semibold text-brand hover:underline">
                 Vea nuestra página de mudanzas en Miami en español

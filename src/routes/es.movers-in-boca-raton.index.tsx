@@ -6,7 +6,7 @@ const PATH = "/es/movers-in-boca-raton/";
 const FAQS = [
   { q: "¿Requieren COI los condos de Boca?", a: "Sí, casi todos. Boca Raton concentra muchos edificios de lujo y comunidades 55+ que exigen COI, ascensor reservado y ventanas específicas de acceso." },
   { q: "¿Sirven a comunidades 55+?", a: "Sí — Century Village, Kings Point, Del Aire y otras. Manejamos reglas HOA, gate house y horarios permitidos." },
-  { q: "¿Manejan mudanzas de vuelta al norte?", a: "Sí. Boca es punto común de mudanzas de larga distancia a NY, NJ, MA. FMCSA verificado con planificación previa." },
+  { q: "¿Manejan mudanzas de vuelta al norte?", a: "Sí. Boca es punto común de mudanzas de larga distancia a NY, NJ, MA. Son mudanzas interestatales reguladas por FMCSA; consulte el número USDOT del transportista antes de reservar." },
 ];
 
 export const Route = createFileRoute("/es/movers-in-boca-raton/")({

@@ -15,8 +15,8 @@ export function QuoteBand() {
           <span className="inline-flex items-center gap-2 rounded-full bg-white border border-border px-3 py-1 text-xs font-semibold text-brand shadow-soft">
             <ShieldCheck className="h-3.5 w-3.5" />
             {lang === "es"
-              ? "Empresas verificadas FDACS y FMCSA"
-              : "FDACS & FMCSA Verified Movers"}
+              ? "Consulte licencias en FDACS y FMCSA"
+              : "Check any license: FMCSA & FDACS"}
           </span>
           <h2 className="mt-3 font-display text-2xl md:text-3xl font-bold text-ink leading-tight">
             {lang === "es"

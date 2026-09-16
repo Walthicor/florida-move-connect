@@ -72,7 +72,7 @@ export const Route = createFileRoute("/es/")({
       path: PATH,
       lang: "es",
       title: "Mudanzas en Florida | Compare Cotizaciones Gratis",
-      description: "Compare hasta 4 cotizaciones gratis de empresas de mudanzas licenciadas en Florida, verificadas por FDACS y FMCSA, para mudanzas locales y de larga distancia.",
+      description: "Compare hasta 4 cotizaciones gratis de empresas de mudanzas licenciadas en Florida para mudanzas locales y de larga distancia. Consulte cada licencia en FDACS y FMCSA.",
       faqs: FAQS,
     });
     return {

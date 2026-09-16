@@ -1,6 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { pageHead } from "@/lib/seo";
 import { PageHero, PageCostTable, PageLocalKnowledge, PageFaq } from "@/components/site/PageBlocks";
+import { ProseSection } from "@/components/site/ContentSections";
 
 const PATH = "/grand-piano-movers/";
 
@@ -16,6 +17,22 @@ const FAQS = [
   {
     q: "What if the grand will not fit through the door?",
     a: "The crew measures doors, turns and stairwells first. If the instrument cannot clear, it is removed through a window by crane as a separately quoted operation. Disassembly often solves the clearance problem before a crane is needed.",
+  },
+  {
+    q: "What is the difference between a baby grand, a parlor grand and a concert grand for moving purposes?",
+    a: "Length and weight decide the crew. A baby grand at roughly 5 to 5 foot 6 and 500-650 pounds usually takes three movers. Parlor or living-room grands at 5 foot 7 to 7 feet and 650-800 pounds take three to four. Semi-concert and concert grands from 7 to 9 feet can exceed 1,000 pounds and need four to five movers plus a wider clearance path.",
+  },
+  {
+    q: "How many people does it take to move a grand piano?",
+    a: "Three at an absolute minimum for a baby grand, and four to five for a semi-concert or concert instrument. Crew size is not padding on the invoice: the body has to be supported evenly while each leg comes off, and an under-staffed lift is how soundboards crack and backs get injured.",
+  },
+  {
+    q: "Should a grand be tuned before or after a Florida move?",
+    a: "After, and not immediately. Give the instrument two to four weeks in its new room so the soundboard settles to that room's humidity, then book the tuning. Tuning first simply pays for a tuning that the move and the climate change undo.",
+  },
+  {
+    q: "Can a grand piano be stored in Florida between homes?",
+    a: "Only in climate-controlled storage. An uncontrolled Florida unit swings through heat and humidity that swells the soundboard, corrodes strings and loosens glue joints. Ask specifically for a climate-controlled vault and keep the instrument crated or fully wrapped while it sits.",
   },
 ];
 
@@ -69,6 +86,69 @@ export const Route = createFileRoute("/grand-piano-movers/")({
           { t: "Re-tune after acclimating", d: "Florida humidity shifts the soundboard. Wait two to four weeks in the new room, then book the tuning." },
         ]}
       />
+      <ProseSection
+        eyebrow="By instrument"
+        title="Which Grand Do You Actually Have?"
+        bg="bg-surface-alt"
+      >
+        <p>
+          "Grand piano" covers instruments from 4 foot 11 to nine feet, and the difference decides
+          crew size, clearance and price far more than the brand does. Measure from the very front
+          edge of the keyboard end to the tip of the tail with the lid closed, then match it below.
+        </p>
+        <p>
+          <strong>Baby grand (about 4'11" - 5'6", 500-650 lb).</strong> Three movers, legs and lyre
+          off, body on a skid board. This is the instrument most Florida households own, and the one
+          most likely to clear a standard doorway once it is on its side. Typical local estimate
+          $300-$800.
+        </p>
+        <p>
+          <strong>Parlor or living-room grand (about 5'7" - 7', 650-800 lb).</strong> Three to four
+          movers. The extra length is what fails interior turns — hallway corners and stair landings
+          are measured before the crew commits to a route.
+        </p>
+        <p>
+          <strong>Semi-concert and concert grand (7' - 9', up to roughly 1,300 lb).</strong> Four to
+          five movers, wider clearance, and the instruments most likely to need a window or crane
+          exit. Typical local estimate $500-$1,500, quoted after someone has seen the path.
+        </p>
+        <p>
+          <strong>Player and hybrid grands.</strong> The player mechanism and its electronics are
+          part of the instrument's weight and are handled with it — tell the mover it is a player
+          system so the quote reflects the added care and weight rather than being revised on the
+          day.
+        </p>
+      </ProseSection>
+      <ProseSection
+        eyebrow="Florida specifics"
+        title="Humidity, Storage and Florida Homes"
+      >
+        <p>
+          Florida is a harder climate on a grand than the move itself. Soundboards respond to
+          humidity, so a piano crossing from a dehumidified northern house into a Gulf-coast room
+          will shift regardless of how carefully it travelled. That is why tuning waits two to four
+          weeks and why any storage gap belongs in a climate-controlled vault rather than an
+          uncontrolled unit.
+        </p>
+        <p>
+          The homes matter too. Tile and polished-concrete floors are common here and unforgiving of
+          a dropped caster; lanai doors, pool decks and step-down living rooms create routes that do
+          not exist up north; and high-rise condos along both coasts add a certificate of insurance,
+          a reserved service elevator and a fixed loading window. Give each mover the floor type,
+          the exact path and any elevator or gate rule while you are still comparing quotes.
+        </p>
+        <p>
+          Comparing instruments or planning a whole-home move around the piano? See{" "}
+          <Link to="/piano-moving-cost/">piano moving costs by instrument and access</Link>, the{" "}
+          <Link to="/piano-movers/">Florida piano moving hub</Link> for crews and specialty
+          services, and{" "}
+          <Link to="/storage-solutions/">climate-controlled storage in Florida</Link> if the
+          instrument needs to wait between homes. City-level access detail lives on{" "}
+          <Link to="/piano-movers-tampa/">Tampa piano movers</Link>,{" "}
+          <Link to="/piano-movers-miami/">Miami piano movers</Link> and{" "}
+          <Link to="/piano-movers-orlando/">Orlando piano movers</Link>.
+        </p>
+      </ProseSection>
       <PageFaq title="Grand piano moving FAQ" faqs={FAQS} />
     </>
   ),

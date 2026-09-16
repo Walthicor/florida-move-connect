@@ -206,7 +206,11 @@ function FdacsSection() {
         <Link to="/long-distance-movers/">
           our interstate moving guide explains the FMCSA check
         </Link>
-        .
+        . Registration is only half the picture: read{" "}
+        <Link to="/blog/$slug/" params={{ slug: "moving-insurance-florida-explained" }}>
+          how moving insurance and valuation coverage work in Florida
+        </Link>{" "}
+        so you know what a mover's liability actually covers before you sign.
       </p>
     </ProseSection>
   );
@@ -218,6 +222,8 @@ const CITY_PAGES = [
   { to: "/movers-in-boca-raton/", label: "Movers in Boca Raton", d: "Palm Beach County associations, 55+ communities and season scheduling." },
   { to: "/movers-in-naples/", label: "Movers in Naples", d: "Southwest Florida gated communities and seasonal-resident timing." },
   { to: "/movers-in-tampa/", label: "Movers in Tampa", d: "Bay-area bridge routes, historic districts and Westshore offices." },
+  { to: "/movers-in-riverview/", label: "Movers in Riverview", d: "South Hillsborough new-construction communities, HOA rules and US-301 access." },
+  { to: "/movers-in-sarasota/", label: "Movers in Sarasota", d: "Sarasota, Bradenton and Lakewood Ranch rates, plus island and condo access." },
   
   { to: "/movers-in-orlando/", label: "Movers in Orlando", d: "Central Florida relocation volume and corporate housing gaps." },
   { to: "/movers-in-ocala/", label: "Movers in Ocala", d: "Marion County rates, horse-farm access and Villages-corridor routes." },

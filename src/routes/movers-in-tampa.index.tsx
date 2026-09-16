@@ -424,6 +424,13 @@ function RelatedLinks() {
         relocating downtown with{" "}
         <Link to="/commercial-movers/">after-hours commercial moving services</Link>.
       </p>
+      <p>
+        South of the city, compare{" "}
+        <Link to="/movers-in-riverview/">Riverview and South Hillsborough moving rates</Link> for
+        the new-construction communities off US-301, and{" "}
+        <Link to="/movers-in-sarasota/">Sarasota, Bradenton and Lakewood Ranch movers</Link> further
+        down I-75.
+      </p>
     </ProseSection>
   );
 }

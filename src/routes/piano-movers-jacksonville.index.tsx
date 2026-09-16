@@ -1,5 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { pageHead } from "@/lib/seo";
+import { ProseSection } from "@/components/site/ContentSections";
 import { PianoCityPage, pianoCitySchema, type PianoFaq } from "@/components/site/PianoCityPage";
 
 const PATH = "/piano-movers-jacksonville/";
@@ -69,6 +70,36 @@ export const Route = createFileRoute("/piano-movers-jacksonville/")({
         "Nocatee",
         "Jacksonville Beach",
       ]}
+      extra={
+        <ProseSection title="Why Jacksonville Piano Moves Price Differently" bg="bg-surface-alt">
+          <p>
+            Jacksonville covers more land than any other city in the contiguous United States, and
+            that single fact drives most of the pricing here. A move from Riverside to Nocatee, or
+            from Mandarin out to Jacksonville Beach, can leave the flat-rate radius a piano
+            specialist works within and flip the job to per-mile pricing. Always ask which structure
+            your quote uses and where the radius ends.
+          </p>
+          <p>
+            The housing stock splits sharply. Riverside, Avondale and San Marco were built in the
+            1910s-1930s: brick front steps, narrow period doorways, deep porches and interior turns
+            that a concert grand cannot make without the legs and lyre coming off. Mandarin and
+            Orange Park bring ranch homes with easier ground-floor access but long driveways under
+            oak canopy. Nocatee and the St. Johns County subdivisions are two-story new builds behind
+            gates, and Ponte Vedra and the beaches add salt air, sandy approaches and HOA parking
+            limits.
+          </p>
+          <p>
+            Northeast Florida also has a military rhythm you will not find in Orlando or Sarasota.
+            NAS Jacksonville and Naval Station Mayport generate steady interstate piano transport on
+            PCS timelines, which are fixed and unforgiving — book as far ahead as your orders allow,
+            and ask about crating for any instrument shipping out of state. For the whole-home side
+            of the move, see{" "}
+            <Link to="/movers-in-jacksonville/">Jacksonville movers for Duval and St. Johns County</Link>, and for
+            instrument-by-instrument pricing read{" "}
+            <Link to="/piano-moving-cost/">the piano moving cost breakdown</Link>.
+          </p>
+        </ProseSection>
+      }
       faqs={FAQS}
       related={[
         { to: "/movers-in-jacksonville/", label: "Full-service movers in Jacksonville", d: "Whole-home moves across Duval and St. Johns, with the piano bundled in for $75 - $150 extra." },

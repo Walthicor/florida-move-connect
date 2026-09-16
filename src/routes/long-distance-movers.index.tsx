@@ -196,7 +196,12 @@ function IntrastateVsInterstate() {
       <p>
         Not sure which yours is? If the truck never leaves Florida, it is
         intrastate. For shorter in-town work priced by the hour, see{" "}
-        <Link to="/local-movers-in-florida/">local movers in Florida</Link>.
+        <Link to="/local-movers-in-florida/">local movers in Florida</Link>. Before you sign a
+        long-haul estimate, read{" "}
+        <Link to="/blog/$slug/" params={{ slug: "moving-insurance-florida-explained" }}>
+          how moving insurance and valuation coverage work in Florida
+        </Link>{" "}
+        so you know what released value actually pays.
       </p>
     </ProseSection>
   );

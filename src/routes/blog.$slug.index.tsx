@@ -1586,14 +1586,14 @@ function InsuranceBody() {
           >
             hurricane-season moving guide
           </Link>
-          , learn about{" "}
-          <a href="/blog/binding-vs-non-binding-moving-estimates/" className="text-brand underline">
-            binding vs. non-binding estimates
-          </a>
-          , and see how to{" "}
-          <a href="/blog/verify-florida-moving-company-license/" className="text-brand underline">
-            verify a Florida moving company license
-          </a>
+          , check hourly coverage limits on our{" "}
+          <Link to="/local-movers-in-florida/" className="text-brand underline">
+            Florida local moving rate guide
+          </Link>
+          , and see how declared value works for{" "}
+          <Link to="/piano-movers/" className="text-brand underline">
+            piano and specialty item moves
+          </Link>
           .
         </p>
       </div>

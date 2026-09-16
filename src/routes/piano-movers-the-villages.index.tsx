@@ -33,7 +33,7 @@ export const Route = createFileRoute("/piano-movers-the-villages/")({
     const base = pageHead({
       path: PATH,
       title: "Piano Movers The Villages FL | Grand Piano Specialists",
-      description: "Piano movers serving The Villages charge $150-$500 for uprights, $300-$800 for grands locally and $450-$2,300 interstate. Insured, CPM-trained crews, free quotes.",
+      description: "Piano movers in The Villages charge $150-$500 for uprights, $300-$800 for grands locally and $450-$2,300 interstate. Insured, CPM-trained crews, free quotes.",
       faqs: FAQS,
       noAlternates: true,
     });

@@ -33,7 +33,7 @@ export const Route = createFileRoute("/piano-movers-jacksonville/")({
     const base = pageHead({
       path: PATH,
       title: "Piano Movers Jacksonville FL | Licensed & Insured",
-      description: "Jacksonville piano movers charge $150-$500 for uprights, $300-$800 for grands and $450-$2,300 interstate, using FDACS-registered, CPM-trained crews. Free quotes.",
+      description: "Jacksonville piano movers charge $150-$500 for uprights, $300-$800 for grands and $450-$2,300 interstate, with FDACS-registered, CPM-trained crews. Free quotes.",
       faqs: FAQS,
       noAlternates: true,
     });

@@ -18,6 +18,22 @@ const FAQS = [
     q: "What if the grand will not fit through the door?",
     a: "The crew measures doors, turns and stairwells first. If the instrument cannot clear, it is removed through a window by crane as a separately quoted operation. Disassembly often solves the clearance problem before a crane is needed.",
   },
+  {
+    q: "What is the difference between a baby grand, a parlor grand and a concert grand for moving purposes?",
+    a: "Length and weight decide the crew. A baby grand at roughly 5 to 5 foot 6 and 500-650 pounds usually takes three movers. Parlor or living-room grands at 5 foot 7 to 7 feet and 650-800 pounds take three to four. Semi-concert and concert grands from 7 to 9 feet can exceed 1,000 pounds and need four to five movers plus a wider clearance path.",
+  },
+  {
+    q: "How many people does it take to move a grand piano?",
+    a: "Three at an absolute minimum for a baby grand, and four to five for a semi-concert or concert instrument. Crew size is not padding on the invoice: the body has to be supported evenly while each leg comes off, and an under-staffed lift is how soundboards crack and backs get injured.",
+  },
+  {
+    q: "Should a grand be tuned before or after a Florida move?",
+    a: "After, and not immediately. Give the instrument two to four weeks in its new room so the soundboard settles to that room's humidity, then book the tuning. Tuning first simply pays for a tuning that the move and the climate change undo.",
+  },
+  {
+    q: "Can a grand piano be stored in Florida between homes?",
+    a: "Only in climate-controlled storage. An uncontrolled Florida unit swings through heat and humidity that swells the soundboard, corrodes strings and loosens glue joints. Ask specifically for a climate-controlled vault and keep the instrument crated or fully wrapped while it sits.",
+  },
 ];
 
 export const Route = createFileRoute("/grand-piano-movers/")({

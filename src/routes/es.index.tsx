@@ -56,6 +56,7 @@ const SERVICES = [
   { icon: Package, title: "Servicios de Embalaje", desc: "Embalaje profesional completo o solo frágiles.", anchor: "Servicios de embalaje profesional", to: "/es/packing-services/" },
   { icon: Piano, title: "Mudanzas de Pianos", desc: "Especialistas certificados para pianos verticales y de cola.", anchor: "Mudanzas de pianos en Florida", to: "/es/piano-movers/" },
   { icon: Sofa, title: "Mudanzas de Apartamentos", desc: "Complejos con COI, ascensores y HOAs.", anchor: "Mudanzas de apartamentos y condos", to: "/es/apartment-movers/" },
+  { icon: HomeIcon, title: "Adultos Mayores", desc: "Reducción de tamaño y comunidades 55+. Rango típico $600-$2,500.", anchor: "Mudanzas para adultos mayores", to: "/es/senior-moving-services/" },
 ];
 
 const COST_ROWS = [

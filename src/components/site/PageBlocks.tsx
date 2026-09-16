@@ -3,6 +3,7 @@
 
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
+import { NetworkDisclosure } from "./NetworkDisclosure";
 import {
   ArrowRight,
   ShieldCheck,
@@ -49,6 +50,7 @@ export function PageHero({
           </Link>
         </div>
       </div>
+      <NetworkDisclosure />
     </section>
   );
 }

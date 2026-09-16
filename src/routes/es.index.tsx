@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { pageHead } from "@/lib/seo";
 import { HeroQuoteForm } from "@/components/site/QuoteForm";
+import { NetworkDisclosure } from "@/components/site/NetworkDisclosure";
 import heroVideo from "@/assets/hero-cinematic.mp4.asset.json";
 
 const PATH = "/es/";
@@ -31,7 +32,7 @@ const FAQS = [
   },
   {
     q: "¿Todas las empresas están licenciadas?",
-    a: "Todas nuestras empresas están verificadas por FDACS (mudanzas locales) o FMCSA (larga distancia). Confirmamos las licencias antes de conectarle con ellas.",
+    a: "Trabajamos únicamente con empresas independientes con licencia: registro FDACS para mudanzas dentro de Florida y número USDOT con autoridad FMCSA para mudanzas interestatales. Usted puede consultar ambos registros gratis en safer.fmcsa.dot.gov y en el registro FDACS antes de firmar.",
   },
   {
     q: "¿Cuánto tiempo tarda?",
@@ -49,7 +50,7 @@ const FAQS = [
 
 const SERVICES = [
   { icon: HomeIcon, title: "Mudanzas Locales", desc: "Empresas por hora dentro de Florida. Desde $95-$150/hora según el tamaño de la vivienda.", anchor: "Mudanzas locales en Florida", to: "/es/local-movers-in-florida/" },
-  { icon: Truck, title: "Larga Distancia", desc: "Mudanzas interestatales verificadas por FMCSA. Precio fijo o por peso.", anchor: "Mudanzas de larga distancia", to: "/es/long-distance-movers/" },
+  { icon: Truck, title: "Larga Distancia", desc: "Mudanzas interestatales con transportistas registrados ante FMCSA. Precio fijo o por peso.", anchor: "Mudanzas de larga distancia", to: "/es/long-distance-movers/" },
   { icon: Warehouse, title: "Almacenamiento", desc: "Storage-in-transit y bodegas con clima controlado.", anchor: "Almacenamiento y mudanzas", to: "/es/storage-solutions/" },
   { icon: Building2, title: "Mudanzas Comerciales", desc: "Oficinas y comercios. Fines de semana, IT y COIs.", anchor: "Mudanzas comerciales en Florida", to: "/es/commercial-movers/" },
   { icon: Package, title: "Servicios de Embalaje", desc: "Embalaje profesional completo o solo frágiles.", anchor: "Servicios de embalaje profesional", to: "/es/packing-services/" },
@@ -114,13 +115,13 @@ function Hero() {
         <div>
           <span className="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur border border-white/25 px-3 py-1 text-xs font-semibold text-white shadow-soft">
             <ShieldCheck className="h-3.5 w-3.5" />
-            Empresas licenciadas FDACS · verificadas FMCSA
+            Empresas con licencia · usted puede verificarla
           </span>
           <h1 className="mt-5 font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.05] drop-shadow-[0_2px_20px_rgba(0,0,0,0.35)]">
             Empresas de Mudanzas en Florida. Compare Cotizaciones Gratis.
           </h1>
           <p className="mt-5 text-base md:text-lg text-white/90 leading-relaxed">
-            Reciba hasta 4 cotizaciones gratis de empresas licenciadas en Florida en solo 2 minutos. Todas verificadas por FDACS o FMCSA. Locales, larga distancia, comercial, almacenamiento y más — sin compromiso.
+            Reciba hasta 4 cotizaciones gratis de empresas de mudanzas independientes con licencia en Florida en solo 2 minutos. Usted puede confirmar la licencia de cualquier empresa: número USDOT en la base FMCSA SAFER para mudanzas interestatales, o registro FDACS para mudanzas dentro de Florida. Locales, larga distancia, comercial, almacenamiento y más — sin compromiso.
           </p>
           <ul className="mt-6 grid gap-2 text-sm text-white">
             {[
@@ -139,6 +140,7 @@ function Hero() {
           <HeroQuoteForm />
         </div>
       </div>
+      <NetworkDisclosure />
     </section>
   );
 }
@@ -257,7 +259,7 @@ function CostTable() {
 function WhyUs() {
   const pros = [
     "Enfocados 100% en Florida — no somos una plataforma nacional",
-    "Verificación FDACS y FMCSA antes de conectarle con cualquier empresa",
+    "Le indicamos cómo verificar la licencia FDACS o el número USDOT de cada empresa",
     "Solo 4 empresas emparejadas — no será bombardeado con llamadas",
     "Precios reales de Florida, incluyendo tarifas por edificios y ascensores",
     "Empresas con experiencia local: condos en Miami, tormentas en Tampa, tráfico en Orlando",

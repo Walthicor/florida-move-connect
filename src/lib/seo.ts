@@ -18,7 +18,7 @@ export const ORG_SCHEMA = {
   logo: ORG_LOGO,
   areaServed: "Florida",
   description:
-    "Free platform connecting Florida residents with licensed, FDACS and FMCSA-verified moving companies.",
+    "Free referral platform that connects Florida residents with independent licensed moving companies. Florida Movers Direct is not a moving company.",
 };
 
 export type FaqItem = { q: string; a: string };

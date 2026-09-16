@@ -11,6 +11,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { HeroQuoteForm } from "./QuoteForm";
+import { NetworkDisclosure } from "./NetworkDisclosure";
 import { SITE_URL } from "@/lib/seo";
 
 /* ---------------------------------------------------------------------- */
@@ -64,8 +65,8 @@ const SERVICE_LINKS: CityLink[] = [
 ];
 
 const VETTING = [
-  { t: "FDACS registration", d: "Every mover operating inside Florida must be registered with the Florida Department of Agriculture and Consumer Services. We verify it before a quote reaches you." },
-  { t: "FMCSA / USDOT number", d: "Any mover crossing a state line needs an active USDOT number and interstate authority — we check the record, not the claim." },
+  { t: "FDACS registration", d: "Every mover operating inside Florida must be registered with the Florida Department of Agriculture and Consumer Services. Ask for the registration number and look it up in the FDACS Household Moving Services registry before you pay a deposit." },
+  { t: "FMCSA / USDOT number", d: "Any mover crossing a state line needs an active USDOT number and interstate authority — you can confirm both free of charge in the FMCSA SAFER database at safer.fmcsa.dot.gov." },
   { t: "Written binding estimate", d: "Crew size, hours, stairs and materials stated on paper before work starts — never a verbal ballpark and never full payment up front." },
   { t: "Real insurance coverage", d: "Released value protection pays only $0.60 per pound, so we confirm full value protection is offered and documented." },
 ];
@@ -142,6 +143,7 @@ function Hero({ city, eyebrow, opening }: MoversCityPageProps) {
           </Link>
         </div>
       </div>
+      <NetworkDisclosure />
     </section>
   );
 }

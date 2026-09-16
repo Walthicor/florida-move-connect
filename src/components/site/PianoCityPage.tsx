@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { NetworkDisclosure } from "./NetworkDisclosure";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -144,6 +145,7 @@ function Hero({ city, eyebrow, opening }: PianoCityPageProps) {
           </Link>
         </div>
       </div>
+      <NetworkDisclosure />
     </section>
   );
 }

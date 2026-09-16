@@ -311,10 +311,42 @@ function RatesTable() {
             ))}
           </div>
         </div>
+        <PageEstimateNote />
+
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
+          {SCENARIOS.map((s) => (
+            <div key={s.title} className="rounded-2xl border border-border bg-white p-6 shadow-soft">
+              <h3 className="font-display text-lg font-bold text-ink">{s.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
+              <p className="mt-3 text-sm font-semibold text-brand">{s.estimate}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-4 text-xs text-muted-foreground">
+          Scenarios are illustrative estimates, not quotes — your actual price comes only from a written estimate by the mover.
+        </p>
       </div>
     </section>
   );
 }
+
+const SCENARIOS = [
+  {
+    title: "Studio across town",
+    body: "Furnished studio, ground floor to ground floor, 8 miles, everything boxed in advance. Two movers, about 3 hours including load and unload.",
+    estimate: "Typical estimate: $400 – $550",
+  },
+  {
+    title: "2-bedroom apartment, third floor",
+    body: "Walk-up with no elevator, 15 miles, some furniture disassembly. Three movers, 5-6 hours — the stairs are the single biggest line item.",
+    estimate: "Typical estimate: $800 – $1,200",
+  },
+  {
+    title: "4-bedroom house, same suburb",
+    body: "Full household with garage and patio, 10 miles, mid-month weekday. Four movers, 8-10 hours with two trucks or two trips.",
+    estimate: "Typical estimate: $1,600 – $2,600",
+  },
+];
 
 const MOVE_TYPES = [
   { type: "Local move", example: "Tampa to St. Pete, Kendall to Doral", distance: "Under ~50 miles, inside Florida", pricing: "Hourly (crew size × hours)", oversight: "FDACS registration required" },

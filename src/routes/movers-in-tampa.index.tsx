@@ -98,6 +98,7 @@ function TampaPage() {
       <StorageSection />
       <VerifySection />
       <Faq />
+      <RelatedLinks />
       <BottomCta />
     </>
   );

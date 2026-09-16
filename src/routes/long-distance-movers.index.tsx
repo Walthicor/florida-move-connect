@@ -63,6 +63,7 @@ const VERIFY_STEPS = [
   "Run it through the FMCSA mover search at fmcsa.dot.gov: authority must be ACTIVE with insurance on file.",
   "Confirm whether you are dealing with a CARRIER (owns the trucks) or a BROKER (resells your move). Brokers are legal — but then verify the carrier who actually shows up.",
   "Check the complaint history. Patterns matter more than one bad review.",
+  "Interstate carriers are required by federal law to give you the booklet \"Your Rights and Responsibilities When You Move\" before pickup. If a mover does not offer it, ask why.",
 ];
 
 const TIMELINE = [
@@ -240,6 +241,17 @@ function InboundMoves() {
             dock and elevator rules in detail.
           </p>
         </SubBlock>
+        <SubBlock title="Florida to Georgia and North Carolina">
+          <p>
+            The shortest interstate runs out of the state — Jacksonville and
+            Tallahassee to Atlanta or Savannah, Central Florida to Charlotte and
+            Raleigh — typically land in the $1,800-$3,500 range for a 1-2
+            bedroom home, as an estimate. Cost drivers on these lanes are
+            shipment weight, stairs or elevators at either end, and whether the
+            truck can park close enough to avoid a long-carry fee. Summer and
+            month-end dates quote higher.
+          </p>
+        </SubBlock>
         <SubBlock title="From the West Coast to Florida">
           <p>
             San Francisco to Miami movers and other cross-country lanes run the
@@ -354,7 +366,7 @@ function Hero() {
       <div className="container-page py-14 md:py-20 max-w-4xl">
         <span className="inline-flex items-center gap-2 rounded-full bg-white border border-border px-3 py-1 text-xs font-semibold text-brand shadow-soft">
           <ShieldCheck className="h-3.5 w-3.5" />
-          FMCSA-Verified Long Distance Carriers
+          FMCSA-Registered Long Distance Carriers
         </span>
         <h1 className="mt-5 font-display text-4xl md:text-5xl lg:text-6xl font-bold text-ink leading-[1.05]">
           Long Distance Movers in <span className="text-brand">Florida</span>
@@ -526,10 +538,10 @@ function Verify() {
           ))}
         </ul>
         <p className="mt-8 text-base md:text-lg leading-relaxed text-ink">
-          Every long distance mover in our network passes this exact
-          verification before receiving a single quote request —{" "}
+          Run this exact checklist on every mover we match you with before you
+          sign —{" "}
           <span className="font-semibold text-brand">
-            that filter is the product.
+            a two-minute lookup is the cheapest insurance on your move.
           </span>
         </p>
       </div>

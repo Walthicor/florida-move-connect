@@ -6,13 +6,13 @@ const COPY = {
     { icon: CircleDollarSign, label: "100% Free" },
     { icon: ShieldCheck, label: "Licensed & Insured Movers" },
     { icon: BadgeCheck, label: "No Obligation" },
-    { icon: FileCheck2, label: "FDACS & FMCSA Verified" },
+    { icon: FileCheck2, label: "Check any license: FMCSA & FDACS" },
   ],
   es: [
     { icon: CircleDollarSign, label: "100% Gratis" },
     { icon: ShieldCheck, label: "Licenciados y Asegurados" },
     { icon: BadgeCheck, label: "Sin Compromiso" },
-    { icon: FileCheck2, label: "Verificados FDACS y FMCSA" },
+    { icon: FileCheck2, label: "Consulte licencias: FMCSA y FDACS" },
   ],
 } as const;
 

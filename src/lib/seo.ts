@@ -126,7 +126,10 @@ export function pageHead(opts: PageHeadOptions) {
       { property: "og:image", content: image },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: ogLocale },
-      { property: "og:locale:alternate", content: ogLocaleAlt },
+      // Only advertise the other locale when a real translated twin exists.
+      ...(opts.noAlternates
+        ? []
+        : [{ property: "og:locale:alternate", content: ogLocaleAlt }]),
       { name: "twitter:title", content: opts.title },
       { name: "twitter:description", content: opts.description },
       { name: "twitter:image", content: image },

@@ -32,8 +32,7 @@ export const Route = createFileRoute("/movers-in-tallahassee/")({
     const base = pageHead({
       path: PATH,
       title: "Movers in Tallahassee FL | Local Rates & Free Quotes",
-      description:
-        "How much do movers cost in Tallahassee? $95-$150/hr, $400-$700 for a 1BR, $900-$1,600 for a 3BR. Compare up to 4 licensed Tallahassee movers free.",
+      description: "Movers in Tallahassee cost $95-$150 an hour, $400-$700 for a one-bedroom and $900-$1,600 for a three-bedroom. Compare four licensed local crews free of charge.",
       faqs: FAQS,
       noAlternates: true,
     });

@@ -32,8 +32,7 @@ export const Route = createFileRoute("/movers-in-pensacola/")({
     const base = pageHead({
       path: PATH,
       title: "Movers in Pensacola FL | Compare Licensed Moving Companies",
-      description:
-        "Compare licensed movers in Pensacola FL. Local crews from $95/hr, military PCS and Panhandle long-haul routes. Get up to 4 free quotes in 2 minutes.",
+      description: "Compare licensed Pensacola movers with local crews from $95 an hour, military PCS experience and Panhandle long-haul routes. Four free quotes in two minutes.",
       faqs: FAQS,
       noAlternates: true,
     });

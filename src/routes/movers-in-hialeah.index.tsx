@@ -32,8 +32,7 @@ export const Route = createFileRoute("/movers-in-hialeah/")({
     const base = pageHead({
       path: PATH,
       title: "Movers in Hialeah FL | Mudanzas en Hialeah | Free Quotes",
-      description:
-        "Licensed movers in Hialeah FL — bilingual crews, apartment and cross-town Miami-Dade moves from $95/hr. Compare up to 4 free quotes. Mudanzas en Hialeah.",
+      description: "Licensed movers in Hialeah with bilingual crews for apartments and cross-town Miami-Dade moves from $95 an hour. Compare up to four free quotes, no obligation.",
       faqs: FAQS,
     });
     return { ...base, scripts: [...base.scripts, ...moversCitySchema("Hialeah", PATH)] };

@@ -6,8 +6,8 @@ import { ArrowRight, ShieldCheck, ChevronDown, DollarSign, Building2, MapPin, Mu
 export const Route = createFileRoute("/movers-in-tampa/")({
   head: () => pageHead({
     path: "/movers-in-tampa/",
-    title: 'Movers in Tampa FL | Compare Licensed Moving Companies',
-    description: 'Compare free quotes from licensed movers in Tampa. Local crews from $95/hr, piano specialists, Hyde Park to Wesley Chapel. FDACS-verified companies.',
+    title: "Tampa Movers | Compare Licensed Moving Companies",
+    description: "Compare licensed Tampa movers for local, apartment, commercial and long-distance moves across Hillsborough County. Free quotes, no obligation.",
     service: { serviceType: 'Moving Services', areaServed: 'Tampa, Florida' },
     faqs: FAQS,
   }),

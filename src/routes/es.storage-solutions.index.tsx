@@ -15,7 +15,7 @@ export const Route = createFileRoute("/es/storage-solutions/")({
       path: PATH,
       lang: "es",
       title: "Almacenamiento en Florida | Storage-in-Transit y Clima",
-      description: "Almacenamiento con clima controlado y storage-in-transit (SIT) en Florida: costos 2026 y cómo elegir la opción correcta. Cotizaciones gratis hoy.",
+      description: "Almacenamiento con clima controlado y storage-in-transit (SIT) en Florida: costos 2026 y cómo elegir la opción correcta para su mudanza. Cotizaciones gratis.",
       faqs: FAQS,
       service: { serviceType: "Moving and Storage Solutions", areaServed: "Florida" },
     }),

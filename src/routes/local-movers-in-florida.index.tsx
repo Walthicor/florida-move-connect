@@ -14,8 +14,8 @@ import {
 export const Route = createFileRoute("/local-movers-in-florida/")({
   head: () => pageHead({
     path: "/local-movers-in-florida/",
-    title: 'Local Movers in Florida | Hourly Rates & Free Quotes 2026',
-    description: 'Compare licensed local moving companies across Florida. Hourly rates from $95/hr, FDACS-verified movers, same-week availability. Get up to 4 free quotes.',
+    title: "Local Movers in Florida | Rates & Free Moving Quotes",
+    description: "Compare licensed local movers in Florida. See typical hourly rates and cost factors, then request free moving quotes with no obligation.",
     service: { serviceType: 'Local Moving', areaServed: 'Florida' },
     faqs: FAQS,
   }),

@@ -33,8 +33,7 @@ export const Route = createFileRoute("/piano-movers-boca-raton/")({
     const base = pageHead({
       path: PATH,
       title: "Piano Movers Boca Raton FL | Condo & Grand Piano Moves",
-      description:
-        "Boca Raton piano movers for condos and high-value grands. Uprights $150-$500, grands $300-$800. Full value protection. Up to 4 free quotes.",
+      description: "Boca Raton piano movers handle condos and high-value grands, with uprights at $150-$500 and grands at $300-$800 plus full value protection. Four free quotes.",
       faqs: FAQS,
       noAlternates: true,
     });

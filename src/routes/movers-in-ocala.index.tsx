@@ -7,8 +7,8 @@ import { ProseSection, SubBlock, CardGrid, CheckList, LinkDirectory } from "@/co
 export const Route = createFileRoute("/movers-in-ocala/")({
   head: () => pageHead({
     path: "/movers-in-ocala/",
-    title: 'Movers in Ocala FL | Compare Local Moving Companies',
-    description: 'Compare free quotes from licensed movers in Ocala and Marion County. Horse-country properties, The Villages routes and local moves from $350.',
+    title: "Ocala Movers | Compare Local Moving Companies",
+    description: "Compare licensed Ocala movers for local, senior, downsizing and long-distance moves across Marion County. Request free quotes today.",
     service: { serviceType: 'Moving Services', areaServed: 'Ocala, Florida' },
     faqs: FAQS,
   }),

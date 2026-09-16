@@ -11,8 +11,7 @@ export const Route = createFileRoute("/es/contact/")({
       path: PATH,
       lang: "es",
       title: "Contacto | Cotizaciones Gratis de Mudanzas en Florida",
-      description:
-        "Solicite hasta 4 cotizaciones gratis de empresas de mudanzas licenciadas en Florida. Verificadas por FDACS y FMCSA. Respuesta en 1 hora hábil.",
+      description: "Solicite hasta 4 cotizaciones gratis de empresas de mudanzas licenciadas en Florida, verificadas por FDACS y FMCSA, con respuesta en una hora hábil y sin costo.",
     }),
   component: Page,
 });

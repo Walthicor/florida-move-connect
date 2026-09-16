@@ -6,8 +6,8 @@ import { ArrowRight, ShieldCheck, ChevronDown, DollarSign, Building2, MapPin, Ro
 export const Route = createFileRoute("/movers-in-orlando/")({
   head: () => pageHead({
     path: "/movers-in-orlando/",
-    title: 'Movers in Orlando FL | Compare Licensed Moving Companies',
-    description: 'Compare free quotes from licensed movers in Orlando. Lake Nona to Winter Park, apartment specialists, from $400. FDACS-verified moving companies.',
+    title: "Orlando Movers | Compare Licensed Moving Companies",
+    description: "Compare licensed Orlando movers for local, apartment, commercial and long-distance moves in Central Florida. Free quotes, no obligation.",
     service: { serviceType: 'Moving Services', areaServed: 'Orlando, Florida' },
     faqs: FAQS,
   }),

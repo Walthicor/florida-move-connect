@@ -34,9 +34,8 @@ export const Route = createFileRoute("/es/senior-moving-services/")({
     pageHead({
       path: PATH,
       lang: "es",
-      title: "Mudanzas para Adultos Mayores en Florida | 55+ y Downsizing",
-      description:
-        "Mudanzas para adultos mayores en Florida: ayuda con downsizing, comunidades 55+, clasificación y coordinación de donaciones. Equipos licenciados. Cotice gratis.",
+      title: "Mudanzas para Adultos Mayores en Florida | Gratis",
+      description: "Mudanzas para adultos mayores en Florida: ayuda con downsizing, comunidades 55+, clasificación y donaciones, con equipos licenciados. Cotizaciones gratis hoy.",
       service: { serviceType: "Senior Moving Services", areaServed: "Florida" },
       faqs: FAQS,
     }),

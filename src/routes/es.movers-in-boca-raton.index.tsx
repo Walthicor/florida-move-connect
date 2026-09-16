@@ -15,7 +15,7 @@ export const Route = createFileRoute("/es/movers-in-boca-raton/")({
       path: PATH,
       lang: "es",
       title: "Mudanzas en Boca Raton FL | Empresas Licenciadas 2026",
-      description: "Empresas de mudanzas licenciadas en Boca Raton: costos 2026, condos de gran altura, country clubs y comunidades 55+. Compare 4 cotizaciones gratis.",
+      description: "Empresas de mudanzas licenciadas en Boca Raton: costos 2026, condos de gran altura, country clubs y comunidades 55+. Compare 4 cotizaciones gratis sin costo.",
       faqs: FAQS,
       service: { serviceType: "Moving Services", areaServed: "Boca Raton, FL" },
     }),

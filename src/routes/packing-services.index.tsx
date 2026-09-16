@@ -16,7 +16,7 @@ export const Route = createFileRoute("/packing-services/")({
   head: () => pageHead({
     path: "/packing-services/",
     title: 'Professional Packing Services in Florida | Full & Partial',
-    description: 'Professional packers in Florida from $280. Full packing, fragile-only and unpacking services from licensed movers. Compare free quotes today.',
+    description: "Professional packers in Florida start near $280 for full packing, fragile-only jobs and unpacking. Compare free quotes from licensed, insured moving crews.",
     service: { serviceType: 'Packing Services', areaServed: 'Florida' },
     faqs: FAQS,
   }),

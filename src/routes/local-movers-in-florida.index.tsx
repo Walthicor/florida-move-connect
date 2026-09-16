@@ -206,7 +206,11 @@ function FdacsSection() {
         <Link to="/long-distance-movers/">
           our interstate moving guide explains the FMCSA check
         </Link>
-        .
+        . Registration is only half the picture: read{" "}
+        <Link to="/blog/$slug/" params={{ slug: "moving-insurance-florida-explained" }}>
+          how moving insurance and valuation coverage work in Florida
+        </Link>{" "}
+        so you know what a mover's liability actually covers before you sign.
       </p>
     </ProseSection>
   );

@@ -301,6 +301,7 @@ function Cities() {
     { name: "Jacksonville", to: "/es/movers-in-jacksonville/" },
     { name: "Naples", to: "/es/movers-in-naples/" },
     { name: "Boca Raton", to: "/es/movers-in-boca-raton/" },
+    { name: "Hialeah", to: "/es/movers-in-hialeah/" },
   ];
   return (
     <section className="bg-background">

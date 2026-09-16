@@ -224,8 +224,7 @@ function Communities() {
             <p className="text-base leading-relaxed text-muted-foreground">
               The Villages · Solivita · On Top of the World (Ocala) · Kings Point · Century Village ·
               Sun City Center · Del Webb communities · and 55+ neighborhoods across{" "}
-              <Link to="/movers-in-naples/">Naples</Link>,{" "}
-              <Link to="/movers-in-sarasota/">Sarasota</Link>,{" "}
+              <Link to="/movers-in-naples/">Naples</Link>, Sarasota,{" "}
               <Link to="/movers-in-boca-raton/">Boca Raton</Link>, Vero Beach and the greater{" "}
               <Link to="/movers-in-tampa/">Tampa</Link> and{" "}
               <Link to="/movers-in-orlando/">Orlando</Link> areas.

@@ -12,6 +12,8 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TermsIndexRouteImport } from './routes/terms.index'
+import { Route as TermsOfServiceIndexRouteImport } from './routes/terms-of-service.index'
+import { Route as TampaPianoMoversIndexRouteImport } from './routes/tampa-piano-movers.index'
 import { Route as StorageSolutionsIndexRouteImport } from './routes/storage-solutions.index'
 import { Route as SeniorMovingServicesIndexRouteImport } from './routes/senior-moving-services.index'
 import { Route as PrivacyPolicyIndexRouteImport } from './routes/privacy-policy.index'
@@ -26,10 +28,10 @@ import { Route as PianoMoversBocaRatonIndexRouteImport } from './routes/piano-mo
 import { Route as PackingServicesIndexRouteImport } from './routes/packing-services.index'
 import { Route as MudanzasFIndexRouteImport } from './routes/mudanzas-f.index'
 import { Route as MovingStorageIndexRouteImport } from './routes/moving-storage.index'
+import { Route as MovingAndStorageInFloridaIndexRouteImport } from './routes/moving-and-storage-in-florida.index'
 import { Route as MoversInTheVillagesIndexRouteImport } from './routes/movers-in-the-villages.index'
 import { Route as MoversInTampaIndexRouteImport } from './routes/movers-in-tampa.index'
 import { Route as MoversInTallahasseeIndexRouteImport } from './routes/movers-in-tallahassee.index'
-import { Route as MoversInSarasotaIndexRouteImport } from './routes/movers-in-sarasota.index'
 import { Route as MoversInPensacolaIndexRouteImport } from './routes/movers-in-pensacola.index'
 import { Route as MoversInOrlandoIndexRouteImport } from './routes/movers-in-orlando.index'
 import { Route as MoversInOcalaIndexRouteImport } from './routes/movers-in-ocala.index'
@@ -43,14 +45,16 @@ import { Route as MiamiMoversIndexRouteImport } from './routes/miami-movers.inde
 import { Route as LongDistanceMoversIndexRouteImport } from './routes/long-distance-movers.index'
 import { Route as LocalMoversIndexRouteImport } from './routes/local-movers.index'
 import { Route as LocalMoversInFloridaIndexRouteImport } from './routes/local-movers-in-florida.index'
+import { Route as HowItWorksIndexRouteImport } from './routes/how-it-works.index'
 import { Route as GrandPianoMoversIndexRouteImport } from './routes/grand-piano-movers.index'
-import { Route as FurnitureMoversIndexRouteImport } from './routes/furniture-movers.index'
 import { Route as EsIndexRouteImport } from './routes/es.index'
+import { Route as CookiePolicyEuIndexRouteImport } from './routes/cookie-policy-eu.index'
 import { Route as ContactIndexRouteImport } from './routes/contact.index'
 import { Route as CommercialMoversIndexRouteImport } from './routes/commercial-movers.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as ApartmentMoversIndexRouteImport } from './routes/apartment-movers.index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
+import { Route as AboutUsIndexRouteImport } from './routes/about-us.index'
 import { Route as EsTermsIndexRouteImport } from './routes/es.terms.index'
 import { Route as EsStorageSolutionsIndexRouteImport } from './routes/es.storage-solutions.index'
 import { Route as EsSeniorMovingServicesIndexRouteImport } from './routes/es.senior-moving-services.index'
@@ -72,6 +76,7 @@ import { Route as EsContactIndexRouteImport } from './routes/es.contact.index'
 import { Route as EsCommercialMoversIndexRouteImport } from './routes/es.commercial-movers.index'
 import { Route as EsBlogIndexRouteImport } from './routes/es.blog.index'
 import { Route as EsApartmentMoversIndexRouteImport } from './routes/es.apartment-movers.index'
+import { Route as BlogMovingToFloridaGuideIndexRouteImport } from './routes/blog.moving-to-florida-guide.index'
 import { Route as BlogSlugIndexRouteImport } from './routes/blog.$slug.index'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -87,6 +92,16 @@ const IndexRoute = IndexRouteImport.update({
 const TermsIndexRoute = TermsIndexRouteImport.update({
   id: '/terms/',
   path: '/terms/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsOfServiceIndexRoute = TermsOfServiceIndexRouteImport.update({
+  id: '/terms-of-service/',
+  path: '/terms-of-service/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TampaPianoMoversIndexRoute = TampaPianoMoversIndexRouteImport.update({
+  id: '/tampa-piano-movers/',
+  path: '/tampa-piano-movers/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const StorageSolutionsIndexRoute = StorageSolutionsIndexRouteImport.update({
@@ -163,6 +178,12 @@ const MovingStorageIndexRoute = MovingStorageIndexRouteImport.update({
   path: '/moving-storage/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MovingAndStorageInFloridaIndexRoute =
+  MovingAndStorageInFloridaIndexRouteImport.update({
+    id: '/moving-and-storage-in-florida/',
+    path: '/moving-and-storage-in-florida/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const MoversInTheVillagesIndexRoute =
   MoversInTheVillagesIndexRouteImport.update({
     id: '/movers-in-the-villages/',
@@ -180,11 +201,6 @@ const MoversInTallahasseeIndexRoute =
     path: '/movers-in-tallahassee/',
     getParentRoute: () => rootRouteImport,
   } as any)
-const MoversInSarasotaIndexRoute = MoversInSarasotaIndexRouteImport.update({
-  id: '/movers-in-sarasota/',
-  path: '/movers-in-sarasota/',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const MoversInPensacolaIndexRoute = MoversInPensacolaIndexRouteImport.update({
   id: '/movers-in-pensacola/',
   path: '/movers-in-pensacola/',
@@ -252,19 +268,24 @@ const LocalMoversInFloridaIndexRoute =
     path: '/local-movers-in-florida/',
     getParentRoute: () => rootRouteImport,
   } as any)
+const HowItWorksIndexRoute = HowItWorksIndexRouteImport.update({
+  id: '/how-it-works/',
+  path: '/how-it-works/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GrandPianoMoversIndexRoute = GrandPianoMoversIndexRouteImport.update({
   id: '/grand-piano-movers/',
   path: '/grand-piano-movers/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FurnitureMoversIndexRoute = FurnitureMoversIndexRouteImport.update({
-  id: '/furniture-movers/',
-  path: '/furniture-movers/',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const EsIndexRoute = EsIndexRouteImport.update({
   id: '/es/',
   path: '/es/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CookiePolicyEuIndexRoute = CookiePolicyEuIndexRouteImport.update({
+  id: '/cookie-policy-eu/',
+  path: '/cookie-policy-eu/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactIndexRoute = ContactIndexRouteImport.update({
@@ -290,6 +311,11 @@ const ApartmentMoversIndexRoute = ApartmentMoversIndexRouteImport.update({
 const AboutIndexRoute = AboutIndexRouteImport.update({
   id: '/about/',
   path: '/about/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutUsIndexRoute = AboutUsIndexRouteImport.update({
+  id: '/about-us/',
+  path: '/about-us/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EsTermsIndexRoute = EsTermsIndexRouteImport.update({
@@ -402,6 +428,12 @@ const EsApartmentMoversIndexRoute = EsApartmentMoversIndexRouteImport.update({
   path: '/es/apartment-movers/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogMovingToFloridaGuideIndexRoute =
+  BlogMovingToFloridaGuideIndexRouteImport.update({
+    id: '/blog/moving-to-florida-guide/',
+    path: '/blog/moving-to-florida-guide/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const BlogSlugIndexRoute = BlogSlugIndexRouteImport.update({
   id: '/blog/$slug/',
   path: '/blog/$slug/',
@@ -411,14 +443,16 @@ const BlogSlugIndexRoute = BlogSlugIndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/about-us/': typeof AboutUsIndexRoute
   '/about/': typeof AboutIndexRoute
   '/apartment-movers/': typeof ApartmentMoversIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/commercial-movers/': typeof CommercialMoversIndexRoute
   '/contact/': typeof ContactIndexRoute
+  '/cookie-policy-eu/': typeof CookiePolicyEuIndexRoute
   '/es/': typeof EsIndexRoute
-  '/furniture-movers/': typeof FurnitureMoversIndexRoute
   '/grand-piano-movers/': typeof GrandPianoMoversIndexRoute
+  '/how-it-works/': typeof HowItWorksIndexRoute
   '/local-movers-in-florida/': typeof LocalMoversInFloridaIndexRoute
   '/local-movers/': typeof LocalMoversIndexRoute
   '/long-distance-movers/': typeof LongDistanceMoversIndexRoute
@@ -432,10 +466,10 @@ export interface FileRoutesByFullPath {
   '/movers-in-ocala/': typeof MoversInOcalaIndexRoute
   '/movers-in-orlando/': typeof MoversInOrlandoIndexRoute
   '/movers-in-pensacola/': typeof MoversInPensacolaIndexRoute
-  '/movers-in-sarasota/': typeof MoversInSarasotaIndexRoute
   '/movers-in-tallahassee/': typeof MoversInTallahasseeIndexRoute
   '/movers-in-tampa/': typeof MoversInTampaIndexRoute
   '/movers-in-the-villages/': typeof MoversInTheVillagesIndexRoute
+  '/moving-and-storage-in-florida/': typeof MovingAndStorageInFloridaIndexRoute
   '/moving-storage/': typeof MovingStorageIndexRoute
   '/mudanzas-f/': typeof MudanzasFIndexRoute
   '/packing-services/': typeof PackingServicesIndexRoute
@@ -450,8 +484,11 @@ export interface FileRoutesByFullPath {
   '/privacy-policy/': typeof PrivacyPolicyIndexRoute
   '/senior-moving-services/': typeof SeniorMovingServicesIndexRoute
   '/storage-solutions/': typeof StorageSolutionsIndexRoute
+  '/tampa-piano-movers/': typeof TampaPianoMoversIndexRoute
+  '/terms-of-service/': typeof TermsOfServiceIndexRoute
   '/terms/': typeof TermsIndexRoute
   '/blog/$slug/': typeof BlogSlugIndexRoute
+  '/blog/moving-to-florida-guide/': typeof BlogMovingToFloridaGuideIndexRoute
   '/es/apartment-movers/': typeof EsApartmentMoversIndexRoute
   '/es/blog/': typeof EsBlogIndexRoute
   '/es/commercial-movers/': typeof EsCommercialMoversIndexRoute
@@ -477,14 +514,16 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/about-us': typeof AboutUsIndexRoute
   '/about': typeof AboutIndexRoute
   '/apartment-movers': typeof ApartmentMoversIndexRoute
   '/blog': typeof BlogIndexRoute
   '/commercial-movers': typeof CommercialMoversIndexRoute
   '/contact': typeof ContactIndexRoute
+  '/cookie-policy-eu': typeof CookiePolicyEuIndexRoute
   '/es': typeof EsIndexRoute
-  '/furniture-movers': typeof FurnitureMoversIndexRoute
   '/grand-piano-movers': typeof GrandPianoMoversIndexRoute
+  '/how-it-works': typeof HowItWorksIndexRoute
   '/local-movers-in-florida': typeof LocalMoversInFloridaIndexRoute
   '/local-movers': typeof LocalMoversIndexRoute
   '/long-distance-movers': typeof LongDistanceMoversIndexRoute
@@ -498,10 +537,10 @@ export interface FileRoutesByTo {
   '/movers-in-ocala': typeof MoversInOcalaIndexRoute
   '/movers-in-orlando': typeof MoversInOrlandoIndexRoute
   '/movers-in-pensacola': typeof MoversInPensacolaIndexRoute
-  '/movers-in-sarasota': typeof MoversInSarasotaIndexRoute
   '/movers-in-tallahassee': typeof MoversInTallahasseeIndexRoute
   '/movers-in-tampa': typeof MoversInTampaIndexRoute
   '/movers-in-the-villages': typeof MoversInTheVillagesIndexRoute
+  '/moving-and-storage-in-florida': typeof MovingAndStorageInFloridaIndexRoute
   '/moving-storage': typeof MovingStorageIndexRoute
   '/mudanzas-f': typeof MudanzasFIndexRoute
   '/packing-services': typeof PackingServicesIndexRoute
@@ -516,8 +555,11 @@ export interface FileRoutesByTo {
   '/privacy-policy': typeof PrivacyPolicyIndexRoute
   '/senior-moving-services': typeof SeniorMovingServicesIndexRoute
   '/storage-solutions': typeof StorageSolutionsIndexRoute
+  '/tampa-piano-movers': typeof TampaPianoMoversIndexRoute
+  '/terms-of-service': typeof TermsOfServiceIndexRoute
   '/terms': typeof TermsIndexRoute
   '/blog/$slug': typeof BlogSlugIndexRoute
+  '/blog/moving-to-florida-guide': typeof BlogMovingToFloridaGuideIndexRoute
   '/es/apartment-movers': typeof EsApartmentMoversIndexRoute
   '/es/blog': typeof EsBlogIndexRoute
   '/es/commercial-movers': typeof EsCommercialMoversIndexRoute
@@ -544,14 +586,16 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/about-us/': typeof AboutUsIndexRoute
   '/about/': typeof AboutIndexRoute
   '/apartment-movers/': typeof ApartmentMoversIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/commercial-movers/': typeof CommercialMoversIndexRoute
   '/contact/': typeof ContactIndexRoute
+  '/cookie-policy-eu/': typeof CookiePolicyEuIndexRoute
   '/es/': typeof EsIndexRoute
-  '/furniture-movers/': typeof FurnitureMoversIndexRoute
   '/grand-piano-movers/': typeof GrandPianoMoversIndexRoute
+  '/how-it-works/': typeof HowItWorksIndexRoute
   '/local-movers-in-florida/': typeof LocalMoversInFloridaIndexRoute
   '/local-movers/': typeof LocalMoversIndexRoute
   '/long-distance-movers/': typeof LongDistanceMoversIndexRoute
@@ -565,10 +609,10 @@ export interface FileRoutesById {
   '/movers-in-ocala/': typeof MoversInOcalaIndexRoute
   '/movers-in-orlando/': typeof MoversInOrlandoIndexRoute
   '/movers-in-pensacola/': typeof MoversInPensacolaIndexRoute
-  '/movers-in-sarasota/': typeof MoversInSarasotaIndexRoute
   '/movers-in-tallahassee/': typeof MoversInTallahasseeIndexRoute
   '/movers-in-tampa/': typeof MoversInTampaIndexRoute
   '/movers-in-the-villages/': typeof MoversInTheVillagesIndexRoute
+  '/moving-and-storage-in-florida/': typeof MovingAndStorageInFloridaIndexRoute
   '/moving-storage/': typeof MovingStorageIndexRoute
   '/mudanzas-f/': typeof MudanzasFIndexRoute
   '/packing-services/': typeof PackingServicesIndexRoute
@@ -583,8 +627,11 @@ export interface FileRoutesById {
   '/privacy-policy/': typeof PrivacyPolicyIndexRoute
   '/senior-moving-services/': typeof SeniorMovingServicesIndexRoute
   '/storage-solutions/': typeof StorageSolutionsIndexRoute
+  '/tampa-piano-movers/': typeof TampaPianoMoversIndexRoute
+  '/terms-of-service/': typeof TermsOfServiceIndexRoute
   '/terms/': typeof TermsIndexRoute
   '/blog/$slug/': typeof BlogSlugIndexRoute
+  '/blog/moving-to-florida-guide/': typeof BlogMovingToFloridaGuideIndexRoute
   '/es/apartment-movers/': typeof EsApartmentMoversIndexRoute
   '/es/blog/': typeof EsBlogIndexRoute
   '/es/commercial-movers/': typeof EsCommercialMoversIndexRoute
@@ -612,14 +659,16 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/sitemap.xml'
+    | '/about-us/'
     | '/about/'
     | '/apartment-movers/'
     | '/blog/'
     | '/commercial-movers/'
     | '/contact/'
+    | '/cookie-policy-eu/'
     | '/es/'
-    | '/furniture-movers/'
     | '/grand-piano-movers/'
+    | '/how-it-works/'
     | '/local-movers-in-florida/'
     | '/local-movers/'
     | '/long-distance-movers/'
@@ -633,10 +682,10 @@ export interface FileRouteTypes {
     | '/movers-in-ocala/'
     | '/movers-in-orlando/'
     | '/movers-in-pensacola/'
-    | '/movers-in-sarasota/'
     | '/movers-in-tallahassee/'
     | '/movers-in-tampa/'
     | '/movers-in-the-villages/'
+    | '/moving-and-storage-in-florida/'
     | '/moving-storage/'
     | '/mudanzas-f/'
     | '/packing-services/'
@@ -651,8 +700,11 @@ export interface FileRouteTypes {
     | '/privacy-policy/'
     | '/senior-moving-services/'
     | '/storage-solutions/'
+    | '/tampa-piano-movers/'
+    | '/terms-of-service/'
     | '/terms/'
     | '/blog/$slug/'
+    | '/blog/moving-to-florida-guide/'
     | '/es/apartment-movers/'
     | '/es/blog/'
     | '/es/commercial-movers/'
@@ -678,14 +730,16 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/sitemap.xml'
+    | '/about-us'
     | '/about'
     | '/apartment-movers'
     | '/blog'
     | '/commercial-movers'
     | '/contact'
+    | '/cookie-policy-eu'
     | '/es'
-    | '/furniture-movers'
     | '/grand-piano-movers'
+    | '/how-it-works'
     | '/local-movers-in-florida'
     | '/local-movers'
     | '/long-distance-movers'
@@ -699,10 +753,10 @@ export interface FileRouteTypes {
     | '/movers-in-ocala'
     | '/movers-in-orlando'
     | '/movers-in-pensacola'
-    | '/movers-in-sarasota'
     | '/movers-in-tallahassee'
     | '/movers-in-tampa'
     | '/movers-in-the-villages'
+    | '/moving-and-storage-in-florida'
     | '/moving-storage'
     | '/mudanzas-f'
     | '/packing-services'
@@ -717,8 +771,11 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/senior-moving-services'
     | '/storage-solutions'
+    | '/tampa-piano-movers'
+    | '/terms-of-service'
     | '/terms'
     | '/blog/$slug'
+    | '/blog/moving-to-florida-guide'
     | '/es/apartment-movers'
     | '/es/blog'
     | '/es/commercial-movers'
@@ -744,14 +801,16 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/sitemap.xml'
+    | '/about-us/'
     | '/about/'
     | '/apartment-movers/'
     | '/blog/'
     | '/commercial-movers/'
     | '/contact/'
+    | '/cookie-policy-eu/'
     | '/es/'
-    | '/furniture-movers/'
     | '/grand-piano-movers/'
+    | '/how-it-works/'
     | '/local-movers-in-florida/'
     | '/local-movers/'
     | '/long-distance-movers/'
@@ -765,10 +824,10 @@ export interface FileRouteTypes {
     | '/movers-in-ocala/'
     | '/movers-in-orlando/'
     | '/movers-in-pensacola/'
-    | '/movers-in-sarasota/'
     | '/movers-in-tallahassee/'
     | '/movers-in-tampa/'
     | '/movers-in-the-villages/'
+    | '/moving-and-storage-in-florida/'
     | '/moving-storage/'
     | '/mudanzas-f/'
     | '/packing-services/'
@@ -783,8 +842,11 @@ export interface FileRouteTypes {
     | '/privacy-policy/'
     | '/senior-moving-services/'
     | '/storage-solutions/'
+    | '/tampa-piano-movers/'
+    | '/terms-of-service/'
     | '/terms/'
     | '/blog/$slug/'
+    | '/blog/moving-to-florida-guide/'
     | '/es/apartment-movers/'
     | '/es/blog/'
     | '/es/commercial-movers/'
@@ -811,14 +873,16 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  AboutUsIndexRoute: typeof AboutUsIndexRoute
   AboutIndexRoute: typeof AboutIndexRoute
   ApartmentMoversIndexRoute: typeof ApartmentMoversIndexRoute
   BlogIndexRoute: typeof BlogIndexRoute
   CommercialMoversIndexRoute: typeof CommercialMoversIndexRoute
   ContactIndexRoute: typeof ContactIndexRoute
+  CookiePolicyEuIndexRoute: typeof CookiePolicyEuIndexRoute
   EsIndexRoute: typeof EsIndexRoute
-  FurnitureMoversIndexRoute: typeof FurnitureMoversIndexRoute
   GrandPianoMoversIndexRoute: typeof GrandPianoMoversIndexRoute
+  HowItWorksIndexRoute: typeof HowItWorksIndexRoute
   LocalMoversInFloridaIndexRoute: typeof LocalMoversInFloridaIndexRoute
   LocalMoversIndexRoute: typeof LocalMoversIndexRoute
   LongDistanceMoversIndexRoute: typeof LongDistanceMoversIndexRoute
@@ -832,10 +896,10 @@ export interface RootRouteChildren {
   MoversInOcalaIndexRoute: typeof MoversInOcalaIndexRoute
   MoversInOrlandoIndexRoute: typeof MoversInOrlandoIndexRoute
   MoversInPensacolaIndexRoute: typeof MoversInPensacolaIndexRoute
-  MoversInSarasotaIndexRoute: typeof MoversInSarasotaIndexRoute
   MoversInTallahasseeIndexRoute: typeof MoversInTallahasseeIndexRoute
   MoversInTampaIndexRoute: typeof MoversInTampaIndexRoute
   MoversInTheVillagesIndexRoute: typeof MoversInTheVillagesIndexRoute
+  MovingAndStorageInFloridaIndexRoute: typeof MovingAndStorageInFloridaIndexRoute
   MovingStorageIndexRoute: typeof MovingStorageIndexRoute
   MudanzasFIndexRoute: typeof MudanzasFIndexRoute
   PackingServicesIndexRoute: typeof PackingServicesIndexRoute
@@ -850,8 +914,11 @@ export interface RootRouteChildren {
   PrivacyPolicyIndexRoute: typeof PrivacyPolicyIndexRoute
   SeniorMovingServicesIndexRoute: typeof SeniorMovingServicesIndexRoute
   StorageSolutionsIndexRoute: typeof StorageSolutionsIndexRoute
+  TampaPianoMoversIndexRoute: typeof TampaPianoMoversIndexRoute
+  TermsOfServiceIndexRoute: typeof TermsOfServiceIndexRoute
   TermsIndexRoute: typeof TermsIndexRoute
   BlogSlugIndexRoute: typeof BlogSlugIndexRoute
+  BlogMovingToFloridaGuideIndexRoute: typeof BlogMovingToFloridaGuideIndexRoute
   EsApartmentMoversIndexRoute: typeof EsApartmentMoversIndexRoute
   EsBlogIndexRoute: typeof EsBlogIndexRoute
   EsCommercialMoversIndexRoute: typeof EsCommercialMoversIndexRoute
@@ -896,6 +963,20 @@ declare module '@tanstack/react-router' {
       path: '/terms'
       fullPath: '/terms/'
       preLoaderRoute: typeof TermsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms-of-service/': {
+      id: '/terms-of-service/'
+      path: '/terms-of-service'
+      fullPath: '/terms-of-service/'
+      preLoaderRoute: typeof TermsOfServiceIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tampa-piano-movers/': {
+      id: '/tampa-piano-movers/'
+      path: '/tampa-piano-movers'
+      fullPath: '/tampa-piano-movers/'
+      preLoaderRoute: typeof TampaPianoMoversIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/storage-solutions/': {
@@ -996,6 +1077,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MovingStorageIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/moving-and-storage-in-florida/': {
+      id: '/moving-and-storage-in-florida/'
+      path: '/moving-and-storage-in-florida'
+      fullPath: '/moving-and-storage-in-florida/'
+      preLoaderRoute: typeof MovingAndStorageInFloridaIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/movers-in-the-villages/': {
       id: '/movers-in-the-villages/'
       path: '/movers-in-the-villages'
@@ -1015,13 +1103,6 @@ declare module '@tanstack/react-router' {
       path: '/movers-in-tallahassee'
       fullPath: '/movers-in-tallahassee/'
       preLoaderRoute: typeof MoversInTallahasseeIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/movers-in-sarasota/': {
-      id: '/movers-in-sarasota/'
-      path: '/movers-in-sarasota'
-      fullPath: '/movers-in-sarasota/'
-      preLoaderRoute: typeof MoversInSarasotaIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/movers-in-pensacola/': {
@@ -1115,6 +1196,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LocalMoversInFloridaIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/how-it-works/': {
+      id: '/how-it-works/'
+      path: '/how-it-works'
+      fullPath: '/how-it-works/'
+      preLoaderRoute: typeof HowItWorksIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/grand-piano-movers/': {
       id: '/grand-piano-movers/'
       path: '/grand-piano-movers'
@@ -1122,18 +1210,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GrandPianoMoversIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/furniture-movers/': {
-      id: '/furniture-movers/'
-      path: '/furniture-movers'
-      fullPath: '/furniture-movers/'
-      preLoaderRoute: typeof FurnitureMoversIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/es/': {
       id: '/es/'
       path: '/es'
       fullPath: '/es/'
       preLoaderRoute: typeof EsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cookie-policy-eu/': {
+      id: '/cookie-policy-eu/'
+      path: '/cookie-policy-eu'
+      fullPath: '/cookie-policy-eu/'
+      preLoaderRoute: typeof CookiePolicyEuIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact/': {
@@ -1169,6 +1257,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about/'
       preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about-us/': {
+      id: '/about-us/'
+      path: '/about-us'
+      fullPath: '/about-us/'
+      preLoaderRoute: typeof AboutUsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/es/terms/': {
@@ -1318,6 +1413,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EsApartmentMoversIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/moving-to-florida-guide/': {
+      id: '/blog/moving-to-florida-guide/'
+      path: '/blog/moving-to-florida-guide'
+      fullPath: '/blog/moving-to-florida-guide/'
+      preLoaderRoute: typeof BlogMovingToFloridaGuideIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/$slug/': {
       id: '/blog/$slug/'
       path: '/blog/$slug'
@@ -1331,14 +1433,16 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  AboutUsIndexRoute: AboutUsIndexRoute,
   AboutIndexRoute: AboutIndexRoute,
   ApartmentMoversIndexRoute: ApartmentMoversIndexRoute,
   BlogIndexRoute: BlogIndexRoute,
   CommercialMoversIndexRoute: CommercialMoversIndexRoute,
   ContactIndexRoute: ContactIndexRoute,
+  CookiePolicyEuIndexRoute: CookiePolicyEuIndexRoute,
   EsIndexRoute: EsIndexRoute,
-  FurnitureMoversIndexRoute: FurnitureMoversIndexRoute,
   GrandPianoMoversIndexRoute: GrandPianoMoversIndexRoute,
+  HowItWorksIndexRoute: HowItWorksIndexRoute,
   LocalMoversInFloridaIndexRoute: LocalMoversInFloridaIndexRoute,
   LocalMoversIndexRoute: LocalMoversIndexRoute,
   LongDistanceMoversIndexRoute: LongDistanceMoversIndexRoute,
@@ -1352,10 +1456,10 @@ const rootRouteChildren: RootRouteChildren = {
   MoversInOcalaIndexRoute: MoversInOcalaIndexRoute,
   MoversInOrlandoIndexRoute: MoversInOrlandoIndexRoute,
   MoversInPensacolaIndexRoute: MoversInPensacolaIndexRoute,
-  MoversInSarasotaIndexRoute: MoversInSarasotaIndexRoute,
   MoversInTallahasseeIndexRoute: MoversInTallahasseeIndexRoute,
   MoversInTampaIndexRoute: MoversInTampaIndexRoute,
   MoversInTheVillagesIndexRoute: MoversInTheVillagesIndexRoute,
+  MovingAndStorageInFloridaIndexRoute: MovingAndStorageInFloridaIndexRoute,
   MovingStorageIndexRoute: MovingStorageIndexRoute,
   MudanzasFIndexRoute: MudanzasFIndexRoute,
   PackingServicesIndexRoute: PackingServicesIndexRoute,
@@ -1370,8 +1474,11 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyPolicyIndexRoute: PrivacyPolicyIndexRoute,
   SeniorMovingServicesIndexRoute: SeniorMovingServicesIndexRoute,
   StorageSolutionsIndexRoute: StorageSolutionsIndexRoute,
+  TampaPianoMoversIndexRoute: TampaPianoMoversIndexRoute,
+  TermsOfServiceIndexRoute: TermsOfServiceIndexRoute,
   TermsIndexRoute: TermsIndexRoute,
   BlogSlugIndexRoute: BlogSlugIndexRoute,
+  BlogMovingToFloridaGuideIndexRoute: BlogMovingToFloridaGuideIndexRoute,
   EsApartmentMoversIndexRoute: EsApartmentMoversIndexRoute,
   EsBlogIndexRoute: EsBlogIndexRoute,
   EsCommercialMoversIndexRoute: EsCommercialMoversIndexRoute,

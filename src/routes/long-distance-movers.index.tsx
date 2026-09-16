@@ -63,6 +63,7 @@ const VERIFY_STEPS = [
   "Run it through the FMCSA mover search at fmcsa.dot.gov: authority must be ACTIVE with insurance on file.",
   "Confirm whether you are dealing with a CARRIER (owns the trucks) or a BROKER (resells your move). Brokers are legal — but then verify the carrier who actually shows up.",
   "Check the complaint history. Patterns matter more than one bad review.",
+  "Interstate carriers are required by federal law to give you the booklet \"Your Rights and Responsibilities When You Move\" before pickup. If a mover does not offer it, ask why.",
 ];
 
 const TIMELINE = [
@@ -96,6 +97,14 @@ const FAQS = [
     q: "Can I get a long distance moving instant quote?",
     a: "You can get instant ballpark ranges online, but a price you can hold a mover to comes from a video or in-home survey. Use the instant number to shortlist, then convert it into a binding written estimate.",
   },
+  {
+    q: "Do interstate movers in Florida need a special license?",
+    a: "Yes. Interstate carriers need an active USDOT number with FMCSA operating authority and insurance on file — you can look both up free at fmcsa.dot.gov. Moves that stay inside Florida are regulated by FDACS instead, and the mover must hold a state registration.",
+  },
+  {
+    q: "How far in advance should I book a long distance move from Florida?",
+    a: "Four to eight weeks is the comfortable window, and earlier for summer moves or month-end dates, when Florida outbound lanes book up first. A written, survey-based estimate can still be adjusted if your date moves — ask the mover how their estimate handles a rescheduled pickup.",
+  },
 ];
 
 function LongDistancePage() {
@@ -104,15 +113,92 @@ function LongDistancePage() {
       <Hero />
       <NetworkDisclosure />
       <CostTable />
-      <InboundMoves />
+      <AccurateQuotes />
       <Estimates />
       <BindingBlog />
+      <IntrastateVsInterstate />
+      <InboundMoves />
       <PianoTransport />
       <SouthwestCoverage />
       <Verify />
       <Timeline />
       <Faq />
+      <BottomCta />
     </>
+  );
+}
+
+function AccurateQuotes() {
+  return (
+    <ProseSection
+      eyebrow="Quoting"
+      title="How to Get Accurate Long-Distance Moving Quotes"
+      bg="bg-surface-alt"
+    >
+      <p>
+        A long-distance moving quote is only as good as the inventory behind it.
+        Phone quotes built on "about how much stuff do you have?" are guesses —
+        the numbers that hold up on delivery day come from a survey. To get
+        quotes you can actually compare:
+      </p>
+      <CheckList
+        items={[
+          "Ask for an in-home or video survey. The mover sees every room, closet and the garage, and the estimate is built on what they counted — not what you remembered.",
+          "Give every mover the same inventory. Two quotes on different inventories are not comparable; the cheaper one is usually just missing items.",
+          "Get it in writing. A written estimate lists the inventory, the rate basis (weight or volume), accessorial charges and the delivery window.",
+          "Mention access at both addresses — stairs, elevators, long carries, gated communities and high-rise loading docks all change the price.",
+        ]}
+      />
+      <p>
+        Our guide to{" "}
+        <Link to="/blog/$slug/" params={{ slug: "how-much-do-movers-cost-florida" }}>
+          what movers cost in Florida by home size and route
+        </Link>{" "}
+        has the full price breakdown before you request anything.
+      </p>
+    </ProseSection>
+  );
+}
+
+function IntrastateVsInterstate() {
+  return (
+    <ProseSection
+      eyebrow="Regulation"
+      title="Intrastate vs. Interstate Moves: Who Regulates Your Mover"
+      bg="bg-background"
+    >
+      <p>
+        "Long distance" covers two legally different moves, and the regulator —
+        and the paperwork that protects you — changes depending on which one
+        yours is:
+      </p>
+      <CardGrid>
+        <SubBlock title="Intrastate: staying inside Florida">
+          <p>
+            A Miami to Orlando move crosses half the state but never crosses a
+            state line, so it is regulated by the Florida Department of
+            Agriculture and Consumer Services (FDACS). The mover must hold an
+            active FDACS registration — ask for the registration number and
+            look it up before signing. Pricing is by inventory and distance,
+            not by the hour.
+          </p>
+        </SubBlock>
+        <SubBlock title="Interstate: crossing a state line">
+          <p>
+            Any move that crosses into Georgia, Alabama or beyond falls under
+            the Federal Motor Carrier Safety Administration (FMCSA). The carrier
+            must have an active USDOT number with operating authority and
+            insurance on file, and federal rules govern the estimate types and
+            your rights at delivery.
+          </p>
+        </SubBlock>
+      </CardGrid>
+      <p>
+        Not sure which yours is? If the truck never leaves Florida, it is
+        intrastate. For shorter in-town work priced by the hour, see{" "}
+        <Link to="/local-movers-in-florida/">local movers in Florida</Link>.
+      </p>
+    </ProseSection>
   );
 }
 
@@ -163,6 +249,17 @@ function InboundMoves() {
             dock and elevator rules in detail.
           </p>
         </SubBlock>
+        <SubBlock title="Florida to Georgia and North Carolina">
+          <p>
+            The shortest interstate runs out of the state — Jacksonville and
+            Tallahassee to Atlanta or Savannah, Central Florida to Charlotte and
+            Raleigh — typically land in the $1,800-$3,500 range for a 1-2
+            bedroom home, as an estimate. Cost drivers on these lanes are
+            shipment weight, stairs or elevators at either end, and whether the
+            truck can park close enough to avoid a long-carry fee. Summer and
+            month-end dates quote higher.
+          </p>
+        </SubBlock>
         <SubBlock title="From the West Coast to Florida">
           <p>
             San Francisco to Miami movers and other cross-country lanes run the
@@ -192,12 +289,11 @@ function BindingBlog() {
         written estimate — with the balance billed afterwards.
       </p>
       <p>
-        We wrote a full walkthrough of how each one behaves when the inventory
-        changes, what a reweigh looks like, and the language to ask for before
-        signing:{" "}
-        <a href="/blog/binding-vs-non-binding-moving-estimates/">
-          how binding and non-binding moving estimates differ in practice
-        </a>
+        For how these estimate types play out in real Florida pricing by home
+        size and route, see{" "}
+        <Link to="/blog/$slug/" params={{ slug: "how-much-do-movers-cost-florida" }}>
+          how much movers cost in Florida
+        </Link>
         .
       </p>
     </ProseSection>
@@ -278,7 +374,7 @@ function Hero() {
       <div className="container-page py-14 md:py-20 max-w-4xl">
         <span className="inline-flex items-center gap-2 rounded-full bg-white border border-border px-3 py-1 text-xs font-semibold text-brand shadow-soft">
           <ShieldCheck className="h-3.5 w-3.5" />
-          FMCSA-Verified Long Distance Carriers
+          FMCSA-Registered Long Distance Carriers
         </span>
         <h1 className="mt-5 font-display text-4xl md:text-5xl lg:text-6xl font-bold text-ink leading-[1.05]">
           Long Distance Movers in <span className="text-brand">Florida</span>
@@ -377,7 +473,12 @@ function CostTable() {
 
         <p className="mt-6 text-sm md:text-base text-muted-foreground max-w-3xl leading-relaxed">
           Rates include linehaul, fuel and basic valuation. Your exact price
-          depends on actual weight, access at both homes, and season.
+          depends on actual weight, access at both homes, and season. Full or
+          partial packing is quoted separately — see{" "}
+          <Link to="/packing-services/">
+            professional packing services in Florida
+          </Link>{" "}
+          for what crews pack and what it typically adds.
         </p>
       </div>
     </section>
@@ -450,10 +551,10 @@ function Verify() {
           ))}
         </ul>
         <p className="mt-8 text-base md:text-lg leading-relaxed text-ink">
-          Every long distance mover in our network passes this exact
-          verification before receiving a single quote request —{" "}
+          Run this exact checklist on every mover we match you with before you
+          sign —{" "}
           <span className="font-semibold text-brand">
-            that filter is the product.
+            a two-minute lookup is the cheapest insurance on your move.
           </span>
         </p>
       </div>
@@ -469,9 +570,15 @@ function Timeline() {
           <span className="text-xs font-semibold uppercase tracking-wider text-brand">
             Delivery Windows
           </span>
-          <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
-            How Long Does a Long Distance Move Take?
-          </h2>
+        <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
+          Delivery Windows and What to Expect
+        </h2>
+        <p className="mt-4 text-base md:text-lg text-muted-foreground max-w-3xl leading-relaxed">
+          Long-haul shipments usually share trailer space with other households,
+          so the mover commits to a delivery spread in writing — a range of days,
+          not one date. The driver typically calls 24 hours before arrival inside
+          that window. Typical spreads by region:
+        </p>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {TIMELINE.map((t) => (
@@ -493,7 +600,12 @@ function Timeline() {
         </div>
         <p className="mt-8 text-base md:text-lg leading-relaxed text-muted-foreground max-w-3xl">
           Carriers quote a delivery window, not an exact date — dedicated or
-          expedited service shrinks the window for a premium.
+          expedited service shrinks the window for a premium. If your new home
+          is not ready when the window opens,{" "}
+          <Link to="/storage-solutions/">
+            storage solutions in Florida
+          </Link>{" "}
+          (including storage-in-transit with the carrier) bridge the gap.
         </p>
       </div>
     </section>
@@ -535,6 +647,35 @@ function Faq() {
             );
           })}
         </div>
+      </div>
+    </section>
+  );
+}
+
+function BottomCta() {
+  return (
+    <section className="bg-navy text-navy-foreground">
+      <div className="container-page py-16 md:py-20 text-center max-w-3xl">
+        <h2 className="font-display text-3xl md:text-4xl font-bold">
+          Compare Long Distance Moving Quotes in Minutes
+        </h2>
+        <p className="mt-4 text-base md:text-lg opacity-90 leading-relaxed">
+          Tell us your route and home size, and we match you with independent
+          carriers on that lane. One form, up to 4 written quotes, no
+          obligation.
+        </p>
+        <div className="mt-8">
+          <Link to="/contact/" className="btn-cta btn-cta-hover text-base">
+            Get Free Long Distance Quotes <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+        <p className="mt-6 text-sm opacity-80">
+          ¿Prefieres ayuda en español?{" "}
+          <Link to="/es/long-distance-movers/" className="underline font-semibold">
+            Mudanzas de larga distancia en Florida
+          </Link>
+          .
+        </p>
       </div>
     </section>
   );

@@ -115,7 +115,7 @@ export const BLOG_POSTS: BlogPost[] = [
     imageAlt: "White moving truck driving south on an interstate highway toward Florida with palm trees on the horizon",
     metaTitle: "How Long Does an Interstate Move to Florida Take? (2026)",
     metaDescription:
-      "Interstate moves to Florida take 1-14 days for delivery. Full timeline by origin state, factors that speed up or delay, and expedited options.",
+      "Interstate moves to Florida take 1 to 14 days for delivery. See the full timeline by origin state, what speeds up or delays a load, and expedited options.",
   },
   {
     slug: "moving-insurance-florida-explained",

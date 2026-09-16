@@ -216,7 +216,7 @@ function Unpacking() {
         furniture is leaving the house rather than arriving, ask about donation
         drop-off and disposal at the same time — and if some of it needs to be
         held rather than moved, our{" "}
-        <Link to="/storage-solutions/">storage options</Link> cover the overlap.
+        <Link to="/storage-solutions/">moving and storage options</Link> cover the overlap.
       </p>
     </ProseSection>
   );

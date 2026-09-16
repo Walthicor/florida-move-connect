@@ -611,7 +611,7 @@ function CitiesBand() {
               to={c.to}
               className="rounded-full border border-border bg-white px-4 py-2 text-sm font-semibold text-ink hover:border-brand hover:text-brand transition"
             >
-              {c.label}
+              Movers in {c.label}
             </Link>
           ))}
         </div>

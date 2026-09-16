@@ -23,13 +23,13 @@ const COSTS = [
 const LOCAL = [
   { t: "Snowbird season (Oct-Apr)", d: "Demand doubles; book 3-4 weeks ahead and expect gated communities to require COIs and approved vendor lists." },
   { t: "Luxury and antique inventory", d: "Naples moves carry more art, antiques and oversized furniture than anywhere in Florida — ask about full-value protection and custom crating." },
-  { t: "Summer advantage", d: "May-September is the quiet season here (the reverse of most of Florida) — flexible dates save 15-25%." },
+  { t: "Summer advantage", d: "May-September is the quiet season here (the reverse of most of Florida) — flexible dates typically quote lower." },
 ];
 
 const FAQS = [
   { q: "How much do movers cost in Naples?", a: "$450-$900 for a 1-bedroom, $850-$1,500 for 2-3 bedrooms; estate and luxury moves quote by inventory with white-glove options." },
   { q: "Do Naples movers work inside gated communities?", a: "Daily — COIs, gate access and community vendor rules are standard operating procedure in Collier County." },
-  { q: "When is the cheapest time to move in Naples?", a: "Summer — the opposite of the local demand curve. May-September quotes routinely come in 15-25% under season rates." },
+  { q: "When is the cheapest time to move in Naples?", a: "Summer — the opposite of the local demand curve. May-September quotes typically come in under season rates; the difference varies by home size and access." },
 ];
 
 function NaplesPage() {

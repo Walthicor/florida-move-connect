@@ -39,7 +39,7 @@ const MARION_COMMUNITIES = [
 ];
 
 const FAQS = [
-  { q: "How much do movers cost in Ocala?", a: "$350-$700 for a 1-bedroom and $700-$1,200 for 2-3 bedrooms — typically 15-25% below Miami rates for the same crew size. Hourly work across Florida runs $95-$150 per hour for a two-mover crew with a truck." },
+  { q: "How much do movers cost in Ocala?", a: "$350-$700 for a 1-bedroom and $700-$1,200 for 2-3 bedrooms — typically below Miami rates for the same crew size. Hourly work across Florida runs $95-$150 per hour for a two-mover crew with a truck." },
   { q: "Which moving companies in Ocala FL serve Marion County?", a: "The licensed Ocala moving companies in our network cover the whole county — Marion Oaks, Silver Springs, Belleview, Dunnellon, Ocklawaha, On Top of the World and Summerfield — at the same rate card as the city itself." },
   { q: "Do Ocala movers handle moves to The Villages?", a: "Weekly — it is the most requested route in Marion County, usually $450-$900 for typical homes with community access rules handled." },
   { q: "Can I get same-week movers in Ocala?", a: "Usually yes outside the winter peak; November-March book 2-3 weeks ahead." },

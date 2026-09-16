@@ -109,7 +109,7 @@ function RatesExplainer() {
           "Most Miami movers set a three- or four-hour minimum, so a very small job is not billed at one hour.",
           "High-rise access adds $100-$300 for elevator cycles and dock-to-unit carries.",
           "Materials, specialty items and stairs are separate line items — get them quoted before move day, not after.",
-          "Mid-month weekday moves are the cheapest slots in Miami; month-end and season dates are the most expensive.",
+          "Mid-month weekday moves are typically the cheapest slots in Miami; month-end and peak-season dates typically price highest.",
         ]}
       />
       <p>

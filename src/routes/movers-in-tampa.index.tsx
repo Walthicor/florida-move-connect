@@ -39,7 +39,7 @@ const LOCAL = [
 const NEIGHBORHOODS = ["Hyde Park", "South Tampa", "Channelside", "Ybor City", "Seminole Heights", "Carrollwood", "Westchase", "New Tampa", "Brandon", "Riverview", "Wesley Chapel", "Temple Terrace"];
 
 const FAQS = [
-  { q: "How much do movers cost in Tampa?", a: "$400-$800 for a 1-bedroom, $800-$1,400 for a 2-3 bedroom home, at hourly rates of $95-$150 for two movers — consistently 5-15% below Miami for the identical job." },
+  { q: "How much do movers cost in Tampa?", a: "$400-$800 for a 1-bedroom, $800-$1,400 for a 2-3 bedroom home, at hourly rates of $95-$150 for two movers — typically below Miami for the identical job, though estimates vary by home size and access." },
   { q: "Do you have piano movers in Tampa?", a: "Yes — one of our most requested Tampa services. Uprights from $150, grands from $300, including stairs and crating. See the dedicated Tampa piano movers page for the full price table." },
   { q: "When is the best time to schedule a Tampa move?", a: "Early morning, mid-month, on a weekday. In summer, a 7-8 AM start beats the heat and the daily storms; if crossing the bay, avoid 7-9 AM and 4-7 PM bridge traffic." },
   { q: "Do Tampa movers cover St. Petersburg and Clearwater?", a: "Yes — Pinellas County is standard territory. Cross-bay moves bill the same hourly rates; only the drive time differs, which smart scheduling minimizes." },

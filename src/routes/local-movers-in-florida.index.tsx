@@ -40,7 +40,7 @@ const DRIVERS = [
     direction: "up" as const,
     title: "Month-end weekends",
     body:
-      "The last Saturday of any month is the most expensive day in Florida moving — demand pricing is real.",
+      "The last Saturday of any month is typically the busiest and highest-priced slot in Florida moving — demand pricing is real.",
   },
   {
     direction: "down" as const,
@@ -52,7 +52,7 @@ const DRIVERS = [
     direction: "down" as const,
     title: "Mid-month weekdays",
     body:
-      "Tuesday or Wednesday mid-month routinely quotes 10-20% under weekend rates for the identical move.",
+      "Tuesday or Wednesday mid-month typically quotes below weekend rates for the identical move; the gap varies by city and availability.",
   },
 ];
 

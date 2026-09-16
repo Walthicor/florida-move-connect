@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { NetworkDisclosure } from "@/components/site/NetworkDisclosure";
 import { pageHead } from "@/lib/seo";
 import { ProseSection, CheckList } from "@/components/site/ContentSections";
+import { PageEstimateNote } from "@/components/site/PageBlocks";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -50,6 +51,18 @@ const DRIVERS = [
       "Everything boxed, disassembled and staged near the door before the crew arrives can cut 1-2 billable hours. At $130/hour, your prep pays like a job.",
   },
   {
+    direction: "up" as const,
+    title: "Distance between homes",
+    body:
+      "The drive between addresses is billable time on an hourly job — a 40-minute haul across town is 40 minutes of crew pay, and some companies add a separate travel or fuel fee.",
+  },
+  {
+    direction: "up" as const,
+    title: "Packing and specialty items",
+    body:
+      "Crew packing runs by the hour plus materials, and pianos, safes and pool tables are priced as separate line items. Quote them before move day, not after — see our piano movers guide for instrument pricing.",
+  },
+  {
     direction: "down" as const,
     title: "Mid-month weekdays",
     body:
@@ -82,6 +95,14 @@ const FAQS = [
     q: "Do condo and high-rise buildings change what a local move costs?",
     a: "Yes. Condo movers in Florida budget extra time for reserved service elevators, loading-dock windows and long carries, which typically adds $100-$300 to an otherwise standard job.",
   },
+  {
+    q: "How do I find local movers near me in Florida?",
+    a: "Start with the city directory on this page — rates, access rules and seasonality differ between Miami, Tampa, Orlando and the smaller markets. Then compare written quotes from at least three licensed local moving companies in your city; one form here reaches up to four.",
+  },
+  {
+    q: "What should a written estimate from a local mover include?",
+    a: "The hourly rate, crew size, minimum hours, travel or fuel fees, charges for stairs and specialty items, and the mover's FDACS registration number. If any of those are missing or the mover refuses to put terms in writing, choose a different company.",
+  },
 ];
 
 function LocalMoversPage() {
@@ -96,7 +117,29 @@ function LocalMoversPage() {
       <FdacsSection />
       <CityLinks />
       <Faq />
+      <BottomCta />
     </>
+  );
+}
+
+function BottomCta() {
+  return (
+    <section className="bg-background">
+      <div className="container-page py-16 text-center max-w-2xl">
+        <h2 className="font-display text-3xl md:text-4xl font-bold text-ink">
+          Compare Local Moving Quotes in Your City — Free
+        </h2>
+        <p className="mt-4 text-muted-foreground">
+          One form, up to four licensed Florida movers, no obligation. Verify each registration and
+          hire the quote that fits your move — or no one.
+        </p>
+        <div className="mt-7">
+          <Link to="/contact/" className="btn-cta btn-cta-hover text-base">
+            Get Free Local Quotes <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 }
 

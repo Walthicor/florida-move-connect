@@ -500,6 +500,22 @@ function CostGuideBody() {
           dramatically lowest — quotes 40% under market are the classic setup
           for hostage-load scams.
         </p>
+
+        <p className="mt-8 text-ink">
+          Next step: see hourly rates and example scenarios by home size on our{" "}
+          <Link to="/local-movers-in-florida/" className="text-brand underline">
+            Florida local moving rate guide
+          </Link>
+          , or compare{" "}
+          <Link to="/long-distance-movers/" className="text-brand underline">
+            long-distance moving quotes and delivery windows
+          </Link>{" "}
+          if your move leaves the state. When you want real numbers instead of ranges,{" "}
+          <Link to="/contact/" className="text-brand underline">
+            request free quotes from licensed Florida movers
+          </Link>
+          .
+        </p>
       </div>
     </>
   );

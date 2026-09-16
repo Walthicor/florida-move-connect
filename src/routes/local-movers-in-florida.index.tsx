@@ -218,6 +218,8 @@ const CITY_PAGES = [
   { to: "/movers-in-boca-raton/", label: "Movers in Boca Raton", d: "Palm Beach County associations, 55+ communities and season scheduling." },
   { to: "/movers-in-naples/", label: "Movers in Naples", d: "Southwest Florida gated communities and seasonal-resident timing." },
   { to: "/movers-in-tampa/", label: "Movers in Tampa", d: "Bay-area bridge routes, historic districts and Westshore offices." },
+  { to: "/movers-in-riverview/", label: "Movers in Riverview", d: "South Hillsborough new-construction communities, HOA rules and US-301 access." },
+  { to: "/movers-in-sarasota/", label: "Movers in Sarasota", d: "Sarasota, Bradenton and Lakewood Ranch rates, plus island and condo access." },
   
   { to: "/movers-in-orlando/", label: "Movers in Orlando", d: "Central Florida relocation volume and corporate housing gaps." },
   { to: "/movers-in-ocala/", label: "Movers in Ocala", d: "Marion County rates, horse-farm access and Villages-corridor routes." },

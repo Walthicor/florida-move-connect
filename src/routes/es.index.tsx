@@ -195,7 +195,7 @@ function Services() {
                 <h3 className="mt-4 font-display text-lg font-bold text-ink group-hover:text-brand">{s.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
                 <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-brand">
-                  {s.title} <ArrowRight className="h-3.5 w-3.5" />
+                  {s.anchor} <ArrowRight className="h-3.5 w-3.5" />
                 </span>
               </Link>
             );

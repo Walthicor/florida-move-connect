@@ -68,10 +68,14 @@ function PianoMoversTampaPage() {
     <>
       <Hero />
       <NetworkDisclosure />
+      <PianoTypes />
       <CostTable />
+      <AccessChallenges />
       <HowItWorks />
+      <Insurance />
       <Areas />
       <Faq />
+      <BottomCta />
     </>
   );
 }

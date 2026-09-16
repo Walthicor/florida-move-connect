@@ -4,7 +4,7 @@ import { pageHead } from "@/lib/seo";
 import { ProseSection, SubBlock, CardGrid, CheckList } from "@/components/site/ContentSections";
 import { PageEstimateNote } from "@/components/site/PageBlocks";
 import { useState } from "react";
-import { ArrowRight, ShieldCheck, ChevronDown, DollarSign, Building2, MapPin, Route as RouteIcon, Languages, BadgeCheck } from "lucide-react";
+import { ArrowRight, ShieldCheck, ChevronDown, DollarSign, MapPin, Languages } from "lucide-react";
 
 export const Route = createFileRoute("/movers-in-miami/")({
   head: () => pageHead({
@@ -386,7 +386,7 @@ function CostTable({ title, col2, col3, rows }: { title: string; col2: string; c
             ))}
           </div>
         </div>
-        <PageEstimateNote className="mt-4" />
+        <PageEstimateNote />
       </div>
     </section>
   );

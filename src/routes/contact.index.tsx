@@ -31,13 +31,13 @@ function ContactPage() {
               <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-brand/10 text-brand">
                 <Mail className="h-4 w-4" />
               </span>
-              <span className="font-semibold">Direct email placeholder available after submission</span>
+              <span className="font-semibold">The quote form below is the way to reach us</span>
             </li>
             <li className="flex items-center gap-3">
               <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-brand/10 text-brand">
                 <Phone className="h-4 w-4" />
               </span>
-              <span className="font-semibold">Response within 1 business hour</span>
+              <span className="font-semibold">We reply within one business day</span>
             </li>
             <li className="flex items-center gap-3">
               <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-brand/10 text-brand">

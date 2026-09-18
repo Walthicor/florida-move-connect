@@ -27,6 +27,7 @@ export const Route = createFileRoute("/blog/$slug/")({
       title: post.metaTitle,
       description: post.metaDescription,
       image: post.image,
+      type: "article",
       faqs,
       noAlternates: true,
     });

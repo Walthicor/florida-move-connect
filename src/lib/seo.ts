@@ -48,6 +48,8 @@ export interface PageHeadOptions {
   image?: string;
   faqs?: FaqItem[];
   service?: ServiceMeta;
+  /** Open Graph type. Defaults to "website"; blog articles use "article". */
+  type?: "website" | "article";
   /** Defaults to "en". Set "es" on every Spanish route. */
   lang?: Lang;
   /** Skip hreflang alternates when no translated twin exists (e.g. blog articles). */
@@ -56,6 +58,7 @@ export interface PageHeadOptions {
 
 export function pageHead(opts: PageHeadOptions) {
   const lang: Lang = opts.lang ?? "en";
+  const ogType = opts.type ?? "website";
 
   // Normalize the incoming path to the underlying slug (never includes /es/).
   const bareSlug =
@@ -124,7 +127,7 @@ export function pageHead(opts: PageHeadOptions) {
       { property: "og:description", content: opts.description },
       { property: "og:url", content: canonicalUrl },
       { property: "og:image", content: image },
-      { property: "og:type", content: "website" },
+      { property: "og:type", content: ogType },
       { property: "og:locale", content: ogLocale },
       // Only advertise the other locale when a real translated twin exists.
       ...(opts.noAlternates

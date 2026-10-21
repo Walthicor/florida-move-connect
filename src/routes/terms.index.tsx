@@ -167,9 +167,9 @@ function TermsPage() {
 
           <Section title="13. Contact">
             <p className="text-muted-foreground leading-relaxed">
-              Questions about these Terms? Email{" "}
-              <a href="mailto:mardigitalcali@gmail.com" className="text-brand underline">
-                mardigitalcali@gmail.com
+              Questions about these Terms? Reach us through the{" "}
+              <a href="/contact/" className="text-brand underline">
+                contact form
               </a>
               .
             </p>

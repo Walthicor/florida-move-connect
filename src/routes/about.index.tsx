@@ -53,7 +53,7 @@ const ABOUT_SCHEMA = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer service",
-    email: "mardigitalcali@gmail.com",
+    url: `${SITE_URL}/contact/`,
     availableLanguage: ["English", "Spanish"],
     areaServed: "US-FL",
   },

@@ -61,7 +61,7 @@ function Page() {
           <div>
             <h2 className="font-display text-2xl font-bold text-ink">7. Contacto</h2>
             <p className="mt-3 text-ink/90 leading-relaxed">
-              Preguntas: <a href="mailto:mardigitalcali@gmail.com" className="text-brand underline">mardigitalcali@gmail.com</a>.
+              Preguntas: contáctenos mediante el <a href="/es/contact/" className="text-brand underline">formulario de contacto</a>.
             </p>
           </div>
         </div>

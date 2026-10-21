@@ -41,9 +41,9 @@ function Page() {
                   <Mail className="h-5 w-5" />
                 </span>
                 <div>
-                  <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Correo</div>
-                  <a href="mailto:mardigitalcali@gmail.com" className="font-semibold text-ink hover:text-brand">
-                    mardigitalcali@gmail.com
+                  <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Contacto</div>
+                  <a href="/es/contact/" className="font-semibold text-ink hover:text-brand" data-quote-trigger="true">
+                    Comuníquese mediante el formulario de cotización
                   </a>
                 </div>
               </div>
@@ -53,7 +53,7 @@ function Page() {
                 </span>
                 <div>
                   <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Respuesta</div>
-                  <div className="font-semibold text-ink">En 1 hora hábil</div>
+                  <div className="font-semibold text-ink">En un día hábil</div>
                 </div>
               </div>
               <div className="flex items-start gap-3">

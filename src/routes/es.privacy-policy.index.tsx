@@ -39,13 +39,13 @@ function Page() {
 
           <h2 className="font-display text-2xl font-bold text-ink mt-10">4. Retención y eliminación de datos</h2>
           <p className="text-ink/90 leading-relaxed mt-3">
-            Retenemos los datos de su solicitud mientras sean necesarios para completar el emparejamiento y por hasta 24 meses para efectos legales. Puede solicitar la eliminación de sus datos en cualquier momento escribiendo a{" "}
-            <a href="mailto:mardigitalcali@gmail.com" className="text-brand underline">mardigitalcali@gmail.com</a>.
+            Retenemos los datos de su solicitud mientras sean necesarios para completar el emparejamiento y por hasta 24 meses para efectos legales. Puede solicitar la eliminación de sus datos mediante el{" "}
+            <a href="/es/contact/" className="text-brand underline">formulario de contacto</a>.
           </p>
 
           <h2 className="font-display text-2xl font-bold text-ink mt-10">5. Derechos de privacidad en Florida y CCPA</h2>
           <p className="text-ink/90 leading-relaxed mt-3">
-            Residentes de California (bajo CCPA) y de Florida tienen derecho a: (a) saber qué información personal recopilamos; (b) solicitar la eliminación de esa información; (c) optar por no recibir la venta o el intercambio comercial de datos personales. Contáctenos al correo indicado para ejercer estos derechos.
+            Residentes de California (bajo CCPA) y de Florida tienen derecho a: (a) saber qué información personal recopilamos; (b) solicitar la eliminación de esa información; (c) optar por no recibir la venta o el intercambio comercial de datos personales. Utilice el formulario de contacto para ejercer estos derechos.
           </p>
 
           <h2 className="font-display text-2xl font-bold text-ink mt-10">6. Seguridad</h2>
@@ -55,7 +55,7 @@ function Page() {
 
           <h2 className="font-display text-2xl font-bold text-ink mt-10">7. Contacto</h2>
           <p className="text-ink/90 leading-relaxed mt-3">
-            Preguntas sobre esta política: <a href="mailto:mardigitalcali@gmail.com" className="text-brand underline">mardigitalcali@gmail.com</a>.
+            Preguntas sobre esta política: utilice el <a href="/es/contact/" className="text-brand underline">formulario de contacto</a>.
           </p>
         </div>
       </div>

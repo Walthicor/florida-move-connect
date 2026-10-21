@@ -17,7 +17,6 @@ import {
 import { pageHead, WEBSITE_SCHEMA } from "@/lib/seo";
 import { HeroQuoteForm } from "@/components/site/QuoteForm";
 import { NetworkDisclosure } from "@/components/site/NetworkDisclosure";
-import heroVideo from "@/assets/hero-cinematic.mp4.asset.json";
 
 const PATH = "/es/";
 
@@ -77,6 +76,7 @@ export const Route = createFileRoute("/es/")({
     });
     return {
       ...head,
+      links: [...head.links, { rel: "preload", as: "image", href: "/images/hero-family.webp", fetchPriority: "high" }],
       scripts: [
         ...head.scripts,
         { type: "application/ld+json", children: JSON.stringify(WEBSITE_SCHEMA) },
@@ -103,15 +103,13 @@ function Page() {
 function Hero() {
   return (
     <section className="relative overflow-hidden isolate">
-      <video
+      <img
         className="absolute inset-0 h-full w-full object-cover"
-        src={heroVideo.url}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        poster="/images/hero-family.jpg"
+        src="/images/hero-family.webp"
+        width={520}
+        height={620}
+        fetchPriority="high"
+        alt=""
         aria-hidden="true"
       />
       <div

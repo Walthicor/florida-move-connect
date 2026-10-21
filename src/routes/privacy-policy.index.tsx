@@ -124,12 +124,11 @@ function PrivacyPage() {
             </p>
             <p>
               To request deletion of your information, or to access or correct it,
-              email us at{" "}
-              <a href="mailto:mardigitalcali@gmail.com" className="text-brand underline">
-                mardigitalcali@gmail.com
+              reach us through the{" "}
+              <a href="/contact/" className="text-brand underline">
+                contact form
               </a>{" "}
-              from the email address you used to submit your request, with the subject
-              line "Data Deletion Request." We will respond within the timeframes
+              using the same email address as your original request. We will respond within the timeframes
               required by applicable law. Please note we cannot control the retention
               policies of moving partners who received your information; you may
               contact them directly to request deletion from their systems.
@@ -153,9 +152,9 @@ function PrivacyPage() {
             </ul>
             <p>
               We do not knowingly sell or share personal information of consumers
-              under 16. To exercise any of the rights above, email{" "}
-              <a href="mailto:mardigitalcali@gmail.com" className="text-brand underline">
-                mardigitalcali@gmail.com
+              under 16. To exercise any of the rights above, use our{" "}
+              <a href="/contact/" className="text-brand underline">
+                contact form
               </a>
               . We will verify your identity before fulfilling the request.
             </p>
@@ -197,9 +196,9 @@ function PrivacyPage() {
 
           <Section title="11. Contact Us">
             <p>
-              Questions about this Privacy Policy or your data can be sent to{" "}
-              <a href="mailto:mardigitalcali@gmail.com" className="text-brand underline">
-                mardigitalcali@gmail.com
+              Questions about this Privacy Policy or your data can be submitted through our{" "}
+              <a href="/contact/" className="text-brand underline">
+                contact form
               </a>
               .
             </p>

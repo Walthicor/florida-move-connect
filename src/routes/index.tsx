@@ -18,7 +18,6 @@ import {
   ChevronDown,
 } from "lucide-react";
 import { CITIES } from "../components/site/data";
-import heroVideo from "@/assets/hero-cinematic.mp4.asset.json";
 import { HeroQuoteForm } from "@/components/site/QuoteForm";
 import { NetworkDisclosure } from "@/components/site/NetworkDisclosure";
 
@@ -33,6 +32,7 @@ export const Route = createFileRoute("/")({
     });
     return {
       ...head,
+      links: [...head.links, { rel: "preload", as: "image", href: "/images/hero-family.webp", fetchPriority: "high" }],
       scripts: [
         ...head.scripts,
         { type: "application/ld+json", children: JSON.stringify(WEBSITE_SCHEMA) },
@@ -246,16 +246,13 @@ function FeaturedGuides() {
 function Hero() {
   return (
     <section className="relative overflow-hidden isolate">
-      {/* Cinematic video background */}
-      <video
+      <img
         className="absolute inset-0 h-full w-full object-cover"
-        src={heroVideo.url}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        poster="/images/hero-family.jpg"
+        src="/images/hero-family.webp"
+        width={520}
+        height={620}
+        fetchPriority="high"
+        alt=""
         aria-hidden="true"
       />
       {/* Dark gradient overlay for readability */}

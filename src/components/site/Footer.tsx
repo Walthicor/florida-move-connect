@@ -20,7 +20,7 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2">
               <div className="rounded-md bg-white p-1.5">
-                <img src="/images/logo.jpg" alt="Florida Movers Direct" className="h-8 w-auto" />
+                <img src="/images/logo.webp" width={1130} height={520} alt="Florida Movers Direct" className="h-8 w-auto" loading="lazy" />
               </div>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-white/75">
@@ -36,9 +36,9 @@ export function Footer() {
           <FooterCol title={dict.citiesTitle} items={cities} />
 
           <div>
-            <h4 className="font-display text-sm font-bold uppercase tracking-wider text-white">
+            <h2 className="font-display text-sm font-bold uppercase tracking-wider text-white">
               {dict.contactTitle}
-            </h4>
+            </h2>
             <Link
               to={contactHref as "/contact/"}
               className="pulse-cta mt-4 inline-flex items-center gap-2 rounded-lg bg-gradient-cta px-5 py-3 text-sm font-semibold text-white shadow-card hover:brightness-110 transition"
@@ -94,9 +94,9 @@ function FooterCol({
 }) {
   return (
     <div>
-      <h4 className="font-display text-sm font-bold uppercase tracking-wider text-white">
+      <h2 className="font-display text-sm font-bold uppercase tracking-wider text-white">
         {title}
-      </h4>
+      </h2>
       <ul className="mt-4 space-y-2 text-sm text-white/75">
         {items.map((it) => (
           <li key={it.to}>

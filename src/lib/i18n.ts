@@ -164,6 +164,8 @@ export const CITIES_BY_LANG = {
     { label: "Miami", to: "/movers-in-miami/" },
     { label: "Hialeah", to: "/movers-in-hialeah/" },
     { label: "Tampa", to: "/movers-in-tampa/" },
+    { label: "Riverview", to: "/movers-in-riverview/" },
+    { label: "Sarasota", to: "/movers-in-sarasota/" },
     { label: "Orlando", to: "/movers-in-orlando/" },
     { label: "Ocala", to: "/movers-in-ocala/" },
     { label: "The Villages", to: "/movers-in-the-villages/" },

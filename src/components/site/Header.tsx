@@ -57,7 +57,9 @@ export function Header() {
         {/* Logo */}
         <Link to={homeHref as "/"} className="flex items-center gap-2 shrink-0">
           <img
-            src="/images/logo.jpg"
+            src="/images/logo.webp"
+            width={1130}
+            height={520}
             alt="Florida Movers Direct"
             className="h-9 w-auto md:h-11"
           />

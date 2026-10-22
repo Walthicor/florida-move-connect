@@ -28,6 +28,7 @@ import { Route as PianoMoversBocaRatonIndexRouteImport } from './routes/piano-mo
 import { Route as PackingServicesIndexRouteImport } from './routes/packing-services.index'
 import { Route as MudanzasFIndexRouteImport } from './routes/mudanzas-f.index'
 import { Route as MovingStorageIndexRouteImport } from './routes/moving-storage.index'
+import { Route as MovingScamsFloridaIndexRouteImport } from './routes/moving-scams-florida.index'
 import { Route as MovingAndStorageInFloridaIndexRouteImport } from './routes/moving-and-storage-in-florida.index'
 import { Route as MoversInTheVillagesIndexRouteImport } from './routes/movers-in-the-villages.index'
 import { Route as MoversInTampaIndexRouteImport } from './routes/movers-in-tampa.index'
@@ -47,6 +48,7 @@ import { Route as MiamiMoversIndexRouteImport } from './routes/miami-movers.inde
 import { Route as LongDistanceMoversIndexRouteImport } from './routes/long-distance-movers.index'
 import { Route as LocalMoversIndexRouteImport } from './routes/local-movers.index'
 import { Route as LocalMoversInFloridaIndexRouteImport } from './routes/local-movers-in-florida.index'
+import { Route as HowToVerifyFloridaMoverLicenseIndexRouteImport } from './routes/how-to-verify-florida-mover-license.index'
 import { Route as HowItWorksIndexRouteImport } from './routes/how-it-works.index'
 import { Route as GrandPianoMoversIndexRouteImport } from './routes/grand-piano-movers.index'
 import { Route as EsIndexRouteImport } from './routes/es.index'
@@ -180,6 +182,11 @@ const MovingStorageIndexRoute = MovingStorageIndexRouteImport.update({
   path: '/moving-storage/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MovingScamsFloridaIndexRoute = MovingScamsFloridaIndexRouteImport.update({
+  id: '/moving-scams-florida/',
+  path: '/moving-scams-florida/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MovingAndStorageInFloridaIndexRoute =
   MovingAndStorageInFloridaIndexRouteImport.update({
     id: '/moving-and-storage-in-florida/',
@@ -278,6 +285,12 @@ const LocalMoversInFloridaIndexRoute =
   LocalMoversInFloridaIndexRouteImport.update({
     id: '/local-movers-in-florida/',
     path: '/local-movers-in-florida/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const HowToVerifyFloridaMoverLicenseIndexRoute =
+  HowToVerifyFloridaMoverLicenseIndexRouteImport.update({
+    id: '/how-to-verify-florida-mover-license/',
+    path: '/how-to-verify-florida-mover-license/',
     getParentRoute: () => rootRouteImport,
   } as any)
 const HowItWorksIndexRoute = HowItWorksIndexRouteImport.update({
@@ -465,6 +478,7 @@ export interface FileRoutesByFullPath {
   '/es/': typeof EsIndexRoute
   '/grand-piano-movers/': typeof GrandPianoMoversIndexRoute
   '/how-it-works/': typeof HowItWorksIndexRoute
+  '/how-to-verify-florida-mover-license/': typeof HowToVerifyFloridaMoverLicenseIndexRoute
   '/local-movers-in-florida/': typeof LocalMoversInFloridaIndexRoute
   '/local-movers/': typeof LocalMoversIndexRoute
   '/long-distance-movers/': typeof LongDistanceMoversIndexRoute
@@ -484,6 +498,7 @@ export interface FileRoutesByFullPath {
   '/movers-in-tampa/': typeof MoversInTampaIndexRoute
   '/movers-in-the-villages/': typeof MoversInTheVillagesIndexRoute
   '/moving-and-storage-in-florida/': typeof MovingAndStorageInFloridaIndexRoute
+  '/moving-scams-florida/': typeof MovingScamsFloridaIndexRoute
   '/moving-storage/': typeof MovingStorageIndexRoute
   '/mudanzas-f/': typeof MudanzasFIndexRoute
   '/packing-services/': typeof PackingServicesIndexRoute
@@ -538,6 +553,7 @@ export interface FileRoutesByTo {
   '/es': typeof EsIndexRoute
   '/grand-piano-movers': typeof GrandPianoMoversIndexRoute
   '/how-it-works': typeof HowItWorksIndexRoute
+  '/how-to-verify-florida-mover-license': typeof HowToVerifyFloridaMoverLicenseIndexRoute
   '/local-movers-in-florida': typeof LocalMoversInFloridaIndexRoute
   '/local-movers': typeof LocalMoversIndexRoute
   '/long-distance-movers': typeof LongDistanceMoversIndexRoute
@@ -557,6 +573,7 @@ export interface FileRoutesByTo {
   '/movers-in-tampa': typeof MoversInTampaIndexRoute
   '/movers-in-the-villages': typeof MoversInTheVillagesIndexRoute
   '/moving-and-storage-in-florida': typeof MovingAndStorageInFloridaIndexRoute
+  '/moving-scams-florida': typeof MovingScamsFloridaIndexRoute
   '/moving-storage': typeof MovingStorageIndexRoute
   '/mudanzas-f': typeof MudanzasFIndexRoute
   '/packing-services': typeof PackingServicesIndexRoute
@@ -612,6 +629,7 @@ export interface FileRoutesById {
   '/es/': typeof EsIndexRoute
   '/grand-piano-movers/': typeof GrandPianoMoversIndexRoute
   '/how-it-works/': typeof HowItWorksIndexRoute
+  '/how-to-verify-florida-mover-license/': typeof HowToVerifyFloridaMoverLicenseIndexRoute
   '/local-movers-in-florida/': typeof LocalMoversInFloridaIndexRoute
   '/local-movers/': typeof LocalMoversIndexRoute
   '/long-distance-movers/': typeof LongDistanceMoversIndexRoute
@@ -631,6 +649,7 @@ export interface FileRoutesById {
   '/movers-in-tampa/': typeof MoversInTampaIndexRoute
   '/movers-in-the-villages/': typeof MoversInTheVillagesIndexRoute
   '/moving-and-storage-in-florida/': typeof MovingAndStorageInFloridaIndexRoute
+  '/moving-scams-florida/': typeof MovingScamsFloridaIndexRoute
   '/moving-storage/': typeof MovingStorageIndexRoute
   '/mudanzas-f/': typeof MudanzasFIndexRoute
   '/packing-services/': typeof PackingServicesIndexRoute
@@ -687,6 +706,7 @@ export interface FileRouteTypes {
     | '/es/'
     | '/grand-piano-movers/'
     | '/how-it-works/'
+    | '/how-to-verify-florida-mover-license/'
     | '/local-movers-in-florida/'
     | '/local-movers/'
     | '/long-distance-movers/'
@@ -706,6 +726,7 @@ export interface FileRouteTypes {
     | '/movers-in-tampa/'
     | '/movers-in-the-villages/'
     | '/moving-and-storage-in-florida/'
+    | '/moving-scams-florida/'
     | '/moving-storage/'
     | '/mudanzas-f/'
     | '/packing-services/'
@@ -760,6 +781,7 @@ export interface FileRouteTypes {
     | '/es'
     | '/grand-piano-movers'
     | '/how-it-works'
+    | '/how-to-verify-florida-mover-license'
     | '/local-movers-in-florida'
     | '/local-movers'
     | '/long-distance-movers'
@@ -779,6 +801,7 @@ export interface FileRouteTypes {
     | '/movers-in-tampa'
     | '/movers-in-the-villages'
     | '/moving-and-storage-in-florida'
+    | '/moving-scams-florida'
     | '/moving-storage'
     | '/mudanzas-f'
     | '/packing-services'
@@ -833,6 +856,7 @@ export interface FileRouteTypes {
     | '/es/'
     | '/grand-piano-movers/'
     | '/how-it-works/'
+    | '/how-to-verify-florida-mover-license/'
     | '/local-movers-in-florida/'
     | '/local-movers/'
     | '/long-distance-movers/'
@@ -852,6 +876,7 @@ export interface FileRouteTypes {
     | '/movers-in-tampa/'
     | '/movers-in-the-villages/'
     | '/moving-and-storage-in-florida/'
+    | '/moving-scams-florida/'
     | '/moving-storage/'
     | '/mudanzas-f/'
     | '/packing-services/'
@@ -907,6 +932,7 @@ export interface RootRouteChildren {
   EsIndexRoute: typeof EsIndexRoute
   GrandPianoMoversIndexRoute: typeof GrandPianoMoversIndexRoute
   HowItWorksIndexRoute: typeof HowItWorksIndexRoute
+  HowToVerifyFloridaMoverLicenseIndexRoute: typeof HowToVerifyFloridaMoverLicenseIndexRoute
   LocalMoversInFloridaIndexRoute: typeof LocalMoversInFloridaIndexRoute
   LocalMoversIndexRoute: typeof LocalMoversIndexRoute
   LongDistanceMoversIndexRoute: typeof LongDistanceMoversIndexRoute
@@ -926,6 +952,7 @@ export interface RootRouteChildren {
   MoversInTampaIndexRoute: typeof MoversInTampaIndexRoute
   MoversInTheVillagesIndexRoute: typeof MoversInTheVillagesIndexRoute
   MovingAndStorageInFloridaIndexRoute: typeof MovingAndStorageInFloridaIndexRoute
+  MovingScamsFloridaIndexRoute: typeof MovingScamsFloridaIndexRoute
   MovingStorageIndexRoute: typeof MovingStorageIndexRoute
   MudanzasFIndexRoute: typeof MudanzasFIndexRoute
   PackingServicesIndexRoute: typeof PackingServicesIndexRoute
@@ -1103,6 +1130,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MovingStorageIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/moving-scams-florida/': {
+      id: '/moving-scams-florida/'
+      path: '/moving-scams-florida'
+      fullPath: '/moving-scams-florida/'
+      preLoaderRoute: typeof MovingScamsFloridaIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/moving-and-storage-in-florida/': {
       id: '/moving-and-storage-in-florida/'
       path: '/moving-and-storage-in-florida'
@@ -1234,6 +1268,13 @@ declare module '@tanstack/react-router' {
       path: '/local-movers-in-florida'
       fullPath: '/local-movers-in-florida/'
       preLoaderRoute: typeof LocalMoversInFloridaIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-to-verify-florida-mover-license/': {
+      id: '/how-to-verify-florida-mover-license/'
+      path: '/how-to-verify-florida-mover-license'
+      fullPath: '/how-to-verify-florida-mover-license/'
+      preLoaderRoute: typeof HowToVerifyFloridaMoverLicenseIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/how-it-works/': {
@@ -1483,6 +1524,8 @@ const rootRouteChildren: RootRouteChildren = {
   EsIndexRoute: EsIndexRoute,
   GrandPianoMoversIndexRoute: GrandPianoMoversIndexRoute,
   HowItWorksIndexRoute: HowItWorksIndexRoute,
+  HowToVerifyFloridaMoverLicenseIndexRoute:
+    HowToVerifyFloridaMoverLicenseIndexRoute,
   LocalMoversInFloridaIndexRoute: LocalMoversInFloridaIndexRoute,
   LocalMoversIndexRoute: LocalMoversIndexRoute,
   LongDistanceMoversIndexRoute: LongDistanceMoversIndexRoute,
@@ -1502,6 +1545,7 @@ const rootRouteChildren: RootRouteChildren = {
   MoversInTampaIndexRoute: MoversInTampaIndexRoute,
   MoversInTheVillagesIndexRoute: MoversInTheVillagesIndexRoute,
   MovingAndStorageInFloridaIndexRoute: MovingAndStorageInFloridaIndexRoute,
+  MovingScamsFloridaIndexRoute: MovingScamsFloridaIndexRoute,
   MovingStorageIndexRoute: MovingStorageIndexRoute,
   MudanzasFIndexRoute: MudanzasFIndexRoute,
   PackingServicesIndexRoute: PackingServicesIndexRoute,

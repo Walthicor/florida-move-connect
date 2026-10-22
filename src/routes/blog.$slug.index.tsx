@@ -486,6 +486,22 @@ function CostGuideBody() {
           <li><strong>Specialty items:</strong> pianos ($150-$800), safes, pool tables and art crating are quoted separately.</li>
           <li><strong>Storage:</strong> if your new home is not ready, storage-in-transit runs $150-$400/month.</li>
         </ul>
+
+        <h2 className="mt-12 font-display text-2xl md:text-3xl font-bold text-ink">
+          Moving Costs by City
+        </h2>
+        <p className="mt-4 text-ink">
+          This guide covers statewide averages. Each city has its own access rules, traffic and
+          price range, so check the local page before you compare quotes: how much movers cost in{" "}
+          <Link to="/movers-in-miami/" className="text-brand underline">Miami</Link>,{" "}
+          <Link to="/movers-in-tampa/" className="text-brand underline">Tampa</Link>,{" "}
+          <Link to="/movers-in-orlando/" className="text-brand underline">Orlando</Link>,{" "}
+          <Link to="/movers-in-jacksonville/" className="text-brand underline">Jacksonville</Link>,{" "}
+          <Link to="/movers-in-tallahassee/" className="text-brand underline">Tallahassee</Link>,{" "}
+          <Link to="/movers-in-ocala/" className="text-brand underline">Ocala</Link>,{" "}
+          <Link to="/movers-in-naples/" className="text-brand underline">Naples</Link> and{" "}
+          <Link to="/movers-in-pensacola/" className="text-brand underline">Pensacola</Link>.
+        </p>
       </div>
 
       <MidCta />

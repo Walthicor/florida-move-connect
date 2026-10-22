@@ -76,7 +76,7 @@ const AREAS = [
 
 const FAQS = [
   { q: "How much do movers cost in Tampa?", a: "$400-$800 for a 1-bedroom, $800-$1,400 for a 2-3 bedroom home, at hourly rates of $95-$150 for two movers — typically below Miami for the identical job, though estimates vary by home size and access." },
-  { q: "Do you have piano movers in Tampa?", a: "Yes — one of our most requested Tampa services. Uprights from $150, grands from $300, including stairs and crating. See the dedicated Tampa piano movers page for the full price table." },
+  { q: "Do Tampa movers cover Brandon, Riverview and Wesley Chapel?", a: "Yes. Local Tampa moving companies serve the suburbs east and south of the city, like Brandon and Riverview, and north along I-75 to Wesley Chapel. Moves inside the metro are billed hourly like any local move; only the drive time changes." },
   { q: "When is the best time to schedule a Tampa move?", a: "Early morning, mid-month, on a weekday. In summer, a 7-8 AM start beats the heat and the daily storms; if crossing the bay, avoid 7-9 AM and 4-7 PM bridge traffic." },
   { q: "Do Tampa movers cover St. Petersburg and Clearwater?", a: "Yes — Pinellas County is standard territory. Cross-bay moves bill the same hourly rates; only the drive time differs, which smart scheduling minimizes." },
   { q: "Do Tampa buildings require a certificate of insurance?", a: "Channelside, downtown and most Westshore-area towers do, and many large apartment communities in New Tampa and the USF area ask for one too. The association or property manager wants the COI on file before the service elevator is released, so send it over as soon as your date is set." },
@@ -116,7 +116,7 @@ function Hero() {
           Movers in <span className="text-brand">Tampa</span>, FL
         </h1>
         <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
-          Local Tampa moves average $400-$800 for a 1-bedroom and $800-$1,400 for a 2-3 bedroom home, with hourly crews from $95-$150. Tampa Bay has its own moving logic — a bay that splits the metro, the I-275 and I-4 corridors, daily summer storms, and one of the busiest piano-moving markets in Florida. Our licensed Tampa movers plan around all four. Compare free quotes in 2 minutes.
+          Local Tampa moves average $400-$800 for a 1-bedroom and $800-$1,400 for a 2-3 bedroom home, with hourly crews from $95-$150. Tampa Bay has its own moving logic — a bay that splits the metro, the I-275 and I-4 corridors, and daily summer storms. Compare free quotes from licensed moving companies in Tampa that plan around all three, from South Tampa apartments to new homes in Riverview and Wesley Chapel.
         </p>
         <div className="mt-7">
           <Link to="/contact/" className="btn-cta btn-cta-hover text-base">
@@ -282,8 +282,8 @@ function PianoCard() {
   return (
     <section className="bg-background">
       <div className="container-page py-16 md:py-20 max-w-4xl">
-        <span className="text-xs font-semibold uppercase tracking-wider text-brand">Specialty</span>
-        <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">Piano Moving in Tampa</h2>
+        <span className="text-xs font-semibold uppercase tracking-wider text-brand">Specialty items</span>
+        <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">Moving a Piano or Other Specialty Item?</h2>
         <div className="mt-6 rounded-2xl border border-border bg-gradient-to-br from-white to-surface-alt p-6 md:p-8 shadow-card">
           <div className="flex items-start gap-4">
             <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-cta/10 text-cta flex-shrink-0">
@@ -291,17 +291,14 @@ function PianoCard() {
             </span>
             <div>
               <p className="text-base text-muted-foreground leading-relaxed">
-                Tampa is one of the most active piano-moving markets in Florida — and a piano is the one item standard crews should never touch. Our network includes dedicated piano movers in Tampa handling uprights from $150 and grands from $300, with skid boards, stair expertise and humidity-aware placement. Start with the full{" "}
+                A household move and a piano move need different equipment. Mention any piano,
+                safe or pool table in your quote request so the crew arrives ready. For the
+                instrument itself, see our dedicated page on{" "}
                 <Link to="/piano-movers-tampa/" className="font-semibold text-brand hover:underline">
-                  Tampa piano moving price table and crew requirements
-                </Link>{" "}
-                before you book a general moving crew for an instrument.
-              </p>
-              <div className="mt-5">
-                <Link to="/piano-movers-tampa/" className="btn-cta btn-cta-hover text-sm">
-                  Tampa Piano Movers <ArrowRight className="h-4 w-4" />
+                  piano movers in Tampa
                 </Link>
-              </div>
+                .
+              </p>
             </div>
           </div>
         </div>
@@ -419,9 +416,8 @@ function RelatedLinks() {
         <Link to="/movers-in-orlando/">Orlando moving companies</Link>; heading north, see{" "}
         <Link to="/movers-in-ocala/">Ocala movers in Marion County</Link>, or read our{" "}
         <Link to="/movers-in-the-villages/">guide to moving into The Villages</Link> for retirement
-        community rules. Bay-area households with an instrument should start with{" "}
-        <Link to="/piano-movers-tampa/">Tampa piano moving crews and pricing</Link>, and offices
-        relocating downtown with{" "}
+        community rules. Offices
+        relocating downtown should start with{" "}
         <Link to="/commercial-movers/">after-hours commercial moving services</Link>.
       </p>
       <p>

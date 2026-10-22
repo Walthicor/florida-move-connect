@@ -1,4 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ProseSection } from "@/components/site/ContentSections";
 import { pageHead } from "@/lib/seo";
 import { PageHero, PageCostTable, PageLocalKnowledge, PageFaq } from "@/components/site/PageBlocks";
 
@@ -34,13 +35,13 @@ export const Route = createFileRoute("/piano-moving-cost/")({
       <PageHero
         eyebrow="Pricing guide"
         h1={<>Piano Moving Cost in <span className="text-brand">Florida</span></>}
-        intro="Piano moving in Florida costs $150-$500 for an upright, $300-$800 for a grand and $450-$2,300 for interstate transport, with stairs adding $25-$75 per flight. Below is every number a piano quote is built from — instrument type, crew size, stairs, floor placement, disassembly and crating. No hidden line items."
+        intro="Piano moving in Florida costs $150-$500 for an upright, $300-$800 for a grand and $450-$2,300 for interstate transport, with stairs adding $40-$130 per flight (estimates). Below is every number a piano quote is built from — instrument type, crew size, stairs, floor placement, disassembly and crating. No hidden line items."
         ctaLabel="Compare Piano Moving Quotes"
         ctaHref="/contact/"
       />
       <PageCostTable
         eyebrow="Base rates 2026"
-        title="What piano movers charge"
+        title="How Much Do Piano Movers Charge in Florida?"
         col1="Piano type"
         col2="Price"
         col3="Crew & weight"
@@ -53,7 +54,7 @@ export const Route = createFileRoute("/piano-moving-cost/")({
       />
       <PageCostTable
         eyebrow="Add-ons"
-        title="Surcharges that change the total"
+        title="Which Surcharges Change the Total?"
         col1="Surcharge"
         col2="Cost"
         col3="When it applies"
@@ -74,6 +75,14 @@ export const Route = createFileRoute("/piano-moving-cost/")({
           { t: "Specialist premium", d: "Specialist piano movers cost $100 - $300 more than general movers, and that buys the equipment and insurance piano work requires." },
         ]}
       />
+      <ProseSection title="Ready to Compare Piano Movers?" bg="bg-background">
+        <p>
+          This page explains the price. To compare crews, start with our{" "}
+          <Link to="/piano-movers/">Florida piano movers</Link> page, or go straight to{" "}
+          <Link to="/piano-movers-tampa/">piano movers in Tampa</Link> and{" "}
+          <Link to="/grand-piano-movers/">grand piano movers</Link> for baby grands and concert grands.
+        </p>
+      </ProseSection>
       <PageFaq title="Piano moving cost FAQ" faqs={FAQS} />
     </>
   ),

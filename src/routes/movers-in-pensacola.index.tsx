@@ -82,7 +82,7 @@ export const Route = createFileRoute("/movers-in-pensacola/")({
       }
       related={[
         { to: "/local-movers-in-florida/", label: "Florida local moving rates", d: "The full hourly rate card and what pushes a Pensacola quote up or down." },
-        { to: "/long-distance-movers/", label: "Long-distance moving from the Panhandle", d: "How Pensacola to Tampa, Orlando or out of state is priced and scheduled." },
+        { to: "/long-distance-movers/", label: "Long-distance moving companies in Florida", d: "How Pensacola to Tampa, Orlando or out of state is priced and scheduled." },
         { to: "/movers-in-tallahassee/", label: "Movers in Tallahassee", d: "The next major market east on I-10, with cost-led pricing detail." },
         { to: "/movers-in-jacksonville/", label: "Movers in Jacksonville", d: "Coast-to-coast intrastate route pricing and access notes." },
         { to: "/storage-solutions/", label: "Storage between homes", d: "Storage-in-transit options when PCS dates and closing dates do not line up." },

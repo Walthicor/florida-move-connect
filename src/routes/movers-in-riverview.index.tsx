@@ -23,6 +23,10 @@ const FAQS = [
     a: "Yes. Downtown Tampa is roughly 15 miles north and Brandon is a short hop up US-301, so both stay inside the under-50-mile local band and are billed hourly rather than by weight. Only moves crossing that distance threshold or leaving Florida switch to inventory or weight-based pricing.",
   },
   {
+    q: "How do I find local movers near me in Riverview?",
+    a: "Look for moving companies that already work South Hillsborough, because they know the HOA gate rules, US-301 traffic and builder closing delays. Ask each one for its FDACS registration, a written estimate and its rule for date changes. One form here sends your request to up to four licensed Riverview movers at once.",
+  },
+  {
     q: "When is the cheapest time to move in Riverview?",
     a: "Mid-month, midweek, outside the summer peak. Closings on new-construction homes cluster at month-end, and June through September brings both the heaviest demand and afternoon storms that slow loading. Booking three to four weeks out gives you a real choice of crews.",
   },
@@ -51,8 +55,9 @@ export const Route = createFileRoute("/movers-in-riverview/")({
         <>
           Movers in Riverview charge $95-$150 per hour for a two-mover crew with a truck — typically
           $650-$1,100 for a two-bedroom and $900-$1,600 for a three-bedroom home, as estimates
-          rather than fixed prices. Compare up to 4 licensed, insured crews covering Riverview,
-          Apollo Beach and Gibsonton free of charge.
+          rather than fixed prices. Compare up to 4 licensed, insured local moving companies in
+          Riverview, FL, with crews covering Apollo Beach, Gibsonton and the rest of South
+          Hillsborough free of charge.
         </>
       }
       challenges={[

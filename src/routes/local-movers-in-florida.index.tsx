@@ -93,7 +93,7 @@ const FAQS = [
   },
   {
     q: "Do condo and high-rise buildings change what a local move costs?",
-    a: "Yes. Condo movers in Florida budget extra time for reserved service elevators, loading-dock windows and long carries, which typically adds $100-$300 to an otherwise standard job.",
+    a: "Yes. Local crews budget extra time for reserved service elevators, loading-dock windows and long carries, which typically adds $100-$300 to an otherwise standard job.",
   },
   {
     q: "How do I find local movers near me in Florida?",
@@ -147,14 +147,14 @@ function CondoMoves() {
   return (
     <ProseSection
       eyebrow="Building access"
-      title="Condo and High-Rise Moves in Florida"
+      title="How Do Condo Buildings Change a Local Move?"
       bg="bg-surface-alt"
     >
       <p>
         Florida has more condominium units than almost anywhere in the country, and
         a condo move is a different job from a single-family move even when the
-        inventory is identical. Condo movers in Florida plan around the building
-        first and the furniture second.
+        inventory is identical. A local crew plans around the building first and the
+        furniture second.
       </p>
       <CheckList
         items={[
@@ -167,9 +167,9 @@ function CondoMoves() {
       />
       <p>
         Give the mover the building name and the association's move-in packet with
-        your quote request. Rental towers work the same way — see our{" "}
-        <Link to="/apartment-movers/">apartment moving guide</Link> for elevator and
-        stair pricing detail.
+        your quote request. For the full checklist, compare{" "}
+        <Link to="/apartment-movers/">apartment and condo movers in Florida</Link>, the page
+        dedicated to elevator, COI and stair pricing.
       </p>
     </ProseSection>
   );
@@ -286,7 +286,12 @@ function Hero() {
           with a truck, and a typical local move (under 50 miles) runs
           $400-$1,600 depending on home size. Compare free quotes from licensed,
           FDACS-registered local moving companies in your city — the right crew
-          at the best rate, without calling ten companies yourself.
+          at the best rate, without calling ten companies yourself. Moving farther than
+          50 miles? Start with our{" "}
+          <Link to="/" className="font-semibold text-brand hover:underline">
+            comparison of movers in Florida
+          </Link>{" "}
+          for every type of move.
         </p>
         <div className="mt-7">
           <Link to="/contact/" className="btn-cta btn-cta-hover text-base">

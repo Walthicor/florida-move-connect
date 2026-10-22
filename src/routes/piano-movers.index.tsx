@@ -374,7 +374,7 @@ function Cities() {
                 <MapPin className="h-5 w-5" />
               </span>
               <h3 className="mt-4 font-display text-lg font-bold text-ink group-hover:text-brand">
-                Piano moving in {c.city}
+                Piano movers in {c.city}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.d}</p>
               <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand">

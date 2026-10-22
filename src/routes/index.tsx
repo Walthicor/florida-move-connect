@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
   head: () => {
     const head = pageHead({
       path: "/",
-      title: "Movers in Florida | Compare Licensed Movers & Free Quotes",
+      title: "Florida Movers | Compare Licensed Moving Companies & Free Quotes",
       description: "Compare licensed Florida movers and request free quotes for local, long-distance, commercial and specialty moves. Free to use, no obligation.",
       service: { serviceType: 'Moving Company Lead Matching', areaServed: 'Florida' },
       faqs: FAQS,
@@ -272,7 +272,7 @@ function Hero() {
             Licensed Florida Movers — Verify Any License Yourself
           </span>
           <h1 className="mt-5 font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.05] drop-shadow-[0_2px_20px_rgba(0,0,0,0.35)]">
-            Movers in Florida —{" "}
+            Florida Movers —{" "}
             <span className="text-accent">Compare Licensed Moving Companies</span>{" "}
             and Save
           </h1>

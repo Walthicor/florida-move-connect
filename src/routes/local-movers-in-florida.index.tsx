@@ -287,11 +287,11 @@ function Hero() {
           $400-$1,600 depending on home size. Compare free quotes from licensed,
           FDACS-registered local moving companies in your city — the right crew
           at the best rate, without calling ten companies yourself. Moving farther than
-          50 miles? Start with our{" "}
+          50 miles? Compare{" "}
           <Link to="/" className="font-semibold text-brand hover:underline">
-            comparison of movers in Florida
+            Florida movers
           </Link>{" "}
-          for every type of move.
+          for every type of move, from long-distance to commercial.
         </p>
         <div className="mt-7">
           <Link to="/contact/" className="btn-cta btn-cta-hover text-base">

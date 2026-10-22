@@ -406,9 +406,9 @@ function BottomCta() {
           </Link>
         </div>
         <p className="mt-6 text-sm opacity-80">
-          ¿Prefieres ayuda en español?{" "}
+          Prefer to compare quotes in Spanish? Read the{" "}
           <Link to="/es/piano-movers-tampa/" className="underline font-semibold">
-            Mudanzas de pianos en Tampa
+            Spanish version of our Tampa piano movers guide
           </Link>
           .
         </p>

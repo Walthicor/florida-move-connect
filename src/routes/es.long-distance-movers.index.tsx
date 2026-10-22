@@ -56,7 +56,7 @@ export const Route = createFileRoute("/es/long-distance-movers/")({
         eyebrow="Verifique antes de firmar"
         title="Cómo verificar una empresa de larga distancia"
         items={[
-          { t: "USDOT y MC number", d: "Toda empresa interestatal debe tener número USDOT y MC activos con FMCSA. Verifique en fmcsa.dot.gov/protect-your-move." },
+          { t: "Número USDOT y MC", d: "Toda empresa interestatal debe tener número USDOT y MC activos con FMCSA. Verifique en fmcsa.dot.gov/protect-your-move." },
           { t: "Historial de quejas", d: "Revise historial en FMCSA y BBB. Empresas serias tienen pocas quejas resueltas." },
           { t: "Seguro y liabilidad", d: "Confirme que ofrecen 'Full Value Protection' (60¢/lb es el mínimo federal, insuficiente para muebles caros)." },
         ]}

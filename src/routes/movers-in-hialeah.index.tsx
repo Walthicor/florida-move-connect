@@ -10,8 +10,8 @@ const FAQS = [
     a: "A two-mover crew with a truck runs $95-$150 per hour. Most Hialeah apartment moves land at $400-$700, two-bedroom homes at $650-$1,100 and three-bedroom houses at $900-$1,600. Stairs and long carries from the parking area add billable time.",
   },
   {
-    q: "¿Hay empresas de mudanzas en Hialeah que hablen español?",
-    a: "Sí. La mayoría de las cuadrillas que trabajan en Hialeah atienden en español, y puede recibir su cotización, el estimado escrito y la coordinación del día de la mudanza completamente en español. Indíquelo en el formulario y le conectamos con empresas bilingües.",
+    q: "Are there Spanish-speaking movers in Hialeah?",
+    a: "Yes. Most crews working in Hialeah offer service in Spanish, and you can receive your quote, the written estimate and move-day coordination entirely in Spanish. Note it on the quote form and we connect you with bilingual companies.",
   },
   {
     q: "Do Hialeah movers handle cross-town moves within Miami-Dade?",
@@ -31,7 +31,7 @@ export const Route = createFileRoute("/movers-in-hialeah/")({
   head: () => {
     const base = pageHead({
       path: PATH,
-      title: "Movers in Hialeah FL | Mudanzas en Hialeah | Free Quotes",
+      title: "Movers in Hialeah FL | Bilingual Crews | Free Quotes",
       description: "Licensed movers in Hialeah with bilingual crews for apartments and cross-town Miami-Dade moves from $95 an hour. Compare up to four free quotes, no obligation.",
       faqs: FAQS,
     });
@@ -79,26 +79,26 @@ export const Route = createFileRoute("/movers-in-hialeah/")({
       extra={
         <section className="bg-surface-alt">
           <div className="container-page py-16 md:py-20 max-w-3xl">
-            <span className="text-xs font-semibold uppercase tracking-wider text-brand">En español</span>
+            <span className="text-xs font-semibold uppercase tracking-wider text-brand">Bilingual service</span>
             <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
-              Mudanzas en Hialeah, atendidas en español
+              Can Hialeah Movers Help You in Spanish?
             </h2>
             <p className="mt-4 text-base leading-relaxed text-ink">
-              Hialeah es una ciudad mayoritariamente hispanohablante, y su mudanza no debería
-              obligarle a negociar en inglés. Las empresas que le conectamos ofrecen cotización,
-              estimado escrito y coordinación del día de la mudanza en español, desde $95-$150 por
-              hora con dos trabajadores y camión.
+              Hialeah is a majority Spanish-speaking city, and your move should not force you to
+              negotiate in English. The companies we connect you with offer quotes, written
+              estimates and move-day coordination in Spanish, from $95-$150 per hour for a
+              two-person crew and truck.
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              Puede revisar toda la información de esta página en nuestra{" "}
+              Read the{" "}
               <Link to={"/es/movers-in-hialeah/" as "/"} className="font-semibold text-brand hover:underline">
-                versión en español para Hialeah
+                Spanish version of our Hialeah movers guide
               </Link>
-              , o ver las{" "}
+              , or the{" "}
               <Link to={"/es/movers-in-miami/" as "/"} className="font-semibold text-brand hover:underline">
-                mudanzas en Miami
+                Spanish version of our Miami movers guide
               </Link>{" "}
-              si se muda dentro del condado.
+              if you are moving within the county.
             </p>
           </div>
         </section>

@@ -13,10 +13,10 @@ const PATH = "/es/senior-moving-services/";
 const FAQS = [
   {
     q: "¿Cuánto cuesta una mudanza para adultos mayores en Florida?",
-    a: "La mayoría cuesta entre $600 y $2,500 según el tamaño de la vivienda y cuánta clasificación se necesite. El servicio completo de downsizing (clasificar, empacar, mudar y coordinar donaciones) cuesta $1,800-$4,500.",
+    a: "La mayoría cuesta entre $600 y $2,500 según el tamaño de la vivienda y cuánta clasificación se necesite. El servicio completo de reducción de pertenencias (clasificar, empacar, mudar y coordinar donaciones) cuesta $1,800-$4,500.",
   },
   {
-    q: "¿Las empresas ayudan con el downsizing y la clasificación?",
+    q: "¿Las empresas ayudan a reducir y clasificar las pertenencias?",
     a: "Sí — los especialistas en mudanzas para adultos mayores ofrecen sesiones de clasificación donde trabajan junto a usted o la familia para decidir qué se muda, qué se dona y qué se vende, y luego se encargan de las tres cosas.",
   },
   {
@@ -35,7 +35,7 @@ export const Route = createFileRoute("/es/senior-moving-services/")({
       path: PATH,
       lang: "es",
       title: "Mudanzas para Adultos Mayores en Florida | Gratis",
-      description: "Mudanzas para adultos mayores en Florida: ayuda con downsizing, comunidades 55+, clasificación y donaciones, con equipos licenciados. Cotizaciones gratis hoy.",
+      description: "Mudanzas para adultos mayores en Florida: ayuda para reducir pertenencias, comunidades 55+, clasificación y donaciones, con equipos licenciados. Cotizaciones gratis hoy.",
       service: { serviceType: "Senior Moving Services", areaServed: "Florida" },
       faqs: FAQS,
     }),
@@ -44,7 +44,7 @@ export const Route = createFileRoute("/es/senior-moving-services/")({
       <PageHero
         eyebrow="Especialistas 55+"
         h1="Mudanzas para Adultos Mayores en Florida"
-        intro="Una mudanza para adultos mayores cuesta $600-$2,500 en la mayoría de las reubicaciones en Florida e implica mucho más que cajas: reducir décadas de pertenencias (downsizing), cumplir las reglas de ingreso de las comunidades 55+ y, con frecuencia, trabajar junto a hijos adultos que viven en otro estado. Las empresas de nuestra red especializadas en este tipo de mudanza aportan paciencia, ayuda para clasificar y donar, y experiencia en comunidades como The Villages, Solivita y On Top of the World. Compare cotizaciones gratis en 2 minutos."
+        intro="Una mudanza para adultos mayores cuesta $600-$2,500 en la mayoría de las reubicaciones en Florida e implica mucho más que cajas: reducir décadas de pertenencias, cumplir las reglas de ingreso de las comunidades 55+ y, con frecuencia, trabajar junto a hijos adultos que viven en otro estado. Las empresas de nuestra red especializadas en este tipo de mudanza aportan paciencia, ayuda para clasificar y donar, y experiencia en comunidades como The Villages, Solivita y On Top of the World. Compare cotizaciones gratis en 2 minutos."
         ctaLabel="Cotización Gratis"
         ctaHref="/es/contact/"
       />
@@ -61,7 +61,7 @@ export const Route = createFileRoute("/es/senior-moving-services/")({
             detail: "3-5 horas",
           },
           {
-            size: "Casa de 2 hab. a apartamento (downsizing)",
+            size: "Casa de 2 hab. a apartamento (reducción de pertenencias)",
             price: "$900-$1,800",
             detail: "5-8 horas",
           },
@@ -71,7 +71,7 @@ export const Route = createFileRoute("/es/senior-moving-services/")({
             detail: "La clasificación suma 1-2 días",
           },
           {
-            size: "Downsizing completo (clasificar, empacar, mudar, donar)",
+            size: "Reducción completa de pertenencias (clasificar, empacar, mudar, donar)",
             price: "$1,800-$4,500",
             detail: "2-4 días",
           },
@@ -82,7 +82,7 @@ export const Route = createFileRoute("/es/senior-moving-services/")({
         title="Qué hace distinta una mudanza para adultos mayores"
         items={[
           {
-            t: "Las decisiones de downsizing toman tiempo",
+            t: "Decidir qué conservar toma tiempo",
             d: "Pasar de una casa de 3 habitaciones a una villa de 2 significa decidir qué 40% de sus pertenencias no cabrá. Los equipos especializados reservan días de clasificación en lugar de apurarlo la mañana de la mudanza.",
           },
           {

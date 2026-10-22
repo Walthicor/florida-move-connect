@@ -72,9 +72,9 @@ export const Route = createFileRoute("/piano-movers-miami/")({
       extra={
         <section className="bg-background">
           <div className="container-page py-16 md:py-20 max-w-3xl">
-            <span className="text-xs font-semibold uppercase tracking-wider text-brand">En español</span>
+            <span className="text-xs font-semibold uppercase tracking-wider text-brand">Bilingual service</span>
             <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
-              Atención en español para propietarios en Miami
+              Can Miami Piano Movers Help You in Spanish?
             </h2>
             <p className="mt-4 text-base leading-relaxed text-ink">
               A large share of Miami-Dade homeowners prefer to arrange a move in Spanish, and
@@ -83,14 +83,13 @@ export const Route = createFileRoute("/piano-movers-miami/")({
               terms are published on our Spanish site.
             </p>
             <p className="mt-4 text-base leading-relaxed text-ink">
-              Puede solicitar sus cotizaciones en español: mismos precios, mismas
-              empresas licenciadas y aseguradas.{" "}
+              Same prices, same licensed and insured companies. Read the{" "}
               <Link to="/es/movers-in-miami/" className="font-semibold text-brand hover:underline">
-                Vea nuestra página de mudanzas en Miami en español
+                Spanish version of our Miami movers guide
               </Link>{" "}
-              o{" "}
+              or the{" "}
               <Link to="/es/piano-movers/" className="font-semibold text-brand hover:underline">
-                la guía de mudanza de pianos en español
+                Spanish version of our piano movers guide
               </Link>
               .
             </p>

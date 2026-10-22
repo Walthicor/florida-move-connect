@@ -5,10 +5,10 @@ import { PageHero, PageCostTable, PageLocalKnowledge, PageFaq } from "@/componen
 const PATH = "/es/packing-services/";
 const FAQS = [
   { q: "¿Vale la pena pagar por empaque?", a: "Sí si transporta piezas frágiles, arte, o si tiene poco tiempo. También activa cobertura de 'Full Value Protection' — si usted empaca, la empresa no cubre roturas dentro de cajas cerradas por usted." },
-  { q: "¿La empresa trae los materiales?", a: "Sí. Los planes 'Full Pack' incluyen cajas, papel, cinta y film. En 'Fragile-only' cobran los materiales aparte pero traen todo el día del servicio." },
+  { q: "¿La empresa trae los materiales?", a: "Sí. Los planes de embalaje completo incluyen cajas, papel, cinta y film. En el plan solo frágiles cobran los materiales aparte pero traen todo el día del servicio." },
   { q: "¿Puedo empacar parcialmente?", a: "Sí — 'Partial Pack'. Usted empaca ropa y libros, la empresa empaca cocina, arte y frágiles. Baja costo y mantiene la cobertura sobre lo que ellos empacaron." },
   { q: "¿Qué incluye exactamente el servicio de embalaje?", a: "Materiales grado mudanza, mano de obra del equipo, etiquetado por habitación e inventario básico. El desempaque y el retiro de cajas normalmente se cotizan aparte." },
-  { q: "¿Quién empaca un piano o una obra de arte?", a: "Un equipo especializado. El piano requiere crew propio con tabla de deslizamiento y valuación declarada; el arte y los espejos se protegen en cajas a medida (custom crating), no en cajas estándar." },
+  { q: "¿Quién empaca un piano o una obra de arte?", a: "Un equipo especializado. El piano requiere equipo propio con tabla de deslizamiento y valuación declarada; el arte y los espejos se protegen en cajas a medida (custom crating), no en cajas estándar." },
 ];
 
 export const Route = createFileRoute("/es/packing-services/")({
@@ -17,7 +17,7 @@ export const Route = createFileRoute("/es/packing-services/")({
       path: PATH,
       lang: "es",
       title: "Servicios de Embalaje Profesional en Florida | Cotice",
-      description: "Servicios de embalaje profesional en Florida: full pack, solo frágiles y materiales incluidos, con precios 2026. Compare hasta 4 cotizaciones gratis hoy mismo.",
+      description: "Servicios de embalaje profesional en Florida: embalaje completo, solo frágiles y materiales incluidos, con precios 2026. Compare hasta 4 cotizaciones gratis hoy mismo.",
       faqs: FAQS,
       service: { serviceType: "Professional Packing Services", areaServed: "Florida" },
     }),
@@ -37,18 +37,18 @@ export const Route = createFileRoute("/es/packing-services/")({
         col2="Rango de costo"
         col3="Detalle"
         rows={[
-          { size: "Fragile-only", price: "$200-$500", detail: "Solo vajilla, arte, TVs, lámparas" },
-          { size: "Full pack (2 hab)", price: "$500-$900", detail: "Toda la casa, incluye materiales" },
-          { size: "Full pack (3-4 hab)", price: "$900-$1,800", detail: "Casa completa · 1-2 días" },
+          { size: "Solo frágiles", price: "$200-$500", detail: "Solo vajilla, arte, TVs, lámparas" },
+          { size: "Embalaje completo (2 hab)", price: "$500-$900", detail: "Toda la casa, incluye materiales" },
+          { size: "Embalaje completo (3-4 hab)", price: "$900-$1,800", detail: "Casa completa · 1-2 días" },
           { size: "Solo materiales", price: "$150-$400", detail: "Cajas, papel, cinta, film · entrega previa" },
         ]}
       />
       <PageLocalKnowledge
-        eyebrow="Full pack vs fragile-only"
+        eyebrow="Embalaje completo vs. solo frágiles"
         title="Qué nivel de empaque conviene"
         items={[
-          { t: "Full pack", d: "Empresa empaca todo. Ideal si mueve por trabajo, tiene niños o poco tiempo. Cobertura completa." },
-          { t: "Fragile-only", d: "Empresa empaca cristales, arte y electrónica. Usted empaca ropa/libros. Buen balance costo-protección." },
+          { t: "Embalaje completo", d: "Empresa empaca todo. Ideal si mueve por trabajo, tiene niños o poco tiempo. Cobertura completa." },
+          { t: "Solo frágiles", d: "Empresa empaca cristales, arte y electrónica. Usted empaca ropa/libros. Buen balance costo-protección." },
           { t: "Partial pack", d: "Personalizado: usted define qué empacan ellos. Mantiene cobertura en lo empacado por la empresa." },
         ]}
       />

@@ -100,7 +100,7 @@ const FAQS = [
   },
   {
     q: "Do movers in Miami speak Spanish?",
-    a: "Many do — Miami-Dade is majority Spanish-speaking, and most crews in our network offer bilingual service. If you prefer to compare quotes in Spanish, visit nuestra página en español de mudanzas en Miami or note your preference on the quote form.",
+    a: "Many do — Miami-Dade is majority Spanish-speaking, and most crews in our network offer bilingual service. If you prefer to compare quotes in Spanish, read the Spanish version of our Miami movers guide or note your preference on the quote form.",
   },
   {
     q: "How far in advance should I book Miami movers?",
@@ -246,15 +246,15 @@ function MiamiPage() {
         <div className="container-page py-14 max-w-3xl">
           <div className="flex items-center gap-2">
             <Languages className="h-5 w-5 text-brand" />
-            <h2 className="font-display text-2xl md:text-3xl font-bold">Help in Spanish / Ayuda en español</h2>
+            <h2 className="font-display text-2xl md:text-3xl font-bold">Can You Get Help in Spanish?</h2>
           </div>
           <p className="mt-4 text-base leading-relaxed text-navy-foreground/90">
-            ¿Prefiere comparar cotizaciones en español? La mayoría de las cuadrillas de nuestra red
-            en Miami-Dade ofrecen servicio bilingüe. Visite nuestra página{" "}
+            Prefer to compare quotes in Spanish? Most crews in our Miami-Dade network offer
+            bilingual service. Read the{" "}
             <Link to="/es/movers-in-miami/" className="font-semibold text-brand hover:underline">
-              mudanzas en Miami en español
+              Spanish version of our Miami movers guide
             </Link>{" "}
-            o indique su preferencia de idioma en el formulario de cotización.
+            or note your language preference on the quote form.
           </p>
         </div>
       </section>

@@ -47,7 +47,7 @@ const AREAS = [
 const FAQS = [
   {
     q: "How much does it cost to move a piano in Tampa?",
-    a: "Uprights $150-$400, baby grands $250-$550, grands $350-$800 locally, plus $40-$100 per flight of stairs. Piano moves quote flat-rate, so comparing 2-3 quotes takes minutes and routinely saves $100+.",
+    a: "As estimates, local piano moving in Tampa typically runs $150-$400 for uprights, $250-$550 for baby grands and $350-$800 for grands, plus roughly $40-$100 per flight of stairs. Final pricing depends on the piano, stairs, distance and access at both addresses, so comparing 2-3 quotes before you book is worthwhile.",
   },
   {
     q: "Can regular movers take my piano with the rest of the house?",
@@ -67,7 +67,7 @@ const FAQS = [
   },
   {
     q: "How do I find piano movers near me in Tampa?",
-    a: "Ask three questions before comparing price: do you carry a skid board and piano straps, are you insured for the instrument's full value, and have you worked my building or neighborhood before? One form here sends those questions to up to 4 Tampa Bay specialists at once.",
+    a: "Search for a piano moving company in Tampa that serves your neighborhood, then ask three questions before comparing price: do you carry a skid board and piano straps, are you insured for the instrument's full value, and have you worked my building or area before? One form here sends your request to up to 4 Tampa Bay piano specialists at once.",
   },
   {
     q: "What happens if my piano is damaged during the move?",
@@ -81,9 +81,9 @@ function PianoMoversTampaPage() {
       <Hero />
       <NetworkDisclosure />
       <PianoTypes />
-      <CostTable />
       <AccessChallenges />
       <HowItWorks />
+      <CostTable />
       <Insurance />
       <Areas />
       <Faq />
@@ -104,12 +104,13 @@ function Hero() {
           Piano Movers in <span className="text-brand">Tampa, FL</span>
         </h1>
         <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
-          Moving a piano in Tampa costs $150-$400 for an upright and $300-$800 for a grand,
-          depending on stairs, distance and crating. Through Florida Movers Direct you
-          compare free quotes from specialty piano movers in Tampa — crews with skid boards,
-          locking straps and the humidity know-how a 600-pound instrument demands. A general
-          crew improvising with furniture dollies is how soundboards crack; with an
-          instrument worth thousands, the right crew costs less than the wrong repair.
+          Looking for piano movers in Tampa, Florida? Piano moving in Tampa typically runs
+          $150-$400 for an upright and $350-$800 for a grand (estimates; stairs, distance and
+          access change the final price). Through Florida Movers Direct you compare free
+          quotes from a piano moving company in Tampa that uses skid boards, locking straps
+          and humidity-aware placement. A general crew improvising with furniture dollies is
+          how soundboards crack; with an instrument worth thousands, the right crew can cost
+          less than the wrong repair.
         </p>
         <div className="mt-7">
           <Link to="/contact/" className="btn-cta btn-cta-hover text-base">
@@ -128,8 +129,14 @@ function CostTable() {
         <div className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-wider text-brand">Pricing</span>
           <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
-            Piano Moving Costs in Tampa (2026)
+            Piano Moving Cost Factors in Tampa
           </h2>
+          <p className="mt-4 text-base text-muted-foreground leading-relaxed">
+            Four things drive the price of piano moving in Tampa: the type of piano
+            (an upright versus a grand), the number of stairs, the distance between
+            addresses, and access at both ends (elevators, tight doorways, long carries).
+            The ranges below are estimates, not quotes.
+          </p>
         </div>
         <div className="mt-8 overflow-hidden rounded-2xl border border-border shadow-card">
           <table className="hidden sm:table w-full text-left">
@@ -179,11 +186,11 @@ function CostTable() {
           </div>
         </div>
         <p className="mt-6 text-sm text-muted-foreground leading-relaxed max-w-3xl">
-          Local Tampa Bay pricing — typical ranges labeled as estimates; your quote depends
+          Local Tampa Bay pricing — all figures are estimates; your quote depends
           on piano type, stair count, distance between addresses and access at both ends.
           Long-distance piano transport (Tampa to Miami, Orlando or out of state) is quoted
-          by route — typically $700-$2,500. Every quote includes padding, straps, skid board
-          and basic valuation. For a deeper breakdown by piano type and scenario, see{" "}
+          by route, so ask each mover what is included (padding, straps, skid board and the
+          level of valuation coverage) before comparing prices. For a deeper breakdown by piano type and scenario, see{" "}
           <Link to="/piano-moving-cost/" className="text-brand font-semibold underline underline-offset-2">
             what piano moving costs in Florida
           </Link>
@@ -236,8 +243,12 @@ function Areas() {
       <div className="container-page py-16 md:py-20 max-w-4xl">
         <span className="text-xs font-semibold uppercase tracking-wider text-brand">Coverage</span>
         <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
-          Areas We Cover
+          Service Area: Piano Movers Near Me Across Tampa Bay
         </h2>
+        <p className="mt-4 text-base text-muted-foreground leading-relaxed">
+          We match you with piano movers in Tampa, St. Petersburg, Clearwater, Brandon,
+          Riverview and Wesley Chapel, plus the neighborhoods and suburbs below.
+        </p>
         <div className="mt-8 flex flex-wrap gap-2">
           {AREAS.map((a) => (
             <span
@@ -353,9 +364,9 @@ function Insurance() {
           Insurance and What to Ask Before Hiring a Tampa Piano Mover
         </h2>
         <p className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
-          The default coverage on most moves pays by weight — roughly $0.60 per
-          pound on long-distance shipments — which values a $10,000 grand at a
-          few hundred dollars. Before you book, ask:
+          The basic coverage included with many moves pays by weight, not by the
+          value of the instrument, so it can fall far short of what a grand piano
+          is worth. Before you hire a Tampa piano moving company, ask:
         </p>
         <ul className="mt-8 space-y-4">
           {INSURANCE_ASKS.map((q) => (

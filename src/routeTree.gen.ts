@@ -65,6 +65,7 @@ import { Route as EsPianoMoversIndexRouteImport } from './routes/es.piano-movers
 import { Route as EsPianoMoversTampaIndexRouteImport } from './routes/es.piano-movers-tampa.index'
 import { Route as EsPackingServicesIndexRouteImport } from './routes/es.packing-services.index'
 import { Route as EsMoversInTampaIndexRouteImport } from './routes/es.movers-in-tampa.index'
+import { Route as EsMoversInRiverviewIndexRouteImport } from './routes/es.movers-in-riverview.index'
 import { Route as EsMoversInOrlandoIndexRouteImport } from './routes/es.movers-in-orlando.index'
 import { Route as EsMoversInOcalaIndexRouteImport } from './routes/es.movers-in-ocala.index'
 import { Route as EsMoversInNaplesIndexRouteImport } from './routes/es.movers-in-naples.index'
@@ -371,6 +372,12 @@ const EsMoversInTampaIndexRoute = EsMoversInTampaIndexRouteImport.update({
   path: '/es/movers-in-tampa/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EsMoversInRiverviewIndexRoute =
+  EsMoversInRiverviewIndexRouteImport.update({
+    id: '/es/movers-in-riverview/',
+    path: '/es/movers-in-riverview/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const EsMoversInOrlandoIndexRoute = EsMoversInOrlandoIndexRouteImport.update({
   id: '/es/movers-in-orlando/',
   path: '/es/movers-in-orlando/',
@@ -516,6 +523,7 @@ export interface FileRoutesByFullPath {
   '/es/movers-in-naples/': typeof EsMoversInNaplesIndexRoute
   '/es/movers-in-ocala/': typeof EsMoversInOcalaIndexRoute
   '/es/movers-in-orlando/': typeof EsMoversInOrlandoIndexRoute
+  '/es/movers-in-riverview/': typeof EsMoversInRiverviewIndexRoute
   '/es/movers-in-tampa/': typeof EsMoversInTampaIndexRoute
   '/es/packing-services/': typeof EsPackingServicesIndexRoute
   '/es/piano-movers-tampa/': typeof EsPianoMoversTampaIndexRoute
@@ -589,6 +597,7 @@ export interface FileRoutesByTo {
   '/es/movers-in-naples': typeof EsMoversInNaplesIndexRoute
   '/es/movers-in-ocala': typeof EsMoversInOcalaIndexRoute
   '/es/movers-in-orlando': typeof EsMoversInOrlandoIndexRoute
+  '/es/movers-in-riverview': typeof EsMoversInRiverviewIndexRoute
   '/es/movers-in-tampa': typeof EsMoversInTampaIndexRoute
   '/es/packing-services': typeof EsPackingServicesIndexRoute
   '/es/piano-movers-tampa': typeof EsPianoMoversTampaIndexRoute
@@ -663,6 +672,7 @@ export interface FileRoutesById {
   '/es/movers-in-naples/': typeof EsMoversInNaplesIndexRoute
   '/es/movers-in-ocala/': typeof EsMoversInOcalaIndexRoute
   '/es/movers-in-orlando/': typeof EsMoversInOrlandoIndexRoute
+  '/es/movers-in-riverview/': typeof EsMoversInRiverviewIndexRoute
   '/es/movers-in-tampa/': typeof EsMoversInTampaIndexRoute
   '/es/packing-services/': typeof EsPackingServicesIndexRoute
   '/es/piano-movers-tampa/': typeof EsPianoMoversTampaIndexRoute
@@ -738,6 +748,7 @@ export interface FileRouteTypes {
     | '/es/movers-in-naples/'
     | '/es/movers-in-ocala/'
     | '/es/movers-in-orlando/'
+    | '/es/movers-in-riverview/'
     | '/es/movers-in-tampa/'
     | '/es/packing-services/'
     | '/es/piano-movers-tampa/'
@@ -811,6 +822,7 @@ export interface FileRouteTypes {
     | '/es/movers-in-naples'
     | '/es/movers-in-ocala'
     | '/es/movers-in-orlando'
+    | '/es/movers-in-riverview'
     | '/es/movers-in-tampa'
     | '/es/packing-services'
     | '/es/piano-movers-tampa'
@@ -884,6 +896,7 @@ export interface FileRouteTypes {
     | '/es/movers-in-naples/'
     | '/es/movers-in-ocala/'
     | '/es/movers-in-orlando/'
+    | '/es/movers-in-riverview/'
     | '/es/movers-in-tampa/'
     | '/es/packing-services/'
     | '/es/piano-movers-tampa/'
@@ -958,6 +971,7 @@ export interface RootRouteChildren {
   EsMoversInNaplesIndexRoute: typeof EsMoversInNaplesIndexRoute
   EsMoversInOcalaIndexRoute: typeof EsMoversInOcalaIndexRoute
   EsMoversInOrlandoIndexRoute: typeof EsMoversInOrlandoIndexRoute
+  EsMoversInRiverviewIndexRoute: typeof EsMoversInRiverviewIndexRoute
   EsMoversInTampaIndexRoute: typeof EsMoversInTampaIndexRoute
   EsPackingServicesIndexRoute: typeof EsPackingServicesIndexRoute
   EsPianoMoversTampaIndexRoute: typeof EsPianoMoversTampaIndexRoute
@@ -1362,6 +1376,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EsMoversInTampaIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/es/movers-in-riverview/': {
+      id: '/es/movers-in-riverview/'
+      path: '/es/movers-in-riverview'
+      fullPath: '/es/movers-in-riverview/'
+      preLoaderRoute: typeof EsMoversInRiverviewIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/es/movers-in-orlando/': {
       id: '/es/movers-in-orlando/'
       path: '/es/movers-in-orlando'
@@ -1534,6 +1555,7 @@ const rootRouteChildren: RootRouteChildren = {
   EsMoversInNaplesIndexRoute: EsMoversInNaplesIndexRoute,
   EsMoversInOcalaIndexRoute: EsMoversInOcalaIndexRoute,
   EsMoversInOrlandoIndexRoute: EsMoversInOrlandoIndexRoute,
+  EsMoversInRiverviewIndexRoute: EsMoversInRiverviewIndexRoute,
   EsMoversInTampaIndexRoute: EsMoversInTampaIndexRoute,
   EsPackingServicesIndexRoute: EsPackingServicesIndexRoute,
   EsPianoMoversTampaIndexRoute: EsPianoMoversTampaIndexRoute,

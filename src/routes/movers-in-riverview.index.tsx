@@ -43,7 +43,6 @@ export const Route = createFileRoute("/movers-in-riverview/")({
       title: "Movers in Riverview FL | Local Rates & Free Quotes",
       description: "Movers in Riverview charge $95-$150 an hour, with $650-$1,100 typical for a two-bedroom. Compare licensed South Hillsborough crews and get free written quotes.",
       faqs: FAQS,
-      noAlternates: true,
     });
     return { ...base, scripts: [...base.scripts, ...moversCitySchema("Riverview", PATH)] };
   },
@@ -113,7 +112,9 @@ export const Route = createFileRoute("/movers-in-riverview/")({
             <Link to="/apartment-movers/">apartment and condo move-in requirements</Link> cover the
             elevator and COI side if you are leaving a Brandon or Tampa complex. Households with an
             instrument should start with{" "}
-            <Link to="/piano-movers-tampa/">Tampa-area piano moving crews</Link>.
+            <Link to="/piano-movers-tampa/">Tampa-area piano moving crews</Link>. Prefer to compare
+            quotes in Spanish? Read the{" "}
+            <Link to={"/es/movers-in-riverview/" as "/"}>Spanish version of our Riverview movers guide</Link>.
           </p>
         </ProseSection>
       }

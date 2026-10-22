@@ -30,6 +30,7 @@ const LABELS: Record<string, { en: string; es: string }> = {
   "/movers-in-miami/": { en: "Movers in Miami", es: "Mudanzas en Miami" },
   "/movers-in-hialeah/": { en: "Movers in Hialeah", es: "Mudanzas en Hialeah" },
   "/movers-in-tampa/": { en: "Movers in Tampa", es: "Mudanzas en Tampa" },
+  "/movers-in-riverview/": { en: "Movers in Riverview", es: "Mudanzas en Riverview" },
   "/movers-in-orlando/": { en: "Movers in Orlando", es: "Mudanzas en Orlando" },
   "/movers-in-ocala/": { en: "Movers in Ocala", es: "Mudanzas en Ocala" },
   "/movers-in-the-villages/": { en: "Movers in The Villages", es: "Mudanzas en The Villages" },

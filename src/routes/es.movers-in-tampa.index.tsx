@@ -1,4 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ProseSection } from "@/components/site/ContentSections";
 import { pageHead } from "@/lib/seo";
 import { PageHero, PageCostTable, PageLocalKnowledge, PageNeighborhoods, PageFaq } from "@/components/site/PageBlocks";
 
@@ -45,7 +46,7 @@ export const Route = createFileRoute("/es/movers-in-tampa/")({
         eyebrow="Conocimiento local"
         title="Particularidades de mudarse en Tampa"
         items={[
-          { t: "Cruce de bahía", d: "Howard Frankland, Gandhy y Courtney Campbell — sume 20-40 min ida y vuelta al reloj." },
+          { t: "Cruce de bahía", d: "Howard Frankland, Gandy y Courtney Campbell — sume 20-40 min ida y vuelta al reloj." },
           { t: "Tormentas de verano", d: "Programe cargas antes de las 2 PM (mayo-oct) para evitar chubascos." },
           { t: "Bungalows históricos", d: "Hyde Park y Seminole Heights — puertas estrechas y escalones frontales. Requieren evaluación previa." },
         ]}
@@ -57,6 +58,13 @@ export const Route = createFileRoute("/es/movers-in-tampa/")({
           "Hyde Park", "SoHo", "Downtown Tampa", "Westchase", "Carrollwood", "Brandon", "New Tampa", "South Tampa", "Davis Islands", "St. Petersburg", "Clearwater", "Riverview", "Wesley Chapel",
         ]}
       />
+      <ProseSection title="¿Se muda al sur de Tampa?" bg="bg-background">
+        <p>
+          Si su nueva casa está en South Hillsborough, revise las{" "}
+          <Link to={"/es/movers-in-riverview/" as "/"}>mudanzas en Riverview</Link>, con precios,
+          reglas de HOA y zonas como Apollo Beach y Gibsonton.
+        </p>
+      </ProseSection>
       <PageFaq title="Preguntas frecuentes" faqs={FAQS} />
     </>
   ),

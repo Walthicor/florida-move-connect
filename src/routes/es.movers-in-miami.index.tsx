@@ -4,7 +4,7 @@ import { PageHero, PageCostTable, PageLocalKnowledge, PageNeighborhoods, PageRou
 
 const PATH = "/es/movers-in-miami/";
 const FAQS = [
-  { q: "¿Cuánto cuesta mudarse en Miami?", a: "Local: $110-$180/hr. High-rise/condo sube 15-25% por tiempo extra en ascensores y COIs. Un 2 hab típico: $900-$1,500 total." },
+  { q: "¿Cuánto cuesta mudarse en Miami?", a: "Como estimado local: $450-$900 para estudios y 1 habitación y $850-$1,500 para casas de 2-3 habitaciones, con tarifas de $100-$160 por hora para dos trabajadores. Las torres y condos suelen sumar $100-$300 por ascensor y acarreo. Solo la cotización escrita es definitiva." },
   { q: "¿Necesito COI para mi condo en Brickell?", a: "Sí. Todos los buildings en Brickell, Downtown y Miami Beach lo exigen 48-72 hrs antes. La empresa lo emite gratis." },
   { q: "¿Se puede mudar en fin de semana en Miami Beach?", a: "Depende del building. Muchos edificios de South Beach prohíben mudanzas los domingos y algunos limitan sábado a 9 AM-5 PM." },
 ];
@@ -24,7 +24,7 @@ export const Route = createFileRoute("/es/movers-in-miami/")({
       <PageHero
         eyebrow="Miami · Licenciadas FDACS"
         h1="Empresas de Mudanzas en Miami"
-        intro="Las mudanzas locales en Miami cuestan $95-$150 por hora: $700-$1,300 para 2 habitaciones y $1,100-$1,900 desde un condo en torre. Especialistas en Brickell y Miami Beach, Coral Gables y Coconut Grove. Manejamos COIs, ascensores de carga y reglas del building."
+        intro="Las mudanzas locales en Miami cuestan $100-$160 por hora con dos trabajadores y camión: como estimado, $450-$900 para 1 habitación y $850-$1,500 para 2-3 habitaciones, más $100-$300 en condos de torre. Compañías con experiencia en Brickell, Miami Beach, Coral Gables y Coconut Grove que manejan COIs, ascensores de carga y reglas del edificio."
         ctaLabel="Cotización Gratis"
         ctaHref="/es/contact/"
       />
@@ -32,13 +32,13 @@ export const Route = createFileRoute("/es/movers-in-miami/")({
         eyebrow="Precios 2026 · Miami"
         title="Costos típicos de mudanza en Miami"
         col1="Tamaño"
-        col2="Casa/Townhouse"
-        col3="Condo/High-rise"
+        col2="Rango estimado"
+        col3="Cuadrilla y tiempo"
         rows={[
-          { size: "Studio / 1 hab", price: "$400-$700", detail: "$500-$900" },
-          { size: "2 habitaciones", price: "$700-$1,200", detail: "$900-$1,600" },
-          { size: "3 habitaciones", price: "$1,100-$1,800", detail: "$1,400-$2,400" },
-          { size: "4+ habitaciones", price: "$1,700-$2,800", detail: "$2,200-$3,800" },
+          { size: "Estudio / 1 habitación", price: "$450-$900", detail: "$100-$160/hora, 2 trabajadores" },
+          { size: "2 habitaciones", price: "$700-$1,200", detail: "3 trabajadores, 4-6 hrs" },
+          { size: "3 habitaciones", price: "$850-$1,500", detail: "3-4 trabajadores, 6-8 hrs" },
+          { size: "Recargo por condo / torre", price: "+$100-$300", detail: "Ascensor y acarreo largo" },
         ]}
       />
       <PageLocalKnowledge

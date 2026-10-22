@@ -4,7 +4,7 @@ import { PageHero, PageCostTable, PageLocalKnowledge, PageNeighborhoods, PageFaq
 
 const PATH = "/es/movers-in-orlando/";
 const FAQS = [
-  { q: "¿Cuánto cuesta mudarse en Orlando?", a: "Local: $95-$140/hr. 2 hab: $700-$1,200. Mudanzas en corredores turísticos suman 30-60 min por tráfico." },
+  { q: "¿Cuánto cuesta mudarse en Orlando?", a: "Como estimado: $400-$750 para 1 habitación y $750-$1,300 para 2-3 habitaciones, con tarifas de $90-$140 por hora para dos trabajadores, un poco menos que Miami y Tampa. Las mudanzas en corredores turísticos pueden sumar 30-60 minutos por tráfico." },
   { q: "¿Es peor mudarse a fin de mes?", a: "Sí — Orlando tiene alta rotación de rentas los últimos 3 días del mes. Reserve con 4-6 semanas si no puede evitar esa ventana." },
   { q: "¿Qué pasa con I-4?", a: "I-4 entre Disney y Downtown es cuello de botella 6-9 AM y 3-7 PM. Programe cargas fuera de esas ventanas." },
 ];
@@ -24,7 +24,7 @@ export const Route = createFileRoute("/es/movers-in-orlando/")({
       <PageHero
         eyebrow="Orlando · Licenciadas FDACS"
         h1="Empresas de Mudanzas en Orlando"
-        intro="Las mudanzas locales en Orlando cuestan $95-$140 por hora: $600-$1,150 para un apartamento de 2 habitaciones. Servicio en toda el área metro: Downtown, Winter Park, Lake Nona, Dr. Phillips, Kissimmee y Windermere. Hasta 4 cotizaciones gratis de empresas licenciadas."
+        intro="Las mudanzas locales en Orlando cuestan $90-$140 por hora: como estimado, $600-$1,000 para un apartamento de 2 habitaciones. Servicio en toda el área metro: Downtown, Winter Park, Lake Nona, Dr. Phillips, Kissimmee y Windermere. Hasta 4 cotizaciones gratis de empresas licenciadas."
         ctaLabel="Cotización Gratis"
         ctaHref="/es/contact/"
       />
@@ -35,10 +35,10 @@ export const Route = createFileRoute("/es/movers-in-orlando/")({
         col2="Rango"
         col3="Duración"
         rows={[
-          { size: "Studio / 1 hab", price: "$350-$650", detail: "3-5 hrs" },
-          { size: "2 habitaciones", price: "$600-$1,150", detail: "5-7 hrs" },
-          { size: "3 habitaciones", price: "$950-$1,700", detail: "7-9 hrs" },
-          { size: "4+ habitaciones", price: "$1,500-$2,600", detail: "9-12 hrs" },
+          { size: "Estudio / 1 habitación", price: "$400-$750", detail: "3-4 hrs" },
+          { size: "2 habitaciones", price: "$600-$1,000", detail: "4-6 hrs" },
+          { size: "3 habitaciones", price: "$750-$1,300", detail: "6-8 hrs" },
+          { size: "4+ habitaciones", price: "$1,200-$2,200", detail: "8-10 hrs" },
         ]}
       />
       <PageLocalKnowledge

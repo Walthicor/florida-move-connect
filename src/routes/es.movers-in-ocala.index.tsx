@@ -6,7 +6,7 @@ const PATH = "/es/movers-in-ocala/";
 const FAQS = [
   { q: "¿Sirven a The Villages y Marion County?", a: "Sí, todo Marion County incluyendo The Villages, Belleview y Dunnellon. The Villages tiene reglas específicas de acceso." },
   { q: "¿Manejan mudanzas de fincas de caballos?", a: "Sí. Coordinamos con empresas especializadas en fincas: cercas, arneses, equipo pesado. Requiere planificación adicional." },
-  { q: "¿Cuánto cuesta Ocala → The Villages?", a: "~40 millas. Suele cotizarse como local extendida: $500-$1,200 según tamaño." },
+  { q: "¿Cuánto cuesta Ocala → The Villages?", a: "Es la ruta más común desde Ocala. Como estimado, $450-$900 para viviendas típicas con reglas de acceso de la comunidad; el precio final depende del tamaño y la fecha." },
 ];
 
 export const Route = createFileRoute("/es/movers-in-ocala/")({
@@ -35,10 +35,10 @@ export const Route = createFileRoute("/es/movers-in-ocala/")({
         col2="Rango"
         col3="Notas"
         rows={[
-          { size: "Studio / 1 hab", price: "$300-$550", detail: "Suburbana estándar" },
-          { size: "2 habitaciones", price: "$550-$1,000", detail: "" },
-          { size: "3 habitaciones", price: "$900-$1,500", detail: "" },
-          { size: "Ocala → The Villages", price: "$500-$1,400", detail: "~40 mi, cotizada como local extendida" },
+          { size: "Estudio / 1 habitación", price: "$350-$700", detail: "Estimado local" },
+          { size: "2-3 habitaciones", price: "$700-$1,200", detail: "Estimado local" },
+          { size: "4+ habitaciones", price: "$1,100-$2,000", detail: "Estimado local" },
+          { size: "Ocala → The Villages", price: "$450-$900", detail: "Ruta más común" },
         ]}
       />
       <PageLocalKnowledge

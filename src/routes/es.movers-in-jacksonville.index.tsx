@@ -35,9 +35,10 @@ export const Route = createFileRoute("/es/movers-in-jacksonville/")({
         col2="Rango"
         col3="Notas"
         rows={[
-          { size: "Studio / 1 hab", price: "$350-$600", detail: "3-5 hrs" },
-          { size: "2 habitaciones", price: "$600-$1,100", detail: "5-7 hrs" },
-          { size: "3 habitaciones", price: "$950-$1,700", detail: "7-9 hrs" },
+          { size: "Estudio / 1 habitación", price: "$400-$800", detail: "Estimado local" },
+          { size: "2-3 habitaciones", price: "$750-$1,300", detail: "Estimado local" },
+          { size: "4+ habitaciones", price: "$1,200-$2,200", detail: "Estimado local" },
+          { size: "Cruce de ciudad (Beaches a Westside)", price: "+1-2 horas", detail: "Tiempo de manejo facturable" },
           { size: "PCS militar", price: "Cotización especial", detail: "GBL / DPS coordinado" },
         ]}
       />

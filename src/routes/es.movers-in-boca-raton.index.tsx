@@ -32,13 +32,13 @@ export const Route = createFileRoute("/es/movers-in-boca-raton/")({
         eyebrow="Precios 2026 · Boca Raton"
         title="Costos típicos de mudanza en Boca"
         col1="Tamaño"
-        col2="Casa / townhouse"
-        col3="Condo / high-rise"
+        col2="Rango estimado"
+        col3="Notas"
         rows={[
-          { size: "Studio / 1 hab", price: "$400-$700", detail: "$500-$900" },
-          { size: "2 habitaciones", price: "$700-$1,300", detail: "$900-$1,700" },
-          { size: "3 habitaciones", price: "$1,100-$2,000", detail: "$1,500-$2,600" },
-          { size: "4+ habitaciones", price: "$1,800-$3,000", detail: "$2,400-$4,000" },
+          { size: "Estudio / 1 habitación", price: "$450-$900", detail: "Estimado local" },
+          { size: "2-3 habitaciones", price: "$850-$1,500", detail: "Estimado local" },
+          { size: "4+ habitaciones", price: "$1,400-$2,600", detail: "Estimado local" },
+          { size: "Recargo por condo / torre", price: "+$100-$300", detail: "Ascensor y acarreo largo" },
         ]}
       />
       <PageLocalKnowledge

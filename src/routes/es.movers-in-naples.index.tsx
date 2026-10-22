@@ -32,13 +32,13 @@ export const Route = createFileRoute("/es/movers-in-naples/")({
         eyebrow="Precios 2026 · Naples"
         title="Costos típicos de mudanza en Naples"
         col1="Tamaño"
-        col2="Temporada baja (may-sep)"
-        col3="Temporada alta (oct-abr)"
+        col2="Rango estimado"
+        col3="Notas"
         rows={[
-          { size: "Studio / 1 hab", price: "$350-$650", detail: "$450-$850" },
-          { size: "2 habitaciones", price: "$650-$1,200", detail: "$850-$1,600" },
-          { size: "3 habitaciones", price: "$1,000-$1,800", detail: "$1,400-$2,400" },
-          { size: "Comunidades exclusivas", price: "Cotización especial", detail: "Alta cobertura y personal extra" },
+          { size: "Estudio / 1 habitación", price: "$450-$900", detail: "Estimado local" },
+          { size: "2-3 habitaciones", price: "$850-$1,500", detail: "Estimado local" },
+          { size: "4+ habitaciones / casas de lujo", price: "$1,500-$3,000+", detail: "Según inventario y acceso" },
+          { size: "Guante blanco / antigüedades", price: "Cotizado por inventario", detail: "Manejo especializado" },
         ]}
       />
       <PageLocalKnowledge

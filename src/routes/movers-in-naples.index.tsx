@@ -43,8 +43,8 @@ function NaplesPage() {
         intro="Local Naples moves run $450-$900 for a 1-bedroom and $850-$1,500 for a 2-3 bedroom home — with a market rhythm unlike anywhere else in Florida. Naples runs on the season: October through April, the snowbird wave multiplies demand and gated-community move-in rules do the scheduling. Our Collier County movers live on that calendar."
       />
       <NetworkDisclosure />
-      <SimpleCostTable title="Naples Moving Costs (2026)" rows={COSTS} />
-      <LocalKnowledge title="Moving in Naples: The Season Sets the Rules" items={LOCAL} />
+      <SimpleCostTable title="How Much Do Movers Cost in Naples?" rows={COSTS} />
+      <LocalKnowledge title="How Does the Season Affect a Naples Move?" items={LOCAL} />
       <section className="bg-surface-alt">
         <div className="container-page py-14 max-w-3xl">
           <h2 className="font-display text-2xl md:text-3xl font-bold text-ink">
@@ -71,7 +71,9 @@ function NaplesPage() {
         <p>
           Comparing the coast? Look at{" "}
           <Link to="/movers-in-boca-raton/">Boca Raton condo movers</Link> across Alligator Alley and{" "}
-          <Link to="/movers-in-miami/">Miami moving companies</Link> for Miami-Dade rates. Seasonal
+          <Link to="/movers-in-miami/">Miami moving companies</Link> for Miami-Dade rates, or head up
+          the Gulf Coast to{" "}
+          <Link to="/movers-in-sarasota/">Sarasota, Bradenton and Lakewood Ranch movers</Link>. Seasonal
           residents often pair a move with{" "}
           <Link to="/storage-solutions/">climate-controlled storage in Florida</Link>, and
           white-glove households usually add{" "}

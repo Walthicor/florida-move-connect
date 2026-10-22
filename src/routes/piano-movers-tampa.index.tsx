@@ -262,7 +262,15 @@ function Areas() {
         </div>
         <p className="mt-6 text-sm text-muted-foreground leading-relaxed">
           Plus Clearwater, Largo and St. Petersburg across the bay. Hillsborough, Pinellas
-          and Pasco counties, daily.
+          and Pasco counties, daily. Moving the whole household south of the city? See{" "}
+          <Link to="/movers-in-riverview/" className="text-brand font-semibold underline underline-offset-2">
+            Riverview and South Hillsborough movers
+          </Link>{" "}
+          or{" "}
+          <Link to="/movers-in-sarasota/" className="text-brand font-semibold underline underline-offset-2">
+            Sarasota and Bradenton moving companies
+          </Link>
+          .
         </p>
       </div>
     </section>
@@ -296,9 +304,9 @@ function PianoTypes() {
           ))}
         </div>
         <p className="mt-8 text-sm text-muted-foreground leading-relaxed max-w-3xl">
-          Statewide coverage for every type — see the{" "}
+          Statewide coverage for every type — compare{" "}
           <Link to="/piano-movers/" className="text-brand font-semibold underline underline-offset-2">
-            Florida piano moving hub
+            piano movers across Florida
           </Link>
           , or the dedicated guide for{" "}
           <Link to="/grand-piano-movers/" className="text-brand font-semibold underline underline-offset-2">

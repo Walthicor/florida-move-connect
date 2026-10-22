@@ -421,8 +421,10 @@ function ArticleHeader({ post }: { post: BlogPost }) {
       <div className="container-page pt-8 md:pt-10 max-w-[820px]">
         <img
           src={post.image}
+          width={1280}
+          height={720}
           alt={post.imageAlt}
-          className="w-full rounded-2xl object-cover aspect-[16/9] shadow-soft"
+          className="w-full h-auto rounded-2xl object-cover aspect-[16/9] shadow-soft"
         />
       </div>
     </>
@@ -1736,7 +1738,7 @@ function NeighborhoodsBody() {
           <Link to="/movers-in-boca-raton/" className="text-brand underline">Boca Raton</Link>. Coming from out of state? Compare{" "}
           <Link to="/long-distance-movers/" className="text-brand underline">long-distance movers</Link>{" "}
           and read our{" "}
-          <a href="/blog/moving-to-florida-guide/" className="text-brand underline">
+          <a href="/blog/interstate-move-to-florida-timeline/" className="text-brand underline">
             complete guide to moving to Florida
           </a>
           .
@@ -1808,7 +1810,7 @@ function RelatedInSilo({ slug }: { slug: string }) {
             className="group rounded-2xl border border-border bg-white overflow-hidden shadow-soft hover:-translate-y-0.5 hover:border-brand transition"
           >
             <div className="aspect-[16/10] overflow-hidden bg-surface-alt">
-              <img src={p.image} alt={p.imageAlt} loading="lazy" className="h-full w-full object-cover group-hover:scale-[1.03] transition" />
+              <img src={p.image} width={800} height={500} alt={p.imageAlt} loading="lazy" decoding="async" className="h-full w-full object-cover group-hover:scale-[1.03] transition" />
             </div>
             <div className="p-5">
               <div className="text-[11px] font-semibold uppercase tracking-wider text-brand">

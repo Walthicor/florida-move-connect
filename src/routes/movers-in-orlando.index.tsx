@@ -110,7 +110,7 @@ function CostTable() {
       <div className="container-page py-16 md:py-20">
         <div className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-wider text-brand">Pricing</span>
-          <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">Orlando Moving Costs (2026)</h2>
+          <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">How Much Do Movers Cost in Orlando?</h2>
         </div>
         <div className="mt-8 overflow-hidden rounded-2xl border border-border shadow-card">
           <table className="hidden sm:table w-full text-left">
@@ -165,7 +165,7 @@ function LocalKnowledge() {
       <div className="container-page py-16 md:py-20">
         <div className="max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-wider text-brand">Local Knowledge</span>
-          <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">Moving in Orlando: Timing Is Everything</h2>
+          <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">When Is the Best Time to Move in Orlando?</h2>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-2">
           {LOCAL.map((it) => (
@@ -188,7 +188,7 @@ function Neighborhoods() {
     <section className="bg-background">
       <div className="container-page py-16 md:py-20 max-w-4xl">
         <span className="text-xs font-semibold uppercase tracking-wider text-brand">Coverage</span>
-        <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">Areas Our Orlando Movers Cover Daily</h2>
+        <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">Which Areas Do Orlando Movers Cover?</h2>
         <div className="mt-8 flex flex-wrap gap-2">
           {NEIGHBORHOODS.map((n) => (
             <span key={n} className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white px-3 py-1.5 text-sm text-ink shadow-soft">

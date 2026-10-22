@@ -84,9 +84,9 @@ function OcalaPage() {
         </p>
       </ProseSection>
 
-      <SimpleCostTable title="Moving Costs in Ocala" rows={COSTS} />
+      <SimpleCostTable title="How Much Do Movers Cost in Ocala?" rows={COSTS} />
 
-      <ProseSection title="Ocala Long-Distance and Out-of-State Moves" bg="bg-surface-alt">
+      <ProseSection title="How Do Long-Distance Moves From Ocala Work?" bg="bg-surface-alt">
         <p>
           Ocala has real demand for moves north. Reverse-snowbird households and
           family relocations push a steady volume of moving companies from Ocala to
@@ -213,7 +213,7 @@ function OcalaPage() {
         </div>
       </section>
 
-      <LocalKnowledge title="Moving in Ocala: What Local Crews Plan For" items={LOCAL} />
+      <LocalKnowledge title="What Do Ocala Moving Crews Plan For?" items={LOCAL} />
 
       <Faq faqs={FAQS} />
     </>

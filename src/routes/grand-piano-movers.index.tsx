@@ -140,7 +140,7 @@ export const Route = createFileRoute("/grand-piano-movers/")({
         <p>
           Comparing instruments or planning a whole-home move around the piano? See{" "}
           <Link to="/piano-moving-cost/">piano moving costs by instrument and access</Link>, the{" "}
-          <Link to="/piano-movers/">Florida piano moving hub</Link> for crews and specialty
+          <Link to="/piano-movers/">Florida piano movers</Link> page for crews and specialty
           services, and{" "}
           <Link to="/storage-solutions/">climate-controlled storage in Florida</Link> if the
           instrument needs to wait between homes. City-level access detail lives on{" "}

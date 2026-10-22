@@ -44,6 +44,8 @@ export function PagePlaceholder({ eyebrow, title, description, bullets, image }:
             <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-card bg-white">
               <img
                 src={image ?? "/images/hero-family.jpg"}
+                width={800}
+                height={600}
                 alt=""
                 className="h-full w-full object-cover"
               />

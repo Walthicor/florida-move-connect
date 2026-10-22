@@ -220,7 +220,7 @@ function FeaturedGuides() {
               className="group rounded-2xl border border-border bg-white overflow-hidden shadow-soft hover:-translate-y-0.5 hover:border-brand transition"
             >
               <div className="aspect-[16/10] overflow-hidden bg-surface-alt">
-                <img src={g.image} alt={g.alt} loading="lazy" className="h-full w-full object-cover group-hover:scale-[1.03] transition" />
+                <img src={g.image} width={800} height={500} alt={g.alt} loading="lazy" decoding="async" className="h-full w-full object-cover group-hover:scale-[1.03] transition" />
               </div>
               <div className="p-6">
                 <span className="rounded-full bg-brand/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-brand">

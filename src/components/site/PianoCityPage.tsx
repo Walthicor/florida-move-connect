@@ -141,7 +141,7 @@ function Hero({ city, eyebrow, opening }: PianoCityPageProps) {
             to="/piano-movers/"
             className="inline-flex items-center gap-2 rounded-md border border-border bg-white px-4 py-2.5 text-sm font-semibold text-ink hover:border-brand hover:text-brand transition"
           >
-            Back to the Florida piano movers hub
+            Compare piano movers across Florida
           </Link>
         </div>
       </div>
@@ -162,9 +162,9 @@ function Costs({ city }: { city: string }) {
           <p className="mt-3 text-muted-foreground">
             The same verified statewide rate card our{" "}
             <Link to="/piano-movers/" className="font-semibold text-brand hover:underline">
-              Florida piano movers hub
+              Florida piano movers
             </Link>{" "}
-            publishes, applied to {city} moves.
+            guide publishes, applied to {city} moves.
           </p>
         </div>
 

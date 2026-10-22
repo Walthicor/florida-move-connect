@@ -38,8 +38,11 @@ function BlogIndex() {
               <div className="aspect-[16/10] overflow-hidden bg-surface-alt">
                 <img
                   src={p.image}
+                  width={800}
+                  height={500}
                   alt={p.imageAlt}
                   loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover group-hover:scale-[1.03] transition"
                 />
               </div>

@@ -134,7 +134,7 @@ function CostTable() {
       <div className="container-page py-16 md:py-20">
         <div className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-wider text-brand">Pricing</span>
-          <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">Tampa Moving Costs (2026)</h2>
+          <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">How Much Do Movers Cost in Tampa?</h2>
         </div>
         <div className="mt-8 overflow-hidden rounded-2xl border border-border shadow-card">
           <table className="hidden sm:table w-full text-left">
@@ -190,7 +190,7 @@ function LocalKnowledge() {
       <div className="container-page py-16 md:py-20">
         <div className="max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-wider text-brand">Local Knowledge</span>
-          <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">What Moves the Price in Tampa</h2>
+          <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">What Affects the Price of a Tampa Move?</h2>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-2">
           {LOCAL.map((it) => (
@@ -252,7 +252,7 @@ function Neighborhoods() {
       <div className="container-page py-16 md:py-20 max-w-5xl">
         <div className="max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-wider text-brand">Coverage</span>
-          <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">Tampa Neighborhoods and Nearby Areas</h2>
+          <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">Which Tampa Neighborhoods and Nearby Areas Do Movers Cover?</h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
             Every Tampa neighborhood moves a little differently. Here is what local crews watch
             for in the areas we cover most.
@@ -336,7 +336,7 @@ function StorageSection() {
 
 function VerifySection() {
   return (
-    <ProseSection eyebrow="Verify before you book" title="How to Verify a Tampa Mover" bg="bg-background">
+    <ProseSection eyebrow="Verify before you book" title="How Do You Verify a Tampa Mover?" bg="bg-background">
       <p>
         Florida Movers Direct is a free matching service — we are not a moving company and we do
         not verify licenses on your behalf. Verifying takes two minutes and you should do it

@@ -155,7 +155,7 @@ function Costs({ city, intro, alt }: { city: string; intro?: React.ReactNode; al
         <div className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-wider text-brand">Pricing 2026</span>
           <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
-            Moving Costs in {city}
+            How Much Do Movers Cost in {city}?
           </h2>
           <p className="mt-3 text-muted-foreground">
             {intro ?? (
@@ -235,7 +235,7 @@ function Challenges({ city, items, alt }: { city: string; items: { t: string; d:
         <div className="max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-wider text-brand">Local reality</span>
           <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
-            {city} Moving Challenges
+            What Makes Moving in {city} Different?
           </h2>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
@@ -260,7 +260,7 @@ function Areas({ city, areas, intro }: { city: string; areas: string[]; intro: R
       <div className="container-page py-16 md:py-20 max-w-4xl">
         <span className="text-xs font-semibold uppercase tracking-wider text-brand">Coverage</span>
         <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
-          Neighborhoods We Cover
+          Which {city} Neighborhoods Do Movers Cover?
         </h2>
         <p className="mt-4 text-base leading-relaxed text-ink">{intro}</p>
         <div className="mt-8 flex flex-wrap gap-2">
@@ -320,7 +320,7 @@ function Vetting() {
         <div className="max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-wider text-brand">Screening</span>
           <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
-            What We Check Before Matching You
+            How Do We Check Movers Before Matching You?
           </h2>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-2">

@@ -118,9 +118,9 @@ function MiamiPage() {
       />
       <NetworkDisclosure />
 
-      <CostTable title="Miami Moving Costs: Typical Ranges" col2="Estimated Range" col3="Crew & Time" rows={COSTS} />
+      <CostTable title="How Much Do Movers Cost in Miami?" col2="Estimated Range" col3="Crew & Time" rows={COSTS} />
 
-      <ProseSection eyebrow="Cost factors" title="What Moves the Price in Miami" bg="bg-surface-alt">
+      <ProseSection eyebrow="Cost factors" title="What Affects the Price of a Miami Move?" bg="bg-surface-alt">
         <p>
           Local movers in Miami bill by the hour, not flat — typically $100-$160 per hour for two
           movers and a truck, with a third mover adding roughly $35-$50 per hour. Those hourly rates
@@ -259,7 +259,7 @@ function MiamiPage() {
         </div>
       </section>
 
-      <ProseSection eyebrow="Verify before you book" title="How to Verify a Miami Mover" bg="bg-background">
+      <ProseSection eyebrow="Verify before you book" title="How Do You Verify a Miami Mover?" bg="bg-background">
         <p>
           Florida Movers Direct is a free matching service — we are not a moving company and we do
           not verify licenses on your behalf. Verifying takes two minutes and you should do it

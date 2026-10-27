@@ -8,14 +8,26 @@ export const SERVICES = [
   { label: "Piano Movers Tampa", to: "/piano-movers-tampa/" },
   { label: "Apartment Movers", to: "/apartment-movers/" },
   { label: "Senior Moving Services", to: "/senior-moving-services/" },
+  { label: "Furniture Movers", to: "/furniture-movers/" },
+  { label: "Moving Labor & Help", to: "/moving-labor/" },
 ] as const;
 
 export const CITIES = [
   { label: "Miami", to: "/movers-in-miami/" },
+  { label: "Hialeah", to: "/movers-in-hialeah/" },
+  { label: "Boca Raton", to: "/movers-in-boca-raton/" },
+  { label: "Naples", to: "/movers-in-naples/" },
   { label: "Tampa", to: "/movers-in-tampa/" },
+  { label: "St. Petersburg", to: "/movers-in-st-petersburg/" },
+  { label: "Brandon", to: "/movers-in-brandon/" },
+  { label: "Riverview", to: "/movers-in-riverview/" },
+  { label: "Apollo Beach", to: "/movers-in-apollo-beach/" },
+  { label: "Wesley Chapel", to: "/movers-in-wesley-chapel/" },
+  { label: "Sarasota", to: "/movers-in-sarasota/" },
   { label: "Orlando", to: "/movers-in-orlando/" },
   { label: "Ocala", to: "/movers-in-ocala/" },
+  { label: "The Villages", to: "/movers-in-the-villages/" },
   { label: "Jacksonville", to: "/movers-in-jacksonville/" },
-  { label: "Naples", to: "/movers-in-naples/" },
-  { label: "Boca Raton", to: "/movers-in-boca-raton/" },
+  { label: "Tallahassee", to: "/movers-in-tallahassee/" },
+  { label: "Pensacola", to: "/movers-in-pensacola/" },
 ] as const;

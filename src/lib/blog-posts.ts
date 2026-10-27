@@ -1,4 +1,6 @@
-// Blog post registry. Add new posts by appending an entry here.
+// Blog post registry. New articles live in src/content/blog/ (one file each)
+// and are registered in src/content/blog/index.ts.
+import { ARTICLE_MODULES } from "@/content/blog";
 export type BlogCategory =
   | "Moving Costs"
   | "Moving Guides"
@@ -18,7 +20,7 @@ export interface BlogPost {
   metaDescription: string;
 }
 
-export const BLOG_POSTS: BlogPost[] = [
+const BASE_POSTS: BlogPost[] = [
   {
     slug: "how-much-do-movers-cost-florida",
     title: "How Much Do Movers Cost in Florida? (2026 Price Guide)",
@@ -145,6 +147,11 @@ export const BLOG_POSTS: BlogPost[] = [
     metaDescription:
       "Where to move in Florida in 2026: the best neighborhoods for families, remote workers and retirees, compared on housing, schools, commute and cost of living.",
   },
+];
+
+export const BLOG_POSTS: BlogPost[] = [
+  ...BASE_POSTS,
+  ...ARTICLE_MODULES.map((m) => m.meta),
 ];
 
 export function getPost(slug: string): BlogPost | undefined {

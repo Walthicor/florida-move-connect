@@ -3,6 +3,7 @@ import { useState } from "react";
 import { ArrowRight, Calendar, ChevronDown, Tag, User } from "lucide-react";
 import { getPost, BLOG_POSTS, type BlogPost } from "@/lib/blog-posts";
 import { pageHead, SITE_URL, ORG_LOGO } from "@/lib/seo";
+import { ARTICLE_BY_SLUG } from "@/content/blog";
 
 export const Route = createFileRoute("/blog/$slug/")({
   loader: ({ params }) => {
@@ -21,7 +22,7 @@ export const Route = createFileRoute("/blog/$slug/")({
     }
     const { post } = loaderData;
     const path = `/blog/${params.slug}/`;
-    const faqs = FAQS_BY_SLUG[post.slug] ?? [];
+    const faqs = FAQS_BY_SLUG[post.slug] ?? ARTICLE_BY_SLUG[post.slug]?.faqs ?? [];
     const base = pageHead({
       path,
       title: post.metaTitle,
@@ -371,7 +372,12 @@ function ArticlePage() {
   return (
     <article className="bg-white">
       <ArticleHeader post={post} />
-      {post.slug === "florida-moving-checklist-8-weeks" ? (
+      {ARTICLE_BY_SLUG[post.slug] ? (
+        (() => {
+          const Body = ARTICLE_BY_SLUG[post.slug].Body;
+          return <Body />;
+        })()
+      ) : post.slug === "florida-moving-checklist-8-weeks" ? (
         <ChecklistBody />
       ) : post.slug === "snowbird-moving-florida-guide" ? (
         <SnowbirdBody />
@@ -391,7 +397,7 @@ function ArticlePage() {
         <CostGuideBody />
       )}
 
-      <AuthorAndEnd slug={post.slug} faqs={FAQS_BY_SLUG[post.slug] ?? []} />
+      <AuthorAndEnd slug={post.slug} faqs={FAQS_BY_SLUG[post.slug] ?? ARTICLE_BY_SLUG[post.slug]?.faqs ?? []} />
     </article>
   );
 }
@@ -1807,7 +1813,7 @@ function AuthorAndEnd({ slug, faqs }: { slug: string; faqs: { q: string; a: stri
 }
 
 function RelatedInSilo({ slug }: { slug: string }) {
-  const siblings = (SILOS[slug] ?? []).map((s) => BLOG_POSTS.find((p) => p.slug === s)).filter(Boolean) as BlogPost[];
+  const siblings = (SILOS[slug] ?? ARTICLE_BY_SLUG[slug]?.silo ?? []).map((s) => BLOG_POSTS.find((p) => p.slug === s)).filter(Boolean) as BlogPost[];
   if (siblings.length === 0) return null;
   return (
     <div className="mt-14">
@@ -1844,7 +1850,9 @@ function RelatedInSilo({ slug }: { slug: string }) {
 }
 
 function NextStepLinks({ slug }: { slug: string }) {
-  const step = NEXT_STEP[slug];
+  const step = (NEXT_STEP[slug] ?? ARTICLE_BY_SLUG[slug]?.next) as
+    | { service: { to: ServiceRoute; label: string }; city: { to: CityRoute; label: string } }
+    | undefined;
   if (!step) return null;
   return (
     <div className="mt-12 rounded-2xl border border-border bg-white p-6">

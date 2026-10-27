@@ -1,32 +1,85 @@
 # Florida Movers Direct
 
-> Free platform connecting Florida residents with licensed, FDACS and FMCSA-verified moving companies. Compare up to 4 free quotes for local, long-distance and commercial moves.
+> Free referral service that connects Florida residents with up to 4 independent, licensed moving companies. Florida Movers Direct is not a moving company: movers in the network hold FDACS registration (moves inside Florida) or FMCSA authority with a USDOT number (interstate moves). Comparing quotes is free and has no obligation.
 
-Florida Movers Direct is a Florida-focused lead-matching service. Consumers submit one quote request and receive quotes from up to four licensed moving companies verified against the Florida Department of Agriculture and Consumer Services (FDACS) intrastate registry and the FMCSA interstate registry. The service is free to consumers, always no-obligation, and covers local hourly moves, long-distance interstate moves, commercial and office relocations, storage-in-transit, packing services, piano and specialty moves, and apartment or condo moves throughout Florida.
+Florida Movers Direct covers local hourly moves, long-distance and interstate moves, commercial and office relocations, packing, storage, piano and specialty moves, furniture-only moves, labor-only moving help, apartment and condo moves, and senior moves across Florida. Typical local rates for a two-mover crew with a truck run $95-$150 per hour; long-distance moves typically run $2,200-$6,500+. Prices on the site are estimates; only a written quote from a mover is binding. Anyone can verify a Florida mover with FDACS (https://www.fdacs.gov/Business-Services/Moving-Companies) or FMCSA SAFER (https://safer.fmcsa.dot.gov/).
 
-## Key pages
+## Services
 
-- [Home — Compare licensed Florida movers](https://floridamoversdirect.com/): Overview, how the quote process works, service list, city coverage, cost tables, and FAQ.
-- [Local Movers in Florida — Hourly rates 2026](https://floridamoversdirect.com/local-movers-in-florida/): $95–$150/hr local rate guide, cost drivers, booking timeline.
-- [Long Distance Movers in Florida](https://floridamoversdirect.com/long-distance-movers/): Interstate cost ranges, binding vs. non-binding estimates, FMCSA verification, transit times.
-- [Storage Solutions in Florida](https://floridamoversdirect.com/storage-solutions/): Climate-controlled and storage-in-transit (SIT) pricing and guidance.
-- [Commercial Movers in Florida](https://floridamoversdirect.com/commercial-movers/): Office and business relocation pricing, after-hours logistics.
-- [Packing Services in Florida](https://floridamoversdirect.com/packing-services/): Full-pack, fragile-only, and materials pricing.
-- [Piano Movers in Florida](https://floridamoversdirect.com/piano-movers/): Specialty upright and grand piano moving.
-- [Apartment Movers in Florida](https://floridamoversdirect.com/apartment-movers/): Condo, high-rise, COI, and elevator logistics.
-- [Movers in Miami FL — Cost guide](https://floridamoversdirect.com/movers-in-miami/): Miami-specific pricing, condo COIs, Brickell to Kendall.
-- [Movers in Tampa FL — Cost guide](https://floridamoversdirect.com/movers-in-tampa/): Tampa pricing, bay crossings, Hyde Park to Wesley Chapel.
-- [Movers in Orlando FL — Cost guide](https://floridamoversdirect.com/movers-in-orlando/): Orlando pricing, tourist-corridor traffic, Lake Nona to Winter Park.
-- [Movers in Jacksonville FL](https://floridamoversdirect.com/movers-in-jacksonville/): Duval County pricing, military PCS.
-- [Movers in Naples FL](https://floridamoversdirect.com/movers-in-naples/): Season-smart scheduling and gated-community access.
-- [Movers in Ocala FL](https://floridamoversdirect.com/movers-in-ocala/): Marion County, The Villages routes.
-- [Movers in Boca Raton FL](https://floridamoversdirect.com/movers-in-boca-raton/): Condo and 55+ community moving.
-- [Piano Movers in Tampa FL](https://floridamoversdirect.com/piano-movers-tampa/): Tampa-specific piano moving.
-- [About — Who we are and how we verify movers](https://floridamoversdirect.com/about/): Company info, FDACS/FMCSA verification process, Florida-only service area.
-- [Contact — Get free moving quotes](https://floridamoversdirect.com/contact/): Multi-step quote request form.
+- [Florida movers — compare licensed moving companies](https://floridamoversdirect.com/): Statewide overview, quote form, cost table, cities and FAQ.
+- [Local movers in Florida](https://floridamoversdirect.com/local-movers-in-florida/): Hourly rates, what raises a local quote, booking timeline.
+- [Long distance and interstate movers](https://floridamoversdirect.com/long-distance-movers/): Interstate cost ranges, binding vs non-binding estimates, delivery windows, FMCSA checks.
+- [Commercial and office movers](https://floridamoversdirect.com/commercial-movers/): Office, retail and warehouse relocations.
+- [Packing services](https://floridamoversdirect.com/packing-services/): Full, partial and fragile-only packing.
+- [Moving and storage](https://floridamoversdirect.com/storage-solutions/): Storage-in-transit, climate-controlled and self-storage options.
+- [Apartment and condo movers](https://floridamoversdirect.com/apartment-movers/): COIs, elevator reservations, high-rise rules.
+- [Senior moving services](https://floridamoversdirect.com/senior-moving-services/): Downsizing, 55+ communities, assisted living moves.
+- [Furniture movers](https://floridamoversdirect.com/furniture-movers/): One-item, heavy furniture and appliance moves.
+- [Moving labor and help](https://floridamoversdirect.com/moving-labor/): Labor-only loading and unloading help.
+- [Piano movers in Florida](https://floridamoversdirect.com/piano-movers/): Upright and grand piano moving.
+- [Grand piano movers](https://floridamoversdirect.com/grand-piano-movers/): Baby and concert grands.
+- [Piano moving cost](https://floridamoversdirect.com/piano-moving-cost/): 2026 price ranges and surcharges.
+
+## Cities
+
+- [Movers in Miami](https://floridamoversdirect.com/movers-in-miami/): Miami-Dade local moving costs, condo and high-rise rules.
+- [Movers in Hialeah](https://floridamoversdirect.com/movers-in-hialeah/)
+- [Movers in Boca Raton](https://floridamoversdirect.com/movers-in-boca-raton/): Condos, 55+ communities, moves from the Northeast.
+- [Movers in Naples](https://floridamoversdirect.com/movers-in-naples/): Collier County, season scheduling, gated communities.
+- [Movers in Tampa](https://floridamoversdirect.com/movers-in-tampa/): Tampa local rates, bay crossings, small and last-minute moves.
+- [Movers in St. Petersburg](https://floridamoversdirect.com/movers-in-st-petersburg/): Pinellas County, Clearwater and the beaches.
+- [Movers in Brandon](https://floridamoversdirect.com/movers-in-brandon/): Brandon, Valrico and Seffner.
+- [Movers in Riverview](https://floridamoversdirect.com/movers-in-riverview/): South Hillsborough, Gibsonton, Ruskin, Sun City Center.
+- [Movers in Apollo Beach](https://floridamoversdirect.com/movers-in-apollo-beach/): Waterfront homes and South Shore communities.
+- [Movers in Wesley Chapel](https://floridamoversdirect.com/movers-in-wesley-chapel/): Pasco County, Lutz, Land O' Lakes, Zephyrhills.
+- [Movers in Sarasota](https://floridamoversdirect.com/movers-in-sarasota/): The keys, Lakewood Ranch, Venice and Bradenton.
+- [Movers in Orlando](https://floridamoversdirect.com/movers-in-orlando/): I-4 timing, Lake Nona to Winter Park.
+- [Movers in Ocala](https://floridamoversdirect.com/movers-in-ocala/): Marion County, Marion Oaks, furniture and senior moves.
+- [Movers in The Villages](https://floridamoversdirect.com/movers-in-the-villages/): Senior and downsizing moves.
+- [Movers in Jacksonville](https://floridamoversdirect.com/movers-in-jacksonville/): Duval County, bridge crossings, military PCS moves.
+- [Movers in Tallahassee](https://floridamoversdirect.com/movers-in-tallahassee/): 2026 moving costs, student and state-worker moves.
+- [Movers in Pensacola](https://floridamoversdirect.com/movers-in-pensacola/)
+- [Movers in Riverview (Spanish)](https://floridamoversdirect.com/es/movers-in-riverview/)
+
+## Piano movers by city
+
+- [Piano movers in Tampa](https://floridamoversdirect.com/piano-movers-tampa/)
+- [Piano movers in Miami](https://floridamoversdirect.com/piano-movers-miami/)
+- [Piano movers in Orlando](https://floridamoversdirect.com/piano-movers-orlando/)
+- [Piano movers in Jacksonville](https://floridamoversdirect.com/piano-movers-jacksonville/)
+- [Piano movers in Boca Raton](https://floridamoversdirect.com/piano-movers-boca-raton/)
+- [Piano movers in The Villages](https://floridamoversdirect.com/piano-movers-the-villages/)
+
+## Consumer protection
+
+- [How to verify a Florida mover's license](https://floridamoversdirect.com/how-to-verify-florida-mover-license/): FDACS and FMCSA lookups step by step.
+- [Moving scams in Florida](https://floridamoversdirect.com/moving-scams-florida/): Warning signs and safer booking.
+
+## Guides
+
+- [How much do movers cost in Florida?](https://floridamoversdirect.com/blog/how-much-do-movers-cost-florida/)
+- [Cost to move from New York to Florida](https://floridamoversdirect.com/blog/cost-to-move-new-york-to-florida/)
+- [Moving out of Florida: costs to NY, PA and California](https://floridamoversdirect.com/blog/moving-out-of-florida-cost/)
+- [Binding vs non-binding moving estimates](https://floridamoversdirect.com/blog/binding-vs-non-binding-moving-estimates/)
+- [Small moves and hourly movers in Florida](https://floridamoversdirect.com/blog/small-moves-hourly-movers-florida/)
+- [Last-minute movers in Florida](https://floridamoversdirect.com/blog/last-minute-movers-florida/)
+- [Climate-controlled storage in Florida](https://floridamoversdirect.com/blog/climate-controlled-storage-florida/)
+- [Downsizing for seniors in Florida](https://floridamoversdirect.com/blog/downsizing-for-seniors-florida/)
+- [New Florida resident checklist](https://floridamoversdirect.com/blog/new-florida-resident-checklist/)
+- [Florida moving checklist: 8 weeks](https://floridamoversdirect.com/blog/florida-moving-checklist-8-weeks/)
+- [Interstate move to Florida timeline](https://floridamoversdirect.com/blog/interstate-move-to-florida-timeline/)
+- [Moving insurance in Florida](https://floridamoversdirect.com/blog/moving-insurance-florida-explained/)
+- [Hurricane season moving](https://floridamoversdirect.com/blog/hurricane-season-moving-florida/)
+- [Professional movers vs rental truck](https://floridamoversdirect.com/blog/professional-movers-vs-diy-truck-florida/)
+- [Snowbird moving guide](https://floridamoversdirect.com/blog/snowbird-moving-florida-guide/)
+- [Moving with pets in Florida heat](https://floridamoversdirect.com/blog/moving-with-pets-florida-heat/)
+- [Best Florida neighborhoods 2026](https://floridamoversdirect.com/blog/best-florida-neighborhoods-families-2026/)
 
 ## Optional
 
-- [Blog](https://floridamoversdirect.com/blog/): Florida moving guides and tips.
+- [About Florida Movers Direct](https://floridamoversdirect.com/about/): Who we are and how movers are verified.
+- [Get free moving quotes](https://floridamoversdirect.com/contact/)
+- [Blog](https://floridamoversdirect.com/blog/)
+- [Spanish site (Mudanzas en Florida)](https://floridamoversdirect.com/es/)
 - [Privacy Policy](https://floridamoversdirect.com/privacy-policy/)
 - [Terms of Service](https://floridamoversdirect.com/terms/)

@@ -18,8 +18,8 @@ import {
 export const Route = createFileRoute("/long-distance-movers/")({
   head: () => pageHead({
     path: "/long-distance-movers/",
-    title: "Long Distance Movers in Florida | Free Quotes",
-    description: "Compare FMCSA-registered long-distance movers from Florida. Request free quotes, compare delivery windows and ask for written estimates.",
+    title: "Long Distance & Interstate Movers in Florida | Free Quotes",
+    description: "Compare FMCSA-registered long distance and interstate moving companies in Florida. Get free long distance moving quotes, delivery windows and written estimates.",
     service: { serviceType: 'Long Distance Moving', areaServed: 'Florida' },
     faqs: FAQS,
   }),

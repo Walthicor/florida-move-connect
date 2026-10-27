@@ -134,6 +134,10 @@ const FAQS = [
     a: "Completely. Movers pay to be part of the verified network; you never pay anything to compare, and there is zero obligation to book.",
   },
   {
+    q: "How do I find licensed movers near me in Florida?",
+    a: "Enter your ZIP codes in the quote form and we match you with up to 4 independent moving companies that serve your area. Before booking, check the mover's FDACS registration for moves inside Florida, or its USDOT number in FMCSA SAFER for interstate moves.",
+  },
+  {
     q: "Which Florida cities do you cover?",
     a: "All of them — from Miami and Tampa to Ocala, Naples and the Panhandle. Local moves, intrastate routes like Orlando to Miami, and interstate moves to all 50 states.",
   },
@@ -265,28 +269,31 @@ function Hero() {
         className="absolute inset-0 bg-black/25"
       />
 
-      <div className="relative container-page py-16 md:py-24 grid gap-10 lg:grid-cols-[1.1fr_1fr] items-start">
+      <div className="relative container-page py-8 md:py-24 grid gap-6 md:gap-10 lg:grid-cols-[1.1fr_1fr] items-start">
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur border border-white/25 px-3 py-1 text-xs font-semibold text-white shadow-soft">
+          <span className="hidden md:inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur border border-white/25 px-3 py-1 text-xs font-semibold text-white shadow-soft">
             <ShieldCheck className="h-3.5 w-3.5" />
             Licensed Florida Movers — Verify Any License Yourself
           </span>
-          <h1 className="mt-5 font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.05] drop-shadow-[0_2px_20px_rgba(0,0,0,0.35)]">
+          <h1 className="md:mt-5 font-display text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.08] drop-shadow-[0_2px_20px_rgba(0,0,0,0.35)]">
             Florida Movers —{" "}
             <span className="text-accent">Compare Licensed Moving Companies</span>{" "}
             and Save
           </h1>
-          <p className="mt-5 text-base md:text-lg text-white/90 max-w-xl">
+          <p className="mt-3 md:mt-5 text-base md:text-lg text-white/90 max-w-xl">
             Compare free quotes from licensed movers in Florida in under 2
-            minutes. One simple form connects you with up to 4 independent
-            licensed moving companies competing for your move — local, long
-            distance, or commercial. You can confirm any mover's credentials
-            yourself: USDOT number in the FMCSA SAFER database for interstate
-            moves, FDACS registration for moves inside Florida. No calls from
-            random brokers, no spam, no obligation.
+            minutes — up to 4 independent moving companies near you, no
+            obligation.
+            <span className="hidden md:inline">
+              {" "}One simple form covers local, long distance and commercial
+              moves. You can confirm any mover's credentials yourself: USDOT
+              number in the FMCSA SAFER database for interstate moves, FDACS
+              registration for moves inside Florida. No calls from random
+              brokers, no spam.
+            </span>
           </p>
 
-          <ul className="mt-7 flex flex-wrap gap-2">
+          <ul className="mt-7 hidden md:flex flex-wrap gap-2">
             {TRUST_BADGES.map((b) => (
               <li
                 key={b}
@@ -607,11 +614,14 @@ function CitiesBand() {
             Coverage
           </span>
           <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
-            Cities We Serve
+            Florida Movers Near You: Cities We Serve
           </h2>
           <p className="mt-3 text-muted-foreground">
-            Miami · Tampa · Orlando · Jacksonville · Ocala · Naples · Boca Raton
-            — and every city and county across Florida.
+            Find licensed moving companies near you in South Florida, Tampa Bay,
+            Central Florida, North Florida and the Panhandle. Each city guide
+            covers local moving costs, traffic and building rules, and the
+            neighborhoods crews serve — and the quote form works for every city
+            and county in the state.
           </p>
         </div>
 

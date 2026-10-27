@@ -31,7 +31,7 @@ export const Route = createFileRoute("/movers-in-tallahassee/")({
   head: () => {
     const base = pageHead({
       path: PATH,
-      title: "Movers in Tallahassee FL | Local Rates & Free Quotes",
+      title: "Movers in Tallahassee FL | 2026 Moving Costs & Quotes",
       description: "Movers in Tallahassee cost $95-$150 an hour, $400-$700 for a one-bedroom and $900-$1,600 for a three-bedroom. Compare four licensed local crews free of charge.",
       faqs: FAQS,
       noAlternates: true,

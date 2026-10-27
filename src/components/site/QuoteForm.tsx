@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useId } from "react";
 import { ArrowRight, Building2, CalendarDays, CheckCircle2, Home, Mail, MapPin, Phone, Ruler, User } from "lucide-react";
 import { useRouterState } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
@@ -34,6 +34,9 @@ const COPY = {
       "Up to 4 licensed Florida movers can contact you shortly with written quotes.",
     disclaimer:
       "By submitting, you agree to be contacted by phone, text or email by Florida Movers Direct and up to 4 matched licensed moving partners.",
+    consent:
+      "I agree to be contacted about my move by phone, text message or email by Florida Movers Direct and up to 4 matched licensed movers, including by automated means. Consent is not a condition of any purchase. Message and data rates may apply; reply STOP to opt out of texts.",
+    consentRequired: "Please check the box to agree to be contacted so movers can send your quotes.",
     seeOur: "See our",
     privacy: "Privacy Policy",
     and: "and",
@@ -92,6 +95,9 @@ const COPY = {
       "Hasta 4 empresas licenciadas de Florida pueden contactarle pronto con cotizaciones.",
     disclaimer:
       "Al enviar, acepta ser contactado por teléfono, mensaje o correo por Florida Movers Direct y hasta 4 empresas licenciadas.",
+    consent:
+      "Acepto que Florida Movers Direct y hasta 4 empresas de mudanzas licenciadas me contacten sobre mi mudanza por teléfono, mensaje de texto o correo, incluso por medios automatizados. El consentimiento no es condición de compra. Pueden aplicar tarifas de mensajes y datos; responda STOP para dejar de recibir mensajes.",
+    consentRequired: "Marque la casilla para aceptar el contacto y que las empresas puedan enviarle sus cotizaciones.",
     seeOur: "Consulte nuestra",
     privacy: "Política de Privacidad",
     and: "y los",
@@ -177,6 +183,8 @@ export function MultiStepQuoteForm({
   const [data, setData] = useState<FormData>({ ...empty, ...initialData });
   const [status, setStatus] = useState<"idle" | "saving" | "sent" | "error">("idle");
   const [error, setError] = useState("");
+  const [consent, setConsent] = useState(false);
+  const consentId = useId();
 
   const privacyHref = lang === "es" ? "/es/privacy-policy/" : "/privacy-policy/";
   const termsHref = lang === "es" ? "/es/terms/" : "/terms/";
@@ -206,6 +214,10 @@ export function MultiStepQuoteForm({
     const parsed = schema.safeParse(data);
     if (!parsed.success) {
       setError(c.invalid);
+      return;
+    }
+    if (!consent) {
+      setError(c.consentRequired);
       return;
     }
     setStatus("saving");
@@ -241,6 +253,18 @@ export function MultiStepQuoteForm({
       });
       if (!result.sent) throw new Error("email_not_sent");
       setStatus("sent");
+      // GA4: count the lead (mark "generate_lead" as a key event in GA4).
+      try {
+        const w = window as unknown as { gtag?: (...args: unknown[]) => void };
+        w.gtag?.("event", "generate_lead", {
+          form_location: pathname,
+          move_type: parsed.data.propertyType,
+          home_size: parsed.data.size,
+          language: lang,
+        });
+      } catch {
+        /* analytics must never break the form */
+      }
     } catch {
       setStatus("error");
       setError(c.error);
@@ -344,6 +368,20 @@ export function MultiStepQuoteForm({
           />
         </div>
 
+        <label htmlFor={consentId} className="mt-5 flex items-start gap-3 text-left text-xs leading-relaxed text-muted-foreground cursor-pointer">
+          <input
+            id={consentId}
+            type="checkbox"
+            checked={consent}
+            onChange={(e) => {
+              setConsent(e.target.checked);
+              setError("");
+            }}
+            className="mt-0.5 h-5 w-5 shrink-0 rounded border-input accent-[var(--color-cta)]"
+          />
+          <span>{c.consent}</span>
+        </label>
+
         {error && (
           <p className="mt-4 rounded-lg bg-red-500/10 px-3 py-2 text-center text-xs font-semibold text-red-700">
             {error}
@@ -360,7 +398,7 @@ export function MultiStepQuoteForm({
         </button>
 
         <p className="mt-4 text-center text-[11px] leading-relaxed text-muted-foreground">
-          {c.disclaimer} {c.seeOur}{" "}
+          {c.seeOur}{" "}
           <a href={privacyHref} className="underline hover:text-cta">{c.privacy}</a> {c.and}{" "}
           <a href={termsHref} className="underline hover:text-cta">{c.terms}</a>.
         </p>

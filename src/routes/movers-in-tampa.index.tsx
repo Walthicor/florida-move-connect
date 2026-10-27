@@ -9,8 +9,8 @@ import { ArrowRight, ShieldCheck, ChevronDown, DollarSign, Building2, MapPin, Mu
 export const Route = createFileRoute("/movers-in-tampa/")({
   head: () => pageHead({
     path: "/movers-in-tampa/",
-    title: "Tampa Movers | Compare Licensed Moving Companies",
-    description: "Compare licensed Tampa movers for local, apartment, commercial and long-distance moves across Hillsborough County. Free quotes, no obligation.",
+    title: "Tampa Movers | Compare Local Moving Companies in Tampa FL",
+    description: "Need a moving company in Tampa? Compare up to 4 licensed Tampa movers for local, apartment, small-job and long-distance moves. Free quotes, no obligation.",
     service: { serviceType: 'Moving Services', areaServed: 'Tampa, Florida' },
     faqs: FAQS,
   }),
@@ -76,6 +76,8 @@ const AREAS = [
 
 const FAQS = [
   { q: "How much do movers cost in Tampa?", a: "$400-$800 for a 1-bedroom, $800-$1,400 for a 2-3 bedroom home, at hourly rates of $95-$150 for two movers — typically below Miami for the identical job, though estimates vary by home size and access." },
+  { q: "Are there movers in Tampa for small jobs?", a: "Yes. Many local Tampa movers take single-item, partial-load and studio jobs, billed hourly at about $95-$150 for two movers plus a minimum number of hours that varies by company. Ask each mover for its minimum and how travel time is billed before you book." },
+  { q: "How do I check a Tampa moving company's license?", a: "For a move that stays inside Florida, ask for the company's FDACS registration number and look it up with the Florida Department of Agriculture and Consumer Services. For a move leaving Florida, check its USDOT number in the FMCSA SAFER system. Make sure the name and number match your written estimate." },
   { q: "Do Tampa movers cover Brandon, Riverview and Wesley Chapel?", a: "Yes. Local Tampa moving companies serve the suburbs east and south of the city, like Brandon and Riverview, and north along I-75 to Wesley Chapel. Moves inside the metro are billed hourly like any local move; only the drive time changes." },
   { q: "When is the best time to schedule a Tampa move?", a: "Early morning, mid-month, on a weekday. In summer, a 7-8 AM start beats the heat and the daily storms; if crossing the bay, avoid 7-9 AM and 4-7 PM bridge traffic." },
   { q: "Do Tampa movers cover St. Petersburg and Clearwater?", a: "Yes — Pinellas County is standard territory. Cross-bay moves bill the same hourly rates; only the drive time differs, which smart scheduling minimizes." },
@@ -91,9 +93,12 @@ function TampaPage() {
       <Hero />
       <NetworkDisclosure />
       <CostTable />
+      <SmallMoves />
       <LocalKnowledge />
       <BuildingMoves />
+      <FurnitureMoves />
       <Neighborhoods />
+      <NearbyCities />
       <PianoCard />
       <StorageSection />
       <VerifySection />
@@ -116,7 +121,7 @@ function Hero() {
           Movers in <span className="text-brand">Tampa</span>, FL
         </h1>
         <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
-          Local Tampa moves average $400-$800 for a 1-bedroom and $800-$1,400 for a 2-3 bedroom home, with hourly crews from $95-$150. Tampa Bay has its own moving logic — a bay that splits the metro, the I-275 and I-4 corridors, and daily summer storms. Compare free quotes from licensed moving companies in Tampa that plan around all three, from South Tampa apartments to new homes in Riverview and Wesley Chapel.
+          Tampa movers typically charge $95-$150 per hour for a two-mover crew, which puts most local moves at an estimated $400-$800 for a 1-bedroom and $800-$1,400 for a 2-3 bedroom home. Florida Movers Direct is not a moving company: one free form gets you quotes from up to four independent, licensed moving companies in Tampa. Tampa Bay has its own moving logic — a bay that splits the metro, the I-275 and I-4 corridors, and daily summer storms. Crews in our network plan around all three, from South Tampa apartments to new homes in Riverview and Wesley Chapel.
         </p>
         <div className="mt-7">
           <Link to="/contact/" className="btn-cta btn-cta-hover text-base">
@@ -134,7 +139,12 @@ function CostTable() {
       <div className="container-page py-16 md:py-20">
         <div className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-wider text-brand">Pricing</span>
-          <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">How Much Do Movers Cost in Tampa?</h2>
+          <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">How Much Do Local Movers in Tampa Charge?</h2>
+          <p className="mt-3 text-muted-foreground">
+            Local movers in Tampa bill by the hour. A two-mover crew with a truck typically runs
+            $95-$150 per hour, and larger homes add a third or fourth mover. The ranges below are
+            typical estimates for a move inside Hillsborough County, not quotes.
+          </p>
         </div>
         <div className="mt-8 overflow-hidden rounded-2xl border border-border shadow-card">
           <table className="hidden sm:table w-full text-left">
@@ -184,9 +194,60 @@ function CostTable() {
   );
 }
 
+function SmallMoves() {
+  return (
+    <ProseSection
+      eyebrow="Small and urgent jobs"
+      title="Small Moves, Same-Day and Last-Minute Movers in Tampa"
+      bg="bg-surface-alt"
+    >
+      <p>
+        Yes, Tampa movers take small jobs. A studio apartment, a few rooms of furniture or a single
+        load to a storage unit is billed the same way as a full house: by the hour, at about
+        $95-$150 for two movers and a truck. The difference is the minimum. Each company sets its
+        own minimum number of billable hours, so on a small job the minimum and the way travel time
+        is billed matter more than the hourly rate.
+      </p>
+      <CheckList
+        items={[
+          <>
+            <strong className="text-ink">Small moves:</strong> list every item, the floor number and
+            whether there is an elevator. A short, accurate list lets a mover tell you up front
+            whether the job fits inside its minimum.
+          </>,
+          <>
+            <strong className="text-ink">Same-day movers:</strong> availability depends on whether a
+            crew has an open slot that day. Mid-week mornings are usually easier to fill than a
+            Friday or the last weekend of the month, when leases turn over across Tampa.
+          </>,
+          <>
+            <strong className="text-ink">Last-minute moves:</strong> send photos, both addresses and
+            any building rules right away. Towers in Channelside, downtown and Westshore still need
+            a certificate of insurance and an elevator slot, even on short notice. Our guide to{" "}
+            <Link to="/blog/$slug/" params={{ slug: "last-minute-movers-florida" }}>
+              booking last-minute movers in Florida
+            </Link>{" "}
+            walks through what to send so quotes come back fast.
+          </>,
+          <>
+            <strong className="text-ink">Labor only:</strong> if you already rented a truck or a
+            portable container, you can hire a crew just to load or unload it. See how{" "}
+            <Link to={"/moving-labor/" as "/"}>hourly moving labor in Florida</Link> is quoted and
+            what it does not include.
+          </>,
+        ]}
+      />
+      <p>
+        Whatever the size of the job, ask for the hourly rate, the minimum and any travel or
+        materials fee in writing before the crew arrives.
+      </p>
+    </ProseSection>
+  );
+}
+
 function LocalKnowledge() {
   return (
-    <section className="bg-surface-alt">
+    <section className="bg-background">
       <div className="container-page py-16 md:py-20">
         <div className="max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-wider text-brand">Local Knowledge</span>
@@ -213,7 +274,7 @@ function BuildingMoves() {
     <ProseSection
       eyebrow="Building moves"
       title="Apartment, Condo and Commercial Moves in Tampa"
-      bg="bg-background"
+      bg="bg-surface-alt"
     >
       <p>
         Tampa is a city of both extremes: waterfront high-rises downtown and in Westshore, and
@@ -242,6 +303,44 @@ function BuildingMoves() {
           </>,
         ]}
       />
+    </ProseSection>
+  );
+}
+
+function FurnitureMoves() {
+  return (
+    <ProseSection
+      eyebrow="Single items"
+      title="Furniture and Appliance Movers in Tampa"
+      bg="bg-background"
+    >
+      <p>
+        You do not need to book a full household move to get one sofa, a dresser or a new
+        refrigerator across Tampa. Many local movers handle single pieces, store pickups and
+        room-to-room rearranging on the same hourly terms, with the company minimum applying.
+      </p>
+      <CardGrid>
+        <SubBlock title="Large furniture">
+          <p>
+            Sectionals, bed frames, armoires and dining tables often need to be taken apart to clear
+            narrow doors and stair turns, which is common in older South Tampa and Seminole Heights
+            homes. Tell the mover what needs disassembly so the crew brings the right tools.
+          </p>
+        </SubBlock>
+        <SubBlock title="Appliances">
+          <p>
+            Refrigerators, washers and dryers are heavy and awkward on stairs. Ask whether the crew
+            disconnects and reconnects them; water and gas connections usually need a qualified
+            technician, and many movers only move the appliance itself.
+          </p>
+        </SubBlock>
+      </CardGrid>
+      <p>
+        Measure doorways and the elevator before move day, and mention any glass, marble or
+        oversized piece. Our page on{" "}
+        <Link to={"/furniture-movers/" as "/"}>furniture movers for single items and heavy pieces</Link>{" "}
+        explains how these jobs are priced and what to ask before you book.
+      </p>
     </ProseSection>
   );
 }
@@ -278,9 +377,52 @@ function Neighborhoods() {
   );
 }
 
+function NearbyCities() {
+  return (
+    <ProseSection
+      eyebrow="Nearby cities"
+      title="Movers Near Tampa: Brandon, Seffner, Wesley Chapel and St. Petersburg"
+      bg="bg-background"
+    >
+      <p>
+        Many moves start in Tampa and end a few exits away, or the other way around. Crews in our
+        network often work both ends, but each nearby city has its own access rules, so each one has
+        its own guide.
+      </p>
+      <p>
+        <strong className="text-ink">Brandon:</strong> east of the city along SR-60 and I-75, with
+        large apartment communities and established subdivisions. Compare{" "}
+        <Link to={"/movers-in-brandon/" as "/"}>movers in Brandon, FL</Link> for local rates and HOA
+        notes.
+      </p>
+      <p>
+        <strong className="text-ink">Seffner:</strong> just north of Brandon along I-4. Crews that
+        serve Brandon generally cover Seffner on the same hourly terms, so the{" "}
+        <Link to={"/movers-in-brandon/" as "/"}>Brandon and Seffner moving guide</Link> is the place to
+        start.
+      </p>
+      <p>
+        <strong className="text-ink">Wesley Chapel:</strong> north on I-75 in Pasco County, where
+        gated communities often require guest registration for the crew. See{" "}
+        <Link to={"/movers-in-wesley-chapel/" as "/"}>Wesley Chapel movers and gated-community rules</Link>.
+      </p>
+      <p>
+        <strong className="text-ink">St. Petersburg:</strong> across the bay in Pinellas County,
+        where bridge traffic decides the schedule. Compare{" "}
+        <Link to={"/movers-in-st-petersburg/" as "/"}>St. Petersburg moving companies</Link>.
+      </p>
+      <p>
+        <strong className="text-ink">Riverview:</strong> south along US-301, with new-construction
+        communities and builder closing dates. See{" "}
+        <Link to="/movers-in-riverview/">movers in Riverview, FL</Link>.
+      </p>
+    </ProseSection>
+  );
+}
+
 function PianoCard() {
   return (
-    <section className="bg-background">
+    <section className="bg-surface-alt">
       <div className="container-page py-16 md:py-20 max-w-4xl">
         <span className="text-xs font-semibold uppercase tracking-wider text-brand">Specialty items</span>
         <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">Moving a Piano or Other Specialty Item?</h2>
@@ -312,7 +454,7 @@ function StorageSection() {
     <ProseSection
       eyebrow="Between homes"
       title="Storage Options in Tampa"
-      bg="bg-surface-alt"
+      bg="bg-background"
     >
       <p>
         Closing dates and lease start dates rarely line up perfectly, and in a growing metro like
@@ -333,7 +475,7 @@ function StorageSection() {
 
 function VerifySection() {
   return (
-    <ProseSection eyebrow="Verify before you book" title="How Do You Verify a Tampa Mover?" bg="bg-background">
+    <ProseSection eyebrow="Verify before you book" title="How Do You Verify a Tampa Mover?" bg="bg-surface-alt">
       <p>
         Florida Movers Direct is a free matching service — we are not a moving company and we do
         not verify licenses on your behalf. Verifying takes two minutes and you should do it
@@ -369,6 +511,19 @@ function VerifySection() {
           </p>
         </SubBlock>
       </CardGrid>
+      <p>
+        Start with the{" "}
+        <a href="https://www.fdacs.gov/Business-Services/Moving-Companies" rel="noopener">
+          FDACS moving services information
+        </a>{" "}
+        for Florida-only moves and the{" "}
+        <a href="https://safer.fmcsa.dot.gov/" rel="noopener">
+          FMCSA SAFER company lookup
+        </a>{" "}
+        for interstate carriers. Our step-by-step guide on{" "}
+        <Link to="/how-to-verify-florida-mover-license/">how to check a Florida mover's license</Link>{" "}
+        shows what to match between the registry and your estimate.
+      </p>
     </ProseSection>
   );
 }
@@ -376,7 +531,7 @@ function VerifySection() {
 function Faq() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section className="bg-surface-alt">
+    <section className="bg-background">
       <div className="container-page py-16 md:py-20 max-w-3xl">
         <h2 className="font-display text-3xl md:text-4xl font-bold text-ink">Frequently Asked Questions</h2>
         <div className="mt-8 divide-y divide-border rounded-2xl border border-border bg-white shadow-soft">

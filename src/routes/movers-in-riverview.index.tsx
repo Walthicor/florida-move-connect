@@ -31,6 +31,14 @@ const FAQS = [
     a: "Mid-month, midweek, outside the summer peak. Closings on new-construction homes cluster at month-end, and June through September brings both the heaviest demand and afternoon storms that slow loading. Booking three to four weeks out gives you a real choice of crews.",
   },
   {
+    q: "Do moving companies in Riverview, FL also offer storage?",
+    a: "Many do. Ask each Riverview moving company whether it offers storage-in-transit, where your load is held in its warehouse and redelivered, or whether it can move you into a self-storage unit. Get the monthly rate and the redelivery fee in the same written quote.",
+  },
+  {
+    q: "Do Riverview movers serve Gibsonton, Ruskin and Sun City Center?",
+    a: "Yes. Crews that work Riverview routinely cover the South Shore communities along US-41 and US-301, including Gibsonton, Ruskin, Sun City Center and Wimauma. These moves are billed hourly like any local job; only the drive time changes.",
+  },
+  {
     q: "Can movers handle a same-day closing gap in Riverview?",
     a: "Ask about storage-in-transit when you request quotes. If your Riverview closing and your new move-in date do not line up, the load can stay on the truck or in a warehouse vault instead of being handled twice, which is cheaper than paying a crew to wait.",
   },
@@ -40,8 +48,8 @@ export const Route = createFileRoute("/movers-in-riverview/")({
   head: () => {
     const base = pageHead({
       path: PATH,
-      title: "Movers in Riverview FL | Local Rates & Free Quotes",
-      description: "Movers in Riverview charge $95-$150 an hour, with $650-$1,100 typical for a two-bedroom. Compare licensed South Hillsborough crews and get free written quotes.",
+      title: "Movers in Riverview FL | Moving Companies & Free Quotes",
+      description: "Movers in Riverview, FL charge about $95-$150 an hour, with $650-$1,100 typical for a two-bedroom. Compare licensed Riverview moving companies for free quotes.",
       faqs: FAQS,
     });
     return { ...base, scripts: [...base.scripts, ...moversCitySchema("Riverview", PATH)] };
@@ -52,11 +60,11 @@ export const Route = createFileRoute("/movers-in-riverview/")({
       eyebrow="Licensed South Hillsborough Movers"
       opening={
         <>
-          Movers in Riverview charge $95-$150 per hour for a two-mover crew with a truck — typically
-          $650-$1,100 for a two-bedroom and $900-$1,600 for a three-bedroom home, as estimates
-          rather than fixed prices. Compare up to 4 licensed, insured local moving companies in
-          Riverview, FL, with crews covering Apollo Beach, Gibsonton and the rest of South
-          Hillsborough free of charge.
+          Most movers in Riverview, FL charge $95-$150 per hour for a two-mover crew with a truck,
+          and local moving companies typically quote $650-$1,100 for a two-bedroom and $900-$1,600
+          for a three-bedroom home, as estimates rather than fixed prices. Compare up to 4 licensed,
+          insured Riverview movers covering Gibsonton, Ruskin, Sun City Center and the rest of South
+          Hillsborough, free of charge.
         </>
       }
       challenges={[
@@ -83,17 +91,78 @@ export const Route = createFileRoute("/movers-in-riverview/")({
         "Rivercrest",
         "Summerfield",
         "Bloomingdale",
-        "Apollo Beach",
         "Gibsonton",
+        "Ruskin",
+        "Sun City Center",
+        "Wimauma",
+        "Apollo Beach",
       ]}
       areasIntro={
         <>
           Matched crews cover Riverview and the surrounding South Hillsborough communities — from
-          Panther Trace, Boyette and Rivercrest to Summerfield and Bloomingdale, plus Apollo Beach
-          and Gibsonton along the bay.
+          Panther Trace, Boyette and Rivercrest to Summerfield and Bloomingdale, plus Gibsonton,
+          Ruskin, Sun City Center and Wimauma to the south.
         </>
       }
       extra={
+        <>
+        <ProseSection
+          eyebrow="Coverage"
+          title="South Shore and South Hillsborough Coverage"
+          bg="bg-surface-alt"
+        >
+          <p>
+            Riverview movers rarely stop at the Riverview line. The same crews work the South Shore
+            communities between the Alafia River and the Manatee County line, and each one moves a
+            little differently.
+          </p>
+          <p>
+            <strong className="text-ink">Gibsonton:</strong> older single-family lots, mobile and
+            manufactured homes and properties along US-41. Gravel drives and tight lots can keep a
+            large truck on the road, so ask whether a shorter carry or a smaller truck makes sense.
+          </p>
+          <p>
+            <strong className="text-ink">Ruskin:</strong> a mix of new subdivisions off I-75 and
+            older homes closer to the bay. Newer communities bring HOA move rules; older streets bring
+            narrow approaches and limited turnaround room.
+          </p>
+          <p>
+            <strong className="text-ink">Sun City Center:</strong> a large 55+ community where
+            associations commonly ask for the move date, gate registration and daytime-only work.
+            Many of these jobs are downsizing moves, so our{" "}
+            <Link to="/senior-moving-services/">senior moving services guide</Link> is a useful
+            companion.
+          </p>
+          <p>
+            <strong className="text-ink">Wimauma:</strong> rural parcels and fast-growing new
+            construction south-east of Riverview. Expect longer drive times between addresses and
+            unpaved or newly graded access on some lots.
+          </p>
+          <p>
+            <strong className="text-ink">Apollo Beach:</strong> waterfront homes and canal-front
+            lots just west of US-41. For Apollo Beach rates and access notes, see{" "}
+            <Link to={"/movers-in-apollo-beach/" as "/"}>movers in Apollo Beach, FL</Link>.
+          </p>
+        </ProseSection>
+        <ProseSection
+          eyebrow="Between dates"
+          title="Moving and Storage in Riverview"
+          bg="bg-background"
+        >
+          <p>
+            Moving and storage go together in Riverview because so many moves follow a builder's
+            closing date, and those dates slip. If you have to be out of your old home before the new
+            one is ready, ask each mover for one of two options when you request quotes.
+          </p>
+          <p>
+            Storage-in-transit keeps your inventoried load in the mover's warehouse and redelivers it
+            when you get the keys, so the same company handles everything once. Self-storage is a unit
+            you rent and can open yourself, which suits an open-ended timeline but means two separate
+            moves. In Florida heat, ask for climate control for wood furniture, electronics and
+            photos. Compare both on our{" "}
+            <Link to="/storage-solutions/">moving and storage options in Florida</Link> page.
+          </p>
+        </ProseSection>
         <ProseSection title="Commuting, Home Sizes and Nearby Markets" bg="bg-surface-alt">
           <p>
             Riverview is a commuter town first. Most households moving here are trading a Tampa
@@ -117,13 +186,15 @@ export const Route = createFileRoute("/movers-in-riverview/")({
             <Link to={"/es/movers-in-riverview/" as "/"}>Spanish version of our Riverview movers guide</Link>.
           </p>
         </ProseSection>
+        </>
       }
       related={[
         { to: "/local-movers-in-florida/", label: "Florida hourly moving rates", d: "The statewide rate card and everything that pushes an hourly quote up." },
         { to: "/movers-in-tampa/", label: "Movers in Tampa", d: "The origin market for most Riverview move-ins, with bridge and traffic notes." },
-        { to: "/movers-in-sarasota/", label: "Movers in Sarasota", d: "South down I-75: Sarasota, Bradenton and Lakewood Ranch pricing." },
+        { to: "/movers-in-brandon/", label: "Movers in Brandon", d: "North up US-301: Brandon apartment communities and established subdivisions." },
+        { to: "/movers-in-apollo-beach/", label: "Movers in Apollo Beach", d: "Waterfront and canal-front homes on the South Shore, west of US-41." },
         { to: "/storage-solutions/", label: "Storage between closings", d: "Storage-in-transit for builder delays and mismatched closing dates." },
-        { to: "/commercial-movers/", label: "Commercial moving", d: "Office relocations along the Brandon and Riverview business corridor." },
+        { to: "/movers-in-sarasota/", label: "Movers in Sarasota", d: "South down I-75: Sarasota, Bradenton and Lakewood Ranch pricing." },
       ]}
       faqs={FAQS}
       ctaTitle="Get Your Riverview Moving Cost"

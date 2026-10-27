@@ -16,7 +16,7 @@ export const Route = createFileRoute("/storage-solutions/")({
   head: () => pageHead({
     path: "/storage-solutions/",
     title: 'Moving and Storage in Florida | Climate-Controlled Options',
-    description: "Compare Florida moving companies with storage, including climate-controlled units, storage-in-transit and flexible terms from about $80 a month. Free quotes.",
+    description: "Moving and storage in Florida explained: storage-in-transit vs self-storage vs containers, climate control and condo storage tips. Compare free mover quotes.",
     service: { serviceType: 'Moving and Storage', areaServed: 'Florida' },
     faqs: FAQS,
   }),
@@ -64,6 +64,14 @@ const FAQS = [
     a: "Storage-in-transit keeps your shipment on the mover's inventory in a warehouse you do not visit; self-storage is a unit you rent and access yourself. One company handles the whole chain with SIT, which is what most established moving and storage companies in Florida quote for closing-date gaps.",
   },
   {
+    q: "What is the best storage option for newcomers moving into a Florida condo?",
+    a: "If the condo is ready on a known date, storage-in-transit with your mover is usually simplest because the same crew redelivers on the building's schedule. If you are still deciding what fits, rent a climate-controlled self-storage unit near the condo. Check the association's move-in rules before you book either.",
+  },
+  {
+    q: "How long can a mover keep my things in storage-in-transit?",
+    a: "Storage-in-transit is meant for short gaps, and many Florida movers offer it for up to about 90 days. Terms vary, so ask each mover for its limit, the monthly rate and what happens if your date moves past it.",
+  },
+  {
     q: "Is moving and storage in Ocala FL available from the same company?",
     a: "Yes. Marion County movers commonly quote load, store and redeliver as one job, so your furniture is handled once rather than twice.",
   },
@@ -75,14 +83,238 @@ function StorageSolutionsPage() {
       <Hero />
       <NetworkDisclosure />
       <CostTable />
+      <NeedClimateControl />
+      <WhatIsSit />
+      <ComparisonTable />
       <SitVsSelf />
+      <CondoNewcomers />
       <ClimateSection />
       <OverlapScenarios />
-      <CityCoverage />
       <ClimateControl />
       <StorageInTransit />
+      <CityCoverage />
       <Faq />
     </>
+  );
+}
+
+function NeedClimateControl() {
+  return (
+    <ProseSection
+      eyebrow="Florida humidity"
+      title="Do You Need Climate-Controlled Storage in Florida?"
+      bg="bg-surface-alt"
+    >
+      <p>
+        For most household goods, yes. Florida's heat and humidity last for much of the year, and
+        humidity is what warps wood, grows mildew on fabric and corrodes electronics. A
+        climate-controlled unit keeps temperature and humidity in a narrower band than the outside
+        air. If you are storing anything for more than a few weeks, or anything you would be upset
+        to lose, choose climate control.
+      </p>
+      <CardGrid>
+        <SubBlock title="Climate control is worth it for">
+          <p>
+            Wood and upholstered furniture, mattresses, leather, electronics, photos and documents,
+            artwork, musical instruments, and anything you plan to keep long term.
+          </p>
+        </SubBlock>
+        <SubBlock title="A standard unit can be fine for">
+          <p>
+            Metal patio furniture, plastic bins of seasonal decor, garden tools and other items that
+            tolerate heat and moisture, for short periods.
+          </p>
+        </SubBlock>
+      </CardGrid>
+      <p>
+        Ask the facility or mover how the space is conditioned, not just whether it is "indoor."
+        For a full breakdown of what to look for, read our deep dive on{" "}
+        <Link to="/blog/$slug/" params={{ slug: "climate-controlled-storage-florida" }}>
+          climate-controlled storage in Florida
+        </Link>
+        .
+      </p>
+    </ProseSection>
+  );
+}
+
+function WhatIsSit() {
+  return (
+    <ProseSection
+      eyebrow="Mover storage"
+      title="What Is Storage-in-Transit (SIT)?"
+      bg="bg-background"
+    >
+      <p>
+        Storage-in-transit is short-term storage provided by your moving company as part of the
+        move. The crew loads your home, the mover holds the inventoried shipment in its warehouse,
+        and the same company delivers it to your new address when you are ready. You do not visit
+        the warehouse or unload anything yourself.
+      </p>
+      <CheckList
+        items={[
+          "How it is billed: usually a monthly or daily storage charge plus a redelivery charge, quoted alongside the move.",
+          "How long it lasts: it is designed for short gaps — many Florida movers offer up to about 90 days. Ask each mover for its own limit.",
+          "Who is responsible: one company holds your goods from pickup to delivery, so there is a single inventory and a single claim process.",
+          "What you give up: access. You generally cannot pull out a box mid-stay, so keep essentials with you.",
+        ]}
+      />
+      <p>
+        SIT is the usual answer when a closing date slips, a builder runs late or a lease starts
+        after you have to be out. Ask for it in the quote form so each mover prices the full
+        sequence, and confirm whether the warehouse space is climate-controlled.
+      </p>
+    </ProseSection>
+  );
+}
+
+const COMPARE_ROWS = [
+  {
+    label: "Who loads and unloads",
+    sit: "The mover, start to finish",
+    self: "You, or a crew you hire each time",
+    pod: "You, or labor you hire",
+  },
+  {
+    label: "Access while stored",
+    sit: "Generally none",
+    self: "Whenever the facility is open",
+    pod: "On your driveway; limited once moved to the depot",
+  },
+  {
+    label: "Number of moves",
+    sit: "One move, with a pause",
+    self: "Two: home to unit, unit to new home",
+    pod: "One container, delivered twice",
+  },
+  {
+    label: "Best for",
+    sit: "Known gaps between closing or lease dates",
+    self: "Open-ended timelines or regular access",
+    pod: "Flexible, do-it-yourself pace",
+  },
+  {
+    label: "Watch out for",
+    sit: "Time limits and redelivery fees",
+    self: "Two rounds of labor and split responsibility",
+    pod: "HOA and condo rules on driveway or street placement",
+  },
+  {
+    label: "Climate control",
+    sit: "Ask whether the warehouse is conditioned",
+    self: "Widely available at a higher monthly rate",
+    pod: "Depends on the company's storage facility",
+  },
+];
+
+function ComparisonTable() {
+  return (
+    <section className="bg-surface-alt">
+      <div className="container-page py-16 md:py-20">
+        <div className="max-w-3xl">
+          <span className="text-xs font-semibold uppercase tracking-wider text-brand">Compare</span>
+          <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-ink">
+            Storage-in-Transit vs Self-Storage vs Portable Container
+          </h2>
+          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+            A side-by-side look at how each option works. For typical monthly prices, see the cost
+            table above.
+          </p>
+        </div>
+        <div className="mt-8 overflow-hidden rounded-2xl border border-border shadow-card">
+          <table className="hidden md:table w-full text-left">
+            <thead className="bg-navy text-navy-foreground">
+              <tr>
+                <th className="px-6 py-4 font-display text-sm font-bold uppercase tracking-wider">Feature</th>
+                <th className="px-6 py-4 font-display text-sm font-bold uppercase tracking-wider">Storage-in-Transit</th>
+                <th className="px-6 py-4 font-display text-sm font-bold uppercase tracking-wider">Self-Storage</th>
+                <th className="px-6 py-4 font-display text-sm font-bold uppercase tracking-wider">Portable Container</th>
+              </tr>
+            </thead>
+            <tbody>
+              {COMPARE_ROWS.map((r, i) => (
+                <tr key={r.label} className={i % 2 === 0 ? "bg-white" : "bg-surface-alt"}>
+                  <td className="px-6 py-4 font-semibold text-ink">{r.label}</td>
+                  <td className="px-6 py-4 text-sm text-ink">{r.sit}</td>
+                  <td className="px-6 py-4 text-sm text-ink">{r.self}</td>
+                  <td className="px-6 py-4 text-sm text-ink">{r.pod}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div className="md:hidden divide-y divide-border">
+            {COMPARE_ROWS.map((r) => (
+              <div key={r.label} className="bg-white p-5">
+                <div className="font-display font-bold text-ink">{r.label}</div>
+                <dl className="mt-3 grid grid-cols-1 gap-2 text-sm">
+                  <div>
+                    <dt className="text-muted-foreground">Storage-in-transit</dt>
+                    <dd className="font-semibold text-ink">{r.sit}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-muted-foreground">Self-storage</dt>
+                    <dd className="font-semibold text-ink">{r.self}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-muted-foreground">Portable container</dt>
+                    <dd className="font-semibold text-ink">{r.pod}</dd>
+                  </div>
+                </dl>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CondoNewcomers() {
+  return (
+    <ProseSection
+      eyebrow="New to Florida"
+      title="Storage for Condo and Apartment Newcomers"
+      bg="bg-surface-alt"
+    >
+      <p>
+        The best storage solution for newcomers moving into a Florida condo or apartment depends on
+        two things: whether your move-in date is fixed, and how much of your old home will actually
+        fit. Condos and apartments are often smaller than the house people are leaving, and the
+        building sets the rules for when furniture can come in.
+      </p>
+      <CheckList
+        items={[
+          <>
+            <strong className="text-ink">Move-in date is fixed, everything fits:</strong> use
+            storage-in-transit if you arrive before the unit is ready. The mover redelivers on the
+            building's elevator schedule, with a certificate of insurance already on file.
+          </>,
+          <>
+            <strong className="text-ink">Not sure what fits:</strong> rent a climate-controlled
+            self-storage unit close to the new building, move only what fits the floor plan, and
+            decide on the rest once you have lived in the space.
+          </>,
+          <>
+            <strong className="text-ink">Seasonal or second-home condo:</strong> a small
+            climate-controlled unit for off-season items and hurricane supplies keeps a compact
+            condo usable.
+          </>,
+          <>
+            <strong className="text-ink">Portable containers:</strong> check first. Many condo and
+            apartment communities restrict where a container can sit, or do not allow one at all.
+          </>,
+        ]}
+      />
+      <p>
+        Before you book, ask the association or property manager for its move-in hours, elevator
+        reservation process and insurance requirements, and pass them to every mover you are
+        comparing. Our guide to{" "}
+        <Link to="/apartment-movers/">apartment and condo movers in Florida</Link> covers the
+        building side in more detail. If you are new to the state, the{" "}
+        <Link to="/blog/$slug/" params={{ slug: "interstate-move-to-florida-timeline" }}>moving to Florida guide</Link> walks through the
+        rest of the relocation.
+      </p>
+    </ProseSection>
   );
 }
 
@@ -129,7 +361,7 @@ function ClimateSection() {
     <ProseSection
       eyebrow="Florida-specific"
       title="Climate-Controlled Storage and Why Florida Humidity Changes the Math"
-      bg="bg-surface-alt"
+      bg="bg-background"
     >
       <p>
         An unconditioned storage unit in Florida tracks the outside air. Through
@@ -166,7 +398,7 @@ function OverlapScenarios() {
     <ProseSection
       eyebrow="When people need it"
       title="Typical Overlap Scenarios That Require Storage"
-      bg="bg-background"
+      bg="bg-surface-alt"
     >
       <CardGrid cols={3}>
         <SubBlock title="Closing-date gaps">
@@ -205,7 +437,7 @@ function CityCoverage() {
     <ProseSection
       eyebrow="Coverage"
       title="Moving and Storage Coverage Across Florida"
-      bg="bg-surface-alt"
+      bg="bg-background"
     >
       <p>
         Storage capacity varies by market, and so does availability during
@@ -253,12 +485,12 @@ function Hero() {
           Moving and Storage Solutions in <span className="text-brand">Florida</span>
         </h1>
         <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
-          Need storage between homes? Florida movers offer two paths: storage-in-transit
-          (your mover holds everything in their licensed warehouse for up to 90 days, from
-          about $150/month for a full household) and self-storage units ($80-$260/month by
-          size and climate control). In Florida heat and humidity, climate-controlled is not
-          a luxury — it is what stands between your wood furniture and a warped, mildewed
-          surprise.
+          Moving and storage in Florida comes down to three choices: storage-in-transit, where
+          your mover holds your inventoried load in its warehouse (often up to 90 days, from about
+          $150/month for a full household), a self-storage unit you rent yourself ($80-$260/month
+          by size and climate control), or a portable container. In Florida heat and humidity,
+          climate-controlled is not a luxury — it is what stands between your wood furniture and a
+          warped, mildewed surprise.
         </p>
         <div className="mt-7">
           <Link to="/contact/" className="btn-cta btn-cta-hover text-base">
@@ -333,7 +565,7 @@ function CostTable() {
 
 function ClimateControl() {
   return (
-    <section className="bg-surface-alt">
+    <section className="bg-background">
       <div className="container-page py-16 md:py-20 max-w-4xl">
         <span className="text-xs font-semibold uppercase tracking-wider text-brand">
           Climate Protection
@@ -372,7 +604,7 @@ function ClimateControl() {
 
 function StorageInTransit() {
   return (
-    <section className="bg-background">
+    <section className="bg-surface-alt">
       <div className="container-page py-16 md:py-20 max-w-4xl">
         <span className="text-xs font-semibold uppercase tracking-wider text-brand">
           Storage-In-Transit
